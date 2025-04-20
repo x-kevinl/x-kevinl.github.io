@@ -31,189 +31,107 @@
 <body>
 <canvas id="canvas"></canvas>
 <div id="terminal"><span>&gt; </span><input id="terminal-input" autocomplete="off" /></div>
-<!-- Matter.js physics engine -->
 <script src="https://unpkg.com/matter-js"></script>
 <script>
   const { Engine, Render, Runner, Bodies, Composite, Constraint, Mouse, MouseConstraint, Events, Body } = Matter;
 
   const canvas = document.getElementById('canvas');
   const terminalEl = document.getElementById('terminal');
+  const terminalInput = document.getElementById('terminal-input');
 
   const engine = Engine.create();
   const world = engine.world;
-
   const systemVariables = { friction: 0.1, gravity: 1 };
   engine.world.gravity.y = systemVariables.gravity;
 
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    render.options.width = canvas.width;
-    render.options.height = canvas.height;
-    Render.lookAt(render, { x: canvas.width/2, y: canvas.height/2, width: canvas.width, height: canvas.height });
-  }
-
   const render = Render.create({
-    canvas: canvas,
-    engine: engine,
-    options: { wireframes: false, background: '#888' }
+    canvas, engine,
+    options: { wireframes: false, background: '#888', width: innerWidth, height: innerHeight }
   });
   Render.run(render);
   Runner.run(Runner.create(), engine);
 
-  // Draw radius on circles
+  // ground above terminal
+  function createGround() {
+    const termHeight = terminalEl.offsetHeight;
+    const y = innerHeight - termHeight - 50;
+    return Bodies.rectangle(innerWidth/2, y, innerWidth, 100, { isStatic: true });
+  }
+  let ground = createGround();
+  Composite.add(world, ground);
+
+  // mouse control
+  const mouse = Mouse.create(canvas);
+  const mouseConstraint = MouseConstraint.create(engine, { mouse, constraint: { stiffness: 0.2, render: { visible: false } }});
+  Composite.add(world, mouseConstraint);
+  render.mouse = mouse;
+
+  // drag to velocity
+  let dragStart = null, dragBody = null;
+  Events.on(mouseConstraint, 'startdrag', e => { dragBody = e.body; dragStart = { x: mouse.position.x, y: mouse.position.y, time: engine.timing.timestamp }; });
+  Events.on(mouseConstraint, 'enddrag', () => {
+    if (dragBody && dragStart) {
+      const dt = (engine.timing.timestamp - dragStart.time)/1000;
+      const dx = mouse.position.x - dragStart.x;
+      const dy = mouse.position.y - dragStart.y;
+      Body.setVelocity(dragBody, { x: dx/dt, y: dy/dt });
+    }
+    dragBody = null;
+  });
+
+  // draw radius
   Events.on(render, 'afterRender', () => {
     const ctx = render.context;
-    world.bodies.forEach(body => {
-      if (body.circleRadius) {
-        ctx.beginPath();
-        ctx.moveTo(body.position.x, body.position.y);
-        ctx.lineTo(body.position.x + body.circleRadius, body.position.y);
-        ctx.lineWidth = 2;
-        ctx.strokeStyle = '#fff';
-        ctx.stroke();
+    world.bodies.forEach(b => {
+      if (b.circleRadius) {
+        ctx.beginPath(); ctx.moveTo(b.position.x, b.position.y);
+        ctx.lineTo(b.position.x + b.circleRadius, b.position.y);
+        ctx.lineWidth = 2; ctx.strokeStyle = '#fff'; ctx.stroke();
       }
     });
   });
 
-  window.addEventListener('resize', () => {
-    resizeCanvas();
-    Composite.remove(world, ground);
-    ground = createGround();
-    Composite.add(world, ground);
-  });
-  resizeCanvas();
-
-  const groundHeight = 100;
-  function createGround() {
-    const termHeight = terminalEl.offsetHeight;
-    const yPos = canvas.height - termHeight - groundHeight/2;
-    return Bodies.rectangle(canvas.width/2, yPos, canvas.width, groundHeight, { isStatic: true });
-  }
-
-  let ground = createGround();
-  Composite.add(world, ground);
-
-  const mouse = Mouse.create(canvas);
-  const mouseConstraint = MouseConstraint.create(engine, {
-    mouse: mouse,
-    constraint: { stiffness: 0.2, render: { visible: false } }
-  });
-  Composite.add(world, mouseConstraint);
-  render.mouse = mouse;
-
-  // Drag-to-velocity logic using dt
-  let isDragging = false;
-  let draggedBody = null;
-  let lastMousePos = null;
-  let dragStartTime = null;
-
-  Events.on(mouseConstraint, 'startdrag', event => {
-    isDragging = true;
-    draggedBody = event.body;
-    lastMousePos = { x: mouse.position.x, y: mouse.position.y };
-    dragStartTime = engine.timing.timestamp;
-  });
-
-  Events.on(mouseConstraint, 'mousemove', () => {
-    if (isDragging) {
-      lastMousePos = { x: mouse.position.x, y: mouse.position.y };
-    }
-  });
-
-  Events.on(mouseConstraint, 'enddrag', () => {
-    if (draggedBody) {
-      const dx = mouse.position.x - lastMousePos.x;
-      const dy = mouse.position.y - lastMousePos.y;
-      const dragEndTime = engine.timing.timestamp;
-      const dt = (dragEndTime - dragStartTime) / 1000;
-      let vx = dt > 0 ? dx / dt : 0;
-      let vy = dt > 0 ? dy / dt : 0;
-      const maxV = 50;
-      vx = Math.max(-maxV, Math.min(maxV, vx));
-      vy = Math.max(-maxV, Math.min(maxV, vy));
-      Body.setVelocity(draggedBody, { x: vx, y: vy });
-    }
-    isDragging = false;
-    draggedBody = null;
-    dragStartTime = null;
-  });
-
-  const terminalInput = document.getElementById('terminal-input');
-
-  document.addEventListener('keydown', e => {
-    if (e.key === '/') {
-      e.preventDefault(); terminalEl.style.display = 'block'; terminalInput.focus();
-    } else if (e.key === 'Escape' && terminalEl.style.display === 'block') {
-      hideTerminal();
-    }
-  });
-
-  terminalInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') { handleCommand(terminalInput.value.trim()); terminalInput.value = ''; }
-    else if (e.key === 'Escape') hideTerminal();
-  });
-
-  function hideTerminal() {
-    terminalEl.style.display = 'none'; terminalInput.value = ''; canvas.focus();
-  }
+  // terminal toggle
+  document.addEventListener('keydown', e => { if (e.key === '/') { e.preventDefault(); terminalEl.style.display = 'block'; terminalInput.focus(); } });
+  function hide() { terminalEl.style.display = 'none'; terminalInput.value = ''; canvas.focus(); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') hide(); });
+  terminalInput.addEventListener('keydown', e => { if (e.key === 'Enter') { handleCommand(terminalInput.value); terminalInput.value = ''; } });
 
   function handleCommand(input) {
-    if (!input) return;
-    const parts = input.split(/\s+/);
-    let cmd = parts[0].replace(/^\//, '').toLowerCase();
-    const rawArg = parts[1] ? parts[1].replace(/[()]/g, '') : '';
-    const arg = rawArg.toLowerCase();
-
-    switch (cmd) {
-      case 'spawn': spawn(arg); break;
-      case 'set':
-        if (parts[2] === 'to' && parts[1] in systemVariables) {
-          const val = parseFloat(parts[3]);
-          if (!isNaN(val)) {
-            systemVariables[parts[1]] = val;
-            if (parts[1] === 'gravity') engine.world.gravity.y = val;
-          }
-        }
-        break;
-      case 'reset':
-        Composite.clear(world, false);
-        ground = createGround(); Composite.add(world, ground);
-        Composite.add(world, mouseConstraint);
-        break;
-      case 'exit': hideTerminal(); break;
-      default: console.warn('Unknown command:', cmd);
+    const parts = input.split(' ');
+    const cmd = parts[0];
+    if (cmd === 'spawn' || cmd === '/spawn') {
+      spawn(parts[1] ? parts[1].replace(/[()]/g, '') : '');
+    } else if (cmd === 'set' && parts[2] === 'to') {
+      const v = parseFloat(parts[3]);
+      if (!isNaN(v) && parts[1] in systemVariables) {
+        systemVariables[parts[1]] = v;
+        if (parts[1] === 'gravity') engine.world.gravity.y = v;
+      }
+    } else if (cmd === 'reset') {
+      Composite.clear(world, false);
+      ground = createGround(); Composite.add(world, ground);
+      Composite.add(world, mouseConstraint);
+    } else if (cmd === 'exit') {
+      hide();
     }
   }
 
   function spawn(item) {
     const x = mouse.position.x, y = mouse.position.y;
-    const name = item.trim();
-    switch(name) {
-      case 'square':
-        Composite.add(world, Bodies.rectangle(x, y, 60, 60, { friction: systemVariables.friction }));
-        break;
-      case 'circle':
-        Composite.add(world, Bodies.circle(x, y, 30, { friction: systemVariables.friction, restitution: 0.3 }));
-        break;
-      case 'rope':
-        Composite.add(world, createRope(x, y));
-        break;
-      default:
-        console.warn('Cannot spawn:', item);
-    }
+    if (item === 'square') Composite.add(world, Bodies.rectangle(x, y, 60, 60, { friction: systemVariables.friction }));
+    else if (item === 'circle') Composite.add(world, Bodies.circle(x, y, 30, { friction: systemVariables.friction, restitution: 0.3 }));
+    else if (item === 'rope') Composite.add(world, createRope(x, y));
   }
 
   function createRope(x, y) {
     const rope = Composite.create();
-    const segments = 10, length = 20;
-    const group = Body.nextGroup(true);
-    let prev = Bodies.circle(x, y, 5, { collisionFilter: { group }, isStatic: true });
-    Composite.add(rope, prev);
-    for (let i = 1; i <= segments; i++) {
-      const body = Bodies.circle(x, y + i * length, 5, { collisionFilter: { group }, friction: systemVariables.friction, density: 0.001 });
-      const constraint = Constraint.create({ bodyA: prev, bodyB: body, length, stiffness: 1 });
-      Composite.add(rope, [body, constraint]); prev = body;
+    let prev = Bodies.circle(x, y, 5, { isStatic: true }); Composite.add(rope, prev);
+    for (let i = 1; i <= 10; i++) {
+      const b = Bodies.circle(x, y + i*20, 5, { friction: systemVariables.friction });
+      Composite.add(rope, b);
+      Composite.add(rope, Constraint.create({ bodyA: prev, bodyB: b, length: 20, stiffness: 1 }));
+      prev = b;
     }
     return rope;
   }
