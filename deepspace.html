@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>deep space</title>
+  <title>DeepSpace Simulation</title>
   <style>
     body { margin: 0; overflow: hidden; }
     #canvas { display: block; }
@@ -61,6 +61,21 @@
   Render.run(render);
   Runner.run(Runner.create(), engine);
 
+  // Draw radius on circles
+  Events.on(render, 'afterRender', () => {
+    const ctx = render.context;
+    world.bodies.forEach(body => {
+      if (body.circleRadius) {
+        ctx.beginPath();
+        ctx.moveTo(body.position.x, body.position.y);
+        ctx.lineTo(body.position.x + body.circleRadius, body.position.y);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#fff';
+        ctx.stroke();
+      }
+    });
+  });
+
   window.addEventListener('resize', () => {
     resizeCanvas();
     Composite.remove(world, ground);
@@ -87,7 +102,7 @@
   Composite.add(world, mouseConstraint);
   render.mouse = mouse;
 
-  // Improved drag-to-velocity logic using time delta
+  // Drag-to-velocity logic using dt
   let isDragging = false;
   let draggedBody = null;
   let lastMousePos = null;
@@ -111,13 +126,13 @@
       const dx = mouse.position.x - lastMousePos.x;
       const dy = mouse.position.y - lastMousePos.y;
       const dragEndTime = engine.timing.timestamp;
-      const dt = (dragEndTime - dragStartTime) / 1000; // seconds
-      const vx = dt > 0 ? dx / dt : dx * 0.001;
-      const vy = dt > 0 ? dy / dt : dy * 0.001;
-      // Optional: cap max velocity
+      const dt = (dragEndTime - dragStartTime) / 1000;
+      let vx = dt > 0 ? dx / dt : 0;
+      let vy = dt > 0 ? dy / dt : 0;
       const maxV = 50;
-      const cap = v => Math.max(-maxV, Math.min(maxV, v));
-      Body.setVelocity(draggedBody, { x: cap(vx), y: cap(vy) });
+      vx = Math.max(-maxV, Math.min(maxV, vx));
+      vy = Math.max(-maxV, Math.min(maxV, vy));
+      Body.setVelocity(draggedBody, { x: vx, y: vy });
     }
     isDragging = false;
     draggedBody = null;
@@ -146,8 +161,9 @@
   function handleCommand(input) {
     if (!input) return;
     const parts = input.split(/\s+/);
-    let cmd = parts[0].replace(/^\//, '');
-    const arg = parts[1] ? parts[1].replace(/[()]/g, '') : '';
+    let cmd = parts[0].replace(/^\//, '').toLowerCase();
+    const rawArg = parts[1] ? parts[1].replace(/[()]/g, '') : '';
+    const arg = rawArg.toLowerCase();
 
     switch (cmd) {
       case 'spawn': spawn(arg); break;
@@ -172,10 +188,20 @@
 
   function spawn(item) {
     const x = mouse.position.x, y = mouse.position.y;
-    if (item === 'square') Composite.add(world, Bodies.rectangle(x, y, 60, 60, { friction: systemVariables.friction }));
-    else if (item === 'circle') Composite.add(world, Bodies.circle(x, y, 30, { friction: systemVariables.friction, restitution: 0.3 }));
-    else if (item === 'rope') Composite.add(world, createRope(x, y));
-    else console.warn('Cannot spawn:', item);
+    const name = item.trim();
+    switch(name) {
+      case 'square':
+        Composite.add(world, Bodies.rectangle(x, y, 60, 60, { friction: systemVariables.friction }));
+        break;
+      case 'circle':
+        Composite.add(world, Bodies.circle(x, y, 30, { friction: systemVariables.friction, restitution: 0.3 }));
+        break;
+      case 'rope':
+        Composite.add(world, createRope(x, y));
+        break;
+      default:
+        console.warn('Cannot spawn:', item);
+    }
   }
 
   function createRope(x, y) {
