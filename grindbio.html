@@ -157,7 +157,7 @@
     let qIndex = 0;
     let selected = null;
 
-    function parseU6(text) {
+    function parseUnit(text) {
       const blocks = text.trim().split(/QUESTION:/).filter(b => b.trim());
       return blocks.map(block => {
         const qLine = block.match(/\n([^\n]+)/);
@@ -175,18 +175,20 @@
       qIndex = 0;
       selected = null;
       const quiz = document.getElementById('quiz');
-      if (unit === 6) {
-        quiz.innerHTML = '<p class="loading">Loading Unit 6...</p>';
-        fetch('bio/unit_6.txt')
-          .then(r => r.text())
-          .then(text => {
-            questions = parseU6(text);
-            nextQuestion(); // show random first
-          });
-      } else {
-        questions = practiceData[unit];
-        nextQuestion();
-      }
+      quiz.innerHTML = `<p class="loading">Loading Unit ${unit}...</p>`;
+      fetch(`bio/unit_${unit}.txt`)
+        .then(r => {
+          if (!r.ok) throw new Error('File not found');
+          return r.text();
+        })
+        .then(text => {
+          questions = parseUnit(text);
+          nextQuestion();
+        })
+        .catch(() => {
+          questions = practiceData[unit] || [];
+          nextQuestion();
+        });
     }
 
     function renderQuestion() {
@@ -213,7 +215,6 @@
           <div class="result-area"></div>
         </div>`;
 
-      const quizCard = quiz.querySelector('.question-card');
       const labels = quiz.querySelectorAll('.options label');
       labels.forEach(label => label.classList.remove('option-correct','option-wrong'));
       quiz.querySelectorAll('input[name="option"]').forEach(input => {
