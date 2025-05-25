@@ -1,0 +1,1098 @@
+QUESTION: What event happened in Darwin's life that led his brother Erasmus to believe he would publish a journal?
+ANSWER1: Darwin returned from his voyage on the Beagle.
+ANSWER2: Darwin discovered a new species.
+ANSWER3: Darwin wrote letters describing his travels that his father found interesting.
+ANSWER4: Darwin attended a scientific conference in London.
+CORRECT: 3
+
+QUESTION: Which of the following was NOT among the things collected or observed by Darwin during his voyage mentioned in the sources?
+ANSWER1: Armadillos roasted in their shells.
+ANSWER2: Galapagos tortoises weighing up to 500 pounds.
+ANSWER3: Naked Tahitian women.
+ANSWER4: Giant sloves.
+CORRECT: 3
+
+QUESTION: When presenting his geological findings, Darwin described an earthquake that caused the land to rise. By how many feet did the source say the land rose?
+ANSWER1: 400 feet.
+ANSWER2: 14,000 feet.
+ANSWER3: 8 feet.
+ANSWER4: 96 feet.
+CORRECT: 3
+
+QUESTION: What did Darwin find at the very crest of the Andes Mountains that provided evidence for geological change over vast periods of time?
+ANSWER1: Remains of extinct llamas.
+ANSWER2: Fossilized shells of marine creatures.
+ANSWER3: Tracks of dinosaurs.
+ANSWER4: Volcanic ash layers.
+CORRECT: 2
+
+QUESTION: After hearing Darwin's geological paper, what was Richard Owen's reaction to Darwin's fossil specimens?
+ANSWER1: He immediately offered to display them in the British museum.
+ANSWER2: He dismissed them as rubbish Darwin had collected.
+ANSWER3: He thought they should languish in a dusty Bloomsbury cellar and offered to look over them.
+ANSWER4: He was uninterested in fossils and preferred live specimens.
+CORRECT: 3
+
+QUESTION: What observation about the finches from the Galapagos Islands was particularly interesting to the vice governor?
+ANSWER1: Their bright red plumage.
+ANSWER2: They were unique and never described before.
+ANSWER3: There was a separate species for each island.
+ANSWER4: They were all descended from a single common ground finch.
+CORRECT: 3
+
+QUESTION: How did the vice governor of the Galapagos Islands explain the presence of different finch species on the islands?
+ANSWER1: They were blown over from South America and adapted.
+ANSWER2: God put them there.
+ANSWER3: They evolved from different ancestral birds.
+ANSWER4: It was a mystery that didn't require an answer.
+CORRECT: 2
+
+QUESTION: Professor Owen identified and described fossils discovered by Darwin, including a large extinct llama-like creature and a giant ground sloth. What did Owen name the huge rodent skull discovered by Darwin?
+ANSWER1: Capibara.
+ANSWER2: Glyptodon.
+ANSWER3: Toxodon.
+ANSWER4: Megatherium.
+CORRECT: 3
+
+QUESTION: According to the sources, what was Professor Owen's view on the creation of life and species?
+ANSWER1: It should be explained by natural, ordinary causes like geology.
+ANSWER2: It is primarily due to divine will and a special act of God.
+ANSWER3: Men of science should be free to investigate all means of species creation.
+ANSWER4: Species change over time to adapt to new conditions.
+CORRECT: 2
+
+QUESTION: What analogy did Darwin use to describe the relationship between different species, moving away from the idea of a ladder of life?
+ANSWER1: A river flowing to the sea.
+ANSWER2: A tree of life with branching shoots.
+ANSWER3: A chain link fence.
+ANSWER4: A complex web.
+CORRECT: 2
+
+QUESTION: Darwin's grandfather, Erasmus Darwin, is mentioned in the sources in relation to a bold idea. What was this idea?
+ANSWER1: That all warm-blooded animals arose from one living filament.
+ANSWER2: That species were created by God.
+ANSWER3: That humans are separate from the animal kingdom.
+ANSWER4: That geological changes happen gradually.
+CORRECT: 1
+
+QUESTION: Biologists Chris Schneider and his colleagues are exploring Darwin's ideas in Ecuador by comparing animals in the rainforest and nearby Andes Mountains. What do they hope to understand by comparing these two groups?
+ANSWER1: The differences in predator-prey relationships.
+ANSWER2: How changing environments might trigger the evolution of new species.
+ANSWER3: The total number of species in Ecuador.
+ANSWER4: How animal behavior changes with altitude.
+CORRECT: 2
+
+QUESTION: Ornithologist Tom Smith is comparing the size of bird beaks from the rainforest with those from the mountains. What might subtle differences in beak size offer clues about?
+ANSWER1: The age of the birds.
+ANSWER2: How and why new species arise.
+ANSWER3: The bird's mating habits.
+ANSWER4: The overall health of the ecosystem.
+CORRECT: 2
+
+QUESTION: Darwin's bold insight, extended to all of life, was that the great variety of life on Earth is descended from what?
+ANSWER1: Multiple independent lineages created by God.
+ANSWER2: Pre-ordained forms moving in specific directions.
+ANSWER3: One root or one common ancestor.
+ANSWER4: Different ancestors for different types of organisms.
+CORRECT: 3
+
+QUESTION: According to the sources, the key to Darwin's thought is that given enough time and innumerable small events, anything can take place by what?
+ANSWER1: Divine intervention.
+ANSWER2: Human design.
+ANSWER3: The laws of nature.
+ANSWER4: Random chance alone.
+CORRECT: 3
+
+QUESTION: The praying mantis in the rainforest is described as being almost perfectly disguised as a leaf. How does the source explain how this adaptation likely arose?
+ANSWER1: The mantis decided to change its form to look like a leaf for protection.
+ANSWER2: The environment somehow molded the mantis into a leaf shape.
+ANSWER3: Mantises with slightly more leaf-like traits survived and reproduced more, accumulating modifications over time.
+ANSWER4: A sudden major mutation caused the mantis to resemble a leaf.
+CORRECT: 3
+
+QUESTION: When animal populations moved from the rainforest to the higher Andes Mountains, what environmental change did they face?
+ANSWER1: Increased predation.
+ANSWER2: A lack of food resources.
+ANSWER3: A change from steamy lowlands to Windswept and cool grasslands.
+ANSWER4: More competition from other species.
+CORRECT: 3
+
+QUESTION: Hummingbirds in the Andes have adapted to frigid nights. How does the source describe this adaptation?
+ANSWER1: They migrate to warmer areas each night.
+ANSWER2: They grow thicker feathers for insulation.
+ANSWER3: They can drop their body temperature significantly and enter a state of hibernation.
+ANSWER4: They build communal nests for warmth.
+CORRECT: 3
+
+QUESTION: How can small changes in hummingbird beak length be important for their survival in different environments?
+ANSWER1: Longer beaks help them defend against predators.
+ANSWER2: Different beak lengths are better suited for extracting nectar from different flower shapes.
+ANSWER3: Shorter beaks help them fly faster.
+ANSWER4: Beak color changes for camouflage.
+CORRECT: 2
+
+QUESTION: What modern tool do scientists like Smith and Schneider use to study how closely related species are, which Darwin did not have?
+ANSWER1: Powerful microscopes.
+ANSWER2: DNA analysis.
+ANSWER3: Radio carbon dating.
+ANSWER4: Satellite tracking.
+CORRECT: 2
+
+QUESTION: What is the ultimate source of the genetic variation that is passed from generation to generation in the form of DNA?
+ANSWER1: Sexual reproduction.
+ANSWER2: Random mating.
+ANSWER3: Mutations.
+ANSWER4: Natural selection.
+CORRECT: 3
+
+QUESTION: The source mentions that the blueprints for all living things are in the same language, the genetic code of DNA. What is this fact considered powerful evidence for?
+ANSWER1: That all organisms were designed by a creator.
+ANSWER2: That all organisms evolved on a single tree of life.
+ANSWER3: That convergent evolution is a widespread process.
+ANSWER4: That mutations happen randomly.
+CORRECT: 2
+
+QUESTION: Darwin was convinced that traits were passed on from generation to generation, but he didn't understand the mechanism. What do we now know determines the traits of all living things?
+ANSWER1: Environmental factors during development.
+ANSWER2: The sequence of the four chemical building blocks of DNA.
+ANSWER3: Protein folding patterns.
+ANSWER4: The structure of cells.
+CORRECT: 2
+
+QUESTION: In the example of artificial selection, what was produced from wolves in a matter of a few hundred years?
+ANSWER1: Diverse breeds of dogs like Greyhounds and Bulldogs.
+ANSWER2: Domesticated cats.
+ANSWER3: Farm animals like sheep and cattle.
+ANSWER4: New species entirely separate from wolves.
+CORRECT: 1
+
+QUESTION: According to the sources, what was Darwin's view on whether artificial selection could produce complex organs like the heart or eyes?
+ANSWER1: Yes, given enough time and effort, breeders could produce such organs.
+ANSWER2: No, these organs were too miraculous and could only be the work of God.
+ANSWER3: Yes, through gradual selection of advantageous traits.
+ANSWER4: He believed nature, not breeders, could produce such complexity.
+CORRECT: 2
+
+QUESTION: What concept from Thomas Malthus inspired Darwin's idea of natural selection?
+ANSWER1: Human populations grow faster than resources, leading to a struggle for existence.
+ANSWER2: The importance of inherited traits.
+ANSWER3: The idea that species change gradually over time.
+ANSWER4: The classification of organisms based on shared traits.
+CORRECT: 1
+
+QUESTION: According to Darwin's realization based on Malthus's ideas, what is the essence of natural selection?
+ANSWER1: The inheritance of acquired characteristics.
+ANSWER2: The survival of the strongest individuals.
+ANSWER3: Unequal reproduction among individuals with varying traits.
+ANSWER4: The creation of new genetic variations through mutation.
+CORRECT: 3
+
+QUESTION: How was Darwin's carriage treated in London by people who likely thought he was a Poor Law Commissioner or one of the "top hatted tops"?
+ANSWER1: He was greeted with cheers and applause.
+ANSWER2: His carriage was stopped and inspected.
+ANSWER3: His carriage was stoned.
+ANSWER4: People asked him for money.
+CORRECT: 3
+
+QUESTION: When Darwin discussed his emerging ideas about species changing with his brother Erasmus, how did Darwin describe his feeling, particularly in relation to telling his cousin Emma?
+ANSWER1: He felt excited and revolutionary.
+ANSWER2: He felt like he was confessing a murder.
+ANSWER3: He felt nervous but optimistic.
+ANSWER4: He felt confident in his findings.
+CORRECT: 2
+
+QUESTION: Emma Darwin asked Charles to read her favorite part of the New Testament after he told her about his ideas. Which passage did she ask him to read?
+ANSWER1: The creation story in Genesis.
+ANSWER2: The Sermon on the Mount.
+ANSWER3: Our Savior's farewell to his disciples, mentioning the vine and branches.
+ANSWER4: The resurrection of Jesus.
+CORRECT: 3
+
+QUESTION: After the tragic death of his daughter Annie, how did Darwin's faith change according to the sources?
+ANSWER1: It strengthened his belief in God's plan.
+ANSWER2: It led him to abandon science for religion.
+ANSWER3: It mainly destroyed his belief in Christianity and a God who ordered events.
+ANSWER4: It had no impact on his religious views.
+CORRECT: 3
+
+QUESTION: What is the perspective of biologist Ken Miller, mentioned in the sources, regarding evolution and religion?
+ANSWER1: He is an atheist who sees no compatibility between science and faith.
+ANSWER2: He believes God is the sum total of the laws of physics, a New Age view.
+ANSWER3: He is an orthodox Catholic and an orthodox Darwinist who finds consistency between science and traditional faith.
+ANSWER4: He believes science disproves the existence of God.
+CORRECT: 3
+
+QUESTION: According to Ken Miller, as an experimental scientist, where does he NOT find God?
+ANSWER1: In the complexity of nature.
+ANSWER2: In the laws of physics.
+ANSWER3: In the insufficiency of science to explain things.
+ANSWER4: In the history of evolution written in DNA.
+CORRECT: 3
+
+QUESTION: What was Richard Owen's main argument for man's superiority, specifically regarding the human brain?
+ANSWER1: The human brain is larger than any other animal's.
+ANSWER2: The human brain has a third lobe peculiar to Homo sapiens.
+ANSWER3: The human brain allows for complex language unique to humans.
+ANSWER4: The human brain is the only one capable of abstract thought.
+CORRECT: 2
+
+QUESTION: How did T.H. Huxley respond to Bishop Wilberforce's question about claiming descent from an ape through his grandfather or grandmother?
+ANSWER1: He admitted that he did trace his ancestry back to apes.
+ANSWER2: He stated he would rather be descended from an ape than from someone who uses influence to ridicule scientific discussion.
+ANSWER3: He denied any relation to apes.
+ANSWER4: He explained the concept of common ancestry without addressing the specific question.
+CORRECT: 2
+
+QUESTION: What significant event happened that prompted Darwin's friends to urge him to publish his theory quickly?
+ANSWER1: A major scientific conference was announced.
+ANSWER2: Alfred Wallace sent Darwin an essay with a similar theory.
+ANSWER3: Darwin's health took a turn for the worse.
+ANSWER4: Professor Owen published a book criticizing Darwin's ideas.
+CORRECT: 2
+
+QUESTION: Darwin described Wallace's essay as like a pricey of his theory. What did he mean by this?
+ANSWER1: Wallace had stolen his ideas and published them first.
+ANSWER2: Wallace's essay summarized his own long-held ideas very effectively.
+ANSWER3: Wallace's theory was completely different from his but also valuable.
+ANSWER4: Wallace's work was not worth much in scientific terms.
+CORRECT: 2
+
+QUESTION: What was Darwin's initial reaction to receiving Wallace's essay?
+ANSWER1: He was thrilled to find someone else thinking along similar lines.
+ANSWER2: He wanted to burn his own work because he felt his originality was "smashed."
+ANSWER3: He immediately decided to publish his full manuscript.
+ANSWER4: He felt challenged to prove his theory before Wallace could.
+CORRECT: 2
+
+QUESTION: What did Darwin's friends suggest he do after receiving Wallace's essay?
+ANSWER1: Immediately burn his manuscript.
+ANSWER2: Publish Wallace's essay under his own name.
+ANSWER3: Publish a joint paper with excerpts from his work and Wallace's essay, then prepare his manuscript for publication.
+ANSWER4: Ignore Wallace's work and focus on finishing his book.
+CORRECT: 3
+
+QUESTION: According to the sources, what does the similarity in DNA between humans and chimpanzees (98% identical) suggest?
+ANSWER1: Humans evolved directly from chimpanzees.
+ANSWER2: Humans and chimpanzees had a common ancestor only a few million years ago.
+ANSWER3: Mutations occur very frequently in primates.
+ANSWER4: DNA sequencing is not an accurate measure of relatedness.
+CORRECT: 2
+
+QUESTION: If the same gene from a rat is compared to the human gene, many more spelling differences are seen than between humans and chimps. Why?
+ANSWER1: Rats have a much higher mutation rate than primates.
+ANSWER2: The common ancestor with the rat lived much longer ago than the common ancestor with chimps.
+ANSWER3: Rats are not closely related to mammals.
+ANSWER4: The rat genome is much larger than the human genome.
+CORRECT: 2
+
+QUESTION: Psychologist Sally Boysen studies the minds of chimpanzees and humans. What do the similarities in developmental milestones and cognitive skills (like learning to count or grasp zero) in chimps suggest about the human mind?
+ANSWER1: Humans are simply more advanced chimpanzees.
+ANSWER2: These cognitive abilities are unique to primates.
+ANSWER3: These abilities likely came from a common ancestor and are supported by comparable neurological structures.
+ANSWER4: Chimpanzees can be trained to perform tasks beyond their natural capacity.
+CORRECT: 3
+
+QUESTION: According to the sources, what might have been favored by natural selection on the evolutionary line leading to humans?
+ANSWER1: Increased physical strength.
+ANSWER2: An explosive development of mental capacity, communication, and language skills.
+ANSWER3: Enhanced senses like sight and smell.
+ANSWER4: The ability to live in diverse environments.
+CORRECT: 2
+
+QUESTION: What is the basic definition of evolution according to the "Five Fingers of Evolution" source?
+ANSWER1: The process of natural selection.
+ANSWER2: Survival of the fittest.
+ANSWER3: Change in the gene pool over time.
+ANSWER4: The development of new species.
+CORRECT: 3
+
+QUESTION: In the analogy used in the "Five Fingers of Evolution" video, what represents the gene pool of a population?
+ANSWER1: The survivors on a deserted island.
+ANSWER2: The individual genes in the population, like cards in a deck.
+ANSWER3: The red hair trait.
+ANSWER4: The number of offspring produced.
+CORRECT: 2
+
+QUESTION: Which of the "Five Fingers of Evolution" is the only process that consistently leads to adaptation?
+ANSWER1: Mutation (Middle finger).
+ANSWER2: Gene flow (Pointer finger).
+ANSWER3: Genetic drift (Little finger).
+ANSWER4: Natural selection (Thumb).
+CORRECT: 4
+
+QUESTION: The "Five Fingers of Evolution" uses fingers as a mnemonic device. What does the ring finger represent?
+ANSWER1: Small population size.
+ANSWER2: Non-random mating.
+ANSWER3: Mutation.
+ANSWER4: Gene flow.
+CORRECT: 2
+
+QUESTION: The "Five Fingers of Evolution" uses fingers as a mnemonic device. What does the little finger represent?
+ANSWER1: Natural selection.
+ANSWER2: Non-random mating.
+ANSWER3: Mutation.
+ANSWER4: Small population size.
+CORRECT: 4
+
+QUESTION: The "Five Fingers of Evolution" uses fingers as a mnemonic device. What does the pointer finger represent?
+ANSWER1: Mutation.
+ANSWER2: Gene flow (movement of individuals).
+ANSWER3: Small population size.
+ANSWER4: Non-random mating.
+CORRECT: 2
+
+QUESTION: The "Five Fingers of Evolution" uses fingers as a mnemonic device. What does the middle finger represent?
+ANSWER1: Gene flow.
+ANSWER2: Natural selection.
+ANSWER3: Mutation.
+ANSWER4: Non-random mating.
+CORRECT: 3
+
+QUESTION: In the Rock Pocket Mouse example, what drives the change in fur color over evolutionary time in the population?
+ANSWER1: The mice's preference for dark or light rocks.
+ANSWER2: Random chance alone.
+ANSWER3: Predators weeding out mice that don't match their background.
+ANSWER4: Direct environmental pressure changing the fur color.
+CORRECT: 3
+
+QUESTION: How did the dark-colored pocket mice arise in the first place?
+ANSWER1: They migrated from a different, darker environment.
+ANSWER2: Through random and rare gene flow events.
+ANSWER3: Usually due to a new mutation.
+ANSWER4: As a direct response to living on dark rocks.
+CORRECT: 3
+
+QUESTION: According to the Rock Pocket Mouse source, are mutations good or bad?
+ANSWER1: They are always bad as they represent copying errors.
+ANSWER2: They are always good as they increase genetic variation.
+ANSWER3: They are neither good nor bad; whether they are favored or rejected depends on the environment.
+ANSWER4: They are only good if they cause a visible change in phenotype.
+CORRECT: 3
+
+QUESTION: What specific gene was found to be different in dark and light pocket mice, affecting their fur color?
+ANSWER1: The Darwin gene.
+ANSWER2: The Coloration gene.
+ANSWER3: The Mc1r gene.
+ANSWER4: The Keratin gene.
+CORRECT: 3
+
+QUESTION: The difference between dark and light pocket mice on a specific lava flow boiled down to a difference in how many chemical letters in the Mc1r gene?
+ANSWER1: One.
+ANSWER2: Four.
+ANSWER3: Ninety-eight.
+ANSWER4: Hundreds.
+CORRECT: 2
+
+QUESTION: What competitive advantage does dark fur give a pocket mouse living on dark volcanic rock?
+ANSWER1: It helps them absorb more heat.
+ANSWER2: It makes them more attractive to mates.
+ANSWER3: It provides camouflage, concealing them from visual predators.
+ANSWER4: It allows them to run faster on the dark surface.
+CORRECT: 3
+
+QUESTION: The Rock Pocket Mouse example illustrates that while mutation is random, what process is not random?
+ANSWER1: Gene flow.
+ANSWER2: Genetic drift.
+ANSWER3: Natural selection.
+ANSWER4: Sexual reproduction.
+CORRECT: 3
+
+QUESTION: What does natural selection do that is not random, according to the Rock Pocket Mouse source?
+ANSWER1: It creates new mutations.
+ANSWER2: It determines where organisms migrate.
+ANSWER3: It sorts out the winners and losers based on their traits in a given environment.
+ANSWER4: It causes individuals to change their traits during their lifetime.
+CORRECT: 3
+
+QUESTION: The source mentions that dark mice have evolved independently on different lava flows. What evolutionary concept does this demonstrate?
+ANSWER1: Genetic drift.
+ANSWER2: Gene flow.
+ANSWER3: Convergent evolution.
+ANSWER4: Artificial selection.
+CORRECT: 3
+
+QUESTION: How does the Rock Pocket Mouse example suggest that evolutionary change is never ending?
+ANSWER1: Organisms are constantly struggling against each other.
+ANSWER2: Mutations happen continuously.
+ANSWER3: As environments transform, species must adapt and re-adapt.
+ANSWER4: Predators are always evolving new hunting strategies.
+CORRECT: 3
+
+QUESTION: What type of animals are expected to be most represented in the fossil record?
+ANSWER1: Those that lived in dry, arid environments.
+ANSWER2: Those with soft bodies that decomposed quickly.
+ANSWER3: Those that lived in areas where sediment accumulated and had hard parts like bones or shells.
+ANSWER4: Those that were eaten by predators, leaving behind remains.
+CORRECT: 3
+
+QUESTION: Fossils of footprints, burrows, and fossilized feces (coprolites) provide evidence of what aspect of ancient organisms?
+ANSWER1: Their genetic makeup.
+ANSWER2: Their behavior.
+ANSWER3: Their age.
+ANSWER4: Their internal anatomy.
+CORRECT: 2
+
+QUESTION: Darwin predicted the existence of fossils of transitional forms linking very different groups of organisms. Which transition is cited as one of the best-documented evolutionary transitions to date, supported by discoveries since Darwin's time?
+ANSWER1: The transition of fish to amphibians.
+ANSWER2: The origin of birds from dinosaurs.
+ANSWER3: The evolution of whales from land-dwelling mammals.
+ANSWER4: The evolution of mammals from reptilian ancestors.
+CORRECT: 3
+
+QUESTION: Pakicetus, an early fossil in the whale evolutionary lineage, had a body shape and long limbs resembling land animals. However, what skeletal feature suggested adaptations to an aquatic environment?
+ANSWER1: A powerful tail.
+ANSWER2: Large, paddle-like hind feet.
+ANSWER3: Distinctively cetacean middle ear structures.
+ANSWER4: Reduced hind limbs.
+CORRECT: 3
+
+QUESTION: Ambulocetus ("walking whale") is described as a perfect intermediate between modern whales and their land-dwelling ancestors. What features supported its ability to move on land and swim?
+ANSWER1: Short limbs for walking and webbed feet for swimming.
+ANSWER2: Joints of its forelimbs suggesting mobility on land and a powerful tail and large, paddle-like hind feet for swimming.
+ANSWER3: Only vestigial hind limbs.
+ANSWER4: A streamlined body shape adapted solely for water.
+CORRECT: 2
+
+QUESTION: Initially, paleontologists hypothesized that the ancestors of whales were hoofed, wolflike carnivores based on limited fossils. However, later molecular evidence suggested whales were more closely related to which group?
+ANSWER1: Carnivores.
+ANSWER2: Hippos and other cloven-hoofed mammals.
+ANSWER3: Rodents.
+ANSWER4: Primates.
+CORRECT: 2
+
+QUESTION: What specific skeletal feature, present in Pakicetus and Rodhocetus, resolved the contradiction between fossil and molecular evidence regarding whale ancestry?
+ANSWER1: Skull shape.
+ANSWER2: Forelimb structure.
+ANSWER3: Vertebral column structure.
+ANSWER4: The distinctive ankle bone of a cloven-hoofed mammal.
+CORRECT: 4
+
+QUESTION: What term describes anatomical similarities in different organisms that often have different functions but are structurally similar because of common ancestry?
+ANSWER1: Analogous structures.
+ANSWER2: Vestigial structures.
+ANSWER3: Homologous structures.
+ANSWER4: Convergent structures.
+CORRECT: 3
+
+QUESTION: The forelimbs of humans, cats, whales, and bats have the same underlying skeletal elements. What does Darwin cite this as evidence for?
+ANSWER1: The work of a common designer.
+ANSWER2: Adaptation to similar environments.
+ANSWER3: Common ancestry.
+ANSWER4: Independent evolution of similar structures.
+CORRECT: 3
+
+QUESTION: Molecular biology provides strong evidence that all life-forms are related. What is a key piece of evidence cited?
+ANSWER1: All forms of life use the same genetic language of DNA and RNA, and the genetic code is essentially universal.
+ANSWER2: All organisms have similar metabolic rates.
+ANSWER3: All organisms require oxygen to survive.
+ANSWER4: The physical structures of organisms are remarkably similar at the cellular level.
+CORRECT: 1
+
+QUESTION: What are "pseudogenes" as described in the sources?
+ANSWER1: Genes that create false or misleading traits.
+ANSWER2: Genes found only in humans that have no function.
+ANSWER3: Genes that have been duplicated multiple times in the genome.
+ANSWER4: Organisms retaining genes that have lost their function, though homologous genes in related species are functional.
+CORRECT: 4
+
+QUESTION: How does the source describe the GLO gene in humans compared to most other mammals?
+ANSWER1: It is hyperactive, leading to excess vitamin C production.
+ANSWER2: It is non-functional, meaning humans cannot synthesize vitamin C and must get it from their diet.
+ANSWER3: It is identical and fully functional, allowing vitamin C synthesis.
+ANSWER4: It is a newly evolved gene found only in primates.
+CORRECT: 2
+
+QUESTION: In an evolutionary tree, what does each branch point represent?
+ANSWER1: A mass extinction event.
+ANSWER2: A new mutation occurring.
+ANSWER3: The common ancestor of all species that descended from it.
+ANSWER4: A transitional fossil.
+CORRECT: 3
+
+QUESTION: How can homologous structures be used to determine the branching sequence of an evolutionary tree?
+ANSWER1: By comparing the functions of the structures.
+ANSWER2: By comparing the age of the fossils.
+ANSWER3: Characters shared by all species date to deep ancestral past, while recently evolved characters are shared by smaller groups.
+ANSWER4: By measuring the size and shape of the structures.
+CORRECT: 3
+
+QUESTION: Darwin gained insight into the process of incremental change by studying the practices used by plant and animal breeders. What is this practice called?
+ANSWER1: Natural selection.
+ANSWER2: Genetic drift.
+ANSWER3: Gene flow.
+ANSWER4: Artificial selection.
+CORRECT: 4
+
+QUESTION: According to Darwin, what are the two essential components of artificial selection?
+ANSWER1: Environment and predators.
+ANSWER2: Mutation and adaptation.
+ANSWER3: Variation and heritability.
+ANSWER4: Competition and survival.
+CORRECT: 3
+
+QUESTION: In the context of natural selection, what does "heritability" refer to?
+ANSWER1: The ability of an organism to find resources.
+ANSWER2: The transmission of a trait from parent to offspring.
+ANSWER3: The rate at which mutations occur.
+ANSWER4: The size of a population.
+CORRECT: 2
+
+QUESTION: Darwin observed that individuals in natural populations have small but measurable differences. What forces in nature, analogous to the breeder in artificial selection, choose which individuals become the breeding stock for the next generation?
+ANSWER1: Random chance.
+ANSWER2: The environment and its selective pressures.
+ANSWER3: The will of the individual organism.
+ANSWER4: The age of the organism.
+CORRECT: 2
+
+QUESTION: How is natural selection described in contrast to artificial selection?
+ANSWER1: Natural selection is a creative process, while artificial selection is an editing process.
+ANSWER2: Natural selection is driven by human choice, while artificial selection is driven by the environment.
+ANSWER3: Natural selection is an editing process where the environment selects traits, while artificial selection is where humans choose traits.
+ANSWER4: Natural selection occurs rapidly, while artificial selection occurs slowly.
+CORRECT: 3
+
+QUESTION: The evolution of pesticide resistance in insects is cited as an example of natural selection in action. How does this process work?
+ANSWER1: The pesticide causes insects to mutate and become resistant.
+ANSWER2: Insects learn to avoid the pesticide over time.
+ANSWER3: Insects that are already genetically resistant survive the pesticide and reproduce, increasing the frequency of resistance alleles.
+ANSWER4: The pesticide weakens the insects, making them less likely to reproduce.
+CORRECT: 3
+
+QUESTION: In the example of pesticide resistance, what happens to the frequency of alleles for pesticide resistance in the insect population after repeated pesticide applications?
+ANSWER1: It decreases.
+ANSWER2: It remains constant.
+ANSWER3: It increases.
+ANSWER4: It fluctuates randomly.
+CORRECT: 3
+
+QUESTION: In what sense is natural selection described as more of an editing process than a creative process?
+ANSWER1: It introduces new genetic material into the population.
+ANSWER2: It creates new traits on demand as needed by the environment.
+ANSWER3: It selects among variations already present in the population, rather than creating new ones.
+ANSWER4: It allows all individuals to reproduce equally.
+CORRECT: 3
+
+QUESTION: What is microevolution defined as?
+ANSWER1: Large-scale evolutionary changes that result in new species.
+ANSWER2: The development of new mutations in individual organisms.
+ANSWER3: A change in the frequencies of alleles in a population's gene pool over generations.
+ANSWER4: The process of individuals adapting to their environment during their lifetime.
+CORRECT: 3
+
+QUESTION: What is the ultimate source (original source) of the genetic variation that makes evolution possible?
+ANSWER1: Sexual reproduction.
+ANSWER2: Gene flow.
+ANSWER3: Genetic drift.
+ANSWER4: Mutation.
+CORRECT: 4
+
+QUESTION: In organisms that reproduce sexually, where does most of the genetic variation in a population come from?
+ANSWER1: New mutations occurring in each individual.
+ANSWER2: Fresh assortments of existing alleles generated by sexual reproduction (crossing over, independent assortment, random fertilization).
+ANSWER3: Gene flow from other populations.
+ANSWER4: Direct adaptation to environmental pressures.
+CORRECT: 2
+
+QUESTION: Why is genetic variation considered an essential element of evolution?
+ANSWER1: It guarantees that all individuals in a population will survive.
+ANSWER2: It provides the raw material for natural selection to act upon.
+ANSWER3: It prevents any change from occurring in the population.
+ANSWER4: It ensures that all individuals have the same traits.
+CORRECT: 2
+
+QUESTION: Why can't an individual organism evolve during its lifetime?
+ANSWER1: Individuals do not experience mutations after birth.
+ANSWER2: Evolution involves changes in the genetic makeup of a population over time, not changes in an individual's genetic makeup.
+ANSWER3: Individuals are too complex to undergo evolutionary change.
+ANSWER4: Only populations that reproduce asexually can evolve.
+CORRECT: 2
+
+QUESTION: What does the Hardy-Weinberg equilibrium describe?
+ANSWER1: The conditions under which a population's allele and genotype frequencies remain constant from generation to generation.
+ANSWER2: The rate at which mutations occur in a population.
+ANSWER3: The process by which natural selection leads to adaptation.
+ANSWER4: The pattern of gene flow between different populations.
+CORRECT: 1
+
+QUESTION: For a population to be in Hardy-Weinberg equilibrium, which of the following conditions must be met?
+ANSWER1: The population must be small.
+ANSWER2: There must be significant gene flow.
+ANSWER3: Mating must be random.
+ANSWER4: There must be frequent mutations.
+CORRECT: 3
+
+QUESTION: According to the Hardy-Weinberg principle, what happens to allele frequencies in a population that meets all five conditions for equilibrium?
+ANSWER1: They increase over time.
+ANSWER2: They decrease over time.
+ANSWER3: They remain constant.
+ANSWER4: They fluctuate randomly.
+CORRECT: 3
+
+QUESTION: Which term in the Hardy-Weinberg equation (p² + 2pq + q² = 1) represents the frequency of homozygous recessive individuals in a population?
+ANSWER1: p²
+ANSWER2: 2pq
+ANSWER3: q²
+ANSWER4: p + q
+CORRECT: 3
+
+QUESTION: The Hardy-Weinberg equation is useful in public health science for what purpose?
+ANSWER1: To predict future disease outbreaks.
+ANSWER2: To estimate the number of people who carry alleles for certain inherited diseases.
+ANSWER3: To determine the mutation rate of disease-causing genes.
+ANSWER4: To develop new medical treatments.
+CORRECT: 2
+
+QUESTION: Phenylketonuria (PKU) is an inherited disease caused by a recessive allele. If the frequency of individuals born with PKU (q²) is 1 in 10,000 (0.0001), what is the calculated frequency of the recessive allele (q) in the population according to the Hardy-Weinberg equation?
+ANSWER1: 0.0001
+ANSWER2: 0.01
+ANSWER3: 0.1
+ANSWER4: 0.99
+CORRECT: 2
+
+QUESTION: Using the PKU example with q=0.01, what is the calculated frequency of carriers (heterozygous individuals, 2pq) in the population according to the Hardy-Weinberg equation?
+ANSWER1: 0.01
+ANSWER2: 0.0198
+ANSWER3: 0.99
+ANSWER4: 0.9801
+CORRECT: 2
+
+QUESTION: Deviations from the conditions for Hardy-Weinberg equilibrium can cause microevolution. What are the three main causes of evolutionary change mentioned in the sources?
+ANSWER1: Mutation, sexual reproduction, and random mating.
+ANSWER2: Natural selection, genetic drift, and gene flow.
+ANSWER3: Overproduction, heritable variation, and unequal reproduction.
+ANSWER4: Artificial selection, environmental change, and population size.
+CORRECT: 2
+
+QUESTION: What is genetic drift defined as?
+ANSWER1: The movement of alleles between populations.
+ANSWER2: Changes in the gene pool of a population due to chance events.
+ANSWER3: The selective breeding of organisms by humans.
+ANSWER4: The process by which organisms become better adapted to their environment.
+CORRECT: 2
+
+QUESTION: What is the bottleneck effect?
+ANSWER1: The introduction of new individuals into a population.
+ANSWER2: A drastic reduction in population size due to a chance event, leading to a change in allele frequencies in the surviving population.
+ANSWER3: Non-random mating occurring in a population.
+ANSWER4: The flow of genes between isolated populations.
+CORRECT: 2
+
+QUESTION: What is the founder effect?
+ANSWER1: When a large population is reduced in size by a disaster.
+ANSWER2: The accumulation of mutations over time.
+ANSWER3: When a few individuals colonize a new habitat, and their genetic makeup is unlikely to represent the original population's gene pool.
+ANSWER4: The selection of individuals with advantageous traits.
+CORRECT: 3
+
+QUESTION: Gene flow, the movement of individuals between populations, can affect microevolution. How might gene flow between populations living in different habitats interfere with each population's adaptation to its local environment?
+ANSWER1: It would increase the rate of beneficial mutations.
+ANSWER2: It could introduce alleles not suited to the local environment, preventing the population from becoming fully adapted.
+ANSWER3: It would reduce the overall genetic variation in each population.
+ANSWER4: It would make mating less random.
+CORRECT: 2
+
+QUESTION: Which mechanism of microevolution is the only one that consistently leads to adaptive evolution?
+ANSWER1: Mutation.
+ANSWER2: Genetic drift.
+ANSWER3: Gene flow.
+ANSWER4: Natural selection.
+CORRECT: 4
+
+QUESTION: What is adaptive evolution?
+ANSWER1: Evolution that occurs rapidly over a few generations.
+ANSWER2: Evolution that results in a better fit between organisms and their environment.
+ANSWER3: Evolution caused by human intervention.
+ANSWER4: Evolution that increases the total number of species.
+CORRECT: 2
+
+QUESTION: What is the biological definition of relative fitness?
+ANSWER1: How strong an individual is compared to others.
+ANSWER2: An organism's physical traits, metabolism, and behavior.
+ANSWER3: The relative contribution an individual makes to the gene pool of the next generation, determined by the number of fertile offspring it produces.
+ANSWER4: The ability of an organism to survive environmental extremes.
+CORRECT: 3
+
+QUESTION: Natural selection can alter variation in a population in three main ways. What are these modes of selection?
+ANSWER1: Mutation, gene flow, and genetic drift.
+ANSWER2: Directional, stabilizing, and disruptive selection.
+ANSWER3: Artificial, natural, and sexual selection.
+ANSWER4: Overproduction, variation, and unequal reproduction.
+CORRECT: 2
+
+QUESTION: Which mode of natural selection favors intermediate phenotypes and removes extreme phenotypes, maintaining the status quo for a particular character?
+ANSWER1: Directional selection.
+ANSWER2: Stabilizing selection.
+ANSWER3: Disruptive selection.
+ANSWER4: Sexual selection.
+CORRECT: 2
+
+QUESTION: Which mode of natural selection favors individuals at one end of the phenotypic range, leading to a shift in the average phenotype of the population over time? (Implied by examples like finch beak depth in wet/dry years or pocket mouse color on dark rock)
+ANSWER1: Directional selection.
+ANSWER2: Stabilizing selection.
+ANSWER3: Disruptive selection.
+ANSWER4: Balancing selection.
+CORRECT: 1
+
+QUESTION: Which mode of natural selection favors individuals at both extremes of the phenotypic range over intermediate phenotypes, potentially leading to two or more contrasting phenotypes in the same population?
+ANSWER1: Directional selection.
+ANSWER2: Stabilizing selection.
+ANSWER3: Disruptive selection.
+ANSWER4: Sexual selection.
+CORRECT: 3
+
+QUESTION: What is sexual selection?
+ANSWER1: The selection of traits that improve survival against predators.
+ANSWER2: The selection of traits that increase an individual's ability to obtain mates.
+ANSWER3: The random combination of alleles during sexual reproduction.
+ANSWER4: The process by which asexual organisms reproduce.
+CORRECT: 2
+
+QUESTION: Sexual selection can lead to phenotypic differences between males and females. When males compete directly for mates, such as through physical contests, what type of sexual selection is this? (Implied by elk contest example)
+ANSWER1: Intersexual selection.
+ANSWER2: Intrasexual selection.
+ANSWER3: Disruptive selection.
+ANSWER4: Stabilizing selection.
+CORRECT: 2
+
+QUESTION: When individuals of one sex (usually females) are choosy in selecting their mates from the other sex, often based on elaborate ornamentation or displays, what type of sexual selection is this? (Implied by peacock and tree frog calling examples)
+ANSWER1: Intrasexual selection.
+ANSWER2: Intersexual selection.
+ANSWER3: Stabilizing selection.
+ANSWER4: Directional selection.
+CORRECT: 2
+
+QUESTION: The "good genes" hypothesis suggests that females prefer male traits that are correlated with good overall health. What evidence from the gray tree frog study supported this?
+ANSWER1: Females preferred males with brighter coloration.
+ANSWER2: Offspring of long-calling males (preferred by females) grew bigger, faster, and survived better.
+ANSWER3: Short-calling males were better at competing for resources.
+ANSWER4: Male calling duration was not related to offspring survival.
+CORRECT: 2
+
+QUESTION: The evolution of drug resistance in microorganisms is a serious public health concern. In the case of antibiotic resistance in bacteria, why is the statement "Antibiotics have created resistant bacteria" incorrect?
+ANSWER1: Bacteria can only become resistant through genetic engineering.
+ANSWER2: Resistance genes were already naturally present in the bacterial population; antibiotic use increased their frequency by selecting against non-resistant bacteria.
+ANSWER3: Antibiotics only kill bacteria; they do not cause any genetic changes.
+ANSWER4: Bacteria become resistant through gene flow, not antibiotic exposure.
+CORRECT: 2
+
+QUESTION: How do we contribute to the problem of antibiotic resistance according to the sources?
+ANSWER1: By eating organic food.
+ANSWER2: By exercising regularly.
+ANSWER3: By overprescribing antibiotics, patients stopping treatment early, and using antibiotics in livestock feed.
+ANSWER4: By developing new sanitation methods.
+CORRECT: 3
+
+QUESTION: What role does diploidy play in preserving genetic variation in a population?
+ANSWER1: It prevents mutations from occurring.
+ANSWER2: It eliminates all recessive alleles.
+ANSWER3: It preserves variation by "hiding" recessive alleles in heterozygotes where they are not expressed and selected against.
+ANSWER4: It increases the rate of gene flow.
+CORRECT: 3
+
+QUESTION: Balancing selection can preserve genetic variation. What is one way balancing selection can occur?
+ANSWER1: Through directional selection.
+ANSWER2: Through the bottleneck effect.
+ANSWER3: Through heterozygote advantage, where individuals with two different alleles have greater fitness than either homozygote.
+ANSWER4: By increasing the mutation rate.
+CORRECT: 3
+
+QUESTION: The sickle-cell allele, which can cause health problems in homozygous individuals, is maintained at relatively high frequencies in populations in areas where malaria is prevalent. What is this an example of?
+ANSWER1: Gene flow.
+ANSWER2: Genetic drift.
+ANSWER3: Heterozygote advantage (a form of balancing selection).
+ANSWER4: Directional selection against the sickle-cell allele.
+CORRECT: 3
+
+QUESTION: Natural selection leads to adaptation, but why cannot it fashion perfect organisms?
+ANSWER1: Environments are static, providing no pressure for change.
+ANSWER2: Natural selection can only act on existing variations, anatomical structures are modified ancestral forms, adaptations are compromises, and chance/environment interact.
+ANSWER3: Mutations are always harmful.
+ANSWER4: Individuals evolve during their lifetime.
+CORRECT: 2
+
+QUESTION: One reason why natural selection cannot fashion perfect organisms is that anatomical structures result from modified ancestral forms. What does this imply about the evolution of new structures?
+ANSWER1: New structures are created from scratch when needed.
+ANSWER2: Evolution builds upon existing structures, which can limit the possibilities for future adaptation.
+ANSWER3: Ancestral forms are always perfectly suited to the environment.
+ANSWER4: Modified ancestral forms are always superior to the original.
+CORRECT: 2
+
+QUESTION: Natural selection cannot fashion perfect organisms because adaptations are often compromises. What does this mean?
+ANSWER1: Organisms have to make choices about which adaptations to develop.
+ANSWER2: Adapting to one environmental pressure might make an organism less suited to another.
+ANSWER3: All individuals in a population have the same set of adaptations.
+ANSWER4: Adaptations are only temporary changes.
+CORRECT: 2
+
+QUESTION: How do chance events, natural selection, and the environment interact to limit the extent of adaptive evolution?
+ANSWER1: Chance events always override the effects of natural selection.
+ANSWER2: Chance events can affect the genetic makeup of populations (like drift), and the environment can change unpredictably, limiting how closely organisms match the environment.
+ANSWER3: Natural selection eliminates all effects of chance.
+ANSWER4: The environment dictates which mutations will occur.
+CORRECT: 2
+
+QUESTION: What is a theory described as, in a scientific context, according to the sources?
+ANSWER1: A guess or speculation about something unknown.
+ANSWER2: A proposed explanation for a phenomenon that has not been tested.
+ANSWER3: Broader in scope than a hypothesis, generates new hypotheses, and is supported by a large body of evidence.
+ANSWER4: An idea that has been proven absolutely true and is not subject to change.
+CORRECT: 3
+
+QUESTION: What concept refers to the independent evolution of similar features in different lineages, usually as a result of similar environmental pressures?
+ANSWER1: Homology.
+ANSWER2: Divergent evolution.
+ANSWER3: Convergent evolution.
+ANSWER4: Genetic drift.
+CORRECT: 3
+
+QUESTION: What are analogous structures?
+ANSWER1: Structures that are similar due to common ancestry.
+ANSWER2: Structures that have lost their function over time.
+ANSWER3: Similar structures that result from convergent evolution rather than common ancestry.
+ANSWER4: Structures found only in embryonic stages.
+CORRECT: 3
+
+QUESTION: Comparative embryology provides evidence for common descent because all vertebrate embryos possess genes that direct the development of what structures?
+ANSWER1: Lungs and legs.
+ANSWER2: Gills slits and a tail.
+ANSWER3: Feathers and scales.
+ANSWER4: Hair and mammary glands.
+CORRECT: 2
+
+QUESTION: Humans are born without gills and a tail, while adult fish retain them. What does comparative embryology suggest about the genes for these structures in humans?
+ANSWER1: Humans never inherited these genes.
+ANSWER2: The genes are active only during early embryonic development in humans.
+ANSWER3: The genes mutated so much that they are unrecognizable.
+ANSWER4: The genes are completely absent in the human genome.
+CORRECT: 2
+
+QUESTION: Comparisons of DNA and amino acid sequences between different organisms reveal evolutionary relationships. What is a key piece of evidence from molecular biology suggesting strong relatedness among all life forms?
+ANSWER1: All cells have a nucleus.
+ANSWER2: All organisms breathe oxygen.
+ANSWER3: All organisms use DNA as genetic blueprint, RNA, ribosomes, the same genetic code, and the same amino acids and ATP.
+ANSWER4: All organisms reproduce sexually.
+CORRECT: 3
+
+QUESTION: Striking genetic similarities between organisms imply evolutionary relatedness. What example is given comparing the DNA sequence of the human and mouse cytochrome c gene?
+ANSWER1: They are completely different, showing no relation.
+ANSWER2: They are very similar, suggesting shared ancestry.
+ANSWER3: They are identical, proving humans evolved from mice.
+ANSWER4: They have some similarities but mostly differences, indicating independent origins.
+CORRECT: 2
+
+QUESTION: What phenomenon explains the current distribution of lungfishes across continents like South America, Africa, and Australia?
+ANSWER1: Gene flow across oceans.
+ANSWER2: Independent creation in different locations.
+ANSWER3: Convergent evolution in similar aquatic environments.
+ANSWER4: Continental drift since they evolved when Pangaea was intact.
+CORRECT: 4
+
+QUESTION: What typically followed mass extinction events throughout Earth's history?
+ANSWER1: A permanent decrease in the diversity of life.
+ANSWER2: A rebound in diversity as new life-forms diversified and filled ecological voids.
+ANSWER3: The immediate creation of perfectly adapted new species.
+ANSWER4: A period of stasis with no significant evolutionary change.
+CORRECT: 2
+
+QUESTION: Which of the following is a key point about evolution by natural selection emphasized in the sources?
+ANSWER1: Evolution occurs at the individual level.
+ANSWER2: Evolution is goal directed, leading to perfect organisms.
+ANSWER3: Natural selection can amplify or diminish only heritable traits.
+ANSWER4: Mutation is the primary driver of adaptation.
+CORRECT: 3
+
+QUESTION: Besides pesticide resistance, what is another example of natural selection in action mentioned in the sources?
+ANSWER1: Changes in ocean salinity.
+ANSWER2: Camouflage and antibiotic resistance.
+ANSWER3: The formation of mountain ranges.
+ANSWER4: The migration patterns of birds.
+CORRECT: 2
+
+QUESTION: The Rock Pocket Mice example showed that if dark color gave mice just a 5% competitive advantage, how quickly could the whole population turn black starting from a rare mutation?
+ANSWER1: In millions of years.
+ANSWER2: In about 100 years.
+ANSWER3: Very quickly, compounded year in and year out.
+ANSWER4: It would never happen with only a 5% advantage.
+CORRECT: 3
+
+QUESTION: In the Rock Pocket Mouse example, if the dark color gave a 1% competitive advantage and 1% of the population was dark, how long would it take for 95% of the mice to be dark?
+ANSWER1: About 100 years.
+ANSWER2: About 1,000 years.
+ANSWER3: About 10,000 years.
+ANSWER4: About 100,000 years.
+CORRECT: 2
+
+QUESTION: What does the Rock Pocket Mouse example illustrate about the genetic basis of similar adaptations evolving in different populations?
+ANSWER1: Similar adaptations must arise from the same genetic mutations.
+ANSWER2: Different genetic pathways can lead to very similar adaptations, and natural selection can favor these independently.
+ANSWER3: Evolution always follows a single predictable genetic path.
+ANSWER4: Mutations are only beneficial if they occur in specific genes.
+CORRECT: 2
+
+QUESTION: The source compares different lava flows where dark mice evolved independently to what concept?
+ANSWER1: Genetic drift events.
+ANSWER2: Rewinding the tape of life and letting evolution occur again and again.
+ANSWER3: The founder effect.
+ANSWER4: Different instances of gene flow.
+CORRECT: 2
+
+QUESTION: The evolution of the eye is discussed as a challenge to Darwin's theory. How does the source address the idea of an "organ of extreme complexity" like the eye evolving by small steps?
+ANSWER1: It states that such organs cannot evolve by natural selection alone.
+ANSWER2: It explains that intermediate stages, though seemingly difficult to imagine, do exist in nature and models show gradual evolution is possible.
+ANSWER3: It argues that the eye must have been created in its final, perfect form.
+ANSWER4: It suggests that only major mutations could create such a complex organ.
+CORRECT: 2
+
+QUESTION: Zoologist Dan Eric Nilsson developed models to show how a primitive eye spot could evolve into a complex camera-type eye. What was a key intermediate step in this process?
+ANSWER1: The development of feathers around the eye.
+ANSWER2: The formation of a cuplike depression in the patch of light-sensitive cells.
+ANSWER3: The sudden appearance of a fully formed lens.
+ANSWER4: The eye migrating to a different part of the body.
+CORRECT: 2
+
+QUESTION: In Nilsson's model of eye evolution, what was the advantage of the cuplike shape compared to a flat patch of light-sensitive cells?
+ANSWER1: It allowed for color vision.
+ANSWER2: It enabled the detection of sound.
+ANSWER3: It provided some pictorial information by shading light from different directions.
+ANSWER4: It allowed the eye to move.
+CORRECT: 3
+
+QUESTION: What happened in Nilsson's model when the opening of the cuplike eye was constricted, similar to what happened in creatures like the chambered nautilus?
+ANSWER1: It made the image brighter but less sharp.
+ANSWER2: It helped focus light more sharply, improving image definition.
+ANSWER3: It prevented any light from entering the eye.
+ANSWER4: It allowed the eye to detect magnetic fields.
+CORRECT: 2
+
+QUESTION: What was the alternative solution that became very popular in the animal kingdom for improving image sharpness, besides constricting the eye opening?
+ANSWER1: Increasing the size of the light-sensitive cells.
+ANSWER2: Putting in a lens.
+ANSWER3: Developing multiple eye spots.
+ANSWER4: Moving into darker environments.
+CORRECT: 2
+
+QUESTION: Nilsson's model demonstrated that a complete camera-type eye could evolve gradually in very small steps from a simple pigment cup eye. Approximately how long did the source suggest this process could take?
+ANSWER1: Billions of years.
+ANSWER2: Millions of years.
+ANSWER3: Less than half a million years.
+ANSWER4: Thousands of years.
+CORRECT: 3
+
+QUESTION: Darwin studied barnacles extensively. What unusual observation did he make about certain barnacle species?
+ANSWER1: They could move rapidly through the water.
+ANSWER2: The females carried tiny parasitic males that were little more than a head and an enormous coiled penis.
+ANSWER3: They could photosynthesize like plants.
+ANSWER4: They changed color based on their environment.
+CORRECT: 2
+
+QUESTION: What was Darwin's motivation for studying barnacles, pigeons, and worms?
+ANSWER1: He found them intrinsically interesting subjects.
+ANSWER2: He needed the evidence they provided to support his theory.
+ANSWER3: His doctors recommended it as a form of relaxation.
+ANSWER4: He was trying to prove the idea of special creation wrong.
+CORRECT: 2
+
+QUESTION: Why would natural selection tend to reduce genetic variation more in populations of haploid organisms than in populations of diploid organisms?
+ANSWER1: Mutations occur less frequently in haploid organisms.
+ANSWER2: Haploid organisms reproduce more slowly.
+ANSWER3: All alleles in a haploid organism are phenotypically expressed and thus screened by natural selection, whereas recessive alleles can be hidden in heterozygotes in diploid organisms.
+ANSWER4: Haploid organisms do not experience gene flow.
+CORRECT: 3
+
+QUESTION: What is a possible consequence for a population that has passed through a bottleneck event, even if it later recovers in size?
+ANSWER1: Increased genetic variation.
+ANSWER2: Reduced genetic variation.
+ANSWER3: A higher rate of mutation.
+ANSWER4: More gene flow with other populations.
+CORRECT: 2
+
+QUESTION: The greater prairie chicken population in Illinois experienced a severe bottleneck. How did researchers try to counteract the lack of genetic diversity?
+ANSWER1: By exposing them to radiation to induce mutations.
+ANSWER2: By selective breeding of the remaining birds.
+ANSWER3: By adding birds from neighboring states to introduce new alleles (gene flow).
+ANSWER4: By providing them with extra food resources.
+CORRECT: 3
+
+QUESTION: Why is natural selection considered the *only* mechanism that consistently leads to adaptive evolution?
+ANSWER1: Because it is the only process that creates new genetic variation.
+ANSWER2: Because the process is random, leading to varied outcomes.
+ANSWER3: Because it is a non-random process where individuals better suited to the environment are more likely to survive and reproduce, passing on favorable traits.
+ANSWER4: Because it happens faster than other evolutionary mechanisms.
+CORRECT: 3
+
+QUESTION: What does the example of HIV evolving resistance to drugs illustrate about evolution?
+ANSWER1: Evolution only occurs in large, complex organisms.
+ANSWER2: Evolution can happen very rapidly in organisms with short generation times and high mutation rates.
+ANSWER3: Viruses are able to consciously adapt to their environment.
+ANSWER4: Drug resistance is caused by the drugs themselves.
+CORRECT: 2
+
+QUESTION: In the case of HIV, how do drug-resistant varieties arise?
+ANSWER1: The drugs force the virus to change its genetic code.
+ANSWER2: The patient's immune system induces resistance in the virus.
+ANSWER3: Random genetic copying mistakes (mutations) occur during replication, and some of these happen by chance to confer resistance.
+ANSWER4: The virus learns from exposure to the drugs.
+CORRECT: 3
+
+QUESTION: How does natural selection act on the HIV population when drugs are present in the patient's bloodstream?
+ANSWER1: It favors the non-resistant strains, causing them to replicate faster.
+ANSWER2: It eliminates all varieties of the virus.
+ANSWER3: It favors the drug-resistant forms, as they are better able to survive and reproduce in that environment.
+ANSWER4: It causes new mutations to occur that confer resistance.
+CORRECT: 3
+
+QUESTION: What happened to the virus population in the patient who stopped taking their HIV drugs for a time?
+ANSWER1: The drug-resistant strains continued to dominate.
+ANSWER2: The virus was completely eliminated from his system.
+ANSWER3: The non-resistant "wild type" virus, which was more fit in the drug-free environment, replicated rapidly and became dominant.
+ANSWER4: The virus evolved into a new, non-viral pathogen.
+CORRECT: 3
+
+QUESTION: What is a key challenge or risk associated with the experimental treatment strategy of a "treatment interruption" for HIV?
+ANSWER1: The patient's body might develop an allergic reaction to the virus.
+ANSWER2: The virus might evolve to become even more resistant to drugs.
+ANSWER3: As the virus reverts to wild type, it can become more dangerous to the host by being a more effective killer of cells.
+ANSWER4: The patient's immune system might fail completely.
+CORRECT: 3
+
+QUESTION: Why did Jeff Gustofson decide to try a treatment interruption for his HIV, despite the risks?
+ANSWER1: He was confident it would cure him.
+ANSWER2: He felt he had exhausted other treatment options and it was worth the risk to try a different strategy.
+ANSWER3: His doctor insisted it was the only way forward.
+ANSWER4: He wanted to prove that evolution could be managed.
+CORRECT: 2
+
+QUESTION: What did the successful treatment interruption for Jeff Gustofson show?
+ANSWER1: That HIV cannot evolve resistance given enough time.
+ANSWER2: That the virus population could shift back to a drug-susceptible state, making previous medications effective again.
+ANSWER3: That stopping treatment is always better than continuing.
+ANSWER4: That the "good genes" hypothesis applies to viruses.
+CORRECT: 2
+
+QUESTION: According to the source, what have scientists learned about HIV over the past decade or so that helps in the "race with HIV"?
+ANSWER1: How to prevent mutations from occurring.
+ANSWER2: How it replicates, how it tries to survive, and how it evolves.
+ANSWER3: How to vaccinate against all strains of the virus.
+ANSWER4: How to make the human immune system immune to the virus.
+CORRECT: 2
+
+QUESTION: What common misconception about evolution is countered by the Rock Pocket Mouse example?
+ANSWER1: That adaptation takes millions of years.
+ANSWER2: That natural selection is a random process.
+ANSWER3: That mutations are always harmful.
+ANSWER4: That only large animals can evolve.
+CORRECT: 2
+
+QUESTION: How are the five fingers of evolution explained?
+ANSWER1: A metaphor for the complexity of the evolutionary process.
+ANSWER2: A mnemonic device to remember the five processes that can cause evolution.
+ANSWER3: A way to visualize the tree of life.
+ANSWER4: A model for measuring the speed of evolution.
+CORRECT: 2
+
+QUESTION: What is the key difference between natural selection and the other four evolutionary processes (mutation, gene flow, genetic drift, non-random mating) discussed in the sources?
+ANSWER1: Natural selection is the only one that introduces new genetic variation.
+ANSWER2: Natural selection is the only one that consistently leads to adaptation to the environment.
+ANSWER3: Natural selection is the only one that changes allele frequencies over time.
+ANSWER4: Natural selection is the only one that requires a large population size.
+CORRECT: 2
