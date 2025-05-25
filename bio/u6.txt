@@ -1,0 +1,1295 @@
+QUESTION:
+What molecule is often referred to as the "currency" of biological energy and is essential for cell processes?
+ANSWER1: Glucose
+ANSWER2: ADP
+ANSWER3: ATP
+ANSWER4: NADH
+CORRECT:3
+
+QUESTION:
+Energy is released from ATP when which chemical bond is broken?
+ANSWER1: The bond between adenine and ribose
+ANSWER2: The bond between ribose and the first phosphate
+ANSWER3: The bond between the second and third phosphate
+ANSWER4: The bond within adenine
+CORRECT:3
+
+QUESTION:
+ATP is composed of an adenine base, a ribose sugar, and how many phosphate groups?
+ANSWER1: One
+ANSWER2: Two
+ANSWER3: Three
+ANSWER4: Four
+CORRECT:3
+
+QUESTION:
+According to one source, which of the following cell types makes ATP?
+ANSWER1: E. coli (bacteria; prokaryote)
+ANSWER2: S. cerevisiae (yeast; eukaryote)
+ANSWER3: both E. coli and S. cerevisiae
+ANSWER4: neither E. coli nor S. cerevisiae
+CORRECT:3
+
+QUESTION:
+While all cells make ATP, how can the process for making ATP energy differ?
+ANSWER1: It depends on the cell's age.
+ANSWER2: It depends on the cell's size.
+ANSWER3: It depends on the type of cell.
+ANSWER4: It depends on the surrounding temperature.
+CORRECT:3
+
+QUESTION:
+What is one efficient process for making ATP energy that often involves mitochondria in eukaryotic cells and requires oxygen?
+ANSWER1: Fermentation
+ANSWER2: Photosynthesis
+ANSWER3: Aerobic cellular respiration
+ANSWER4: Glycolysis
+CORRECT:3
+
+QUESTION:
+According to the formula presented for cellular respiration, what are the main reactants (inputs)?
+ANSWER1: Carbon dioxide and water
+ANSWER2: Glucose and oxygen
+ANSWER3: ATP and heat
+ANSWER4: NADH and FADH2
+CORRECT:2
+
+QUESTION:
+According to the formula presented for cellular respiration, what are the main products (outputs)?
+ANSWER1: Glucose and oxygen
+ANSWER2: Carbon dioxide and water
+ANSWER3: ATP, carbon dioxide, and water
+ANSWER4: Pyruvate and ATP
+CORRECT:3
+
+QUESTION:
+The formula for cellular respiration looks remarkably similar to the formula for photosynthesis, but with what difference?
+ANSWER1: The products in one are the reactants in the other.
+ANSWER2: Both processes produce glucose.
+ANSWER3: Both processes consume oxygen.
+ANSWER4: Both processes require ATP as a reactant.
+CORRECT:1
+
+QUESTION:
+Photosynthesis makes glucose, while cellular respiration does what with glucose?
+ANSWER1: Also makes glucose
+ANSWER2: Breaks down glucose
+ANSWER3: Converts glucose to water
+ANSWER4: Uses glucose to make oxygen
+CORRECT:2
+
+QUESTION:
+According to one source, what advantage do photosynthetic organisms have regarding glucose?
+ANSWER1: They only perform cellular respiration.
+ANSWER2: They don't need glucose.
+ANSWER3: They make their own glucose and break it down.
+ANSWER4: They only break down glucose from their environment.
+CORRECT:3
+
+QUESTION:
+If you are not photosynthetic, like a human or an amoeba, how do you get glucose for cellular respiration?
+ANSWER1: By performing anaerobic respiration
+ANSWER2: By making it yourself from carbon dioxide
+ANSWER3: By finding a food source
+ANSWER4: By converting water into glucose
+CORRECT:3
+
+QUESTION:
+Cellular respiration typically involves how many major steps or stages?
+ANSWER1: One
+ANSWER2: Two
+ANSWER3: Three
+ANSWER4: Four
+CORRECT:3
+
+QUESTION:
+What is the name of the first stage of cellular respiration?
+ANSWER1: Krebs Cycle
+ANSWER2: Electron Transport Chain
+ANSWER3: Glycolysis
+ANSWER4: Pyruvate Oxidation
+CORRECT:3
+
+QUESTION:
+Where does the first stage of cellular respiration, glycolysis, take place in a eukaryotic cell?
+ANSWER1: In the mitochondria
+ANSWER2: In the nucleus
+ANSWER3: In the cytoplasm (cytosol)
+ANSWER4: In the outer membrane
+CORRECT:3
+
+QUESTION:
+Does the first stage of cellular respiration, glycolysis, require oxygen?
+ANSWER1: Yes, it is an aerobic process.
+ANSWER2: No, it is an anaerobic process.
+ANSWER3: Only sometimes, depending on the cell type.
+ANSWER4: It depends on the organism.
+CORRECT:2
+
+QUESTION:
+Glycolysis begins by breaking glucose into two molecules of what three-carbon compound?
+ANSWER1: Citric acid
+ANSWER2: Acetyl CoA
+ANSWER3: Pyruvate
+ANSWER4: Lactate
+CORRECT:3
+
+QUESTION:
+What is the approximate net yield of ATP molecules from glycolysis per one molecule of glucose?
+ANSWER1: 0 ATP
+ANSWER2: 2 ATP
+ANSWER3: 4 ATP
+ANSWER4: 32-34 ATP
+CORRECT:2
+
+QUESTION:
+How many total ATP molecules are generated during the energy payoff phase of glycolysis per glucose molecule?
+ANSWER1: 2 ATP
+ANSWER2: 4 ATP
+ANSWER3: 6 ATP
+ANSWER4: 34 ATP
+CORRECT:2
+
+QUESTION:
+How many ATP molecules are invested or used to get glycolysis started per glucose molecule?
+ANSWER1: 0 ATP
+ANSWER2: 1 ATP
+ANSWER3: 2 ATP
+ANSWER4: 4 ATP
+CORRECT:3
+
+QUESTION:
+In addition to pyruvate and ATP, glycolysis also produces molecules of which electron carrier?
+ANSWER1: FADH2
+ANSWER2: NADPH
+ANSWER3: ATP Synthase
+ANSWER4: NADH
+CORRECT:4
+
+QUESTION:
+What is the role of NADH produced in glycolysis, according to one source?
+ANSWER1: It is a waste product to be discarded.
+ANSWER2: It will be used to make even more ATP later on by transferring electrons.
+ANSWER3: It is immediately used as an energy source for the cell.
+ANSWER4: It is converted into carbon dioxide.
+CORRECT:2
+
+QUESTION:
+What type of molecule is NADH?
+ANSWER1: A sugar
+ANSWER2: A protein
+ANSWER3: A coenzyme
+ANSWER4: An enzyme
+CORRECT:3
+
+QUESTION:
+After pyruvate is produced, what is the name of the next major stage (including pyruvate oxidation and the cycle) of aerobic cellular respiration in eukaryotic cells?
+ANSWER1: Glycolysis
+ANSWER2: Electron Transport Chain
+ANSWER3: Citric Acid Cycle (or Krebs Cycle)
+ANSWER4: Fermentation
+CORRECT:3
+
+QUESTION:
+Where does the Krebs Cycle (Citric Acid Cycle) take place in a eukaryotic cell?
+ANSWER1: In the cytoplasm
+ANSWER2: In the outer mitochondrial membrane
+ANSWER3: In the inner mitochondrial membrane
+ANSWER4: In the mitochondrial matrix
+CORRECT:4
+
+QUESTION:
+Does the Krebs Cycle (Citric Acid Cycle) require oxygen?
+ANSWER1: Yes, it is an aerobic process.
+ANSWER2: No, it is an anaerobic process.
+ANSWER3: Only sometimes, depending on the cell type.
+ANSWER4: It depends on the organism.
+CORRECT:1
+
+QUESTION:
+What molecule enters the Krebs Cycle (Citric Acid Cycle) after pyruvate is processed?
+ANSWER1: Pyruvate
+ANSWER2: Glucose
+ANSWER3: Citric acid
+ANSWER4: Acetyl CoA
+CORRECT:4
+
+QUESTION:
+What are the main products generated from one glucose molecule during the two turns of the Krebs Cycle (Citric Acid Cycle)?
+ANSWER1: 2 ATP, 2 NADH, 2 FADH2, 2 CO2
+ANSWER2: 4 ATP, 10 NADH, 2 FADH2, 6 CO2
+ANSWER3: 2 ATP, 6 NADH, 2 FADH2, 4 CO2
+ANSWER4: 34 ATP, water, carbon dioxide
+CORRECT:3
+
+QUESTION:
+While the Krebs Cycle produces a small amount of ATP, its main purpose is to make which molecules for the next stage?
+ANSWER1: Glucose and oxygen
+ANSWER2: Pyruvate and Acetyl CoA
+ANSWER3: Carbon dioxide and water
+ANSWER4: NADH and FADH2
+CORRECT:4
+
+QUESTION:
+During the Krebs Cycle, carbons are cleaved off citric acid and exhaled by the cell in what form?
+ANSWER1: Water
+ANSWER2: Oxygen
+ANSWER3: Carbon dioxide
+ANSWER4: ATP
+CORRECT:3
+
+QUESTION:
+The Krebs Cycle is also known as the Citric Acid Cycle because of the formation of what molecule?
+ANSWER1: Pyruvate
+ANSWER2: Oxaloacetic acid
+ANSWER3: Citric acid
+ANSWER4: Acetyl CoA
+CORRECT:3
+
+QUESTION:
+What is the name of the third major stage of aerobic cellular respiration where most ATP is produced?
+ANSWER1: Glycolysis
+ANSWER2: Krebs Cycle
+ANSWER3: Electron Transport Chain / Oxidative Phosphorylation
+ANSWER4: Fermentation
+CORRECT:3
+
+QUESTION:
+Where is the electron transport chain located in a eukaryotic cell?
+ANSWER1: In the cytoplasm
+ANSWER2: Across the outer mitochondrial membrane
+ANSWER3: Embedded in the inner mitochondrial membrane
+ANSWER4: In the mitochondrial matrix
+CORRECT:3
+
+QUESTION:
+Does the electron transport chain require oxygen?
+ANSWER1: Yes, it is an aerobic process.
+ANSWER2: No, it is an anaerobic process.
+ANSWER3: Only sometimes, depending on the cell type.
+ANSWER4: It depends on the organism.
+CORRECT:1
+
+QUESTION:
+What molecules deliver electrons to the electron transport chain?
+ANSWER1: ATP and ADP
+ANSWER2: Glucose and Pyruvate
+ANSWER3: Carbon dioxide and Water
+ANSWER4: NADH and FADH2
+CORRECT:4
+
+QUESTION:
+At the end of the electron transport chain, what molecule is the final acceptor of electrons?
+ANSWER1: Carbon dioxide
+ANSWER2: Water
+ANSWER3: Oxygen
+ANSWER4: ATP Synthase
+CORRECT:3
+
+QUESTION:
+When oxygen accepts electrons at the end of the electron transport chain and combines with protons, what molecule is formed?
+ANSWER1: Carbon dioxide
+ANSWER2: Water
+ANSWER3: Glucose
+ANSWER4: ATP
+CORRECT:2
+
+QUESTION:
+The energy released as electrons are transferred down the electron transport chain is used to do what?
+ANSWER1: Directly produce ATP
+ANSWER2: Pump hydrogen ions (protons) across the inner mitochondrial membrane
+ANSWER3: Produce glucose
+ANSWER4: Release carbon dioxide
+CORRECT:2
+
+QUESTION:
+What process uses the potential energy of the hydrogen ion (proton) concentration gradient across the inner mitochondrial membrane to make ATP?
+ANSWER1: Glycolysis
+ANSWER2: Substrate-level phosphorylation
+ANSWER3: Chemiosmosis
+ANSWER4: Fermentation
+CORRECT:3
+
+QUESTION:
+What enzyme complex uses the flow of hydrogen ions (protons) to produce ATP?
+ANSWER1: Dehydrogenase
+ANSWER2: ATP Synthase
+ANSWER3: Acetyl CoA
+ANSWER4: Pyruvate Kinase
+CORRECT:2
+
+QUESTION:
+What does the word "synthase" mean?
+ANSWER1: To break down
+ANSWER2: To transfer
+ANSWER3: To move
+ANSWER4: To make
+CORRECT:4
+
+QUESTION:
+Most of the ATP produced during aerobic cellular respiration is generated by what process?
+ANSWER1: Glycolysis
+ANSWER2: The Krebs Cycle
+ANSWER3: Substrate-level phosphorylation
+ANSWER4: Oxidative phosphorylation (Electron Transport Chain and Chemiosmosis)
+CORRECT:4
+
+QUESTION:
+What is the approximate number of ATP molecules produced by oxidative phosphorylation (Electron Transport Chain and Chemiosmosis) per one molecule of glucose in a "perfect case" or efficient scenario?
+ANSWER1: 2 ATP
+ANSWER2: 4 ATP
+ANSWER3: 28-34 ATP
+ANSWER4: 38 ATP
+CORRECT:3
+
+QUESTION:
+What is the estimated total yield of ATP molecules from one molecule of glucose through aerobic cellular respiration in a "perfect case" scenario, combining all stages?
+ANSWER1: 2 ATP
+ANSWER2: 4 ATP
+ANSWER3: 32 ATP
+ANSWER4: 38 ATP
+CORRECT:4
+
+QUESTION:
+Why isn't there an exact number for the net ATP yield from cellular respiration per glucose molecule?
+ANSWER1: Scientists haven't finished studying the process.
+ANSWER2: The amount can vary depending on conditions and how NADH electrons are shuttled.
+ANSWER3: Some of the ATP is immediately used by the cell.
+ANSWER4: The yield is always exactly 38 ATP.
+CORRECT:2
+
+QUESTION:
+What highly toxic substance, found in some rat poisons, works by blocking a step in the electron transport chain?
+ANSWER1: Alcohol
+ANSWER2: Lactic acid
+ANSWER3: Cyanide
+ANSWER4: Pyruvate
+CORRECT:3
+
+QUESTION:
+Why are many mitochondrial disorders deadly?
+ANSWER1: Because mitochondria are the primary sites of fermentation.
+ANSWER2: Because the mitochondria's role in ATP production is essential for body cells.
+ANSWER3: Because mitochondria produce toxic waste products.
+ANSWER4: Because mitochondria are responsible for photosynthesis.
+CORRECT:2
+
+QUESTION:
+What is the process called when cells make ATP energy when there is no oxygen available?
+ANSWER1: Aerobic cellular respiration
+ANSWER2: Photosynthesis
+ANSWER3: Glycolysis
+ANSWER4: Fermentation (or anaerobic respiration)
+CORRECT:4
+
+QUESTION:
+How efficient is fermentation compared to aerobic cellular respiration in producing ATP?
+ANSWER1: Much more efficient
+ANSWER2: Equally efficient
+ANSWER3: Not nearly as efficient
+ANSWER4: Efficiency depends on the cell type
+CORRECT:3
+
+QUESTION:
+The pathway that generates ATP during fermentation is glycolysis, yielding a net gain of how many ATP per glucose molecule?
+ANSWER1: 0 ATP
+ANSWER2: 2 ATP
+ANSWER3: 4 ATP
+ANSWER4: 32-34 ATP
+CORRECT:2
+
+QUESTION:
+Besides producing a small amount of ATP via glycolysis, what is a key role of fermentation, especially in the absence of oxygen?
+ANSWER1: To produce a large amount of ATP directly.
+ANSWER2: To regenerate NAD+ so glycolysis can continue.
+ANSWER3: To convert glucose directly into carbon dioxide and water.
+ANSWER4: To store energy in molecules like NADH and FADH2.
+CORRECT:2
+
+QUESTION:
+What metabolic pathway is the same in both fermentation and the first stage of cellular respiration?
+ANSWER1: Krebs Cycle
+ANSWER2: Electron Transport Chain
+ANSWER3: Glycolysis
+ANSWER4: Oxidative Phosphorylation
+CORRECT:3
+
+QUESTION:
+Which two types of fermentation are discussed in the sources?
+ANSWER1: Citric Acid Fermentation and Pyruvate Fermentation
+ANSWER2: Aerobic Fermentation and Anaerobic Fermentation
+ANSWER3: Lactic Acid Fermentation and Alcoholic Fermentation
+ANSWER4: Glycolysis Fermentation and Oxidative Fermentation
+CORRECT:3
+
+QUESTION:
+Which organisms or cells can perform lactic acid fermentation according to the sources?
+ANSWER1: Yeasts and plants
+ANSWER2: Muscle cells and certain bacteria
+ANSWER3: Obligate anaerobes
+ANSWER4: Photosynthetic protists
+CORRECT:2
+
+QUESTION:
+What is the main product of lactic acid fermentation?
+ANSWER1: Ethyl alcohol and CO2
+ANSWER2: Lactate (Lactic Acid)
+ANSWER3: Acetyl CoA
+ANSWER4: Oxygen and Water
+CORRECT:2
+
+QUESTION:
+What feeling is associated with the buildup of lactic acid in muscles during strenuous exercise?
+ANSWER1: Increased energy
+ANSWER2: Relaxation
+ANSWER3: Pain or soreness
+ANSWER4: Numbness
+CORRECT:3
+
+QUESTION:
+Which organisms can perform alcoholic fermentation according to the sources?
+ANSWER1: Muscle cells
+ANSWER2: Certain bacteria and yeasts
+ANSWER3: Plants
+ANSWER4: Humans
+CORRECT:2
+
+QUESTION:
+What are the main products of alcoholic fermentation?
+ANSWER1: Lactate
+ANSWER2: Water and Oxygen
+ANSWER3: Carbon dioxide and ethanol
+ANSWER4: Pyruvate
+CORRECT:3
+
+QUESTION:
+What product of alcoholic fermentation provides the bubbles in beer and champagne?
+ANSWER1: Ethanol
+ANSWER2: Water
+ANSWER3: Carbon dioxide
+ANSWER4: Lactate
+CORRECT:3
+
+QUESTION:
+What happens to yeast when the alcohol concentration reaches a certain level in their surroundings?
+ANSWER1: They thrive and reproduce faster.
+ANSWER2: They switch to aerobic respiration.
+ANSWER3: The ethanol becomes toxic and kills them.
+ANSWER4: They begin performing lactic acid fermentation.
+CORRECT:3
+
+QUESTION:
+What type of organism requires anaerobic conditions and is poisoned by oxygen?
+ANSWER1: Facultative anaerobe
+ANSWER2: Obligate anaerobe
+ANSWER3: Aerobic organism
+ANSWER4: Photosynthetic organism
+CORRECT:2
+
+QUESTION:
+What type of organism can make ATP either by fermentation or oxidative phosphorylation, depending on whether oxygen is available?
+ANSWER1: Obligate anaerobe
+ANSWER2: Obligate aerobe
+ANSWER3: Facultative anaerobe
+ANSWER4: Photosynthetic organism
+CORRECT:3
+
+QUESTION:
+Which type of cell or organism behaves as a facultative anaerobe according to the sources?
+ANSWER1: A plant cell
+ANSWER2: An obligate anaerobe bacterium
+ANSWER3: A human muscle cell
+ANSWER4: A photosynthetic protist
+CORRECT:3
+
+QUESTION:
+For a facultative anaerobe, what molecule represents a "fork in the metabolic road," determining whether fermentation or aerobic respiration occurs?
+ANSWER1: Glucose
+ANSWER2: Pyruvate
+ANSWER3: Acetyl CoA
+ANSWER4: ATP
+CORRECT:2
+
+QUESTION:
+If oxygen is available, what process will a facultative anaerobe organism always use to make ATP?
+ANSWER1: Fermentation
+ANSWER2: Anaerobic respiration
+ANSWER3: The more productive aerobic respiration
+ANSWER4: Glycolysis only
+CORRECT:3
+
+QUESTION:
+Glycolysis is described as the "universal energy-harvesting process of life," suggesting it evolved when?
+ANSWER1: Recently, with the evolution of eukaryotes
+ANSWER2: Early in the history of life on Earth, before significant atmospheric oxygen
+ANSWER3: Only in organisms with mitochondria
+ANSWER4: As a recent adaptation for aerobic environments
+CORRECT:2
+
+QUESTION:
+What characteristic of glycolysis supports the idea that it evolved very early, before significant oxygen was present in Earth's atmosphere?
+ANSWER1: It takes place in mitochondria.
+ANSWER2: It produces a large amount of ATP.
+ANSWER3: It does not require oxygen.
+ANSWER4: It requires specific organelles.
+CORRECT:3
+
+QUESTION:
+The location of glycolysis within the cell also implies great antiquity because it does not require what?
+ANSWER1: Glucose
+ANSWER2: Enzymes
+ANSWER3: Membrane-enclosed organelles of the eukaryotic cell
+ANSWER4: ATP
+CORRECT:3
+
+QUESTION:
+Where can the metabolic machinery of glycolysis be found?
+ANSWER1: Only in animal cells
+ANSWER2: Only in plant cells
+ANSWER3: Only in bacterial cells
+ANSWER4: In virtually any living cell (universal)
+CORRECT:4
+
+QUESTION:
+The process of cellular respiration breaks down food molecules and generates what molecule, which is the energy currency of cells?
+ANSWER1: Glucose
+ANSWER2: Oxygen
+ANSWER3: Carbon dioxide
+ANSWER4: ATP
+CORRECT:4
+
+QUESTION:
+In eukaryotic cells performing aerobic cellular respiration, which molecule is consumed, particularly as the final electron acceptor in the mitochondria?
+ANSWER1: Glucose
+ANSWER2: Carbon dioxide
+ANSWER3: Oxygen
+ANSWER4: Water
+CORRECT:3
+
+QUESTION:
+What gas is produced as a waste product during cellular respiration, originating from the breakdown of glucose and its intermediates?
+ANSWER1: Oxygen
+ANSWER2: Water vapor
+ANSWER3: Carbon dioxide
+ANSWER4: Methane
+CORRECT:3
+
+QUESTION:
+What molecule is produced as a byproduct of cellular respiration when oxygen accepts electrons and combines with protons?
+ANSWER1: Glucose
+ANSWER2: Carbon dioxide
+ANSWER3: Water
+ANSWER4: ATP
+CORRECT:3
+
+QUESTION:
+In eukaryotic cells, where does most aerobic cellular respiration (specifically the Krebs Cycle and Electron Transport Chain) take place?
+ANSWER1: Cytoplasm
+ANSWER2: Nucleus
+ANSWER3: Mitochondria
+ANSWER4: Chloroplasts
+CORRECT:3
+
+QUESTION:
+Bacteria, which are prokaryotes, do not have mitochondria. Where do they perform aerobic respiration, according to one source?
+ANSWER1: They cannot perform aerobic respiration.
+ANSWER2: They use their outer membranes.
+ANSWER3: They use their ribosomes.
+ANSWER4: They use their nucleus.
+CORRECT:2
+
+QUESTION:
+Besides glucose, what other types of organic molecules can cells use as fuel for cellular respiration?
+ANSWER1: Only carbohydrates
+ANSWER2: Only fats
+ANSWER3: Only proteins
+ANSWER4: Carbohydrates, fats, and proteins
+CORRECT:4
+
+QUESTION:
+What is the correct general order of the three main stages of aerobic cellular respiration as described in the sources?
+ANSWER1: Krebs Cycle, Glycolysis, Electron Transport Chain
+ANSWER2: Glycolysis, Krebs Cycle, Electron Transport Chain
+ANSWER3: Electron Transport Chain, Glycolysis, Krebs Cycle
+ANSWER4: Glycolysis, Electron Transport Chain, Krebs Cycle
+CORRECT:2
+
+QUESTION:
+What is the process called where an enzyme transfers a phosphate group from a substrate molecule directly to ADP, forming ATP?
+ANSWER1: Oxidative phosphorylation
+ANSWER2: Chemiosmosis
+ANSWER3: Substrate-level phosphorylation
+ANSWER4: Reduction
+CORRECT:3
+
+QUESTION:
+In aerobic cellular respiration, substrate-level phosphorylation produces ATP in which stages?
+ANSWER1: Glycolysis only
+ANSWER2: Krebs Cycle only
+ANSWER3: Glycolysis and the Krebs Cycle
+ANSWER4: Electron Transport Chain only
+CORRECT:3
+
+QUESTION:
+Where is the chemical energy originally stored in glucose released during cellular respiration?
+ANSWER1: In the newly formed chemical bonds of ATP, CO2, and H2O.
+ANSWER2: By breaking the chemical bonds in ATP.
+ANSWER3: From the chemical bonds in glucose as it is broken down.
+ANSWER4: From the absorption of light energy.
+CORRECT:3
+
+QUESTION:
+The transfer of electrons from one molecule to another is called what?
+ANSWER1: Hydrolysis
+ANSWER2: Phosphorylation
+ANSWER3: Oxidation-reduction reaction (redox reaction)
+ANSWER4: Glycolysis
+CORRECT:3
+
+QUESTION:
+In a redox reaction, what is the loss of electrons from one substance called?
+ANSWER1: Reduction
+ANSWER2: Oxidation
+ANSWER3: Phosphorylation
+ANSWER4: Synthesis
+CORRECT:2
+
+QUESTION:
+In a redox reaction, what is the addition of electrons to another substance called?
+ANSWER1: Oxidation
+ANSWER2: Reduction
+ANSWER3: Lysis
+ANSWER4: Cleavage
+CORRECT:2
+
+QUESTION:
+NADH and FADH2 are described as organic molecules or coenzymes that do what in redox reactions?
+ANSWER1: Provide oxygen
+ANSWER2: Shuttle electrons
+ANSWER3: Break down glucose
+ANSWER4: Synthesize ATP directly
+CORRECT:2
+
+QUESTION:
+What characteristic of oxygen makes it powerful in pulling electrons down the electron transport chain?
+ANSWER1: Its large size
+ANSWER2: Its low electronegativity
+ANSWER3: Its high electronegativity (electron affinity)
+ANSWER4: Its ability to form hydrogen bonds
+CORRECT:3
+
+QUESTION:
+In a eukaryotic cell, where are the electron carrier molecules that form the electron transport chain built into?
+ANSWER1: The outer mitochondrial membrane
+ANSWER2: The inner mitochondrial membrane
+ANSWER3: The mitochondrial matrix
+ANSWER4: The cytoplasm
+CORRECT:2
+
+QUESTION:
+In oxidative phosphorylation, the pumping of hydrogen ions (H+) across the inner mitochondrial membrane creates a concentration gradient which stores what kind of energy?
+ANSWER1: Kinetic energy
+ANSWER2: Chemical energy
+ANSWER3: Thermal energy
+ANSWER4: Potential energy
+CORRECT:4
+
+QUESTION:
+What is the function of the folds (cristae) of the inner mitochondrial membrane?
+ANSWER1: To decrease the surface area for the ETC and ATP synthase.
+ANSWER2: To provide space for thousands of electron transport chains and ATP synthases.
+ANSWER3: To contain the mitochondrial DNA.
+ANSWER4: To regulate the passage of pyruvate into the matrix.
+CORRECT:2
+
+QUESTION:
+Unlike white fat, what is a characteristic of brown fat cells' mitochondria?
+ANSWER1: They store large droplets of fat.
+ANSWER2: They perform photosynthesis.
+ANSWER3: They actively burn energy and produce heat without making ATP efficiently.
+ANSWER4: They are inactive metabolically.
+CORRECT:3
+
+QUESTION:
+How do brown fat cells primarily generate heat instead of ATP during cellular respiration?
+ANSWER1: They use glycolysis more efficiently.
+ANSWER2: They have ion channels that dissipate the proton gradient across the inner mitochondrial membrane.
+ANSWER3: They perform a special type of fermentation.
+ANSWER4: They directly convert glucose into heat.
+CORRECT:2
+
+QUESTION:
+An initial study on brown fat in adults, using PET-CT scans of patients, found brown fat deposits were more prevalent in which group?
+ANSWER1: Older patients
+ANSWER2: Heavier patients
+ANSWER3: Patients scanned in cold weather
+ANSWER4: Patients scanned in warm weather
+CORRECT:3
+
+QUESTION:
+A second study on brown fat activity in men exposed to cold temperatures found that the brown fat activity level was significantly higher in which group?
+ANSWER1: The overweight/obese group
+ANSWER2: The lean group
+ANSWER3: The group with higher BMI
+ANSWER4: All participants had equal activity levels
+CORRECT:2
+
+QUESTION:
+Medical researchers are investigating activating brown fat or converting white fat to beige fat as possible treatments for what condition?
+ANSWER1: Diabetes insipidus
+ANSWER2: Anemia
+ANSWER3: Obesity and type 2 diabetes
+ANSWER4: Mitochondrial disorders
+CORRECT:3
+
+QUESTION:
+According to the sources, carbon dioxide (CO2) is produced during which stages of aerobic cellular respiration?
+ANSWER1: Glycolysis and Krebs Cycle
+ANSWER2: Pyruvate oxidation and Electron Transport Chain
+ANSWER3: Glycolysis and Electron Transport Chain
+ANSWER4: Pyruvate oxidation and Krebs Cycle
+CORRECT:4
+
+QUESTION:
+According to the sources, oxygen (O2) is used during which stage of aerobic cellular respiration?
+ANSWER1: Glycolysis
+ANSWER2: Krebs Cycle
+ANSWER3: Electron Transport Chain / Oxidative Phosphorylation
+ANSWER4: Pyruvate Oxidation
+CORRECT:3
+
+QUESTION:
+What is the process called when you use water to break down a compound, such as breaking the bond in ATP?
+ANSWER1: Dehydration synthesis
+ANSWER2: Phosphorylation
+ANSWER3: Hydrolysis
+ANSWER4: Oxidation
+CORRECT:3
+
+QUESTION:
+What percentage of the energy originally stored in glucose is captured as ATP during cellular respiration, according to one source?
+ANSWER1: About 10%
+ANSWER2: About 25%
+ANSWER3: About 34%
+ANSWER4: About 90%
+CORRECT:3
+
+QUESTION:
+What term refers to the energy requirement for basic life-sustaining activities, such as keeping your heart pumping and brain functioning?
+ANSWER1: Caloric intake
+ANSWER2: Basal metabolic rate (BMR)
+ANSWER3: Voluntary activity energy
+ANSWER4: Thermogenesis
+CORRECT:2
+
+QUESTION:
+What is the process called where cells produce organic molecules using energy-requiring metabolic pathways?
+ANSWER1: Cellular respiration
+ANSWER2: Fermentation
+ANSWER3: Biosynthesis
+ANSWER4: Hydrolysis
+CORRECT:3
+
+QUESTION:
+Glycolysis and the citric acid cycle can function as metabolic interchanges, enabling cells to do what?
+ANSWER1: Directly synthesize ATP from sunlight.
+ANSWER2: Convert some kinds of molecules to others as needed.
+ANSWER3: Only process glucose for energy.
+ANSWER4: Exclusively produce waste products.
+CORRECT:2
+
+QUESTION:
+Cellular respiration also produces heat, which helps maintain what in the body?
+ANSWER1: Muscle contraction
+ANSWER2: Constant body temperature
+ANSWER3: Blood glucose levels
+ANSWER4: Oxygen transport
+CORRECT:2
+
+QUESTION:
+In the electron transport chain, where are hydrogen ions (H+) pumped across the inner mitochondrial membrane?
+ANSWER1: Into the mitochondrial matrix
+ANSWER2: Into the cytoplasm
+ANSWER3: Into the intermembrane space
+ANSWER4: Into the nucleus
+CORRECT:3
+
+QUESTION:
+When glucose is oxidized during cellular respiration, what happens to the hydrogen atoms (with their electrons)?
+ANSWER1: They are released as H2 gas.
+ANSWER2: They are added to oxygen to form water.
+ANSWER3: They are used to form carbon dioxide.
+ANSWER4: They remain attached to the carbon skeleton.
+CORRECT:2
+
+QUESTION:
+NAD+ accepts electrons and becomes reduced to what molecule?
+ANSWER1: FADH2
+ANSWER2: ATP
+ANSWER3: NADH
+ANSWER4: Pyruvate
+CORRECT:3
+
+QUESTION:
+An enzyme called dehydrogenase strips hydrogen atoms from an organic fuel molecule and transfers them to NAD+, reducing it. How many hydrogen atoms and electrons are typically transferred to NAD+?
+ANSWER1: One hydrogen atom and one electron
+ANSWER2: Two hydrogen atoms and one electron
+ANSWER3: Two hydrogen atoms and two electrons
+ANSWER4: One hydrogen atom and two electrons
+CORRECT:3 (Source says "strips two hydrogen atoms... and transfers two electrons and one proton to its coenzyme NAD+, reducing it to NADH. The other proton is released". A hydrogen atom is an electron and a proton. So two hydrogen atoms are two electrons and two protons. NADH gains two electrons and one proton, releasing the other proton. This means NAD+ gains 2 electrons and 1 H+ to become NADH. So the transfer involves 2 electrons and 2 protons from the perspective of stripping the hydrogen atoms from the fuel, with one proton then released.)
+
+QUESTION:
+NAD+ is an organic molecule that cells use to do what?
+ANSWER1: Catalyze ATP synthesis
+ANSWER2: Build cell membranes
+ANSWER3: Shuttle electrons in redox reactions
+ANSWER4: Store glucose
+CORRECT:3
+
+QUESTION:
+The electron transport chain functions as an "energy staircase" where electrons release energy in small amounts. This released energy is used for what?
+ANSWER1: To produce carbon dioxide
+ANSWER2: To directly synthesize glucose
+ANSWER3: To store energy in the chemical bonds of ATP
+ANSWER4: To cause brown fat cells to store more fat
+CORRECT:3 (Source says "releasing energy in small amounts that can be stored in the chemical bonds of ATP". Figure 6.5C also shows Controlled release of energy for synthesis of ATP.)
+
+QUESTION:
+During glycolysis, glucose is converted into what more usable form?
+ANSWER1: Acetyl CoA
+ANSWER2: Citric acid
+ANSWER3: Pyruvate
+ANSWER4: NADH
+CORRECT:3
+
+QUESTION:
+The breakdown of glucose to pyruvate during glycolysis releases energy that is stored in ATP and what other molecule?
+ANSWER1: FADH2
+ANSWER2: CO2
+ANSWER3: NADH
+ANSWER4: Water
+CORRECT:3
+
+QUESTION:
+The pyruvate molecules produced by glycolysis still possess about what percentage of the energy available from the initial glucose molecule?
+ANSWER1: About 10%
+ANSWER2: About 50%
+ANSWER3: About 90%
+ANSWER4: About 100%
+CORRECT:3
+
+QUESTION:
+In glycolysis, how many enzyme-catalyzed reactions occur to convert glucose to two molecules of pyruvate?
+ANSWER1: Three
+ANSWER2: Six
+ANSWER3: Nine
+ANSWER4: Twelve
+CORRECT:3
+
+QUESTION:
+In glycolysis, the steps can be grouped into which two main phases?
+ANSWER1: Krebs Cycle and Electron Transport Chain
+ANSWER2: Lactic Acid Fermentation and Alcohol Fermentation
+ANSWER3: Energy Investment Phase and Energy Payoff Phase
+ANSWER4: Oxidation and Reduction
+CORRECT:3
+
+QUESTION:
+What happens during the Energy Investment Phase of glycolysis?
+ANSWER1: ATP is produced.
+ANSWER2: Energy is consumed.
+ANSWER3: Pyruvate is converted to Acetyl CoA.
+ANSWER4: Carbon dioxide is released.
+CORRECT:2
+
+QUESTION:
+In the Energy Investment Phase of glycolysis, how many ATP molecules are used to energize glucose?
+ANSWER1: 0
+ANSWER2: 1
+ANSWER3: 2
+ANSWER4: 4
+CORRECT:3
+
+QUESTION:
+In the Energy Payoff Phase of glycolysis, how many molecules of ATP are produced by substrate-level phosphorylation per glucose molecule?
+ANSWER1: 0
+ANSWER2: 2
+ANSWER3: 4
+ANSWER4: 32
+CORRECT:3
+
+QUESTION:
+Besides ATP, what other molecule is generated during the Energy Payoff Phase of glycolysis through a redox reaction?
+ANSWER1: FADH2
+ANSWER2: CO2
+ANSWER3: Water
+ANSWER4: NADH
+CORRECT:4
+
+QUESTION:
+Compounds that form between an initial reactant and a final product in a metabolic pathway are known as what?
+ANSWER1: Enzymes
+ANSWER2: Catalysts
+ANSWER3: Intermediates
+ANSWER4: Products
+CORRECT:3
+
+QUESTION:
+After glycolysis, pyruvate is transported from the cytosol into what organelle in eukaryotic cells where the citric acid cycle and oxidative phosphorylation occur?
+ANSWER1: Nucleus
+ANSWER2: Endoplasmic reticulum
+ANSWER3: Mitochondrion
+ANSWER4: Golgi apparatus
+CORRECT:3
+
+QUESTION:
+During pyruvate oxidation, before entering the citric acid cycle, pyruvate loses a carbon and two oxygens as what molecule?
+ANSWER1: Water
+ANSWER2: Carbon dioxide
+ANSWER3: Oxygen
+ANSWER4: Acetyl CoA
+CORRECT:2
+
+QUESTION:
+The remaining two-carbon compound from pyruvate oxidation joins with coenzyme A to form what molecule that enters the citric acid cycle?
+ANSWER1: Pyruvate
+ANSWER2: Citrate
+ANSWER3: Oxaloacetate
+ANSWER4: Acetyl CoA
+CORRECT:4
+
+QUESTION:
+How many CO2 molecules are released during pyruvate oxidation per glucose molecule?
+ANSWER1: 0
+ANSWER2: 1
+ANSWER3: 2
+ANSWER4: 3
+CORRECT:3 (2 pyruvate molecules per glucose, and 1 CO2 released per pyruvate)
+
+QUESTION:
+How many NADH molecules are produced during pyruvate oxidation per glucose molecule?
+ANSWER1: 0
+ANSWER2: 1
+ANSWER3: 2
+ANSWER4: 6
+CORRECT:3 (2 pyruvate molecules per glucose, and 1 NADH produced per pyruvate)
+
+QUESTION:
+How many turns of the citric acid cycle occur for each molecule of glucose processed?
+ANSWER1: One turn
+ANSWER2: Two turns
+ANSWER3: Three turns
+ANSWER4: Four turns
+CORRECT:2 (Two pyruvate from one glucose, which are converted to two acetyl CoA, and each acetyl CoA enters the cycle)
+
+QUESTION:
+A turn of the citric acid cycle begins when acetyl CoA combines its two-carbon group with a four-carbon molecule called what?
+ANSWER1: Citrate
+ANSWER2: Pyruvate
+ANSWER3: Oxaloacetate
+ANSWER4: Succinate
+CORRECT:3
+
+QUESTION:
+What is the six-carbon molecule formed when acetyl CoA combines with oxaloacetate at the start of the citric acid cycle?
+ANSWER1: Pyruvate
+ANSWER2: Glucose
+ANSWER3: Citrate (Citric acid)
+ANSWER4: Succinate
+CORRECT:3
+
+QUESTION:
+In the citric acid cycle, ATP is produced by what method?
+ANSWER1: Oxidative phosphorylation
+ANSWER2: Chemiosmosis
+ANSWER3: Electron transport chain
+ANSWER4: Substrate-level phosphorylation
+CORRECT:4
+
+QUESTION:
+Besides ATP and CO2, what other energy-carrying molecules are generated during the citric acid cycle?
+ANSWER1: NADH and FADH2
+ANSWER2: Glucose and Oxygen
+ANSWER3: ADP and Phosphate
+ANSWER4: Lactate and Ethanol
+CORRECT:1
+
+QUESTION:
+The high-energy electrons carried by NADH and FADH2 from Stages 1 and 2 are used in Stage 3 for what purpose?
+ANSWER1: To synthesize glucose
+ANSWER2: To directly synthesize ATP
+ANSWER3: To power the electron transport chain to generate ATP
+ANSWER4: To produce carbon dioxide
+CORRECT:3
+
+QUESTION:
+Where is the electron transport chain embedded in the mitochondrion?
+ANSWER1: Outer membrane
+ANSWER2: Inner membrane
+ANSWER3: Intermembrane space
+ANSWER4: Matrix
+CORRECT:2
+
+QUESTION:
+What drives ATP synthesis in chemiosmosis?
+ANSWER1: The direct reaction between ADP and phosphate.
+ANSWER2: The energy from breaking down NADH and FADH2.
+ANSWER3: The flow of hydrogen ions (protons) through ATP synthase.
+ANSWER4: The consumption of oxygen.
+CORRECT:3
+
+QUESTION:
+If oxygen is absent, what happens to electron transport and ATP production via oxidative phosphorylation?
+ANSWER1: They increase.
+ANSWER2: They stop.
+ANSWER3: They switch to using carbon dioxide.
+ANSWER4: They become more efficient.
+CORRECT:2
+
+QUESTION:
+Fermentation is a way of harvesting energy that does not require what?
+ANSWER1: Glucose
+ANSWER2: Enzymes
+ANSWER3: Oxygen
+ANSWER4: ATP
+CORRECT:3
+
+QUESTION:
+In fermentation, NAD+ must be present for what pathway to oxidize glucose and generate a net gain of 2 ATP?
+ANSWER1: Krebs Cycle
+ANSWER2: Electron Transport Chain
+ANSWER3: Oxidative Phosphorylation
+ANSWER4: Glycolysis
+CORRECT:4
+
+QUESTION:
+In lactic acid fermentation, NADH is oxidized back to NAD+ as pyruvate is reduced to what molecule?
+ANSWER1: Ethanol
+ANSWER2: Carbon dioxide
+ANSWER3: Lactate
+ANSWER4: Acetyl CoA
+CORRECT:3
+
+QUESTION:
+According to one source, where is lactate carried after building up in muscle cells during intense exercise?
+ANSWER1: Exhaled as a gas
+ANSWER2: Converted to ethanol
+ANSWER3: Carried by the blood to the liver to be converted back to pyruvate and oxidized
+ANSWER4: Stored permanently in muscle tissue
+CORRECT:3
+
+QUESTION:
+What product of bacterial lactic acid fermentation is used by the dairy industry to make cheese and yogurt?
+ANSWER1: Ethanol
+ANSWER2: Carbon dioxide
+ANSWER3: Lactate (Acid)
+ANSWER4: Water
+CORRECT:3
+
+QUESTION:
+In alcoholic fermentation, yeasts recycle their NADH back to NAD+ while converting pyruvate to CO2 and what other molecule?
+ANSWER1: Lactate
+ANSWER2: Water
+ANSWER3: Ethanol
+ANSWER4: Oxygen
+CORRECT:3
+
+QUESTION:
+What makes baker's yeast cause bread dough to rise?
+ANSWER1: The production of ethanol
+ANSWER2: The production of carbon dioxide bubbles
+ANSWER3: The production of lactate
+ANSWER4: The consumption of oxygen
+CORRECT:2
+
+QUESTION:
+Many prokaryotes that live in stagnant ponds and deep in the soil are poisoned by oxygen. What are they called?
+ANSWER1: Facultative anaerobes
+ANSWER2: Obligate anaerobes
+ANSWER3: Aerobic bacteria
+ANSWER4: Photosynthetic bacteria
+CORRECT:2
+
+QUESTION:
+For making wine and beer using yeast, why must the process be done anaerobically?
+ANSWER1: Oxygen makes the yeast die.
+ANSWER2: Yeast will switch to aerobic respiration and not produce ethanol if oxygen is available.
+ANSWER3: Anaerobic conditions allow the yeast to perform photosynthesis.
+ANSWER4: Oxygen increases the lactate production.
+CORRECT:2
+
+QUESTION:
+What characteristic of glycolysis makes it seem like a metabolic heirloom from early cells?
+ANSWER1: Its high ATP yield
+ANSWER2: Its reliance on mitochondria
+ANSWER3: Its universality and anaerobic nature
+ANSWER4: Its complexity
+CORRECT:3
+
+QUESTION:
+What provides the energy for biosynthesis, the production of organic molecules by cells?
+ANSWER1: Sunlight
+ANSWER2: Heat released from cellular respiration
+ANSWER3: ATP from metabolic pathways
+ANSWER4: Carbon dioxide
+CORRECT:3
+
+QUESTION:
+Glycolysis and the citric acid cycle serve as metabolic interchanges, allowing cells to make organic molecules that are not present in food from what?
+ANSWER1: Inorganic molecules like CO2 and water directly.
+ANSWER2: Intermediates of the energy-harvesting pathways.
+ANSWER3: Excess ATP.
+ANSWER4: Oxygen.
+CORRECT:2
+
+QUESTION:
+How does feedback inhibition regulate metabolic pathways, such as cellular respiration?
+ANSWER1: The end product activates an early enzyme in the pathway.
+ANSWER2: The initial reactant inhibits an early enzyme in the pathway.
+ANSWER3: An intermediate product inhibits the final enzyme.
+ANSWER4: The end product inhibits an early enzyme in the pathway, slowing it down.
+CORRECT:4
+
+QUESTION:
+If ATP accumulates in a cell, it inhibits an early enzyme in glycolysis. What does this signal?
+ANSWER1: The need for more energy.
+ANSWER2: The cell has sufficient energy.
+ANSWER3: The need to switch to fermentation.
+ANSWER4: The need to produce more glucose.
+CORRECT:2
+
+QUESTION:
+If ADP builds up in a cell, it activates an early enzyme in glycolysis. What does this signal?
+ANSWER1: The cell has sufficient energy.
+ANSWER2: The need to slow down respiration.
+ANSWER3: The need for more energy.
+ANSWER4: The need to store ATP.
+CORRECT:3
+
+QUESTION:
+Why can someone gain weight and store fat even on a low-fat diet?
+ANSWER1: They are performing too much anaerobic respiration.
+ANSWER2: Their cells cannot use carbohydrates or proteins for energy.
+ANSWER3: Excess calorie intake from carbohydrates or proteins can be converted into fat using intermediates from cellular respiration pathways.
+ANSWER4: Brown fat is converting energy directly into heat instead of storing it.
+CORRECT:3
+
+QUESTION:
+The ability to make organic molecules from carbon dioxide and water is not universal. Which cells lack this ability, according to one source?
+ANSWER1: Bacterial cells
+ANSWER2: Plant cells
+ANSWER3: Algae cells
+ANSWER4: Animal cells
+CORRECT:4
+
+QUESTION:
+Where are electron carriers like NADH and FADH2 built into in the inner membrane of a mitochondrion?
+ANSWER1: The matrix
+ANSWER2: The intermembrane space
+ANSWER3: An electron transport chain
+ANSWER4: ATP synthase
+CORRECT:3
+
+QUESTION:
+What happens to the carbon atoms that were in glucose during cellular respiration?
+ANSWER1: They are incorporated into water molecules.
+ANSWER2: They are exhaled as carbon dioxide.
+ANSWER3: They are excreted as water in urine.
+ANSWER4: They are stored in ATP molecules.
+CORRECT:2
+
+QUESTION:
+What happens to the oxygen atoms that were inhaled during cellular respiration?
+ANSWER1: They are exhaled as carbon dioxide.
+ANSWER2: They become part of carbon dioxide.
+ANSWER3: They become part of water.
+ANSWER4: They are stored in ATP molecules.
+CORRECT:3
+
+QUESTION:
+In brown fat cells, ion channels across the inner mitochondrial membrane allow H+ to flow freely. What effect does this have?
+ANSWER1: It increases ATP synthesis.
+ANSWER2: It decreases heat production.
+ANSWER3: It dissipates the H+ gradient, preventing ATP synthesis and releasing energy as heat.
+ANSWER4: It stops electron transport.
+CORRECT:3
+
+QUESTION:
+The study on brown fat in adults used PET-CT scans. What does PET identify?
+ANSWER1: Adipose (fat) tissue
+ANSWER2: Areas with high uptake of radioactively labeled glucose
+ANSWER3: Muscle contraction
+ANSWER4: Bone density
+CORRECT:2
+
+QUESTION:
+The study on brown fat in adults used PET-CT scans. What can CT scans detect?
+ANSWER1: Areas with high glucose uptake
+ANSWER2: Metabolically active tissue
+ANSWER3: Adipose (fat) tissue
+ANSWER4: Mitochondrial activity
+CORRECT:3
+
+QUESTION:
+In response to cold or other signals, some white fat cells appear to convert to what kind of cells that function like brown fat?
+ANSWER1: White cells
+ANSWER2: Beige cells
+ANSWER3: Red cells
+ANSWER4: Muscle cells
+CORRECT:2
+
+QUESTION:
+Increasing the amount and activity of brown or beige fat could potentially help with what?
+ANSWER1: Increasing muscle mass
+ANSWER2: Burning off excess stored fat
+ANSWER3: Decreasing blood pressure
+ANSWER4: Improving vision
+CORRECT:2
+
+QUESTION:
+The phrase "Oxidation Is Loss, Reduction Is Gain" (OIL RIG) helps remember what happens to electrons in redox reactions. What is gained or lost?
+ANSWER1: Protons
+ANSWER2: Neutrons
+ANSWER3: Electrons
+ANSWER4: Carbon atoms
+CORRECT:3
+
+QUESTION:
+Where does pyruvate oxidation take place in a eukaryotic cell?
+ANSWER1: Cytoplasm
+ANSWER2: Outer mitochondrial membrane
+ANSWER3: Mitochondrial matrix
+ANSWER4: Inner mitochondrial membrane
+CORRECT:3
+
+QUESTION:
+What is one reason mentioned for the difficulty of losing excess fat?
+ANSWER1: Fats cannot be used as fuel in cellular respiration.
+ANSWER2: Fats yield more than twice as much ATP as a gram of carbohydrate, so a large amount of energy must be expended to burn stored fat.
+ANSWER3: Fats are primarily used for biosynthesis, not energy production.
+ANSWER4: Fats cannot be converted into intermediates of cellular respiration.
+CORRECT:2
+
+QUESTION:
+To be oxidized as fuel, proteins must first be digested into what?
+ANSWER1: Glycerol
+ANSWER2: Fatty acids
+ANSWER3: Amino acids
+ANSWER4: Simple sugars
+CORRECT:3
+
+QUESTION:
+During the conversion of excess amino acids to intermediates of glycolysis or the citric acid cycle for fuel, what is stripped off and later disposed of in urine?
+ANSWER1: Carbon atoms
+ANSWER2: Hydrogen atoms
+ANSWER3: Amino groups
+ANSWER4: Phosphate groups
+CORRECT:3
+
+QUESTION:
+The interconnections among metabolic pathways that harvest energy and those that construct organic molecules provide a clear example of what theme?
+ANSWER1: Energy and Matter
+ANSWER2: Structure and Function
+ANSWER3: Information Flow
+ANSWER4: Pathways That Transform Energy and Matter
+CORRECT:4
