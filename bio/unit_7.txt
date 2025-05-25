@@ -1,0 +1,481 @@
+QUESTION: What are biofuels defined as? ANSWER1: Energy sources from fossilized organic matter. ANSWER2: Energy sources obtained from living material. ANSWER3: Energy sources derived from wind and solar power. ANSWER4: Energy sources produced by burning wood. CORRECT: 2
+
+
+QUESTION: When energy is derived from biofuels, what energy source is being tapped into? ANSWER1: Geothermal energy. ANSWER2: Nuclear energy. ANSWER3: The energy of the sun. ANSWER4: The energy of Earth's core. CORRECT: 3
+
+
+QUESTION: In living cells, solar energy is converted into what chemical energy through photosynthesis? ANSWER1: The chemical energy of starch. ANSWER2: The chemical energy of protein. ANSWER3: The chemical energy of fat. ANSWER4: The chemical energy of sugar. CORRECT: 4
+
+
+QUESTION: Organisms that are photoautotrophs are producers of food consumed by heterotrophic organisms. Which of the following are listed as photoautotrophs? ANSWER1: Animals, fungi, and some bacteria. ANSWER2: Plants, algae, and some photosynthetic protists and bacteria. ANSWER3: Decomposers and consumers. ANSWER4: Fungi and archaea. CORRECT: 2
+
+
+QUESTION: What are heterotrophs? ANSWER1: Organisms that produce their own food using light. ANSWER2: Organisms that obtain energy from inorganic chemicals. ANSWER3: Consumers that feed on plants or animals or decompose organic material. ANSWER4: Organisms that can photosynthesize and consume other organisms. CORRECT: 3
+
+
+QUESTION: In plant cells, where does photosynthesis primarily occur? ANSWER1: Mitochondria. ANSWER2: Nucleus. ANSWER3: Chloroplasts. ANSWER4: Cell wall. CORRECT: 3
+
+
+QUESTION: Describe the structure of chloroplasts as mentioned in the source. ANSWER1: Surrounded by a single membrane and containing cristae. ANSWER2: Surrounded by a double membrane and containing stacks of thylakoids and a thick fluid called stroma. ANSWER3: Surrounded by a double membrane and containing a nucleus and cytoplasm. ANSWER4: Surrounded by a cell wall and containing ribosomes. CORRECT: 2
+
+
+QUESTION: What is the role of chlorophyll in photosynthesis? ANSWER1: It is a structural component of the cell wall. ANSWER2: It is a light-absorbing pigment in the chloroplasts that plays a central role in converting solar energy to chemical energy. ANSWER3: It is an enzyme that catalyzes carbon fixation. ANSWER4: It is a molecule that stores chemical energy. CORRECT: 2
+
+
+QUESTION: Experiments using isotopes helped determine details of photosynthesis. Which isotope was used to follow the fate of oxygen atoms? ANSWER1: C-14. ANSWER2: H-3. ANSWER3: N-15. ANSWER4: O-18. CORRECT: 4
+
+
+QUESTION: When scientists used O-18 labeled H2O and CO2 to trace the fate of oxygen atoms during photosynthesis, what did they find? ANSWER1: Plants produced O2 containing O-18 when supplied with labeled CO2. ANSWER2: Plants produced O2 containing O-18 when supplied with labeled H2O. ANSWER3: Plants produced sugar containing O-18 when supplied with labeled H2O. ANSWER4: Plants produced sugar containing O-18 when supplied with labeled CO2. CORRECT: 2
+
+
+QUESTION: Photosynthesis is described as a redox process. In this process, which molecules are oxidized and reduced? ANSWER1: CO2 is oxidized and H2O is reduced. ANSWER2: H2O is oxidized and CO2 is reduced. ANSWER3: Glucose is oxidized and O2 is reduced. ANSWER4: ATP is oxidized and NADPH is reduced. CORRECT: 2
+
+
+QUESTION: How does cellular respiration use redox reactions? ANSWER1: To convert light energy into chemical energy. ANSWER2: To synthesize glucose from carbon dioxide. ANSWER3: To harvest the chemical energy stored in a glucose molecule. ANSWER4: To split water and release oxygen. CORRECT: 3
+
+
+QUESTION: Photosynthesis occurs in two stages linked by ATP and NADPH. Where do the light reactions occur? ANSWER1: In the stroma. ANSWER2: On and inside the thylakoids. ANSWER3: In the cytoplasm. ANSWER4: In the outer membrane of the chloroplast. CORRECT: 2
+
+
+QUESTION: What are the products of the light reactions that are used in the Calvin cycle? ANSWER1: Glucose and O2. ANSWER2: CO2 and H2O. ANSWER3: ATP and NADPH. ANSWER4: G3P and RuBP. CORRECT: 3
+
+
+QUESTION: Where does the Calvin cycle take place? ANSWER1: On the thylakoid membranes. ANSWER2: Inside the thylakoid space. ANSWER3: In the stroma. ANSWER4: In the cytoplasm outside the chloroplast. CORRECT: 3
+
+
+QUESTION: What is the process called where CO2 is incorporated into organic compounds during the Calvin cycle? ANSWER1: Photophosphorylation. ANSWER2: Reduction. ANSWER3: Regeneration. ANSWER4: Carbon fixation. CORRECT: 4
+
+
+QUESTION: Sunlight is a type of energy known as? ANSWER1: Mechanical energy. ANSWER2: Thermal energy. ANSWER3: Chemical energy. ANSWER4: Electromagnetic energy or radiation. CORRECT: 4
+
+
+QUESTION: Which wavelengths of visible light are primarily absorbed by chlorophyll and other pigments? ANSWER1: Green and yellow. ANSWER2: Blue-violet and red. ANSWER3: Infrared and radio waves. ANSWER4: UV and X-rays. CORRECT: 2
+
+
+QUESTION: What is a function of carotenoids in photosynthesis? ANSWER1: To catalyze the splitting of water. ANSWER2: To provide structural support to the thylakoids. ANSWER3: To absorb and dissipate excessive light energy (photoprotection). ANSWER4: To directly participate in carbon fixation. CORRECT: 3
+
+
+QUESTION: What happens when a pigment molecule absorbs a photon of light? ANSWER1: Its electrons fall to a lower energy level. ANSWER2: One of its electrons jumps to an energy level farther from the nucleus (excited state). ANSWER3: It is broken down into smaller molecules. ANSWER4: It immediately releases CO2. CORRECT: 2
+
+
+QUESTION: What is fluorescence, as described in the context of isolated chlorophyll? ANSWER1: The absorption of green light. ANSWER2: The emission of heat only after absorbing light. ANSWER3: The emission of light and heat as excited electrons drop back to the ground state. ANSWER4: The transfer of energy to a primary electron acceptor. CORRECT: 3
+
+
+QUESTION: How do intact chloroplasts capture excited electrons before they drop back down to the ground state? ANSWER1: The electrons are transferred to water molecules. ANSWER2: The electrons are immediately captured by a primary electron acceptor in the reaction center. ANSWER3: The energy is released as heat. ANSWER4: The electrons are stored in starch molecules. CORRECT: 2
+
+
+QUESTION: What are photosystems, located in the thylakoid membranes? ANSWER1: Stacks of thylakoids (grana). ANSWER2: Thick fluid filling the chloroplast (stroma). ANSWER3: Clusters of chlorophyll molecules and proteins organized into light-harvesting complexes and a reaction-center complex. ANSWER4: Pores on the leaf surface (stomata). CORRECT: 3
+
+
+QUESTION: A photosystem contains a light-harvesting complex and a reaction-center complex. What molecule is found in the reaction-center complex and is capable of accepting electrons? ANSWER1: Chlorophyll b. ANSWER2: A primary electron acceptor. ANSWER3: Carotenoid. ANSWER4: RuBP. CORRECT: 2
+
+
+QUESTION: How are photosystem I and photosystem II ordered in terms of their function in the light reactions? ANSWER1: Photosystem I functions first, then Photosystem II. ANSWER2: Photosystem II functions first, then Photosystem I. ANSWER3: They function independently of each other. ANSWER4: They function simultaneously without electron transfer between them. CORRECT: 2
+
+
+QUESTION: How is ATP produced during the light reactions? ANSWER1: By the direct transfer of energy from photons. ANSWER2: By splitting CO2 molecules. ANSWER3: By chemiosmosis, similar to cellular respiration, driven by an H+ gradient across the thylakoid membrane. ANSWER4: By reducing NADP+ to NADPH. CORRECT: 3
+
+
+QUESTION: Where do the electrons that end up reducing NADP+ to NADPH originally come from? ANSWER1: CO2. ANSWER2: RuBP. ANSWER3: Water. ANSWER4: ATP. CORRECT: 3
+
+
+QUESTION: What molecule is split by an enzyme in the thylakoid space, providing electrons, hydrogen ions, and oxygen? ANSWER1: CO2. ANSWER2: Glucose. ANSWER3: ATP. ANSWER4: H2O. CORRECT: 4
+
+
+QUESTION: How does O2 gas produced during the splitting of water exit the plant leaf? ANSWER1: Through the roots. ANSWER2: Through the stomata. ANSWER3: Through the veins. ANSWER4: Through the upper surface of the leaf. CORRECT: 2
+
+
+QUESTION: What happens to the photoexcited electrons from photosystem II after being captured by the primary electron acceptor? ANSWER1: They immediately return to the ground state. ANSWER2: They are transferred through an electron transport chain to photosystem I. ANSWER3: They are used to directly reduce CO2. ANSWER4: They are released as heat and light. CORRECT: 2
+
+
+QUESTION: What happens to the photoexcited electrons from photosystem I after being captured by its primary electron acceptor? ANSWER1: They are used to split water. ANSWER2: They return to photosystem II. ANSWER3: They pass through a short electron transport chain to NADP+, reducing it to NADPH. ANSWER4: They are used to synthesize ATP. CORRECT: 3
+
+
+QUESTION: In photophosphorylation, what drives the synthesis of ATP? ANSWER1: The direct energy from photons. ANSWER2: The flow of H+ back across the thylakoid membrane through ATP synthase. ANSWER3: The reduction of NADP+ to NADPH. ANSWER4: The splitting of water. CORRECT: 2
+
+
+QUESTION: How is the H+ concentration gradient across the thylakoid membrane created during the light reactions? ANSWER1: H+ ions are pumped into the stroma by the electron transport chain. ANSWER2: H+ ions are released from the splitting of water and pumped into the thylakoid space by the electron transport chain. ANSWER3: H+ ions are absorbed from the atmosphere through the stomata. ANSWER4: H+ ions are generated during the Calvin cycle. CORRECT: 2
+
+
+QUESTION: The Calvin cycle uses which inputs from the light reactions and the atmosphere? ANSWER1: Glucose and O2 from the light reactions, CO2 from the atmosphere. ANSWER2: ATP and NADPH from the light reactions, CO2 from the atmosphere. ANSWER3: H2O and light energy from the light reactions, O2 from the atmosphere. ANSWER4: G3P and RuBP from the light reactions, H2O from the atmosphere. CORRECT: 2
+
+
+QUESTION: What is the energy source used in the Calvin cycle? ANSWER1: Solar energy directly. ANSWER2: The chemical energy stored in ATP. ANSWER3: The energy released from the splitting of water. ANSWER4: The chemical energy stored in O2. CORRECT: 2
+
+
+QUESTION: What provides the high-energy electrons for reducing CO2 to sugar in the Calvin cycle? ANSWER1: ATP. ANSWER2: O2. ANSWER3: NADPH. ANSWER4: Water. CORRECT: 3
+
+
+QUESTION: What is the output of the Calvin cycle? ANSWER1: Glucose. ANSWER2: An energy-rich, three-carbon sugar called glyceraldehyde 3-phosphate (G3P). ANSWER3: ATP and NADPH. ANSWER4: O2 and water. CORRECT: 2
+
+
+QUESTION: What molecule is regenerated in the Calvin cycle, allowing it to continue? ANSWER1: Glucose. ANSWER2: G3P. ANSWER3: RuBP (ribulose bisphosphate). ANSWER4: CO2. CORRECT: 3
+
+
+QUESTION: For every three molecules of CO2 fixed, how many molecules of G3P leave the Calvin cycle as product? ANSWER1: One. ANSWER2: Two. ANSWER3: Three. ANSWER4: Six. CORRECT: 1
+
+
+QUESTION: What enzyme catalyzes the initial step of carbon fixation in the Calvin cycle, attaching CO2 to RuBP? ANSWER1: ATP synthase. ANSWER2: Rubisco. ANSWER3: NADP+ reductase. ANSWER4: Water-splitting enzyme. CORRECT: 2
+
+
+QUESTION: The steps of the Calvin cycle include which processes? ANSWER1: Light absorption, electron transport, ATP synthesis. ANSWER2: Carbon fixation, reduction, release of G3P, and regeneration of RuBP. ANSWER3: Glycolysis, pyruvate oxidation, citric acid cycle. ANSWER4: Water splitting, oxygen release, NADPH synthesis. CORRECT: 2
+
+
+QUESTION: In the Calvin cycle, what provides the electrons for reducing carbon compounds? ANSWER1: ATP. ANSWER2: NADPH. ANSWER3: Water. ANSWER4: Sunlight. CORRECT: 2
+
+
+QUESTION: Are the steps of the Calvin cycle directly dependent on light? ANSWER1: Yes, they require light to occur. ANSWER2: No, none of the steps requires light directly, but they typically occur during daylight because they depend on ATP and NADPH from the light reactions. ANSWER3: They are independent of light and occur only at night. ANSWER4: They require light only for the regeneration of RuBP. CORRECT: 2
+
+
+QUESTION: According to the source, how are the light reactions and the Calvin cycle integrated in photosynthesis? ANSWER1: They are independent processes that can occur at different times of day. ANSWER2: Photosynthesis is an emergent property of the structural organization of a chloroplast, which integrates the two stages. ANSWER3: The Calvin cycle provides light energy for the light reactions. ANSWER4: The light reactions occur in the stroma, and the Calvin cycle occurs on the thylakoids. CORRECT: 2
+
+
+QUESTION: Plants use G3P produced in the Calvin cycle to make what molecules? ANSWER1: Oxygen and CO2. ANSWER2: ATP and NADPH. ANSWER3: Glucose, sucrose, and other organic molecules. ANSWER4: Water and mineral nutrients. CORRECT: 3
+
+
+QUESTION: What is the starting material that is regenerated in the Calvin cycle? ANSWER1: G3P. ANSWER2: CO2. ANSWER3: RuBP. ANSWER4: ATP. CORRECT: 3
+
+
+QUESTION: What are C3 plants named for? ANSWER1: They fix CO2 only at night. ANSWER2: The first stable product of carbon fixation is a three-carbon intermediate compound. ANSWER3: They require three types of cells for carbon fixation. ANSWER4: They are found only in climates with three distinct seasons. CORRECT: 2
+
+
+QUESTION: What happens in C3 plants when stomata close on a hot, dry day? ANSWER1: CO2 levels increase in the leaf, and O2 levels decrease. ANSWER2: Water loss increases significantly. ANSWER3: CO2 levels drop in the leaf, O2 levels rise, and photosynthesis slows, potentially leading to photorespiration. ANSWER4: The Calvin cycle speeds up. CORRECT: 3
+
+
+QUESTION: What is photorespiration? ANSWER1: The process of splitting water in the light. ANSWER2: The process where rubisco adds O2 instead of CO2 to RuBP, consuming O2 and releasing CO2. ANSWER3: The process of synthesizing sugar from G3P. ANSWER4: The process of regenerating RuBP in the Calvin cycle. CORRECT: 2
+
+
+QUESTION: How does photorespiration affect the carbon fixed by the Calvin cycle? ANSWER1: It significantly increases the amount of carbon fixed. ANSWER2: It has no effect. ANSWER3: It can drain away as much as 50% of the carbon fixed. ANSWER4: It directly produces sugar. CORRECT: 3
+
+
+QUESTION: How do C4 plants minimize photorespiration? ANSWER1: They open their stomata only at night. ANSWER2: They first fix CO2 into a four-carbon compound in mesophyll cells, which then shuttles CO2 to bundle-sheath cells where the Calvin cycle occurs at a high CO2 concentration. ANSWER3: They have a different enzyme that only binds CO2, not O2. ANSWER4: They store large amounts of water. CORRECT: 2
+
+
+QUESTION: Where does carbon fixation occur in C4 plants? ANSWER1: Only in bundle-sheath cells. ANSWER2: Only in mesophyll cells. ANSWER3: First in mesophyll cells, then the CO2 is released to bundle-sheath cells for the Calvin cycle. ANSWER4: In the roots. CORRECT: 3
+
+
+QUESTION: What are CAM plants adapted to? ANSWER1: Cold, wet climates. ANSWER2: Hot, dry climates. ANSWER3: Aquatic environments. ANSWER4: Low light conditions. CORRECT: 2
+
+
+QUESTION: How do CAM plants conserve water? ANSWER1: They close their stomata during the day and open them at night to admit CO2. ANSWER2: They have a thicker cuticle layer. ANSWER3: They store water in their leaves. ANSWER4: They conduct photosynthesis only when water is abundant. CORRECT: 1
+
+
+QUESTION: In CAM plants, when does carbon fixation occur? ANSWER1: Only during the day. ANSWER2: Only at night when stomata are open. ANSWER3: Both day and night. ANSWER4: It occurs in a different type of cell than the Calvin cycle. CORRECT: 2
+
+
+QUESTION: How does the location and timing of carbon fixation differ between C4 and CAM plants? ANSWER1: In both, carbon fixation occurs in different cells at different times. ANSWER2: In C4 plants, it's in different cells; in CAM plants, it's in the same cells at different times. ANSWER3: In C4 plants, it's in the same cells; in CAM plants, it's in different cells. ANSWER4: In both, carbon fixation occurs in the same cells at the same time. CORRECT: 2
+
+
+QUESTION: What is the ultimate source of food for virtually all other organisms on Earth? ANSWER1: Cellular respiration. ANSWER2: Photosynthesizers. ANSWER3: Decomposers. ANSWER4: Fossil fuels. CORRECT: 2
+
+
+QUESTION: About what percentage of the carbohydrate made by photosynthesis is consumed as fuel for cellular respiration in the mitochondria of plant cells? ANSWER1: 10%. ANSWER2: 25%. ANSWER3: 50%. ANSWER4: 90%. CORRECT: 3
+
+
+QUESTION: What is the main component of plant cell walls, made from glucose molecules linked together? ANSWER1: Starch. ANSWER2: Lipids. ANSWER3: Proteins. ANSWER4: Cellulose. CORRECT: 4
+
+
+QUESTION: Plants store excess food made each day primarily as what molecule? ANSWER1: Sucrose. ANSWER2: G3P. ANSWER3: Starch. ANSWER4: RuBP. CORRECT: 3
+
+
+QUESTION: Where does the energy we acquire when we eat meat originally come from? ANSWER1: Directly from cellular respiration in the animal. ANSWER2: Sunlight captured by photosynthesis in the plants eaten by the animal. ANSWER3: Geothermal energy. ANSWER4: Nuclear fusion within the Earth. CORRECT: 2
+
+
+QUESTION: Fossil fuels represent stores of the sun's energy captured by photoautotrophs over what timeframe? ANSWER1: The past few decades. ANSWER2: Hundreds of millions of years. ANSWER3: The last thousand years. ANSWER4: The current year's growth. CORRECT: 2
+
+
+QUESTION: How much has the atmospheric level of CO2 risen since 1850 (the start of the Industrial Revolution)? ANSWER1: Less than 10%. ANSWER2: About 25%. ANSWER3: More than 45%. ANSWER4: It has decreased. CORRECT: 3
+
+
+QUESTION: What kind of studies do scientists use to study the effects of rising CO2 levels on plants? ANSWER1: Only laboratory growth chambers. ANSWER2: Only long-term field projects. ANSWER3: Laboratory growth chambers and field studies. ANSWER4: Studies in natural areas without manipulating CO2 levels. CORRECT: 3
+
+
+QUESTION: In the Duke University FACE experiment, what were the CO2 concentrations in the elevated CO2 plots compared to present-day levels? ANSWER1: About the same. ANSWER2: About half of present-day levels. ANSWER3: About 1 1/2 times present-day levels. ANSWER4: Double present-day levels. CORRECT: 3
+
+
+QUESTION: In the Duke FACE experiment, how did poison ivy biomass respond to elevated CO2 compared to control plots? ANSWER1: It decreased significantly. ANSWER2: It showed no significant change. ANSWER3: It showed an average annual growth increase of 149%. ANSWER4: It showed a slight decrease. CORRECT: 3
+
+
+QUESTION: Besides increased biomass, what other significant finding was reported about poison ivy in elevated CO2 conditions? ANSWER1: It produced fewer leaves. ANSWER2: It became less toxic. ANSWER3: It produced a more potent form of its allergenic compound, urushiol. ANSWER4: It required less water. CORRECT: 3
+
+
+QUESTION: What creates the greenhouse effect in the atmosphere? ANSWER1: Reflection of sunlight by clouds. ANSWER2: Absorption and reflection of heat radiating from Earth by greenhouse gases like CO2 and water vapor. ANSWER3: Absorption of incoming solar radiation by the atmosphere. ANSWER4: Emission of light by atmospheric gases. CORRECT: 2
+
+
+QUESTION: Without the natural greenhouse effect, what would the average air temperature on Earth be? ANSWER1: Much warmer than it is now. ANSWER2: A frigid -18°C (-0.4°F). ANSWER3: The same as it is now. ANSWER4: Dependent solely on geographic location. CORRECT: 2
+
+
+QUESTION: Global warming is a major aspect of climate change, defined as a long-term directional change to the global climate that lasts for how long? ANSWER1: A few months. ANSWER2: One year. ANSWER3: Three decades or more. ANSWER4: Five to ten years. CORRECT: 3
+
+
+QUESTION: What are some predicted consequences of climate change mentioned in the source? ANSWER1: Decreased extinction rates and lower sea levels. ANSWER2: Melting polar ice, rising sea levels, extreme weather, droughts, food/water shortages, increased extinction rates, spread of tropical diseases. ANSWER3: Cooler global temperatures and increased rainfall worldwide. ANSWER4: Reduced atmospheric CO2 levels. CORRECT: 2
+
+
+QUESTION: What was a goal set by the international agreement reached at the Paris climate conference of 2015? ANSWER1: To increase greenhouse gas emissions. ANSWER2: To limit global warming by the year 2100 to less than 2°C (3.6°F). ANSWER3: To replace all fossil fuels with nuclear energy by 2050. ANSWER4: To increase deforestation. CORRECT: 2
+
+
+QUESTION: How can reducing the use of fossil fuels and deforestation help moderate climate change? ANSWER1: By increasing the greenhouse effect. ANSWER2: By adding more CO2 to the atmosphere. ANSWER3: By reducing greenhouse gas emissions and increasing the removal of CO2 from the atmosphere by photosynthesis in forests. ANSWER4: By increasing photorespiration in plants. CORRECT: 3
+
+
+QUESTION: What percentage of the world's transportation fuel was provided by biofuels today, according to the source? ANSWER1: About 25%. ANSWER2: About 15%. ANSWER3: About 2.7%. ANSWER4: About 50%. CORRECT: 3
+
+
+QUESTION: What is the International Energy Agency's goal for the percentage of the world's transportation fuel provided by biofuels by 2050? ANSWER1: 10%. ANSWER2: 25%. ANSWER3: 50%. ANSWER4: 85%. CORRECT: 2
+
+
+QUESTION: Why might the production of bioethanol from food crops raise food prices? ANSWER1: It requires less water than growing food crops. ANSWER2: It increases the demand for those crops, potentially reducing the supply available for food. ANSWER3: It requires less land than growing food crops. ANSWER4: It uses less fertilizer than growing food crops. CORRECT: 2
+
+
+QUESTION: What is a typical blend percentage of ethanol in gasoline used in many cars today? ANSWER1: 85% ethanol, 15% gasoline. ANSWER2: 50% ethanol, 50% gasoline. ANSWER3: 15% ethanol, 85% gasoline. ANSWER4: 100% ethanol. CORRECT: 3
+
+
+QUESTION: Organisms that make their own food are called? ANSWER1: Heterotrophs. ANSWER2: Consumers. ANSWER3: Autotrophs. ANSWER4: Decomposers. CORRECT: 3
+
+
+QUESTION: Plants are specifically called photoautotrophs because? ANSWER1: They consume other organisms. ANSWER2: They decompose organic material. ANSWER3: They use the energy of light to make their own food. ANSWER4: They obtain energy from inorganic chemicals. CORRECT: 3
+
+
+QUESTION: Where are chloroplasts concentrated in a typical plant leaf? ANSWER1: In the veins. ANSWER2: In the stomata. ANSWER3: In the cells of the mesophyll, the green tissue in the interior of the leaf. ANSWER4: In the outer protective layer. CORRECT: 3
+
+
+QUESTION: How does CO2 enter a plant leaf? ANSWER1: Through the roots. ANSWER2: Through the veins. ANSWER3: Through tiny pores called stomata. ANSWER4: Through the upper leaf surface. CORRECT: 3
+
+
+QUESTION: What delivers water to the leaves from the roots? ANSWER1: Stomata. ANSWER2: Chloroplasts. ANSWER3: Veins. ANSWER4: Mesophyll cells. CORRECT: 3
+
+
+QUESTION: How many chloroplasts might a typical mesophyll cell have? ANSWER1: 1 or 2. ANSWER2: About 30 to 40. ANSWER3: Hundreds. ANSWER4: Zero, chloroplasts are only in the outer layers. CORRECT: 2
+
+
+QUESTION: What is the thick fluid filling the inner compartment of a chloroplast called? ANSWER1: Thylakoid space. ANSWER2: Stroma. ANSWER3: Grana. ANSWER4: Cytosol. CORRECT: 2
+
+
+QUESTION: What are stacks of thylakoids called? ANSWER1: Stroma. ANSWER2: Mesophyll. ANSWER3: Grana. ANSWER4: Photosystems. CORRECT: 3
+
+
+QUESTION: The synthesis of sugar in photosynthesis was elucidated using radioactive isotopes, specifically C-14. Which scientist and colleagues were involved in tracing the sequence of intermediate molecules in this cycle? ANSWER1: C. B. van Niel. ANSWER2: Melvin Calvin. ANSWER3: Jacqueline E. Mohan. ANSWER4: Charles Darwin. CORRECT: 2
+
+
+QUESTION: The Calvin cycle is sometimes referred to as the dark reactions or light-independent reactions because? ANSWER1: It always occurs in the dark. ANSWER2: None of its steps requires light directly. ANSWER3: It generates its own energy source. ANSWER4: It produces dark-colored pigments. CORRECT: 2
+
+
+QUESTION: What property of light is analogous to the distance between the crests of waves? ANSWER1: Photon energy. ANSWER2: Wavelength. ANSWER3: Amplitude. ANSWER4: Frequency. CORRECT: 2
+
+
+QUESTION: According to the source, how does UV radiation compare in energy to visible light? ANSWER1: UV radiation has less energy. ANSWER2: UV radiation has more energy and can damage molecules. ANSWER3: UV radiation has the same energy but different wavelength. ANSWER4: UV radiation is not a type of electromagnetic energy. CORRECT: 2
+
+
+QUESTION: Why do leaves appear green to our eyes? ANSWER1: Green wavelengths are absorbed by plant pigments. ANSWER2: Green wavelengths are primarily reflected and transmitted by the pigments. ANSWER3: Plants emit green light. ANSWER4: The plant cell walls are green. CORRECT: 2
+
+
+QUESTION: Chlorophyll a absorbs mainly which colors of light? ANSWER1: Green and yellow. ANSWER2: Blue and orange. ANSWER3: Blue-violet and red. ANSWER4: Infrared. CORRECT: 3
+
+
+QUESTION: What is the role of chlorophyll b? ANSWER1: Directly participates in the light reactions. ANSWER2: Absorbs blue and orange light and conveys absorbed energy to chlorophyll a. ANSWER3: Functions only in photoprotection. ANSWER4: Catalyzes the Calvin cycle. CORRECT: 2
+
+
+QUESTION: How does the energy of photons relate to the wavelength of light? ANSWER1: Shorter wavelength means lower energy photons. ANSWER2: Shorter wavelength means greater energy photons. ANSWER3: Wavelength and photon energy are unrelated. ANSWER4: Longer wavelength means greater energy photons. CORRECT: 2
+
+
+QUESTION: In a photosystem, where are the pigment molecules that function as a light-gathering antenna located? ANSWER1: In the reaction-center complex. ANSWER2: In the primary electron acceptor. ANSWER3: In the light-harvesting complexes. ANSWER4: In the stroma. CORRECT: 3
+
+
+QUESTION: When an electron of a reaction-center chlorophyll a is boosted to a higher energy level, what is the first step in the transformation of light energy to chemical energy in the light reactions? ANSWER1: The electron drops back to the ground state releasing heat. ANSWER2: The electron is immediately captured by the primary electron acceptor. ANSWER3: The electron splits water. ANSWER4: The electron is used to synthesize ATP. CORRECT: 2
+
+
+QUESTION: How are the two photosystems (I and II) connected in the thylakoid membrane? ANSWER1: By direct contact. ANSWER2: By an electron transport chain. ANSWER3: By a proton pump. ANSWER4: By ATP synthase. CORRECT: 2
+
+
+QUESTION: As electrons pass down the electron transport chain between photosystem II and photosystem I, what is released and used? ANSWER1: Light energy is released and used to split water. ANSWER2: Chemical energy is released and used for the production of ATP. ANSWER3: Heat is released and used to reduce NADP+. ANSWER4: Oxygen is released and used to oxidize glucose. CORRECT: 2
+
+
+QUESTION: The flow of H+ back across the thylakoid membrane through ATP synthase powers the synthesis of ATP. This chemiosmotic production of ATP, with light as the initial energy input, is called? ANSWER1: Oxidative phosphorylation. ANSWER2: Substrate-level phosphorylation. ANSWER3: Photophosphorylation. ANSWER4: Carbon fixation. CORRECT: 3
+
+
+QUESTION: What is the role of NADP+ in the light reactions? ANSWER1: It is oxidized to NADPH. ANSWER2: It is reduced to NADPH, temporarily storing electrons and providing reducing power. ANSWER3: It donates electrons to the electron transport chain. ANSWER4: It is a component of the thylakoid membrane. CORRECT: 2
+
+
+QUESTION: According to the mechanical analogy of the light reactions, what provides the energy to boost an electron from photosystem II to a higher energy level? ANSWER1: An enzyme. ANSWER2: A photon mallet. ANSWER3: Water splitting. ANSWER4: ATP. CORRECT: 2
+
+
+QUESTION: The mechanical analogy shows electrons being thrown into a bucket after leaving photosystem I. What do these electrons actually produce? ANSWER1: ATP. ANSWER2: O2. ANSWER3: Glucose. ANSWER4: NADPH. CORRECT: 4
+
+
+QUESTION: What contributes to the high H+ concentration in the thylakoid space during the light reactions? ANSWER1: H+ from the stroma only. ANSWER2: H+ from the splitting of water and H+ pumped by the electron transport chain from the stroma. ANSWER3: H+ from CO2 fixation. ANSWER4: H+ from ATP hydrolysis. CORRECT: 2
+
+
+QUESTION: How many times must the Calvin cycle turn to produce one molecule of G3P, starting with three molecules of CO2? ANSWER1: One time. ANSWER2: Three times. ANSWER3: Six times. ANSWER4: Twelve times. CORRECT: 2
+
+
+QUESTION: For the synthesis of one G3P molecule, how many ATP and NADPH molecules are consumed by the Calvin cycle? ANSWER1: 3 ATP and 2 NADPH. ANSWER2: 6 ATP and 6 NADPH. ANSWER3: 9 ATP and 6 NADPH. ANSWER4: 12 ATP and 18 NADPH. CORRECT: 3
+
+
+QUESTION: What happens to the remaining five G3P molecules in the Calvin cycle after one molecule is released as product (when starting with 3 CO2)? ANSWER1: They are converted to glucose. ANSWER2: They are broken down to release energy. ANSWER3: They are rearranged to regenerate RuBP. ANSWER4: They are released as waste products. CORRECT: 3
+
+
+QUESTION: How do C4 and CAM plants differ in how carbon fixation and the Calvin cycle are separated? ANSWER1: C4 plants separate by time (day/night); CAM plants separate by space (different cells). ANSWER2: C4 plants separate by space (different cells); CAM plants separate by time (day/night). ANSWER3: Both separate by time. ANSWER4: Both separate by space. CORRECT: 2
+
+
+QUESTION: Examples of important agricultural C4 plants mentioned are? ANSWER1: Soybeans, wheat, and rice. ANSWER2: Pineapples and cacti. ANSWER3: Corn and sugarcane. ANSWER4: Algae and cyanobacteria. CORRECT: 3
+
+
+QUESTION: Examples of CAM plants mentioned are? ANSWER1: Corn and sugarcane. ANSWER2: Soybeans, wheat, and rice. ANSWER3: Pineapples, many cacti, and other succulent plants. ANSWER4: Tropical forest trees. CORRECT: 3
+
+
+QUESTION: Cellular respiration in plant mitochondria uses about 50% of the carbohydrates made by photosynthesis. What else are these sugars used for in the plant? ANSWER1: They are released into the environment. ANSWER2: They are used as starting material for making other organic molecules like proteins and lipids, stored as starch, or linked to make cellulose. ANSWER3: They are immediately converted back into CO2 and water. ANSWER4: They are transported to other organisms for consumption. CORRECT: 2
+
+
+QUESTION: What is the most abundant organic molecule in a plant and probably on the surface of the planet? ANSWER1: Starch. ANSWER2: Protein. ANSWER3: Lipids. ANSWER4: Cellulose. CORRECT: 4
+
+
+QUESTION: Why is photosynthesis considered so important to life on Earth? ANSWER1: It produces the majority of the planet's heat. ANSWER2: It is the ultimate source of organic molecules (food) and oxygen for almost all living organisms. ANSWER3: It directly fuels all cellular processes in all organisms. ANSWER4: It is the only process that can convert light energy into chemical energy. CORRECT: 2
+
+
+QUESTION: The burning of fossil fuels and deforestation contributes to rising atmospheric CO2 levels. What is a consequence of these rising levels? ANSWER1: Increased rates of photosynthesis in all plants. ANSWER2: Decreased global temperatures. ANSWER3: Intensification of the greenhouse effect and global warming. ANSWER4: Increased oxygen levels in the atmosphere. CORRECT: 3
+
+
+QUESTION: Besides CO2, what are some other greenhouse gases mentioned? ANSWER1: Nitrogen and oxygen. ANSWER2: Methane, NOx, water vapor, CFC. ANSWER3: Hydrogen and helium. ANSWER4: Sulfur dioxide and carbon monoxide. CORRECT: 2
+
+
+QUESTION: How much has human activity increased the average temperature of the planet since 1900, according to scientific calculation mentioned? ANSWER1: About 0.1°C (0.18°F). ANSWER2: About 1°C (1.8°F). ANSWER3: About 5°C (9°F). ANSWER4: The temperature has decreased. CORRECT: 2
+
+
+QUESTION: What is a key characteristic of science illustrated by scientists studying the effects of increasing CO2 levels on plants? ANSWER1: Relying on a single experiment to draw conclusions. ANSWER2: Using anecdotes instead of data. ANSWER3: The use of multiple lines of evidence in testing hypotheses. ANSWER4: Ignoring data that doesn't support a hypothesis. CORRECT: 3
+
+
+QUESTION: What did the chemical analysis show about poison ivy grown in elevated CO2 plots in the Duke FACE experiment? ANSWER1: It produced more sugar. ANSWER2: It produced less urushiol. ANSWER3: It produced a more potent form of its allergenic compound, urushiol. ANSWER4: It absorbed less CO2. CORRECT: 3
+
+
+QUESTION: What role do forests play in moderating climate change? ANSWER1: They increase greenhouse gas emissions. ANSWER2: Their photosynthesis sucks CO2 out of the atmosphere and stores it in biomass. ANSWER3: They reflect solar radiation away from Earth. ANSWER4: They accelerate the melting of polar ice caps. CORRECT: 2
+
+
+QUESTION: More than half of the world's animal and plant species live in which type of forest mentioned as important to protect? ANSWER1: Temperate forests. ANSWER2: Boreal forests. ANSWER3: Tropical forests. ANSWER4: Deciduous forests. CORRECT: 3
+
+
+QUESTION: What does the word "photosynthesis" encapsulate, based on its Greek roots? ANSWER1: Light-breaking. ANSWER2: Energy-making. ANSWER3: Light-putting together. ANSWER4: Sugar-breaking. CORRECT: 3
+
+
+QUESTION: Which of the following correctly describes a human's dietary lifestyle based on the source definitions? ANSWER1: Autotroph. ANSWER2: Photoautotroph. ANSWER3: Producer. ANSWER4: Heterotroph. CORRECT: 4
+
+
+QUESTION: Why is water necessary for photosynthesis to proceed? ANSWER1: It provides the carbon used to build sugar. ANSWER2: It provides oxygen for the electron transport chain. ANSWER3: It provides electrons to replace those lost by chlorophyll in photosystem II and is the source of released oxygen. ANSWER4: It provides energy to drive the Calvin cycle. CORRECT: 3
+
+
+QUESTION: Which redox process, photosynthesis or cellular respiration, is endergonic? ANSWER1: Cellular respiration. ANSWER2: Photosynthesis. ANSWER3: Both are endergonic. ANSWER4: Neither is endergonic. CORRECT: 2
+
+
+QUESTION: For chloroplasts to produce sugar from carbon dioxide in the dark, what would they need to be supplied with? ANSWER1: O2 and H2O. ANSWER2: Light energy and H2O. ANSWER3: ATP and NADPH. ANSWER4: Glucose and O2. CORRECT: 3
+
+
+QUESTION: What color of light is least effective at driving photosynthesis? ANSWER1: Red. ANSWER2: Blue. ANSWER3: Green. ANSWER4: Violet. CORRECT: 3
+
+
+QUESTION: Why is green light least effective at driving photosynthesis? ANSWER1: It has the lowest energy photons. ANSWER2: It is mostly absorbed by photosynthetic pigments. ANSWER3: It is mostly reflected and transmitted by photosynthetic pigments. ANSWER4: It damages chlorophyll molecules. CORRECT: 3
+
+
+QUESTION: Compared with a solution of isolated chlorophyll, why do intact chloroplasts not release heat and light (fluorescence) when illuminated? ANSWER1: They are kept at a lower temperature. ANSWER2: The excited electrons are captured by a primary electron acceptor before they fall back to ground state. ANSWER3: The chloroplast membranes block the light. ANSWER4: Chlorophyll is less concentrated in chloroplasts. CORRECT: 2
+
+
+QUESTION: Looking at the model of the light reactions, why are two photons of light required in the movement of electrons from water to NADPH? ANSWER1: One photon is needed for splitting water, and one for reducing NADP+. ANSWER2: One photon excites an electron from photosystem II, and a second photon excites an electron from photosystem I. ANSWER3: One photon provides energy for ATP synthesis, and one for NADPH synthesis. ANSWER4: Photons are only needed to excite electrons in photosystem II. CORRECT: 2
+
+
+QUESTION: Describe two forces moving H+ across the thylakoid membrane during the light reactions. ANSWER1: Active transport and diffusion. ANSWER2: Gravity and osmosis. ANSWER3: Energy released as electrons pass down the electron transport chain pumps H+ into the thylakoid space, and the concentration gradient drives H+ back through ATP synthase. ANSWER4: Absorption of CO2 and release of O2. CORRECT: 3
+
+
+QUESTION: Why is the large number of ATP and NADPH molecules used during the Calvin cycle consistent with the value of glucose as an energy source? ANSWER1: Glucose is a highly oxidized molecule requiring little energy to synthesize. ANSWER2: Glucose is a highly reduced molecule, storing a lot of potential energy, and reducing CO2 to glucose requires a lot of energy and reducing power. ANSWER3: ATP and NADPH are waste products that must be consumed. ANSWER4: The cycle uses more energy than it produces. CORRECT: 2
+
+
+QUESTION: What does the concept of "structure and function" relate to in the context of chloroplasts and photosynthesis? ANSWER1: The ability of pigments to absorb light depends on their chemical structure. ANSWER2: The synthesis of organic compounds emerges from the precise structural organization and interactions of the component parts (membranes, pigments, enzymes) within chloroplasts. ANSWER3: The shape of the leaf determines its photosynthetic rate. ANSWER4: The number of stomata determines the amount of water absorbed. CORRECT: 2
+
+
+QUESTION: How do the reactant molecules of photosynthesis reach the chloroplasts in leaves? ANSWER1: CO2 enters through veins, and water enters through stomata. ANSWER2: Both CO2 and water enter through stomata. ANSWER3: CO2 enters through stomata, and water is carried to the leaves in veins from the roots. ANSWER4: Both are absorbed directly from the air. CORRECT: 3
+
+
+QUESTION: Where does most of the mass of the carbohydrates produced by photosynthesis come from? ANSWER1: The soil absorbed by the roots. ANSWER2: Water supplied to the leaves. ANSWER3: CO2 from the air. ANSWER4: Sunlight energy. CORRECT: 3
+
+
+QUESTION: Which redox process, photosynthesis or cellular respiration, is exergonic? ANSWER1: Cellular respiration. ANSWER2: Photosynthesis. ANSWER3: Both are exergonic. ANSWER4: Neither is exergonic. CORRECT: 1
+
+
+QUESTION: What is the relationship between the reactants and products of photosynthesis and cellular respiration? ANSWER1: They are completely different processes with no overlap. ANSWER2: They are opposite reactions, with the reactants of one being the products of the other and vice versa. ANSWER3: Photosynthesis produces the reactants for cellular respiration, but cellular respiration produces unrelated products. ANSWER4: They both produce glucose and oxygen. CORRECT: 2
+
+
+QUESTION: What happens to the potential energy of electrons as they move from H2O to CO2 in photosynthesis? ANSWER1: It decreases. ANSWER2: It increases. ANSWER3: It remains the same. ANSWER4: They are lost as heat. CORRECT: 2
+
+
+QUESTION: What happens to the potential energy of electrons as they are passed down an electron transport chain to O2 in cellular respiration? ANSWER1: It increases. ANSWER2: It remains the same. ANSWER3: It decreases. ANSWER4: They are used to split water. CORRECT: 3
+
+
+QUESTION: What molecule is oxidized in cellular respiration? ANSWER1: O2. ANSWER2: CO2. ANSWER3: Water. ANSWER4: Glucose. CORRECT: 4
+
+
+QUESTION: What molecule is reduced in cellular respiration? ANSWER1: Glucose. ANSWER2: O2. ANSWER3: CO2. ANSWER4: Water. CORRECT: 2
+
+
+QUESTION: In the context of the electromagnetic spectrum, visible light is only a small fraction of the spectrum, consisting of wavelengths from about? ANSWER1: 1 nm to 100 nm. ANSWER2: 380 nm to 750 nm. ANSWER3: 1 mm to 1 meter. ANSWER4: 1 meter to 100 meters. CORRECT: 2
+
+
+QUESTION: Why can ultraviolet (UV) radiation cause damage to molecules like proteins and nucleic acids? ANSWER1: It has very long wavelengths. ANSWER2: It carries less energy per photon than visible light. ANSWER3: The photons of UV wavelengths have enough energy to damage molecules. ANSWER4: It causes plants to photosynthesize too quickly. CORRECT: 3
+
+
+QUESTION: When isolated pigment molecules absorb light, their excited electrons typically drop back to the ground state very quickly. What happens to the excess energy? ANSWER1: It is used to fix carbon. ANSWER2: It is transferred to a primary electron acceptor. ANSWER3: It is released as heat, and sometimes light (fluorescence). ANSWER4: It is stored as chemical energy. CORRECT: 3
+
+
+QUESTION: What is an action spectrum? ANSWER1: The wavelengths of light that are absorbed by pigments. ANSWER2: The rate of photosynthesis at each wavelength. ANSWER3: The spectrum of colors emitted by a pigment. ANSWER4: The range of wavelengths in the electromagnetic spectrum. CORRECT: 2
+
+
+QUESTION: What is an absorption spectrum? ANSWER1: The rate of photosynthesis at each wavelength. ANSWER2: The spectrum of colors emitted by a pigment. ANSWER3: The wavelengths of light that are absorbed by pigments. ANSWER4: The range of wavelengths that cause damage to molecules. CORRECT: 3
+
+
+QUESTION: Where are the components of the electron transport chain and photosystems embedded in the chloroplast? ANSWER1: In the outer membrane. ANSWER2: In the inner membrane. ANSWER3: In the stroma. ANSWER4: In the thylakoid membranes. CORRECT: 4
+
+
+QUESTION: What molecule is reduced by the electron transport chain after photosystem I? ANSWER1: Water. ANSWER2: CO2. ANSWER3: NADP+. ANSWER4: ATP. CORRECT: 3
+
+
+QUESTION: What is G3P used to build besides glucose and other organic molecules? ANSWER1: ATP and NADPH. ANSWER2: CO2 and Water. ANSWER3: RuBP. ANSWER4: Proteins and lipids. CORRECT: 4
+
+
+QUESTION: The Calvin cycle functions like a sugar factory within which organelle? ANSWER1: Mitochondrion. ANSWER2: Nucleus. ANSWER3: Chloroplast. ANSWER4: Vacuole. CORRECT: 3
+
+
+QUESTION: What does "carbon fixation" refer to in the context of the Calvin cycle? ANSWER1: The release of CO2. ANSWER2: The synthesis of glucose. ANSWER3: The incorporation of carbon from CO2 into organic compounds. ANSWER4: The regeneration of RuBP. CORRECT: 3
+
+
+QUESTION: What is one problem that farmers face in growing C3 plants in hot, dry weather? ANSWER1: Increased water uptake. ANSWER2: Stomata close, reducing CO2 intake and increasing O2 buildup, leading to photorespiration. ANSWER3: Increased photosynthesis rates. ANSWER4: Reduced need for water. CORRECT: 2
+
+
+QUESTION: According to one hypothesis, photorespiration is an evolutionary relic from a time when the atmosphere had less of which gas? ANSWER1: CO2. ANSWER2: N2. ANSWER3: O2. ANSWER4: H2O vapor. CORRECT: 3
+
+
+QUESTION: In C4 plants, which cells are packed around the veins of the leaf and are where the Calvin Cycle reactions occur in the absence of oxygen? ANSWER1: Mesophyll cells. ANSWER2: Stomata. ANSWER3: Bundle-sheath cells. ANSWER4: Epidermal cells. CORRECT: 3
+
+
+QUESTION: CAM plants store CO2 by fixing it into a four-carbon compound. When is this CO2 released to the Calvin cycle? ANSWER1: At night. ANSWER2: During the day when stomata are closed. ANSWER3: Only when water is available. ANSWER4: Continuously day and night. CORRECT: 2
+
+
+QUESTION: Do C3, C4, and CAM plants all eventually use the Calvin cycle to make sugar from CO2? ANSWER1: No, only C3 plants use the Calvin cycle. ANSWER2: Yes, they all use the Calvin cycle. ANSWER3: Only C4 and CAM plants use the Calvin cycle. ANSWER4: Only C3 and C4 plants use the Calvin cycle. CORRECT: 2
+
+
+QUESTION: Why would photorespiration on a hot, dry day occur less in C4 and CAM plants than in C3 plants? ANSWER1: C4 and CAM plants keep their stomata open more often. ANSWER2: C4 and CAM plants have mechanisms to maintain a higher CO2 concentration around rubisco even when stomata are closed, reducing rubisco's tendency to fix O2. ANSWER3: C4 and CAM plants use a different enzyme for carbon fixation that cannot bind O2. ANSWER4: C4 and CAM plants do not have rubisco. CORRECT: 2
+
+
+QUESTION: What does the term "producers of the biosphere" refer to? ANSWER1: Decomposers. ANSWER2: Heterotrophs. ANSWER3: Photoautotrophs. ANSWER4: Consumers. CORRECT: 3
+
+
+QUESTION: Besides providing food, what other essential molecule do photosynthesizers provide for almost all living organisms? ANSWER1: Water. ANSWER2: Carbon dioxide. ANSWER3: Nitrogen. ANSWER4: Oxygen (O2). CORRECT: 4
+
+
+QUESTION: The burning of ancient carbon stores, such as fossil fuels, increases the atmospheric level of what gas? ANSWER1: Oxygen. ANSWER2: Nitrogen. ANSWER3: Carbon dioxide. ANSWER4: Water vapor. CORRECT: 3
+
+
+QUESTION: In the context of climate change, what does deforestation contribute to? ANSWER1: Increased oxygen levels. ANSWER2: Reduced atmospheric CO2. ANSWER3: Increased CO2 emissions from burning trees and reduced CO2 uptake by remaining forests. ANSWER4: Decreased global temperatures. CORRECT: 3
+
+
+QUESTION: What is a major aspect of climate change that involves a long-term directional change to the global climate lasting for three decades or more? ANSWER1: Weather fluctuations. ANSWER2: El Niño cycles. ANSWER3: Global warming. ANSWER4: Daily temperature changes. CORRECT: 3
+
+
+QUESTION: According to the source, what is one approach countries are using to limit global warming as agreed upon in the Paris Agreement? ANSWER1: Increasing the use of coal and oil. ANSWER2: Shifting away from fossil fuels towards zero-carbon sources like wind, solar, and nuclear power. ANSWER3: Decreasing energy efficiency. ANSWER4: Increasing deforestation rates. CORRECT: 2
+
+
+
