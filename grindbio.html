@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology Honors Practice</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; max-width: 800px; }
+    .question-card { border: 1px solid #ccc; border-radius: 8px; padding: 16px; margin-top: 20px; }
+    .options { margin-top: 12px; }
+    .options label { display: block; margin-bottom: 8px; }
+    button { margin-right: 8px; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .correct { color: green; margin-top: 12px; }
+    .incorrect { color: red; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Biology Honors Practice</h1>
+  <label for="unitSelect">Select Unit:</label>
+  <select id="unitSelect">
+    <option value="6">Unit 6</option>
+    <option value="7">Unit 7</option>
+    <option value="8">Unit 8</option>
+    <option value="9">Unit 9</option>
+    <option value="10">Unit 10</option>
+    <option value="12">Unit 12</option>
+    <option value="13">Unit 13</option>
+    <option value="14">Unit 14</option>
+  </select>
+
+  <div id="quiz"></div>
+
+  <script>
+    let practiceData = {7:[],8:[],9:[],10:[],12:[],13:[],14:[]};
+    let questions = [];
+    let qIndex = 0;
+    let selected = null;
+
+    function parseU6(text) {
+      const blocks = text.trim().split(/QUESTION:/).filter(b => b.trim());
+      return blocks.map(block => {
+        const qLine = block.match(/\n([^\n]+)/);
+        const question = qLine ? qLine[1].trim() : '';
+        const answers = [...block.matchAll(/ANSWER\d: ([^\n]+)/g)].map(m => m[1].trim());
+        const correct = block.match(/CORRECT:(\d+)/);
+        const ans = correct ? answers[parseInt(correct[1],10)-1] : '';
+        return { question, options: answers, answer: ans };
+      });
+    }
+
+    document.getElementById('unitSelect').addEventListener('change', e => {
+      loadUnit(parseInt(e.target.value));
+    });
+
+    function loadUnit(unit) {
+      qIndex = 0;
+      selected = null;
+      if (unit === 6) {
+        document.getElementById('quiz').innerHTML = 'Loading Unit 6...';
+        fetch('bio/unit_6.txt')
+          .then(r => r.text())
+          .then(text => {
+            questions = parseU6(text);
+            renderQuestion();
+          });
+      } else {
+        questions = practiceData[unit];
+        renderQuestion();
+      }
+    }
+
+    function renderQuestion() {
+      if (!questions.length) {
+        document.getElementById('quiz').innerHTML = '<p>No questions available.</p>';
+        return;
+      }
+      const q = questions[qIndex];
+      const container = document.getElementById('quiz');
+      container.innerHTML = '';
+
+      const card = document.createElement('div');
+      card.className = 'question-card';
+
+      const qEl = document.createElement('h2');
+      qEl.textContent = q.question;
+      card.appendChild(qEl);
+
+      const opts = document.createElement('div');
+      opts.className = 'options';
+      q.options.forEach(opt => {
+        const label = document.createElement('label');
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'option';
+        radio.value = opt;
+        radio.addEventListener('change', () => selected = opt);
+        label.appendChild(radio);
+        label.append(opt);
+        opts.appendChild(label);
+      });
+      card.appendChild(opts);
+
+      const btnCheck = document.createElement('button');
+      btnCheck.textContent = 'Check Answer';
+      btnCheck.disabled = true;
+      btnCheck.addEventListener('click', () => showResult(q.answer));
+      card.appendChild(btnCheck);
+
+      const btnNext = document.createElement('button');
+      btnNext.textContent = 'Next';
+      btnNext.addEventListener('click', nextQuestion);
+      card.appendChild(btnNext);
+
+      container.appendChild(card);
+
+      // enable check when selected changes
+      opts.addEventListener('change', () => btnCheck.disabled = !selected);
+    }
+
+    function showResult(correct) {
+      const card = document.querySelector('.question-card');
+      let res = document.createElement('div');
+      if (selected === correct) {
+        res.className = 'correct';
+        res.textContent = 'Correct!';
+      } else {
+        res.className = 'incorrect';
+        res.textContent = 'Incorrect. Correct: ' + correct;
+      }
+      card.appendChild(res);
+    }
+
+    function nextQuestion() {
+      qIndex = (qIndex + 1) % questions.length;
+      selected = null;
+      loadUnit(parseInt(document.getElementById('unitSelect').value));
+    }
+
+    // initial load
+    loadUnit(6);
+  </script>
+</body>
+</html>
