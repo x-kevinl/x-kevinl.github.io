@@ -1,0 +1,1343 @@
+QUESTION:
+What is speciation?
+ANSWER1: The process of changing the gene pool within a single population.
+ANSWER2: The development of a new species from an existing one.
+ANSWER3: The extinction of a species.
+ANSWER4: The migration of a species to a new habitat.
+CORRECT: 2
+
+QUESTION:
+According to the biological species concept, what defines a species?
+ANSWER1: Members share a common ancestry.
+ANSWER2: Members can interbreed and produce fertile offspring.
+ANSWER3: Members have similar physical appearances.
+ANSWER4: Members occupy the same ecological niche.
+CORRECT: 2
+
+QUESTION:
+Reproductive isolation refers to the existence of barriers that prevent members of two species from doing what?
+ANSWER1: Migrating to the same geographic area.
+ANSWER2: Competing for the same resources.
+ANSWER3: Producing viable, fertile offspring with each other.
+ANSWER4: Having similar behavioral patterns.
+CORRECT: 3
+
+QUESTION:
+What is a zygote?
+ANSWER1: An unfertilized egg cell.
+ANSWER2: A mature sperm cell.
+ANSWER3: A fertilized egg.
+ANSWER4: A type of reproductive barrier.
+CORRECT: 3
+
+QUESTION:
+Diane Dodd's fruit fly experiment involved feeding different groups different diets (starch vs. maltose). What was the outcome after eight generations?
+ANSWER1: The groups became physically distinct but still interbred.
+ANSWER2: One group died out due to the specific diet.
+ANSWER3: The groups became reproductively isolated and would not interbreed.
+ANSWER4: They developed new mutations specific to their diets.
+CORRECT: 3
+
+QUESTION:
+What is the first component needed to create brand new species, according to the Bozeman Science source?
+ANSWER1: Genetic mutation.
+ANSWER2: Natural selection.
+ANSWER3: Reproductive isolation.
+ANSWER4: Geographic separation.
+CORRECT: 3
+
+QUESTION:
+When does allopatric speciation occur?
+ANSWER1: When a new species arises within the same geographic area as its parent species.
+ANSWER2: When a population is divided by a geographic barrier.
+ANSWER3: When a species adapts to a new ecological niche.
+ANSWER4: When errors in cell division lead to extra chromosomes.
+CORRECT: 2
+
+QUESTION:
+When does sympatric speciation occur?
+ANSWER1: When populations are separated by a river or mountain range.
+ANSWER2: When a new species arises within the same geographic area as its parent species.
+ANSWER3: When hybrid offspring are sterile.
+ANSWER4: When two populations fuse into one through interbreeding.
+CORRECT: 2
+
+QUESTION:
+The separation of Eastern and Western meadowlarks by ice age glaciers, leading to their current inability to interbreed effectively, is given as an example of which type of speciation?
+ANSWER1: Sympatric speciation.
+ANSWER2: Parapatric speciation.
+ANSWER3: Peripatric speciation.
+ANSWER4: Allopatric speciation.
+CORRECT: 4
+
+QUESTION:
+According to the Amoeba Sisters source, what happens to the offspring of two different species that breed (like a donkey and a zebra producing a zonkey)?
+ANSWER1: They are typically stronger and healthier than the parent species.
+ANSWER2: They are typically able to interbreed with either parent species.
+ANSWER3: They are typically sterile and cannot reproduce.
+ANSWER4: They develop into a brand new species capable of reproducing.
+CORRECT: 3
+
+QUESTION:
+Which of the following is NOT considered a prezygotic barrier?
+ANSWER1: Temporal isolation.
+ANSWER2: Hybrid sterility.
+ANSWER3: Behavioral isolation.
+ANSWER4: Mechanical isolation.
+CORRECT: 2
+
+QUESTION:
+Temporal isolation is a reproductive barrier where species are isolated by what?
+ANSWER1: Different habitats.
+ANSWER2: Different breeding times or seasons.
+ANSWER3: Physical incompatibility of reproductive parts.
+ANSWER4: Failure to send or receive appropriate mating signals.
+CORRECT: 2
+
+QUESTION:
+The example of American Toads breeding in the spring and Fowler's Toads breeding in the fall, even when they live in the same area, illustrates which type of reproductive isolation?
+ANSWER1: Habitat isolation.
+ANSWER2: Mechanical isolation.
+ANSWER3: Temporal isolation.
+ANSWER4: Gametic isolation.
+CORRECT: 3
+
+QUESTION:
+Mechanical isolation is a reproductive barrier characterized by what?
+ANSWER1: Differences in courtship rituals.
+ANSWER2: Molecular incompatibility of gametes.
+ANSWER3: Physical incompatibility of reproductive parts.
+ANSWER4: Offspring that die before reaching maturity.
+CORRECT: 3
+
+QUESTION:
+The example of snails in Japan where shells spiral in opposite directions (left-handed vs. right-handed), preventing mating, illustrates which type of reproductive isolation?
+ANSWER1: Behavioral isolation.
+ANSWER2: Mechanical isolation.
+ANSWER3: Habitat isolation.
+ANSWER4: Temporal isolation.
+CORRECT: 2
+
+QUESTION:
+Behavioral isolation is a reproductive barrier where species are isolated by what?
+ANSWER1: Different preferred environments within the same area.
+ANSWER2: Incompatibility between eggs and sperm.
+ANSWER3: Offspring that are feeble or sterile.
+ANSWER4: Different courtship rituals or mating signals.
+CORRECT: 4
+
+QUESTION:
+Eastern and Western meadowlarks living in the same area but having different songs that attract mates is an example of which type of reproductive isolation?
+ANSWER1: Temporal isolation.
+ANSWER2: Mechanical isolation.
+ANSWER3: Behavioral isolation.
+ANSWER4: Gametic isolation.
+CORRECT: 3
+
+QUESTION:
+Which of the following is considered a postzygotic barrier?
+ANSWER1: Habitat isolation.
+ANSWER2: Gametic isolation.
+ANSWER3: Reduced hybrid fertility.
+ANSWER4: Behavioral isolation.
+CORRECT: 3
+
+QUESTION:
+When a hybrid zygote is formed but immediately dies, as seen in some corals, this is an example of what?
+ANSWER1: Reduced hybrid fertility.
+ANSWER2: Zygote mortality.
+ANSWER3: Hybrid breakdown.
+ANSWER4: Gametic isolation.
+CORRECT: 2
+
+QUESTION:
+Horses and donkeys can mate and produce a mule, but the mule is sterile. This is an example of which postzygotic barrier?
+ANSWER1: Reduced hybrid viability.
+ANSWER2: Hybrid breakdown.
+ANSWER3: Reduced hybrid fertility.
+ANSWER4: Gametic isolation.
+CORRECT: 3
+
+QUESTION:
+The construction of the Great Wall of China has impacted gene flow in wind-pollinated plants, leading to reproductive isolation between populations on either side. What serves as the barrier to gene flow in this case?
+ANSWER1: Insects that can't cross the wall.
+ANSWER2: The wall blocking the wind that carries pollen.
+ANSWER3: Different soil types on either side of the wall.
+ANSWER4: Humans actively preventing pollen transfer.
+CORRECT: 2
+
+QUESTION:
+In the Great Wall example, insect-pollinated plants on either side of the wall did not show reduced genetic diversity. Why?
+ANSWER1: Insects were prevented from pollinating these plants.
+ANSWER2: These plants reproduced asexually.
+ANSWER3: Insects could easily get over the wall to transfer pollen.
+ANSWER4: Wind pollination was not important for these plants.
+CORRECT: 3
+
+QUESTION:
+Polyploidy is a mechanism of sympatric speciation that involves what?
+ANSWER1: Geographic separation of populations.
+ANSWER2: Mistakes in chromosome number resulting in extra sets of chromosomes.
+ANSWER3: Behavioral differences leading to mate choice.
+ANSWER4: Adaptation to different ecological niches.
+CORRECT: 2
+
+QUESTION:
+Polyploidy is most common in which type of organism?
+ANSWER1: Animals.
+ANSWER2: Fungi.
+ANSWER3: Plants.
+ANSWER4: Bacteria.
+CORRECT: 3
+
+QUESTION:
+According to the Bozeman Science source, approximately what percentage of brand-new fern species form through polyploidy?
+ANSWER1: 15%
+ANSWER2: 30%
+ANSWER3: 50%
+ANSWER4: 75%
+CORRECT: 2
+
+QUESTION:
+What is the typical outcome of a mistake in chromosome number in animals, unlike in plants?
+ANSWER1: The organism dies.
+ANSWER2: The organism becomes polyploid and forms a new species.
+ANSWER3: The organism becomes sterile but survives.
+ANSWER4: The organism reproduces asexually.
+CORRECT: 1
+
+QUESTION:
+Which animal is mentioned as a rare example of a polyploid animal species that shed extra sex chromosomes?
+ANSWER1: Viscacha rat.
+ANSWER2: Gray tree frog.
+ANSWER3: African elephant.
+ANSWER4: Snapping shrimp.
+CORRECT: 1
+
+QUESTION:
+What are the two main models for the tempo of speciation discussed in the sources?
+ANSWER1: Allopatric and Sympatric.
+ANSWER2: Prezygotic and Postzygotic.
+ANSWER3: Gradualism and Punctuated Equilibrium.
+ANSWER4: Microevolution and Macroevolution.
+CORRECT: 3
+
+QUESTION:
+The gradual model of speciation suggests that new species evolve by what?
+ANSWER1: Rapid bursts of change due to environmental pressures.
+ANSWER2: Sudden, large-scale mutations.
+ANSWER3: The gradual accumulation of small changes over long periods.
+ANSWER4: Hybridization events between existing species.
+CORRECT: 3
+
+QUESTION:
+Punctuated equilibrium is a model of speciation that suggests what?
+ANSWER1: Species change gradually over time with little interruption.
+ANSWER2: Evolution occurs primarily through the creation of sterile hybrids.
+ANSWER3: Species change most rapidly when they first arise and then change little.
+ANSWER4: Speciation rate is constant across all lineages.
+CORRECT: 3
+
+QUESTION:
+Who is a famous proponent of the punctuated equilibrium model of speciation mentioned in the Bozeman Science source?
+ANSWER1: Charles Darwin.
+ANSWER2: Diane Dodd.
+ANSWER3: Steven J. Gould.
+ANSWER4: Peter Grant.
+CORRECT: 3
+
+QUESTION:
+According to the punctuated equilibrium model, why are transitional fossils relatively rare?
+ANSWER1: Transitional forms were outcompeted and quickly went extinct.
+ANSWER2: Speciation occurs relatively quickly in small, isolated populations, reducing the chance of fossilization.
+ANSWER3: The fossil record is incomplete, and most organisms didn't fossilize.
+ANSWER4: Transitional forms only existed in environments where fossilization was impossible.
+CORRECT: 2
+
+QUESTION:
+What is the definition of a species according to the Amoeba Sisters source?
+ANSWER1: Organisms that look similar and live in the same area.
+ANSWER2: Organisms that can interbreed AND their offspring can reproduce.
+ANSWER3: Organisms that share a common ancestor.
+ANSWER4: Organisms that occupy the same ecological niche.
+CORRECT: 2
+
+QUESTION:
+According to the Amoeba Sisters source, what is the relationship between isolation and the mechanisms of evolution like natural selection or genetic drift?
+ANSWER1: Isolation is the mechanism for change over time.
+ANSWER2: Isolation prevents any change from occurring in populations.
+ANSWER3: Isolation is what separates the gene pools so the mechanisms of change act on them separately.
+ANSWER4: Isolation causes mutations to occur more frequently.
+CORRECT: 3
+
+QUESTION:
+Besides the biological species concept, which other concepts are mentioned for defining a species?
+ANSWER1: Genetic, Anatomical, and Physiological.
+ANSWER2: Morphological, Ecological, and Phylogenetic.
+ANSWER3: Allopatric, Sympatric, and Parapatric.
+ANSWER4: Prezygotic, Postzygotic, and Zygotic.
+CORRECT: 2
+
+QUESTION:
+Which species concept defines a species based on observable physical traits?
+ANSWER1: Biological species concept.
+ANSWER2: Ecological species concept.
+ANSWER3: Morphological species concept.
+ANSWER4: Phylogenetic species concept.
+CORRECT: 3
+
+QUESTION:
+Which species concept defines a species based on its role in a biological community and unique adaptations to that role?
+ANSWER1: Biological species concept.
+ANSWER2: Ecological species concept.
+ANSWER3: Morphological species concept.
+ANSWER4: Phylogenetic species concept.
+CORRECT: 2
+
+QUESTION:
+Which species concept defines a species as the smallest group of individuals that share a common ancestor?
+ANSWER1: Biological species concept.
+ANSWER2: Ecological species concept.
+ANSWER3: Morphological species concept.
+ANSWER4: Phylogenetic species concept.
+CORRECT: 4
+
+QUESTION:
+Which species concepts can be applied to both asexual organisms and fossils?
+ANSWER1: Biological species concept only.
+ANSWER2: Morphological, Ecological, and Phylogenetic concepts.
+ANSWER3: Allopatric and Sympatric concepts.
+ANSWER4: Ecological and Biological concepts only.
+CORRECT: 2
+
+QUESTION:
+Lonesome George, the last known individual of the giant tortoise species *Chelonoidis abingdonii*, illustrated the biological species concept because attempts to interbreed him with females of a closely related species failed. What was the specific outcome of these attempts?
+ANSWER1: No mating occurred.
+ANSWER2: Mating occurred, but no eggs were laid.
+ANSWER3: Eggs were laid, but none hatched.
+ANSWER4: Fertile offspring were produced, but they did not survive.
+CORRECT: 3
+
+QUESTION:
+What is the term for the evolutionary process by which one species splits into two or more species?
+ANSWER1: Microevolution.
+ANSWER2: Macroevolution.
+ANSWER3: Adaptation.
+ANSWER4: Speciation.
+CORRECT: 4
+
+QUESTION:
+According to the Campbell Biology source, what is the key event in the origin of a new species?
+ANSWER1: An increase in the mutation rate.
+ANSWER2: The interruption of gene flow between populations.
+ANSWER3: A change in the environment.
+ANSWER4: The introduction of a new predator.
+CORRECT: 2
+
+QUESTION:
+What is the definition of adaptive radiation?
+ANSWER1: The slow, gradual evolution of a single species over time.
+ANSWER2: The migration of a species into a new, unoccupied territory.
+ANSWER3: The evolution of many diverse species from a common ancestor.
+ANSWER4: The process by which a species goes extinct due to environmental change.
+CORRECT: 3
+
+QUESTION:
+Isolated island chains are often considered showcases of speciation and adaptive radiation because they provide opportunities for what?
+ANSWER1: Rapid mass extinctions.
+ANSWER2: Gene flow between distant populations.
+ANSWER3: Populations to evolve in isolation and adapt to new environments.
+ANSWER4: The complete absence of natural selection.
+CORRECT: 3
+
+QUESTION:
+The Galapagos Islands are highlighted as a prime example of adaptive radiation. Approximately how far are they located off the Pacific coast of South America?
+ANSWER1: 90 km.
+ANSWER2: 900 km.
+ANSWER3: 9000 km.
+ANSWER4: 90,000 km.
+CORRECT: 2
+
+QUESTION:
+Darwin's finches on the Galapagos Islands are a classic example of adaptive radiation, particularly known for the diversity in what trait?
+ANSWER1: Feather color.
+ANSWER2: Song patterns.
+ANSWER3: Beak shape and size.
+ANSWER4: Clutch size (number of eggs laid).
+CORRECT: 3
+
+QUESTION:
+The different beak shapes of Darwin's finches are adapted for what purpose?
+ANSWER1: Attracting mates.
+ANSWER2: Defense against predators.
+ANSWER3: Specialized feeding habits.
+ANSWER4: Building different types of nests.
+CORRECT: 3
+
+QUESTION:
+Peter and Rosemary Grant conducted a long-term field study on Darwin's finches on which Galapagos island?
+ANSWER1: Floreana.
+ANSWER2: Española.
+ANSWER3: Daphne Major.
+ANSWER4: Isabela.
+CORRECT: 3
+
+QUESTION:
+During the Grants' study on Daphne Major, a severe drought occurred in 1977. How did this environmental change affect the food available for the medium ground finches?
+ANSWER1: It increased the abundance of all seed types.
+ANSWER2: It eliminated all seeds from the island.
+ANSWER3: It drastically reduced seed production, leaving mainly tough, hard-to-crack seeds.
+ANSWER4: It changed the type of insects available as food.
+CORRECT: 3
+
+QUESTION:
+The drought on Daphne Major resulted in natural selection favoring which trait in the medium ground finch population?
+ANSWER1: Smaller beak size.
+ANSWER2: Brighter feather color.
+ANSWER3: Ability to crack tough seeds (larger beaks).
+ANSWER4: Different song patterns.
+CORRECT: 3
+
+QUESTION:
+Which gene was identified as being associated with beak formation and contributing to beak diversity in Darwin's finches?
+ANSWER1: FOXP2.
+ANSWER2: ALX1.
+ANSWER3: PAX6.
+ANSWER4: Hox genes.
+CORRECT: 2
+
+QUESTION:
+What is a hybrid zone?
+ANSWER1: An area where different species cannot interbreed.
+ANSWER2: A region where members of different species meet and mate, producing some hybrid offspring.
+ANSWER3: A new geographic area colonized by a single species.
+ANSWER4: An environment that causes rapid mutation rates.
+CORRECT: 2
+
+QUESTION:
+Studying hybrid zones can provide opportunities to learn about what?
+ANSWER1: The effects of pollution on ecosystems.
+ANSWER2: The process of reproductive isolation.
+ANSWER3: The geological history of a region.
+ANSWER4: Animal migration patterns.
+CORRECT: 2
+
+QUESTION:
+In a hybrid zone, when hybrid offspring are less fit than members of the parent species, and natural selection strengthens reproductive barriers, this outcome is called what?
+ANSWER1: Fusion.
+ANSWER2: Stability.
+ANSWER3: Adaptive radiation.
+ANSWER4: Reinforcement.
+CORRECT: 4
+
+QUESTION:
+The example of Collared and Pied flycatchers, where females in areas of overlap (sympatric) are better at distinguishing males of their own species compared to females in areas without overlap (allopatric), illustrates which outcome in a hybrid zone?
+ANSWER1: Fusion.
+ANSWER2: Stability.
+ANSWER3: Reinforcement.
+ANSWER4: Hybrid breakdown.
+CORRECT: 3
+
+QUESTION:
+In a hybrid zone, what happens during fusion?
+ANSWER1: Hybrid offspring become increasingly fertile over generations.
+ANSWER2: Reproductive barriers between species are strengthened.
+ANSWER3: So much gene flow occurs that the two hybridizing species combine into one.
+ANSWER4: Hybrid offspring are consistently sterile.
+CORRECT: 3
+
+QUESTION:
+The decline in species diversity of cichlids in Lake Victoria due to murky water making it difficult for females to distinguish between males of different colors is an example of which outcome in a hybrid zone?
+ANSWER1: Reinforcement.
+ANSWER2: Fusion.
+ANSWER3: Stability.
+ANSWER4: Punctuated equilibrium.
+CORRECT: 2
+
+QUESTION:
+What does the morphological species concept primarily rely on to define a species?
+ANSWER1: The ability to interbreed.
+ANSWER2: Shared ecological niche.
+ANSWER3: Observable physical traits.
+ANSWER4: Genetic similarities.
+CORRECT: 3
+
+QUESTION:
+What is a disadvantage of using the morphological species concept?
+ANSWER1: It cannot be applied to fossils.
+ANSWER2: It requires information on possible interbreeding.
+ANSWER3: It relies on subjective criteria and researchers may disagree.
+ANSWER4: It is not applicable to asexual organisms.
+CORRECT: 3
+
+QUESTION:
+What does the ecological species concept focus on when defining a species?
+ANSWER1: Reproductive compatibility.
+ANSWER2: Physical appearance.
+ANSWER3: Unique adaptations to particular roles in a biological community.
+ANSWER4: Shared ancestry.
+CORRECT: 3
+
+QUESTION:
+According to the phylogenetic species concept, a species is defined as what?
+ANSWER1: A group of populations that can interbreed.
+ANSWER2: The smallest group of individuals that share a common ancestor.
+ANSWER3: A population that looks distinct from other populations.
+ANSWER4: A group of organisms occupying the same habitat.
+CORRECT: 2
+
+QUESTION:
+Which species concept is the primary definition used in the Campbell Biology source?
+ANSWER1: Morphological species concept.
+ANSWER2: Ecological species concept.
+ANSWER3: Phylogenetic species concept.
+ANSWER4: Biological species concept.
+CORRECT: 4
+
+QUESTION:
+What is the term for biological features that prevent individuals of different species from interbreeding successfully?
+ANSWER1: Genetic drift.
+ANSWER2: Natural selection.
+ANSWER3: Reproductive barriers.
+ANSWER4: Adaptation.
+CORRECT: 3
+
+QUESTION:
+Prezygotic barriers function at what stage?
+ANSWER1: After the formation of a zygote.
+ANSWER2: Before mating or fertilization occurs.
+ANSWER3: After the offspring develops but before it reproduces.
+ANSWER4: During the formation of hybrids.
+CORRECT: 2
+
+QUESTION:
+Postzygotic barriers function at what stage?
+ANSWER1: Before mating occurs.
+ANSWER2: Before fertilization occurs.
+ANSWER3: After hybrid zygotes have formed.
+ANSWER4: Before species come into contact.
+CORRECT: 3
+
+QUESTION:
+Habitat isolation is a prezygotic barrier where species are isolated by what?
+ANSWER1: Different breeding times.
+ANSWER2: Living in different preferred environments within the same general area.
+ANSWER3: Incompatible reproductive organs.
+ANSWER4: Different mating signals.
+CORRECT: 2
+
+QUESTION:
+The example of two species of amphibians living in the same general area, but one preferring an aquatic environment and the other a terrestrial environment, illustrates which type of isolation?
+ANSWER1: Temporal isolation.
+ANSWER2: Habitat isolation.
+ANSWER3: Behavioral isolation.
+ANSWER4: Mechanical isolation.
+CORRECT: 2
+
+QUESTION:
+Molecular incompatibility between the eggs and sperm of different species is an example of which prezygotic barrier?
+ANSWER1: Mechanical isolation.
+ANSWER2: Behavioral isolation.
+ANSWER3: Gametic isolation.
+ANSWER4: Reduced hybrid viability.
+CORRECT: 3
+
+QUESTION:
+Reduced hybrid viability is a postzygotic barrier where what happens?
+ANSWER1: Hybrid offspring are sterile.
+ANSWER2: Hybrid offspring are less vigorous but fertile.
+ANSWER3: Interaction of parental genes impairs the hybrid's development or survival.
+ANSWER4: Hybrid offspring are viable and fertile, but their offspring are sterile.
+CORRECT: 3
+
+QUESTION:
+Hybrid breakdown is a postzygotic barrier where what happens?
+ANSWER1: The hybrid zygote fails to form.
+ANSWER2: The hybrid offspring are sterile.
+ANSWER3: The hybrid offspring are weak and do not survive long.
+ANSWER4: Hybrids are viable and fertile, but their offspring are feeble or sterile.
+CORRECT: 4
+
+QUESTION:
+How does geographic isolation contribute to allopatric speciation?
+ANSWER1: It strengthens gene flow between populations.
+ANSWER2: It prevents natural selection from acting on the populations.
+ANSWER3: It interrupts gene flow, allowing populations to diverge genetically.
+ANSWER4: It increases the mutation rate in the isolated population.
+CORRECT: 3
+
+QUESTION:
+Geologic processes such as a stream changing course or a canyon carving can lead to allopatric speciation by doing what?
+ANSWER1: Introducing new species into an area.
+ANSWER2: Creating geographic barriers that isolate populations.
+ANSWER3: Increasing the resources available to a population.
+ANSWER4: Reducing the size of a population.
+CORRECT: 2
+
+QUESTION:
+The size of a geographic barrier needed to interrupt gene flow depends on what?
+ANSWER1: The age of the populations involved.
+ANSWER2: The number of individuals in the populations.
+ANSWER3: The ability of the organisms or their gametes to move across the barrier.
+ANSWER4: The climate of the region.
+CORRECT: 3
+
+QUESTION:
+The 30 species of snapping shrimp in the genus Alpheus separated by the Isthmus of Panama are given as an example supporting which type of speciation?
+ANSWER1: Sympatric speciation.
+ANSWER2: Allopatric speciation.
+ANSWER3: Peripatric speciation.
+ANSWER4: Polyploid speciation.
+CORRECT: 2
+
+QUESTION:
+Diane Dodd's fruit fly experiment provided evidence that reproductive barriers can evolve as a by-product of changes in populations as they adapt to what?
+ANSWER1: Different predators.
+ANSWER2: Different social structures.
+ANSWER3: Different environmental conditions, such as food sources.
+ANSWER4: Different migration routes.
+CORRECT: 3
+
+QUESTION:
+In the monkey flower example, differences in flower color (pink vs. red) contributed to reproductive isolation by influencing what?
+ANSWER1: The soil pH where the flowers grew.
+ANSWER2: The pollinators (bumblebees vs. hummingbirds) that visited the flowers.
+ANSWER3: The flowering time of the plants.
+ANSWER4: The viability of the seeds produced.
+CORRECT: 2
+
+QUESTION:
+Besides polyploidy, what other factors are mentioned as potentially reducing gene flow and leading to sympatric speciation?
+ANSWER1: Geographic isolation and migration.
+ANSWER2: Habitat differentiation and sexual selection.
+ANSWER3: Mutation and genetic drift.
+ANSWER4: Predation and competition.
+CORRECT: 2
+
+QUESTION:
+Polyploidy often results from accidents during which cellular process?
+ANSWER1: Mitosis.
+ANSWER2: Meiosis.
+ANSWER3: Fertilization.
+ANSWER4: Transcription.
+CORRECT: 2
+
+QUESTION:
+In the formation of a tetraploid (4n) plant from a diploid (2n) parent species, why is the tetraploid plant reproductively isolated from the parent species?
+ANSWER1: They live in different habitats.
+ANSWER2: Their breeding seasons are different.
+ANSWER3: The fusion of their gametes produces triploid (3n) offspring which are sterile.
+ANSWER4: Their reproductive organs are physically incompatible.
+CORRECT: 3
+
+QUESTION:
+Why is polyploid speciation less common in animals compared to plants?
+ANSWER1: Animals reproduce sexually, while plants primarily reproduce asexually.
+ANSWER2: Animals have more complex genomes than plants.
+ANSWER3: Mistakes in chromosome numbers in animals often lead to death, especially due to duplicated sex chromosomes.
+ANSWER4: Animals have external fertilization, which prevents polyploidy.
+CORRECT: 3
+
+QUESTION:
+Sexual selection can lead to speciation because it can do what?
+ANSWER1: Increase the overall population size.
+ANSWER2: Directly affect reproductive success and interrupt gene flow within a population.
+ANSWER3: Reduce the mutation rate.
+ANSWER4: Create new ecological niches.
+CORRECT: 2
+
+QUESTION:
+In Lake Victoria cichlids, sexual selection is driven by females choosing mates based on what trait?
+ANSWER1: Size.
+ANSWER2: Speed.
+ANSWER3: Aggression.
+ANSWER4: Coloration.
+CORRECT: 4
+
+QUESTION:
+The difference in color sensitivity between Pundamilia nyererei females (red-sensitive) and Pundamilia pundamilia females (blue-sensitive) in Lake Victoria contributes to their reproductive isolation because of what environmental factor?
+ANSWER1: Temperature variations.
+ANSWER2: Water clarity affecting light penetration and color visibility.
+ANSWER3: Availability of different food sources.
+ANSWER4: Presence of different predators.
+CORRECT: 2
+
+QUESTION:
+Hybridization among cichlids in Lake Victoria has increased due to pollution causing the water to become murky. How does this lead to increased hybridization?
+ANSWER1: Murky water acts as a geographic barrier.
+ANSWER2: It makes it harder for females to distinguish between males of different colors, weakening behavioral isolation.
+ANSWER3: It increases the mutation rate, creating new hybrid forms.
+ANSWER4: It provides new habitats where hybrids are more fit.
+CORRECT: 2
+
+QUESTION:
+Adaptive radiation is most likely to occur in which type of environment?
+ANSWER1: Large, stable continental landmasses.
+ANSWER2: Isolated island chains with diverse habitats.
+ANSWER3: Deep ocean trenches.
+ANSWER4: Open grasslands with few barriers.
+CORRECT: 2
+
+QUESTION:
+The Galapagos Islands were formed by what geological process?
+ANSWER1: Continental drift.
+ANSWER2: Glacial activity.
+ANSWER3: Underwater volcanoes.
+ANSWER4: Meteorite impacts.
+CORRECT: 3
+
+QUESTION:
+What is one of the key ways reproductive isolation is maintained among many of the Galapagos finch species, even when they live on the same island?
+ANSWER1: Different physical appearances.
+ANSWER2: Different, species-specific songs.
+ANSWER3: Different breeding seasons.
+ANSWER4: Physical incompatibility of reproductive organs.
+CORRECT: 2
+
+QUESTION:
+The Grants documented the effect of natural selection on beak size in Darwin's finches in "real time." What trait did they specifically measure to indicate seed-crushing power?
+ANSWER1: Beak length.
+ANSWER2: Beak width.
+ANSWER3: Beak depth.
+ANSWER4: Beak curvature.
+CORRECT: 3
+
+QUESTION:
+Why was it important for the Grants to establish that beak morphology (shape and size) is heritable in the finches?
+ANSWER1: To confirm that the birds were all the same species.
+ANSWER2: To demonstrate that physical traits are not influenced by the environment.
+ANSWER3: Because natural selection can only modify heritable traits.
+ANSWER4: To predict the behavior of the finches.
+CORRECT: 3
+
+QUESTION:
+What is one possible outcome for a hybrid zone over time?
+ANSWER1: The hybrid offspring become a new, stable species.
+ANSWER2: The hybrid zone shrinks and disappears.
+ANSWER3: Reinforcement, strengthening reproductive barriers.
+ANSWER4: All species in the zone go extinct.
+CORRECT: 3
+
+QUESTION:
+When two hybridizing species in a hybrid zone fuse into one due to weak reproductive barriers and significant gene flow, this is called what?
+ANSWER1: Reinforcement.
+ANSWER2: Stability.
+ANSWER3: Adaptive radiation.
+ANSWER4: Fusion.
+CORRECT: 4
+
+QUESTION:
+A hybrid zone is considered stable if what occurs?
+ANSWER1: No hybrid offspring are produced.
+ANSWER2: Hybrid offspring are consistently sterile.
+ANSWER3: A limited number of hybrid offspring continue to be produced.
+ANSWER4: The two parent species evolve into one.
+CORRECT: 3
+
+QUESTION:
+The punctuated equilibrium model describes an evolutionary pattern where species change most significantly during what period?
+ANSWER1: Gradually over long periods of time.
+ANSWER2: As they arise from an ancestral species.
+ANSWER3: After migrating to a new environment.
+ANSWER4: When exposed to increased predation.
+CORRECT: 2
+
+QUESTION:
+In the punctuated equilibrium model, what term is used to describe the long periods of little apparent morphological change in species?
+ANSWER1: Punctuations.
+ANSWER2: Equilibria.
+ANSWER3: Gradualism.
+ANSWER4: Radiation.
+CORRECT: 2
+
+QUESTION:
+According to the sources, the time interval between speciation events can vary widely, ranging from approximately how long to how long?
+ANSWER1: Hundreds to thousands of years.
+ANSWER2: Thousands to tens of millions of years.
+ANSWER3: Millions to billions of years.
+ANSWER4: Years to decades.
+CORRECT: 2
+
+QUESTION:
+What does microevolution involve?
+ANSWER1: Changes in the gene pool of a population from one generation to the next.
+ANSWER2: The splitting of one species into two or more.
+ANSWER3: The evolution of entirely new traits or body plans.
+ANSWER4: The extinction of a species.
+CORRECT: 1
+
+QUESTION:
+Speciation accounts for both the unity and what else of life?
+ANSWER1: Complexity.
+ANSWER2: Diversity.
+ANSWER3: Simplicity.
+ANSWER4: Fossil record.
+CORRECT: 2
+
+QUESTION:
+Which concept defines species based on their potential to interbreed in nature and produce fertile offspring?
+ANSWER1: Ecological species concept.
+ANSWER2: Morphological species concept.
+ANSWER3: Phylogenetic species concept.
+ANSWER4: Biological species concept.
+CORRECT: 4
+
+QUESTION:
+According to the biological species concept, reproductive compatibility is the factor that does what to members of a biological species?
+ANSWER1: Separates them.
+ANSWER2: Unites them.
+ANSWER3: Competes with them.
+ANSWER4: Selects them.
+CORRECT: 2
+
+QUESTION:
+The inability for two species to produce viable, fertile offspring is called what?
+ANSWER1: Adaptive radiation.
+ANSWER2: Gene flow.
+ANSWER3: Natural selection.
+ANSWER4: Reproductive isolation.
+CORRECT: 4
+
+QUESTION:
+Which type of reproductive barrier prevents mating or fertilization between species?
+ANSWER1: Postzygotic barrier.
+ANSWER2: Prezygotic barrier.
+ANSWER3: Hybrid zone.
+ANSWER4: Allopatric barrier.
+CORRECT: 2
+
+QUESTION:
+Which type of reproductive barrier operates after hybrid zygotes have formed?
+ANSWER1: Postzygotic barrier.
+ANSWER2: Prezygotic barrier.
+ANSWER3: Geographic barrier.
+ANSWER4: Behavioral barrier.
+CORRECT: 1
+
+QUESTION:
+Habitat isolation is a type of prezygotic barrier characterized by what?
+ANSWER1: Different breeding seasons.
+ANSWER2: Lack of opportunities for species to encounter each other in the same area.
+ANSWER3: Incompatibility of gametes.
+ANSWER4: Offspring that are sterile.
+CORRECT: 2
+
+QUESTION:
+When species breed at different times of day, seasons, or years, this is an example of which prezygotic barrier?
+ANSWER1: Habitat isolation.
+ANSWER2: Temporal isolation.
+ANSWER3: Mechanical isolation.
+ANSWER4: Gametic isolation.
+CORRECT: 2
+
+QUESTION:
+When the courtship ritual of one species does not attract mates from another species, this is an example of which prezygotic barrier?
+ANSWER1: Temporal isolation.
+ANSWER2: Mechanical isolation.
+ANSWER3: Behavioral isolation.
+ANSWER4: Gametic isolation.
+CORRECT: 3
+
+QUESTION:
+When the reproductive parts of two species do not fit together, preventing mating, this is an example of which prezygotic barrier?
+ANSWER1: Habitat isolation.
+ANSWER2: Temporal isolation.
+ANSWER3: Mechanical isolation.
+ANSWER4: Behavioral isolation.
+CORRECT: 3
+
+QUESTION:
+When the sperm of one species is unable to fertilize the egg of another species, this is an example of which prezygotic barrier?
+ANSWER1: Reduced hybrid viability.
+ANSWER2: Reduced hybrid fertility.
+ANSWER3: Hybrid breakdown.
+ANSWER4: Gametic isolation.
+CORRECT: 4
+
+QUESTION:
+When the interaction of parental genes impairs a hybrid's development or survival, this is an example of which postzygotic barrier?
+ANSWER1: Reduced hybrid viability.
+ANSWER2: Reduced hybrid fertility.
+ANSWER3: Hybrid breakdown.
+ANSWER4: Gametic isolation.
+CORRECT: 1
+
+QUESTION:
+When hybrids are vigorous but cannot produce viable offspring, this is an example of which postzygotic barrier?
+ANSWER1: Reduced hybrid viability.
+ANSWER2: Reduced hybrid fertility.
+ANSWER3: Hybrid breakdown.
+ANSWER4: Zygote mortality.
+CORRECT: 2
+
+QUESTION:
+In allopatric speciation, what happens to the gene pool of a geographically isolated splinter population?
+ANSWER1: It remains identical to the parent population.
+ANSWER2: It is diluted by gene flow from other populations.
+ANSWER3: It can become genetically unique as changes from natural selection, genetic drift, and mutation are not diluted.
+ANSWER4: It quickly goes extinct.
+CORRECT: 3
+
+QUESTION:
+Reproductive barriers between species can evolve as populations diverge, such as through adaptation to different environments. Which type of barrier was specifically observed evolving in Diane Dodd's fruit fly experiment based on food source preference?
+ANSWER1: Postzygotic barrier.
+ANSWER2: Gametic isolation.
+ANSWER3: A prezygotic barrier (mating preference).
+ANSWER4: Hybrid breakdown.
+CORRECT: 3
+
+QUESTION:
+In sympatric speciation by polyploidy, a new species forms with cells having more than two complete sets of what?
+ANSWER1: Genes.
+ANSWER2: Chromosomes.
+ANSWER3: Alleles.
+ANSWER4: Proteins.
+CORRECT: 2
+
+QUESTION:
+Sexual selection, such as mate choice based on color, is given as an important factor contributing to the rapid diversification of which group of fishes in East African lakes?
+ANSWER1: Trout.
+ANSWER2: Salmon.
+ANSWER3: Cichlids.
+ANSWER4: Sharks.
+CORRECT: 3
+
+QUESTION:
+The evolution of many diverse species from a common ancestor on isolated island chains, like the Galapagos finches, is known as what?
+ANSWER1: Sympatric speciation.
+ANSWER2: Punctuated equilibrium.
+ANSWER3: Adaptive radiation.
+ANSWER4: Hybrid breakdown.
+CORRECT: 3
+
+QUESTION:
+What does the study of hybrid zones offer scientists?
+ANSWER1: Insights into prehistoric life.
+ANSWER2: Opportunities to study reproductive isolation.
+ANSWER3: Evidence for continental drift.
+ANSWER4: Information about human impact on the environment.
+CORRECT: 2
+
+QUESTION:
+According to the sources, what is the term for an evolutionary pattern in which species change most as they arise from an ancestral species and then change relatively little for the rest of their existence?
+ANSWER1: Gradualism.
+ANSWER2: Adaptive radiation.
+ANSWER3: Punctuated equilibrium.
+ANSWER4: Microevolution.
+CORRECT: 3
+
+QUESTION:
+What is the "mystery of mysteries" that fascinated Darwin, according to the Campbell Biology source?
+ANSWER1: The origin of species.
+ANSWER2: The mechanism of inheritance.
+ANSWER3: The age of the Earth.
+ANSWER4: The process of fossilization.
+CORRECT: 1
+
+QUESTION:
+What does the term "epoch" mean in geology?
+ANSWER1: The largest unit of geological time.
+ANSWER2: A period of time where no rocks were deposited.
+ANSWER3: A unit of geological time which is more specific than a period and represents a period where a series of rocks was deposited.
+ANSWER4: The time since the last ice age.
+CORRECT: 3
+
+QUESTION:
+Which epoch is characterized by the Ice Age and organisms like mammoths and saber-toothed tigers?
+ANSWER1: Holocene.
+ANSWER2: Anthropocene.
+ANSWER3: Pleistocene.
+ANSWER4: Paleocene.
+CORRECT: 3
+
+QUESTION:
+Which epoch started at the end of the last Ice Age and is characterized by a more modern landscape and species like elephants?
+ANSWER1: Pleistocene.
+ANSWER2: Anthropocene.
+ANSWER3: Holocene.
+ANSWER4: Eocene.
+CORRECT: 3
+
+QUESTION:
+Which epoch is characterized by humans causing environmental deterioration, leading to species extinctions and invasions?
+ANSWER1: Pleistocene.
+ANSWER2: Holocene.
+ANSWER3: Anthropocene.
+ANSWER4: Pliocene.
+CORRECT: 3
+
+QUESTION:
+According to the Anthropocene handout, what are humans doing that can lead to large species extinctions?
+ANSWER1: Switching to renewable energy sources.
+ANSWER2: Mindful deforestation and preventing the introduction of invasive species.
+ANSWER3: Interrupting ecological balances by tasks like deforestation or introducing invasive species.
+ANSWER4: Limiting fishing and mining activities.
+CORRECT: 3
+
+QUESTION:
+What causes the rapid spread of non-native species across many localities, as described in the Anthropocene handout?
+ANSWER1: Climate change.
+ANSWER2: Extensive global travel by humans.
+ANSWER3: Natural selection.
+ANSWER4: Genetic drift.
+CORRECT: 2
+
+QUESTION:
+Which type of speciation involves a geographic barrier?
+ANSWER1: Sympatric.
+ANSWER2: Parapatric.
+ANSWER3: Allopatric.
+ANSWER4: Peripatric.
+CORRECT: 3
+
+QUESTION:
+Which type of speciation occurs without a geographic barrier?
+ANSWER1: Sympatric.
+ANSWER2: Allopatric.
+ANSWER3: Adaptive.
+ANSWER4: Punctuated.
+CORRECT: 1
+
+QUESTION:
+What is one factor mentioned that can lead to sympatric speciation in plants?
+ANSWER1: Habitat isolation.
+ANSWER2: Geographic isolation.
+ANSWER3: Polyploidy.
+ANSWER4: Behavioral isolation.
+CORRECT: 3
+
+QUESTION:
+Isolated islands are often showcases of what evolutionary process?
+ANSWER1: Hybridization.
+ANSWER2: Extinction.
+ANSWER3: Adaptive radiation.
+ANSWER4: Gradualism.
+CORRECT: 3
+
+QUESTION:
+What is the term for regions where different species meet and mate, producing at least some hybrid offspring?
+ANSWER1: Adaptive zone.
+ANSWER2: Speciation zone.
+ANSWER3: Hybrid zone.
+ANSWER4: Ecological niche.
+CORRECT: 3
+
+QUESTION:
+What is it called when hybrid offspring are less fit than the parent species, leading natural selection to strengthen reproductive barriers?
+ANSWER1: Fusion.
+ANSWER2: Stability.
+ANSWER3: Reinforcement.
+ANSWER4: Hybrid vigor.
+CORRECT: 3
+
+QUESTION:
+What is it called when weak reproductive barriers between species in a hybrid zone lead to so much gene flow that the species fuse into one?
+ANSWER1: Reinforcement.
+ANSWER2: Stability.
+ANSWER3: Fusion.
+ANSWER4: Hybrid breakdown.
+CORRECT: 3
+
+QUESTION:
+Which model of speciation describes long periods of evolutionary stasis interrupted by relatively brief periods of rapid change?
+ANSWER1: Gradualism.
+ANSWER2: Punctuated equilibrium.
+ANSWER3: Adaptive radiation.
+ANSWER4: Microevolution.
+CORRECT: 2
+
+QUESTION:
+According to the biological species concept, what must offspring be to keep a species distinct?
+ANSWER1: Vigorous.
+ANSWER2: Fertile.
+ANSWER3: Large.
+ANSWER4: Long-lived.
+CORRECT: 2
+
+QUESTION:
+The inability of Lonesome George to produce viable offspring with females from a closely related species, despite mating, is consistent with the definition of different species under which concept?
+ANSWER1: Morphological.
+ANSWER2: Ecological.
+ANSWER3: Phylogenetic.
+ANSWER4: Biological.
+CORRECT: 4
+
+QUESTION:
+All domesticated dog breeds are considered the same species because they can interbreed and produce fertile offspring, according to which concept?
+ANSWER1: Morphological species concept.
+ANSWER2: Ecological species concept.
+ANSWER3: Biological species concept.
+ANSWER4: Phylogenetic species concept.
+CORRECT: 3
+
+QUESTION:
+Why is the biological species concept problematic for organisms that reproduce asexually?
+ANSWER1: They do not have reproductive barriers.
+ANSWER2: They do not interbreed with other organisms.
+ANSWER3: Their offspring are always sterile.
+ANSWER4: They only exist as fossils.
+CORRECT: 2
+
+QUESTION:
+The example of two species of salamanders that can hybridize, but their offspring are frail and will not survive long enough to reproduce, is an example of which postzygotic barrier?
+ANSWER1: Reduced hybrid fertility.
+ANSWER2: Hybrid breakdown.
+ANSWER3: Reduced hybrid viability.
+ANSWER4: Zygote mortality.
+CORRECT: 3
+
+QUESTION:
+Why are the Eastern and Western meadowlarks considered distinct species, even though they look very similar and can be found in the same area?
+ANSWER1: They are separated by a geographic barrier.
+ANSWER2: They have different songs that prevent interbreeding.
+ANSWER3: Their reproductive organs are incompatible.
+ANSWER4: Their offspring are sterile.
+CORRECT: 2
+
+QUESTION:
+What is the primary difference between allopatric and sympatric speciation in terms of isolation?
+ANSWER1: Allopatric requires behavioral isolation, while sympatric requires temporal isolation.
+ANSWER2: Allopatric requires geographic separation, while sympatric occurs without it.
+ANSWER3: Allopatric involves prezygotic barriers, while sympatric involves postzygotic barriers.
+ANSWER4: Allopatric is rapid, while sympatric is slow.
+CORRECT: 2
+
+QUESTION:
+According to the Campbell Biology source, what happens to the diversity of life each time speciation occurs?
+ANSWER1: It decreases.
+ANSWER2: It increases.
+ANSWER3: It remains constant.
+ANSWER4: It is unpredictable.
+CORRECT: 2
+
+QUESTION:
+What is one major difference between microevolution and speciation?
+ANSWER1: Microevolution involves large-scale changes, while speciation involves small-scale changes.
+ANSWER2: Microevolution occurs within a population, while speciation involves the splitting of one species into two or more.
+ANSWER3: Microevolution is caused by natural selection, while speciation is caused by genetic drift.
+ANSWER4: Microevolution can be observed in real-time, while speciation only happens over millions of years.
+CORRECT: 2
+
+QUESTION:
+The example of Heliconia flowers being pollinated by hummingbirds with specific bill shapes (long, curved vs. short, straight) is an illustration of which prezygotic barrier?
+ANSWER1: Habitat isolation.
+ANSWER2: Temporal isolation.
+ANSWER3: Behavioral isolation.
+ANSWER4: Mechanical isolation.
+CORRECT: 4
+
+QUESTION:
+The fact that the vision of Pundamilia nyererei females is more sensitive to red light, while Pundamilia pundamilia females are more sensitive to blue light, and this sensitivity is heritable, is evidence supporting the role of what in their speciation?
+ANSWER1: Geographic isolation.
+ANSWER2: Polyploidy.
+ANSWER3: Habitat differentiation.
+ANSWER4: Sexual selection.
+CORRECT: 4
+
+QUESTION:
+What was the main environmental change on Daphne Major that led to strong selection pressure on the beak size of the medium ground finches during the Grants' study?
+ANSWER1: An increase in the predator population.
+ANSWER2: A severe drought that altered available food sources.
+ANSWER3: A volcanic eruption that changed the landscape.
+ANSWER4: The introduction of an invasive plant species.
+CORRECT: 2
+
+QUESTION:
+The increase in average beak depth in the medium ground finch population after the 1977 drought on Daphne Major is direct evidence of what?
+ANSWER1: Genetic drift.
+ANSWER2: Mutation.
+ANSWER3: Natural selection acting on beak size.
+ANSWER4: Hybridization.
+CORRECT: 3
+
+QUESTION:
+In hybrid zones, what does hybridization between two different species potentially increase in the resulting population?
+ANSWER1: The likelihood of extinction.
+ANSWER2: The rate of mutation.
+ANSWER3: Genetic and phenotypic variation.
+ANSWER4: The geographic range of the species.
+CORRECT: 3
+
+QUESTION:
+According to the punctuated equilibrium model, where does most of the evolutionary change in a species occur?
+ANSWER1: Gradually over its entire existence.
+ANSWER2: In the hybrid zones where it overlaps with other species.
+ANSWER3: In relatively brief periods when it is forming from an ancestral species.
+ANSWER4: During mass extinction events.
+CORRECT: 3
+
+QUESTION:
+The average time between speciation events in a survey of various plant and animal groups was approximately how long?
+ANSWER1: 6,500 years.
+ANSWER2: 65,000 years.
+ANSWER3: 6.5 million years.
+ANSWER4: 65 million years.
+CORRECT: 3
+
+QUESTION:
+According to the Campbell Biology source, what happens to the gene pools of species that are reproductively isolated?
+ANSWER1: They fuse together.
+ANSWER2: They are maintained as distinct gene pools.
+ANSWER3: They experience increased gene flow.
+ANSWER4: They become identical over time.
+CORRECT: 2
+
+QUESTION:
+A fertilized egg is also known as a what?
+ANSWER1: Gamete.
+ANSWER2: Zygote.
+ANSWER3: Hybrid.
+ANSWER4: Embryo.
+CORRECT: 2
+
+QUESTION:
+What did Darwin envision the history of life as?
+ANSWER1: A ladder.
+ANSWER2: A circle.
+ANSWER3: A tree with multiple branchings.
+ANSWER4: A linear progression.
+CORRECT: 3
+
+QUESTION:
+The word "species" comes from Latin and means what?
+ANSWER1: Life form.
+ANSWER2: Kind or appearance.
+ANSWER3: Interbreeding group.
+ANSWER4: Ancestral form.
+CORRECT: 2
+
+QUESTION:
+Why can the biological species concept be difficult to apply to fossil organisms?
+ANSWER1: Fossils do not preserve DNA.
+ANSWER2: It is impossible to determine if fossil organisms were able to interbreed.
+ANSWER3: Fossil organisms did not reproduce sexually.
+ANSWER4: Most fossil organisms belong to extinct lineages.
+CORRECT: 2
+
+QUESTION:
+Which species concept is often used by field biologists identifying new species in tropical forests because it doesn't require knowledge of interbreeding?
+ANSWER1: Biological species concept.
+ANSWER2: Ecological species concept.
+ANSWER3: Morphological species concept.
+ANSWER4: Phylogenetic species concept.
+CORRECT: 3
+
+QUESTION:
+When two species of sea urchins release their gametes into the water, surface proteins prevent the gametes from binding to each other. This is an example of which reproductive barrier?
+ANSWER1: Mechanical isolation.
+ANSWER2: Behavioral isolation.
+ANSWER3: Gametic isolation.
+ANSWER4: Reduced hybrid viability.
+CORRECT: 3
+
+QUESTION:
+The different song patterns of the Eastern and Western meadowlarks are given as an example of which type of isolation?
+ANSWER1: Temporal.
+ANSWER2: Habitat.
+ANSWER3: Mechanical.
+ANSWER4: Behavioral.
+CORRECT: 4
+
+QUESTION:
+If chromosomes of the parent species differ in number or structure, what may fail in hybrids, leading to reduced hybrid fertility?
+ANSWER1: Mitosis.
+ANSWER2: Meiosis.
+ANSWER3: Fertilization.
+ANSWER4: Development.
+CORRECT: 2
+
+QUESTION:
+Sympatric speciation is more likely to happen through habitat differentiation or sexual selection than by polyploidy in which group?
+ANSWER1: Plants.
+ANSWER2: Animals.
+ANSWER3: Fungi.
+ANSWER4: Bacteria.
+CORRECT: 2
+
+QUESTION:
+The observation that Pundamilia nyererei breeds in deep water and Pundamilia pundamilia inhabits shallower habitats in Lake Victoria is a consequence of their differences in what?
+ANSWER1: Geographic location.
+ANSWER2: Food sources.
+ANSWER3: Mating behavior driven by color preference and water clarity.
+ANSWER4: Mutation rates.
+CORRECT: 3
+
+QUESTION:
+Hybrid zones can sometimes lead to fusion, where the two species combine into one. What event was largely responsible for increased hybridization and fusion among cichlids in Lake Victoria?
+ANSWER1: Introduction of a new predator.
+ANSWER2: Climate change increasing water temperature.
+ANSWER3: Pollution causing murky water.
+ANSWER4: Increased availability of food resources.
+CORRECT: 3
+
+QUESTION:
+Why are isolated island chains often showcases for adaptive radiation?
+ANSWER1: They have very uniform environments that favor rapid change.
+ANSWER2: They are completely cut off from the rest of the world, preventing any gene flow.
+ANSWER3: They provide opportunities for isolation, adaptation to new niches, and subsequent speciations.
+ANSWER4: They have a very low mutation rate, promoting stability.
+CORRECT: 3
+
+QUESTION:
+According to the punctuated equilibrium model, how long might a species persist essentially unchanged after it appears in the fossil record?
+ANSWER1: Only a few generations.
+ANSWER2: Relatively brief periods of sudden change.
+ANSWER3: Through several layers (strata) until disappearing suddenly.
+ANSWER4: Until it adapts to a new environment.
+CORRECT: 3
+
+QUESTION:
+The time interval between speciation events averaged 6.5 million years in a survey, indicating that the evolution of life on Earth has taken what?
+ANSWER1: A few thousand years.
+ANSWER2: Tens of millions of years.
+ANSWER3: Vast spans of time.
+ANSWER4: A relatively short period.
+CORRECT: 3
+
+QUESTION:
+According to the Amoeba Sisters source, what is a mechanism of evolution that involves change over time and can lead to a new species?
+ANSWER1: Reproductive isolation.
+ANSWER2: Geographic isolation.
+ANSWER3: Polyploidy.
+ANSWER4: Natural selection.
+CORRECT: 4
+
+QUESTION:
+What concept describes an evolutionary pattern in which new species evolve by the gradual accumulation of changes brought about by natural selection?
+ANSWER1: Punctuated equilibrium.
+ANSWER2: Gradualist model.
+ANSWER3: Adaptive radiation.
+ANSWER4: Sympatric speciation.
+CORRECT: 2
+
+QUESTION:
+What is the term for the change in the gene pool of a population from one generation to the next?
+ANSWER1: Speciation.
+ANSWER2: Macroevolution.
+ANSWER3: Microevolution.
+ANSWER4: Adaptive radiation.
+CORRECT: 3
+
+QUESTION:
+The study of what on the island of Daphne Major allowed researchers to quantify the effect of natural selection on phenotypic variation in real time?
+ANSWER1: Giant tortoises.
+ANSWER2: Iguanas.
+ANSWER3: Darwin's finches.
+ANSWER4: Cactus plants.
+CORRECT: 3
+
+QUESTION:
+Which type of plant was formed through multiple polyploid events, according to the Bozeman Science source?
+ANSWER1: Ferns.
+ANSWER2: Angiosperms.
+ANSWER3: Wheat.
+ANSWER4: Cotton.
+CORRECT: 3
+
+QUESTION:
+What human impact involves emissions like Carbon Dioxide from burning fossil fuels, Nitrous Oxide from fertilizers, and Methane from irrigated rice agriculture, leading to climate change?
+ANSWER1: Water Use.
+ANSWER2: Air Pollution.
+ANSWER3: Mining.
+ANSWER4: Species Extinctions.
+CORRECT: 2
