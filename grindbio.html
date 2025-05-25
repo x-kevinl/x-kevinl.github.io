@@ -125,6 +125,17 @@
       background: #e74c3c;
       color: #fff;
     }
+    /* Stats and timer */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #f0f3f5;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
     /* Loading state */
     .loading {
       text-align: center;
@@ -149,33 +160,62 @@
     </select>
 
     <div id="quiz"></div>
+    <div class="stats">
+      <span id="score">Score: 0/0</span>
+      <span id="accuracy">Accuracy: 0%</span>
+      <span id="elapsed">Elapsed: 00:00</span>
+      <span id="qtime">Question time: 00:00</span>
+    </div>
   </div>
 
   <script>
     let questions = [];
     let qIndex = 0;
     let selected = null;
+    let total = 0;
+    let correctCount = 0;
+    let startTime = Date.now();
+    let questionStart = Date.now();
+    let timerInterval;
+
+    function formatTime(ms) {
+      const totalSec = Math.floor(ms / 1000);
+      const min = String(Math.floor(totalSec / 60)).padStart(2, '0');
+      const sec = String(totalSec % 60).padStart(2, '0');
+      return `${min}:${sec}`;
+    }
+
+    function updateStats() {
+      document.getElementById('score').textContent = `Score: ${correctCount}/${total}`;
+      const acc = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+      document.getElementById('accuracy').textContent = `Accuracy: ${acc}%`;
+    }
+
+    function startTimers() {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        const now = Date.now();
+        document.getElementById('elapsed').textContent = `Elapsed: ${formatTime(now - startTime)}`;
+        document.getElementById('qtime').textContent = `Question time: ${formatTime(now - questionStart)}`;
+      }, 500);
+    }
 
     function parseUnit(text) {
-      // Handles raw blocks with QUESTION:... ANSWER1:... appearing on single lines
       return text.split(/QUESTION:/)
-        .map(block => block.trim())
-        .filter(block => block)
+        .map(b => b.trim())
+        .filter(b => b)
         .map(block => {
           const [qPart, restPart] = block.split(/ANSWER1:/);
           const question = qPart.trim();
           const rest = 'ANSWER1:' + (restPart || '');
           const options = [];
           for (let i = 1; i <= 4; i++) {
-            const regex = new RegExp(`ANSWER${i}:\\s*([^\\.]+)\\.`);
-            const match = rest.match(regex);
+            const match = rest.match(new RegExp(`ANSWER${i}:\\s*([^\\.]+)\\.`));
             options.push(match ? match[1].trim() : '');
           }
           const corr = rest.match(/CORRECT:\s*(\d+)/);
-          const correctIndex = corr ? parseInt(corr[1], 10) - 1 : null;
-          const answer = (correctIndex !== null && correctIndex >= 0 && correctIndex < options.length)
-            ? options[correctIndex]
-            : '';
+          const idx = corr ? parseInt(corr[1], 10) - 1 : null;
+          const answer = (idx !== null) ? options[idx] : '';
           return { question, options, answer };
         });
     }
@@ -184,18 +224,24 @@
 
     function loadUnit(unit) {
       qIndex = 0;
+      total = 0;
+      correctCount = 0;
+      startTime = Date.now();
+      questionStart = Date.now();
+      updateStats();
       const quiz = document.getElementById('quiz');
       quiz.innerHTML = `<p class="loading">Loading unit ${unit}...</p>`;
       fetch(`bio/unit_${unit}.txt`)
         .then(r => r.ok ? r.text() : Promise.reject())
-        .then(text => {
-          questions = parseUnit(text);
+        .then(txt => {
+          questions = parseUnit(txt);
           nextQuestion();
         })
         .catch(() => {
           questions = [];
           nextQuestion();
         });
+      startTimers();
     }
 
     function renderQuestion() {
@@ -205,6 +251,7 @@
         return;
       }
       const q = questions[qIndex];
+      questionStart = Date.now();
       quiz.innerHTML = `
         <div class="question-card">
           <h2>${q.question}</h2>
@@ -221,7 +268,6 @@
           </div>
           <div class="result-area"></div>
         </div>`;
-
       const labels = quiz.querySelectorAll('.options label');
       labels.forEach(lbl => {
         lbl.classList.remove('option-correct', 'option-wrong');
@@ -239,6 +285,7 @@
     }
 
     function showResult(correct) {
+      total++;
       const quiz = document.getElementById('quiz');
       const labels = quiz.querySelectorAll('.options label');
       labels.forEach(lbl => {
@@ -247,6 +294,8 @@
         if (inp.checked && inp.value !== correct) lbl.classList.add('option-wrong');
         inp.disabled = true;
       });
+      if (selected === correct) correctCount++;
+      updateStats();
       const resultArea = quiz.querySelector('.result-area');
       const res = document.createElement('div');
       res.className = 'result ' + (selected === correct ? 'correct' : 'incorrect');
@@ -260,7 +309,7 @@
       renderQuestion();
     }
 
-    // load initial unit
+    // initial load
     loadUnit(6);
   </script>
 </body>
