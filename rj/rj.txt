@@ -1,0 +1,2047 @@
+QUESTION:
+According to Friar Lawrence's reflection in Act 2, Scene 3, what quality does he attribute to plants, herbs, and stones?
+ANSWER1: Their fleeting beauty
+ANSWER2: Their powerful grace and true qualities
+ANSWER3: Their ability to predict the future
+ANSWER4: Their resistance to human use
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 1, when prompted by Benvolio, how does Romeo describe his emotional state while in love with Rosaline?
+ANSWER1: Joyful and free
+ANSWER2: Lost and not himself
+ANSWER3: Angry and vengeful
+ANSWER4: Peaceful and content
+CORRECT: 2
+
+QUESTION:
+What specific action does Mercutio suggest to Benvolio that the ape (Romeo) is doing while conjuring him after the feast in Act 2, Scene 1?
+ANSWER1: Crying out Juliet's name
+ANSWER2: Sleeping in a field-bed
+ANSWER3: Sitting under a medlar tree
+ANSWER4: Returning home to his father
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 3, how does Lady Capulet suggest Juliet examine Paris?
+ANSWER1: By listening to his reputation
+ANSWER2: By reading him like a volume or book
+ANSWER3: By asking him direct questions
+ANSWER4: By observing him from a distance
+CORRECT: 2
+
+QUESTION:
+When Tybalt confronts Mercutio and Benvolio in Act 3, Scene 1, he initially says he wants a "word" with one of them. How does Mercutio respond, suggesting an addition to the word?
+ANSWER1: A dance
+ANSWER2: A blow
+ANSWER3: A song
+ANSWER4: A jest
+CORRECT: 2
+
+QUESTION:
+What physical detail about Rosaline does Mercutio use in his conjuration of Romeo in Act 2, Scene 1?
+ANSWER1: Her golden hair
+ANSWER2: Her fine foot and straight leg
+ANSWER3: The color of her eyes
+ANSWER4: The sound of her voice
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 4, Romeo states he will bear a torch because he is "heavy." What does he compare his soul to that prevents him from dancing?
+ANSWER1: A stone
+ANSWER2: Lead
+ANSWER3: Clay
+ANSWER4: Iron
+CORRECT: 2
+
+QUESTION:
+When the Nurse finds Juliet "dead" in Act 4, Scene 5, what does she repeatedly exclaim about Juliet?
+ANSWER1: She is sleeping deeply
+ANSWER2: She is gone, killed, dead
+ANSWER3: She is cold as ice
+ANSWER4: She has run away
+CORRECT: 2
+
+QUESTION:
+In the balcony scene (Act 2, Scene 2), Juliet asks "What's in a name?" and compares Romeo to a specific flower. What flower does she use for comparison?
+ANSWER1: A lily
+ANSWER2: A rose
+ANSWER3: A violet
+ANSWER4: A daisy
+CORRECT: 2
+
+QUESTION:
+According to Friar Lawrence in Act 5, Scene 2, why was his letter to Romeo not delivered by Friar John?
+ANSWER1: Friar John was robbed
+ANSWER2: Romeo had already left Mantua
+ANSWER3: Friar John was stayed by accident due to fear of infection
+ANSWER4: Friar John lost the letter
+CORRECT: 3
+
+QUESTION:
+What is the first thing Juliet says to Romeo in Act 1, Scene 5 when they meet, speaking in shared lines?
+ANSWER1: "Good pilgrim, you do wrong your hand too much"
+ANSWER2: "Have not saints lips, and holy palmers too?"
+ANSWER3: "Ay, pilgrim, lips that they must use in prayer"
+ANSWER4: "For saints have hands that pilgrims' hands do touch"
+CORRECT: 1
+
+QUESTION:
+In Act 3, Scene 3, when Romeo is banished, he believes "heaven is here where Juliet lives". What specific things does he list as being able to look upon her that he cannot?
+ANSWER1: Stars, moon, and sun
+ANSWER2: Rivers, trees, and mountains
+ANSWER3: Every cat and dog and little mouse
+ANSWER4: Kings, queens, and courtiers
+CORRECT: 3
+
+QUESTION:
+How long does Friar Lawrence tell Juliet the effect of the sleeping potion will last in Act 4, Scene 1?
+ANSWER1: Twenty-four hours
+ANSWER2: Two days and two nights
+ANSWER3: Forty-two hours
+ANSWER4: Three days
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 1, Romeo describes Rosaline's resistance to Cupid's arrow and notes she has the "wit" of which mythological figure?
+ANSWER1: Venus
+ANSWER2: Minerva
+ANSWER3: Diana
+ANSWER4: Juno
+CORRECT: 3
+
+QUESTION:
+When Juliet is waiting for the Nurse in Act 2, Scene 5, she uses imagery of love being drawn by "nimble-pinioned doves". What mythological figure does she associate with these doves?
+ANSWER1: Cupid
+ANSWER2: Venus
+ANSWER3: Diana
+ANSWER4: Echo
+CORRECT: 1
+
+QUESTION:
+What is the last thing Mercutio says to Tybalt before they fight in Act 3, Scene 1, after Romeo's attempt to make peace?
+ANSWER1: "Tybalt, you ratcatcher, will you walk?"
+ANSWER2: "O calm, dishonorable, vile submission!"
+ANSWER3: "Alla stoccato carries it away."
+ANSWER4: "Good king of cats, nothing but one of your nine lives."
+CORRECT: 1
+
+QUESTION:
+In Act 4, Scene 3, among the fears Juliet expresses before taking the potion, she mentions shrieks like those made by uprooting a certain plant. Which plant does she name?
+ANSWER1: Hemlock
+ANSWER2: Nightshade
+ANSWER3: Mandrake
+ANSWER4: Rosemary
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 4, Mercutio gives a lengthy description of Tybalt. He calls him the "prince of cats" and describes his fighting style using terms related to what activity?
+ANSWER1: Fishing
+ANSWER2: Dancing
+ANSWER3: Singing prick-song
+ANSWER4: Hunting
+CORRECT: 3
+
+QUESTION:
+What does Romeo give to the Apothecary in Act 5, Scene 1 in exchange for the poison?
+ANSWER1: Jewels
+ANSWER2: A promise of safety
+ANSWER3: Gold
+ANSWER4: Food
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 1, what does Gregory, a Capulet servant, suggest he will do to the maids after fighting with the men of the house of Montague?
+ANSWER1: Capture them
+ANSWER2: Be civil with them and cut off their heads
+ANSWER3: Marry them
+ANSWER4: Ignore them
+CORRECT: 2
+
+QUESTION:
+According to the front matter discussing the editing of Shakespeare's plays, what is a significant difference between older texts like the Moby™ Text and the Folger Shakespeare texts?
+ANSWER1: Older texts contain more illustrations.
+ANSWER2: Older texts often hide editorial interventions.
+ANSWER3: Older texts are based on later editions.
+ANSWER4: Older texts are primarily for performance, not study.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 2, Juliet is eagerly waiting for the Nurse to return with news of Romeo. What item had Juliet asked the Nurse to fetch from Romeo?
+ANSWER1: A letter
+ANSWER2: A token of his love
+ANSWER3: Cords (a rope ladder)
+ANSWER4: Food
+CORRECT: 3
+
+QUESTION:
+After killing Tybalt in Act 3, Scene 1, Romeo exclaims, "O, I am fortune's fool!" Who delivers the line immediately following this?
+ANSWER1: Benvolio
+ANSWER2: Mercutio (ghost)
+ANSWER3: The Prince
+ANSWER4: A Citizen
+CORRECT: 1
+
+QUESTION:
+In Act 2, Scene 6, before Romeo and Juliet's marriage, Friar Lawrence advises Romeo to "love moderately." What comparison does he use to explain why extreme passion can be detrimental?
+ANSWER1: A ship in a storm
+ANSWER2: Fire and powder, or honey that is loathsome in its deliciousness
+ANSWER3: A flower that wilts too quickly
+ANSWER4: A bird that flies too high
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 5, Romeo asks a Servingman about Juliet before he knows her name. What is the Servingman's response?
+ANSWER1: He doesn't know her name.
+ANSWER2: He points her out and names her.
+ANSWER3: He says she is the lady of the house's daughter.
+ANSWER4: He asks Romeo why he wants to know.
+CORRECT: 1
+
+QUESTION:
+In Act 3, Scene 3, when Friar Lawrence rebukes Romeo for his despair over banishment, he uses a series of comparisons to describe Romeo's behavior. He calls Romeo "unseemly woman in a seeming man" and what else?
+ANSWER1: A foolish child
+ANSWER2: An impatient traveller
+ANSWER3: An ill-beseeming beast in seeming both
+ANSWER4: A wasteful merchant
+CORRECT: 3
+
+QUESTION:
+What is the primary reason Friar Lawrence agrees to marry Romeo and Juliet in Act 2, Scene 3?
+ANSWER1: He believes their love is true.
+ANSWER2: He hopes the marriage will end the feud between their families.
+ANSWER3: Romeo threatens him.
+ANSWER4: Juliet's father requested it.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 2, Capulet tells Paris that his daughter Juliet is not yet fourteen. He suggests Paris wait two more years, but also invites him to do what at the feast that night?
+ANSWER1: Speak with Juliet privately
+ANSWER2: Dance with Juliet
+ANSWER3: See and compare Juliet with other beauties
+ANSWER4: Bring Juliet a gift
+CORRECT: 3
+
+QUESTION:
+When Balthasar reports Juliet's death to Romeo in Mantua in Act 5, Scene 1, he states that he "presently took post" to tell Romeo. What does "took post" mean in this context?
+ANSWER1: Found lodgings
+ANSWER2: Sent a letter
+ANSWER3: Traveled quickly by horse
+ANSWER4: Found a job
+CORRECT: 3
+
+QUESTION:
+What specific reason does the Nurse give Juliet for why she was delayed in Act 2, Scene 5, besides her age and weariness?
+ANSWER1: She stopped to talk to Friar Lawrence.
+ANSWER2: She was bothered by Mercutio and Benvolio.
+ANSWER3: She got lost.
+ANSWER4: She had to do other errands for Lady Capulet.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 5, when saying goodbye, Romeo and Juliet debate whether the bird singing is the nightingale or the lark. Which bird's song would signal the coming of day, meaning Romeo must leave?
+ANSWER1: The nightingale
+ANSWER2: The lark
+ANSWER3: Both birds signal daybreak
+ANSWER4: Neither bird signals daybreak
+CORRECT: 2
+
+QUESTION:
+According to Mercutio's Queen Mab speech in Act 1, Scene 4, what are Queen Mab's wagon spokes made of?
+ANSWER1: Grasshopper legs
+ANSWER2: Cricket bones
+ANSWER3: Small spider webs
+ANSWER4: Long spinners' legs
+CORRECT: 4
+
+QUESTION:
+In Act 5, Scene 3, when Romeo sees Paris dead outside the tomb, he calls him "Mercutio's kinsman." What does Romeo then realize Paris was intended to do?
+ANSWER1: Travel with him to Mantua
+ANSWER2: Be buried in the tomb
+ANSWER3: Marry Juliet
+ANSWER4: Fight Tybalt
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 1, Benvolio advises Mercutio and Tybalt to either withdraw to a private place, reason coldly, or depart. What is his reasoning for this advice?
+ANSWER1: The Prince has forbidden fighting.
+ANSWER2: All eyes are gazing on them in the public place.
+ANSWER3: It is too hot for quarreling.
+ANSWER4: They might injure innocent bystanders.
+CORRECT: 2
+
+QUESTION:
+What does Juliet send to Romeo via the Nurse in Act 3, Scene 2 as a token of her love and to bid him come to her?
+ANSWER1: A letter
+ANSWER2: A flower
+ANSWER3: A ring
+ANSWER4: A kiss
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 1, Juliet tells Friar Lawrence she will use a knife to help herself if he cannot provide a remedy to prevent her marriage to Paris. Where does she say she will apply the knife?
+ANSWER1: To her hand
+ANSWER2: Twixt her extremes and her
+ANSWER3: To her heart
+ANSWER4: To her throat
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 5, the Nurse tells Romeo about Juliet's family. She states that whoever can "lay hold of her" will "have the chinks". What does "have the chinks" mean in this context?
+ANSWER1: Will have good luck
+ANSWER2: Will have difficulty
+ANSWER3: Will have money
+ANSWER4: Will have many friends
+CORRECT: 3
+
+QUESTION:
+Before the Capulet feast in Act 1, Scene 4, Mercutio dismisses the need for a formal prologue to introduce the maskers. What specific type of prologue does he say they won't use?
+ANSWER1: A rhyming prologue
+ANSWER2: A prologue spoken by Cupid
+ANSWER3: A prologue faintly spoke after the prompter
+ANSWER4: A lengthy prologue
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 2, after learning Romeo has killed Tybalt, Juliet uses contradictory terms to describe Romeo, referring to him as a "beautiful tyrant" and a "fiend angelical." This is an example of what literary device?
+ANSWER1: Metaphor
+ANSWER2: Simile
+ANSWER3: Oxymoron
+ANSWER4: Personification
+CORRECT: 3
+
+QUESTION:
+What is the condition under which the Apothecary agrees to sell Romeo poison in Act 5, Scene 1?
+ANSWER1: Romeo threatens him.
+ANSWER2: His poverty consents, not his will.
+ANSWER3: He doesn't know it's poison.
+ANSWER4: He is an enemy of the Capulets.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 1, when Romeo is describing Rosaline, he says she will not be hit with Cupid's arrow and has "Dian's wit". What does "Dian's wit" imply about Rosaline?
+ANSWER1: She is intelligent and cunning.
+ANSWER2: She is devoted to hunting.
+ANSWER3: She has sworn off love and marriage.
+ANSWER4: She is as beautiful as the moon.
+CORRECT: 3
+
+QUESTION:
+How does the Nurse describe Paris to Juliet in Act 1, Scene 3?
+ANSWER1: A complete gentleman
+ANSWER2: A flower of courtesy
+ANSWER3: A man of wax
+ANSWER4: Better than Romeo
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 3, Friar Lawrence criticizes Romeo for weeping excessively over his banishment. He compares Romeo's tears and wild acts to those of what?
+ANSWER1: A child
+ANSWER2: A madman
+ANSWER3: A woman and a beast
+ANSWER4: A coward
+CORRECT: 3
+
+QUESTION:
+What signal does Paris instruct his Page to give in Act 5, Scene 3 if the Page hears anyone approaching the tomb?
+ANSWER1: A shout
+ANSWER2: A cough
+ANSWER3: A whistle
+ANSWER4: A light from his torch
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 5, after the death of Juliet is discovered, the Nurse engages in a brief, witty exchange with the Musicians. What specific thing does Peter demand from the First Musician?
+ANSWER1: A song
+ANSWER2: Money
+ANSWER3: A jest or a "gleek"
+ANSWER4: Food
+CORRECT: 3
+
+QUESTION:
+Why does Capulet initially restrain Tybalt from confronting Romeo at the feast in Act 1, Scene 5?
+ANSWER1: He doesn't want to ruin the party.
+ANSWER2: He thinks Romeo is a virtuous and well-behaved youth.
+ANSWER3: The Prince has threatened death for fighting.
+ANSWER4: He doesn't recognize Romeo.
+CORRECT: 2
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet states that the "mask of night" is on her face, otherwise, Romeo would see what on her cheek due to what she has said?
+ANSWER1: Tears
+ANSWER2: A frown
+ANSWER3: A maiden blush
+ANSWER4: Sweat
+CORRECT: 3
+
+QUESTION:
+According to Friar Lawrence's plan in Act 4, Scene 1, where is Romeo supposed to be when Juliet wakes from the potion?
+ANSWER1: At the Capulet house
+ANSWER2: In Mantua
+ANSWER3: Watching her waking at the tomb
+ANSWER4: Waiting at Friar Lawrence's cell
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 5, after Capulet orders Juliet to marry Paris or be disowned, Juliet pleads with her mother. What is Lady Capulet's final response?
+ANSWER1: She will speak to Lord Capulet.
+ANSWER2: She asks Juliet to kneel and beg her father.
+ANSWER3: She says she is done with Juliet.
+ANSWER4: She advises Juliet to obey her father.
+CORRECT: 3
+
+QUESTION:
+How does Romeo get over the wall and into the Capulet's orchard in Act 2, Scene 1?
+ANSWER1: He climbs over it.
+ANSWER2: He finds a gate.
+ANSWER3: Benvolio helps him.
+ANSWER4: The stage directions simply state "Enter Romeo".
+CORRECT: 1
+
+QUESTION:
+What does Friar Lawrence ask Friar John to bring him in Act 5, Scene 2 after realizing the letter was not delivered?
+ANSWER1: A horse
+ANSWER2: A lantern
+ANSWER3: An iron crow
+ANSWER4: Balthasar
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 2, after the Nurse has confused Juliet about the deaths of Romeo and Tybalt, Juliet asks for clarification. Who does she ask if is slaughtered, followed by who is dead?
+ANSWER1: Tybalt then Romeo
+ANSWER2: Mercutio then Tybalt
+ANSWER3: Romeo then Tybalt
+ANSWER4: Mercutio then Romeo
+CORRECT: 3
+
+QUESTION:
+What is the maximum penalty for public brawling decreed by the Prince, referenced by Capulet in Act 1, Scene 2?
+ANSWER1: Banishment
+ANSWER2: A heavy fine
+ANSWER3: Imprisonment
+ANSWER4: The Prince says Montague and Capulet are "bound in penalty alike" implying death or severe punishment was threatened earlier, but the specific penalty isn't reiterated here.
+CORRECT: 4
+
+QUESTION:
+In Act 2, Scene 4, what does Mercutio accuse Benvolio of being quick to do?
+ANSWER1: Get drunk
+ANSWER2: Quarrel
+ANSWER3: Fall in love
+ANSWER4: Judge others
+CORRECT: 2
+
+QUESTION:
+According to Friar Lawrence's philosophy in Act 2, Scene 3, nothing living on Earth is so vile that it doesn't give some special good. What is the counterpoint to this idea that he also mentions?
+ANSWER1: Good things can be corrupted by vice.
+ANSWER2: All good things have a hidden evil.
+ANSWER3: Even good things can be abused or misapplied.
+ANSWER4: Nature is indifferent to good and evil.
+CORRECT: 3
+
+QUESTION:
+When Romeo encounters Paris at Juliet's tomb in Act 5, Scene 3, he tries to avoid fighting. What specific plea does he make to Paris?
+ANSWER1: To join him in mourning Juliet.
+ANSWER2: To leave him alone and avoid adding another sin to Romeo's head.
+ANSWER3: To help him open the tomb.
+ANSWER4: To deliver a letter for him.
+CORRECT: 2
+
+QUESTION:
+In Act 4, Scene 5, after discovering Juliet's apparent death, Capulet uses several metaphors to describe his grief. He compares death to a "an untimely frost" upon what specific item?
+ANSWER1: His joys
+ANSWER2: His love
+ANSWER3: The sweetest flower of all the field
+ANSWER4: His harvest
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 2, Benvolio advises Romeo to attend Capulet's feast to compare Rosaline to other beauties. He claims he will make Romeo think his "swan" is what?
+ANSWER1: An owl
+ANSWER2: A duck
+ANSWER3: A crow
+ANSWER4: A goose
+CORRECT: 3
+
+QUESTION:
+What specific instruction does Romeo give Balthasar in Act 5, Scene 3 before entering the tomb?
+ANSWER1: To keep watch and report any approaching foot upon the churchyard.
+ANSWER2: To take a letter to his father early in the morning and not interrupt Romeo.
+ANSWER3: To fetch Friar Lawrence immediately.
+ANSWER4: To stand guard at the entrance.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 5, Lady Capulet suggests a way to get revenge on Romeo after Tybalt's death. What does she propose doing to Romeo in Mantua?
+ANSWER1: Challenging him to a duel
+ANSWER2: Sending a poison to kill him
+ANSWER3: Having him arrested by the Prince
+ANSWER4: Spreading rumors about him
+CORRECT: 2
+
+QUESTION:
+What does Juliet initially think has happened when the Nurse arrives with confusing news in Act 3, Scene 2?
+ANSWER1: That Romeo has left Verona.
+ANSWER2: That Tybalt has killed Romeo.
+ANSWER3: That her parents have discovered her marriage.
+ANSWER4: That the Nurse has lost the cords.
+CORRECT: 2
+
+QUESTION:
+In Act 2, Scene 4, Romeo and Mercutio engage in a battle of wits. Mercutio compliments Romeo's wit, saying it is like a specific type of flower on Romeo's "pump" (shoe). What type of flower?
+ANSWER1: A rose
+ANSWER2: A pink
+ANSWER3: A violet
+ANSWER4: A daisy
+CORRECT: 2
+
+QUESTION:
+What does Juliet say is her disposition towards marriage when Lady Capulet first asks her about it in Act 1, Scene 3?
+ANSWER1: She is eager for it.
+ANSWER2: It is an honor she dreams not of.
+ANSWER3: She will marry if her parents wish it.
+ANSWER4: She prefers to remain a maid.
+CORRECT: 2
+
+QUESTION:
+In Act 4, Scene 1, Friar Lawrence suggests a desperate remedy for Juliet's situation. He states that this remedy craves an execution as desperate as what they are trying to prevent. What are they trying to prevent?
+ANSWER1: Juliet's banishment
+ANSWER2: Juliet killing herself
+ANSWER3: Romeo returning to Verona
+ANSWER4: The Capulet and Montague feud
+CORRECT: 2
+
+QUESTION:
+When Friar Lawrence enters the tomb in Act 5, Scene 3, what is the first thing he notices that indicates something is wrong?
+ANSWER1: The torch lit by Paris's page.
+ANSWER2: The bloody swords lying about.
+ANSWER3: Paris's body near the monument.
+ANSWER4: Romeo's body inside the vault.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 1, what family do Sampson and Gregory serve?
+ANSWER1: Montague
+ANSWER2: Escalus
+ANSWER3: Paris
+ANSWER4: Capulet
+CORRECT: 4
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet says that if Romeo's love is an "inclination," she would follow him wherever he goes. What specific image does she use to describe this following?
+ANSWER1: As the earth follows the sun
+ANSWER2: As a ship follows the tide
+ANSWER3: As a falconer's voice lures a tassel-gentle
+ANSWER4: As a shadow follows the body
+CORRECT: 3
+
+QUESTION:
+According to Mercutio's description of Queen Mab in Act 1, Scene 4, over whose noses does she sometimes gallop, causing them to dream of smelling out a lawsuit?
+ANSWER1: Lawyers
+ANSWER2: Courtiers
+ANSWER3: Soldiers
+ANSWER4: Parsons
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 5, after her father threatens her, Juliet asks the Nurse for comfort and counsel. What is the Nurse's advice?
+ANSWER1: To run away with Romeo.
+ANSWER2: To seek help from Friar Lawrence.
+ANSWER3: To marry County Paris.
+ANSWER4: To pretend to agree with her father.
+CORRECT: 3
+
+QUESTION:
+When Romeo is banished in Act 3, Scene 3, he is told he must go to Mantua. Where does Friar Lawrence plan for Romeo to go after visiting Juliet one last time?
+ANSWER1: To Mantua
+ANSWER2: To the Montague house
+ANSWER3: To the Prince
+ANSWER4: To another city
+CORRECT: 1
+
+QUESTION:
+In Act 4, Scene 2, when Capulet is making arrangements for the wedding feast, he boasts about the number of cooks he wants to hire. How many "cunning cooks" does he order?
+ANSWER1: Ten
+ANSWER2: Twelve
+ANSWER3: Twenty
+ANSWER4: Thirty
+CORRECT: 3
+
+QUESTION:
+What is the final action Juliet takes in Act 5, Scene 3?
+ANSWER1: She weeps over Romeo's body.
+ANSWER2: She stabs herself with Romeo's dagger.
+ANSWER3: She calls for the Prince.
+ANSWER4: She kisses Romeo.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 1, Benvolio attempts to break up the street brawl. What does Tybalt immediately want to do when he sees Benvolio with his sword drawn?
+ANSWER1: Join Benvolio in keeping the peace.
+ANSWER2: Challenge Benvolio to a fight.
+ANSWER3: Call for backup from his kinsmen.
+ANSWER4: Report Benvolio to the Prince.
+CORRECT: 2
+
+QUESTION:
+In Act 2, Scene 3, Friar Lawrence expresses surprise at Romeo's sudden shift in affection from Rosaline to Juliet, noting that Romeo's love seems to lie in his eyes, not his heart. He mentions the "brine" that has washed Romeo's "sallow cheeks" for Rosaline. What is "brine"?
+ANSWER1: Sweat
+ANSWER2: Tears
+ANSWER3: Dust
+ANSWER4: Paint
+CORRECT: 2
+
+QUESTION:
+When the Nurse encounters Romeo, Benvolio, and Mercutio in Act 2, Scene 4, what warning does she give Romeo regarding Juliet?
+ANSWER1: That Juliet's parents want her to marry Paris.
+ANSWER2: That he should not lead Juliet into a fool's paradise or deal double with her.
+ANSWER3: That Juliet is already promised to another.
+ANSWER4: That Juliet's kinsmen are looking for him.
+CORRECT: 2
+
+QUESTION:
+What does Juliet compare Romeo to when she is eagerly awaiting him in Act 3, Scene 2?
+ANSWER1: A star
+ANSWER2: A mansion of love or a day in night
+ANSWER3: A pilgrim
+ANSWER4: A flower
+CORRECT: 2
+
+QUESTION:
+What is the primary source text used for the Folger Shakespeare editions, on which the electronic Folger Shakespeare texts depend?
+ANSWER1: Various Quartos (Qq) and the First Folio (F)
+ANSWER2: The Moby™ Text
+ANSWER3: Nineteenth-century editions
+ANSWER4: The most recent scholarly editions
+CORRECT: 1
+
+QUESTION:
+In Act 1, Scene 5, after Romeo and Juliet have kissed, Juliet asks the Nurse who Romeo is. What is the Nurse's response about Romeo's family?
+ANSWER1: He is the son of old Lord Montague.
+ANSWER2: He is a kinsman of the Prince.
+ANSWER3: He is a gentleman from Mantua.
+ANSWER4: He is the son of old Tiberio.
+CORRECT: 4 (Note: Tiberio is not mentioned elsewhere as Montague's name in common versions, but is present in this source text, making it a "hard" detail based on the specific provided text).
+
+QUESTION:
+What threat does Romeo give to Balthasar in Act 5, Scene 3 if Balthasar returns to pry into Romeo's actions at the tomb?
+ANSWER1: He will banish him.
+ANSWER2: He will kill him.
+ANSWER3: He will report him to the Prince.
+ANSWER4: He will take away his horse.
+CORRECT: 2
+
+QUESTION:
+In Act 4, Scene 1, when Juliet arrives at Friar Lawrence's cell, Paris is also there. What is Paris doing?
+ANSWER1: He is praying with the Friar.
+ANSWER2: He is discussing his impending marriage to Juliet.
+ANSWER3: He is confessing his sins.
+ANSWER4: He is asking the Friar to speak to Juliet for him.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 5, Capulet becomes enraged by Juliet's refusal to marry Paris. He uses a comparison involving tears, a body as a bark, and sighs as winds. What does he warn will happen to Juliet's "tempest-tossèd body" without a sudden calm?
+ANSWER1: It will sink.
+ANSWER2: It will be overset.
+ANSWER3: It will crash upon the rocks.
+ANSWER4: It will drift away.
+CORRECT: 2
+
+QUESTION:
+What literary device does Romeo use when he describes the poison he buys from the Apothecary in Act 5, Scene 1?
+ANSWER1: Simile, comparing it to death.
+ANSWER2: Metaphor, calling it a "cordial".
+ANSWER3: Personification, addressing the poison directly.
+ANSWER4: Apostrophe, addressing the gold as a worse poison.
+CORRECT: 4 (He calls the gold "worse poison" and addresses it "There is thy gold, worse poison...")
+
+QUESTION:
+In Act 1, Scene 1, how does Romeo describe Rosaline's resistance to love, stating she is "well armed" against weak or strong terms of love?
+ANSWER1: In proof of beauty
+ANSWER2: In strong proof of chastity
+ANSWER3: In a shield of indifference
+ANSWER4: With wisdom beyond her years
+CORRECT: 2
+
+QUESTION:
+When the Nurse finally tells Juliet Romeo's message in Act 2, Scene 5, she says Romeo is not the "flower of courtesy" but that she'll warrant him as gentle as what animal?
+ANSWER1: A dove
+ANSWER2: A lamb
+ANSWER3: A kid
+ANSWER4: A fawn
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 1, what is Mercutio's response when Tybalt says, "Mercutio, thou consortest with Romeo"?
+ANSWER1: He denies it.
+ANSWER2: He takes offense, interpreting "consortest" as associating with musicians ("minstrels").
+ANSWER3: He confirms it proudly.
+ANSWER4: He asks Tybalt what he means.
+CORRECT: 2
+
+QUESTION:
+What celestial event does Juliet ask to be hastened at the beginning of Act 3, Scene 2 so that night will come and she can see Romeo?
+ANSWER1: The setting of the moon
+ANSWER2: The journey of Phoebus' fiery-footed steeds towards lodging
+ANSWER3: The arrival of the evening star
+ANSWER4: The movement of the constellations
+CORRECT: 2
+
+QUESTION:
+In Act 4, Scene 3, Juliet expresses fear that the Friar might have given her poison. What reason does she consider for why he might do this?
+ANSWER1: He wants her inheritance.
+ANSWER2: He fears being dishonored because he married her to Romeo before.
+ANSWER3: He is in league with Paris.
+ANSWER4: He is mad.
+CORRECT: 2
+
+QUESTION:
+What does the Prince ultimately conclude is the cause of the tragedy at the end of Act 5, Scene 3?
+ANSWER1: Fate
+ANSWER2: The Friar's plan gone wrong
+ANSWER3: The Capulet and Montague feud and the Prince's "winking" at their discords
+ANSWER4: Romeo and Juliet's hasty actions
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 4, Mercutio compares Romeo, suffering from love for Rosaline, to a man "already dead." How does he say Romeo has been "stabbed"?
+ANSWER1: With a dagger
+ANSWER2: With a white wench's black eye
+ANSWER3: With Cupid's arrow
+ANSWER4: With words
+CORRECT: 2
+
+QUESTION:
+What does the Nurse suggest Juliet do while Romeo takes effect of his "prayer" (their first kiss) in Act 1, Scene 5?
+ANSWER1: Stand still
+ANSWER2: Close her eyes
+ANSWER3: Kiss him back
+ANSWER4: Say a prayer herself
+CORRECT: 1
+
+QUESTION:
+According to the front matter, editors must make choices when dealing with Shakespeare's texts because the plays were not published as a single, authoritative text. In some cases, how many different published versions of plays like Hamlet, King Lear, Henry V, and Romeo and Juliet exist?
+ANSWER1: Two
+ANSWER2: Three
+ANSWER3: Multiple (represented by Qq and F)
+ANSWER4: Four
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 3, Friar Lawrence tries to comfort Romeo by listing the things he should be happy about. Which of these is NOT something Friar Lawrence says Romeo should be happy about?
+ANSWER1: Juliet is alive.
+ANSWER2: Tybalt would have killed him but he killed Tybalt.
+ANSWER3: The Prince has lessened the law from death to banishment.
+ANSWER4: He has money to start a new life.
+CORRECT: 4
+
+QUESTION:
+In Act 5, Scene 1, Romeo describes the Apothecary as a "caitiff wretch." What does "caitiff" mean in this context?
+ANSWER1: Wealthy and powerful
+ANSWER2: Poor and miserable
+ANSWER3: Young and foolish
+ANSWER4: Old and wise
+CORRECT: 2
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet says, "At lovers' perjuries, they say, Jove laughs." What does she mean by this?
+ANSWER1: That gods approve of passionate love.
+ANSWER2: That promises made by lovers are often broken and not taken seriously by the gods.
+ANSWER3: That Jove is the god of marriage vows.
+ANSWER4: That Romeo should swear by Jove.
+CORRECT: 2
+
+QUESTION:
+When Lady Capulet informs Juliet of the planned marriage to Paris in Act 3, Scene 5, what day of the week is proposed for the wedding?
+ANSWER1: Wednesday
+ANSWER2: Thursday
+ANSWER3: Friday
+ANSWER4: Monday
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 3, Lady Capulet compares Paris to an unbound book of love that only lacks a "cover." What does she imply Juliet would be by marrying Paris?
+ANSWER1: The pages of the book.
+ANSWER2: The golden story within the book.
+ANSWER3: The cover that completes the precious book.
+ANSWER4: The illustration inside the book.
+CORRECT: 3
+
+QUESTION:
+How does the Prince plan to determine the full story of the deaths in Act 5, Scene 3?
+ANSWER1: By arresting everyone present.
+ANSWER2: By hearing the accounts of the Friar, Balthasar, and the Page.
+ANSWER3: By reading Romeo's letter to his father.
+ANSWER4: By consulting with the Capulets and Montagues.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 2, how does Juliet first misunderstand the Nurse's news about the fight and assume Romeo is dead?
+ANSWER1: The Nurse uses ambiguous language ("He's dead, he's dead, he's dead").
+ANSWER2: The Nurse is weeping uncontrollably.
+ANSWER3: The Nurse drops the rope ladder.
+ANSWER4: All of the above.
+CORRECT: 4
+
+QUESTION:
+In Act 2, Scene 6, Friar Lawrence says that a lover may "bestride the gossamers" that idle in the summer air. What quality of the lover does this image emphasize?
+ANSWER1: Their lightness or vanity
+ANSWER2: Their speed
+ANSWER3: Their connection to nature
+ANSWER4: Their fragility
+CORRECT: 1
+
+QUESTION:
+What does Romeo call the poison in Act 5, Scene 1, right before drinking it?
+ANSWER1: Bitter conduct and unsavory guide
+ANSWER2: True apothecary
+ANSWER3: My love
+ANSWER4: All of the above
+CORRECT: 4
+
+QUESTION:
+What specific warning does Benvolio give Mercutio at the start of Act 3, Scene 1 about the day?
+ANSWER1: It is too early to be out.
+ANSWER2: The Capulets are nearby.
+ANSWER3: The hot weather might make them quarrel.
+ANSWER4: They should go home.
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 3, Juliet contemplates the possibility of waking in the tomb and being driven mad. She imagines herself playing with her "forefathers' joints" and plucking "mangled Tybalt" from his shroud. What does she imagine doing with a great kinsman's bone?
+ANSWER1: Using it as a torch
+ANSWER2: Using it as a club to dash out her brains
+ANSWER3: Using it to write a message
+ANSWER4: Using it to dig her way out
+CORRECT: 2
+
+QUESTION:
+According to the Nurse in Act 1, Scene 3, how old is Juliet?
+ANSWER1: Almost fourteen
+ANSWER2: Thirteen
+ANSWER3: Fourteen
+ANSWER4: The Nurse is unsure of the exact age.
+CORRECT: 1
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet says she would "fain deny What I have spoke." What prevents her from doing so?
+ANSWER1: Romeo overheard her "true-love passion".
+ANSWER2: She is afraid of Romeo.
+ANSWER3: Her nurse is listening.
+ANSWER4: She has already sworn her love.
+CORRECT: 1
+
+QUESTION:
+What does Romeo use to open the tomb in Act 5, Scene 3?
+ANSWER1: His bare hands
+ANSWER2: A sword
+ANSWER3: A mattock and wrenching iron
+ANSWER4: He instructs Balthasar to open it.
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 4, Romeo expresses a sense of foreboding before going to the Capulet feast. He feels his mind misgives some consequence hanging in the stars. What does he say will happen as a result?
+ANSWER1: It will lead to a fight.
+ANSWER2: It will start a new sorrow.
+ANSWER3: It will shorten his life.
+ANSWER4: It will lead to the death of Mercutio.
+CORRECT: 3
+
+QUESTION:
+When Tybalt recognizes Romeo at the feast in Act 1, Scene 5, what does he immediately call for?
+ANSWER1: The Prince
+ANSWER2: His sword
+ANSWER3: Lord Capulet
+ANSWER4: The Watch
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 3, when Romeo hears his sentence of banishment, he falls to the ground. Friar Lawrence tells him to arise, and compares him to a "skilless soldier's flask" that is set afire by his own ignorance. What else does the Friar say Romeo is "dismembered" with?
+ANSWER1: His despair
+ANSWER2: His own defense
+ANSWER3: His wild acts
+ANSWER4: His words
+CORRECT: 2
+
+QUESTION:
+In Act 4, Scene 5, after everyone mourns Juliet, Friar Lawrence tells them to carry her to her grave. He says the heavens lower upon them for "some ill." What does he advise them not to do further to avoid provoking the heavens?
+ANSWER1: To weep any more
+ANSWER2: To lament excessively
+ANSWER3: To cross their high will
+ANSWER4: To speak against fate
+CORRECT: 3
+
+QUESTION:
+In the balcony scene (Act 2, Scene 2), Romeo says he found the place "By love." What specific help did love lend him to find her?
+ANSWER1: Counsel and eyes
+ANSWER2: Wings and speed
+ANSWER3: Patience and guidance
+ANSWER4: A map and direction
+CORRECT: 1
+
+QUESTION:
+What is the setting for the first scene of Act 1?
+ANSWER1: A public place in Verona
+ANSWER2: Capulet's house
+ANSWER3: Montague's house
+ANSWER4: A street near the market
+CORRECT: 1
+
+QUESTION:
+In Act 3, Scene 2, when Juliet is reacting to the news of Tybalt's death and Romeo's banishment, she asks the Nurse to "hie to your chamber." What specific action does she say she will do there?
+ANSWER1: Hide from her parents.
+ANSWER2: Wait for Romeo.
+ANSWER3: Find Romeo to comfort him (by finding where he is hid).
+ANSWER4: Weep with her maid.
+CORRECT: 3 (Based on "Hie to your chamber. I'll find Romeo To comfort you. I wot well where he is.")
+
+QUESTION:
+According to the front matter, older editions like the Moby™ Text were sometimes altered based on cultural preference and taste. What specific example is given regarding The Tempest?
+ANSWER1: Changing Prospero's lines.
+ANSWER2: Removing Ariel's songs.
+ANSWER3: Giving Miranda's speech chastising Caliban to Prospero.
+ANSWER4: Altering the ending.
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 5, how does Romeo describe Juliet the first time he sees her at the feast?
+ANSWER1: As a beautiful Capulet.
+ANSWER2: As a true-love passion.
+ANSWER3: As a rich jewel in an Ethiope's ear.
+ANSWER4: As a holy shrine.
+CORRECT: 3
+
+QUESTION:
+What is the purpose of the "FTLN" numbering in the sources?
+ANSWER1: To indicate scene changes.
+ANSWER2: To mark line numbers in the electronic text.
+ANSWER3: To denote speaker changes.
+ANSWER4: To identify specific words or phrases.
+CORRECT: 2 (Note: This question refers to a detail specific to the PDF's formatting, but it's about understanding the text's structure rather than quoting specific lines using the FTLN numbers, fitting the user's constraint interpretation).
+
+QUESTION:
+In Act 2, Scene 1, Mercutio attempts to conjure Romeo using attributes associated with Rosaline and Cupid. What nickname does he use for Cupid?
+ANSWER1: Young Adam Cupid
+ANSWER2: Blind Bow-boy Cupid
+ANSWER3: Young Abraham Cupid
+ANSWER4: Prince Cupid
+CORRECT: 3
+
+QUESTION:
+How does Capulet react in Act 4, Scene 2 when Juliet pretends to be obedient and agrees to marry Paris?
+ANSWER1: He is suspicious.
+ANSWER2: He is overjoyed and decides to move the wedding up to Wednesday.
+ANSWER3: He doesn't believe her sincerity.
+ANSWER4: He is indifferent.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 5, when Juliet is lamenting Romeo's banishment and her forced marriage, Lady Capulet misinterprets Juliet's words as grief for Tybalt and hatred for Romeo. Juliet says she will not be satisfied with Romeo until she beholds him in a specific state. What state does she cunningly imply while meaning his "dead" heart due to her kinsman's vexation?
+ANSWER1: Dead
+ANSWER2: Banished
+ANSWER3: Imprisoned
+ANSWER4: Forgiven
+CORRECT: 1
+
+QUESTION:
+Who first discovers Romeo's body inside the tomb in Act 5, Scene 3?
+ANSWER1: Friar Lawrence
+ANSWER2: The Page
+ANSWER3: The First Watchman
+ANSWER4: Juliet when she wakes
+CORRECT: 1
+
+QUESTION:
+In Act 1, Scene 1, after the brawl, the Prince declares a new penalty for future fighting between the families. What is that penalty?
+ANSWER1: Heavy fines for the lords.
+ANSWER2: Banishment for the instigators.
+ANSWER3: Death for disturbing the streets again.
+ANSWER4: Imprisonment for the heads of both houses.
+CORRECT: 3 (This is implied by Romeo's banishment being a lessening of the law in Act 3, Scene 3)
+
+QUESTION:
+What specific characteristic does Juliet attribute to "old folks" when complaining about the Nurse's slowness in Act 2, Scene 5?
+ANSWER1: They are unwieldy, slow, heavy, and pale as lead.
+ANSWER2: They have poor memory.
+ANSWER3: They are prone to gossip.
+ANSWER4: They do not understand young love.
+CORRECT: 1
+
+QUESTION:
+In Act 4, Scene 1, Friar Lawrence notes that Juliet's grief "strains me past the compass of my wits." What event does he specifically mention as something he has heard she must do?
+ANSWER1: Enter a convent
+ANSWER2: Leave Verona
+ANSWER3: Marry County Paris next Thursday
+ANSWER4: Be banished
+CORRECT: 3
+
+QUESTION:
+What does Balthasar tell Romeo in Act 5, Scene 1 that prompts Romeo's immediate decision to return to Verona?
+ANSWER1: Juliet is getting married to Paris.
+ANSWER2: Friar Lawrence has a new plan.
+ANSWER3: Juliet is dead and buried in the Capulet's vault.
+ANSWER4: The Prince has lifted Romeo's banishment.
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 1, Mercutio calls Tybalt the "king of cats." This is a reference to Tybalt's name, which is the same as the name of a character in what popular story/fable of the time?
+ANSWER1: Aesop's Fables
+ANSWER2: Reynard the Fox
+ANSWER3: Canterbury Tales
+ANSWER4: Arthurian Legend
+CORRECT: 2 (Note: This requires outside knowledge to fully appreciate, but "prince of cats" is stated in the text, and Mercutio's subsequent lines about his "nine lives" are strong textual clues pointing to the Reynard connection, making it inferable or requiring confirmation outside, but grounded in the text provided.)
+
+QUESTION:
+What comparison does Friar Lawrence use in Act 2, Scene 6 to illustrate that "too swift arrives as tardy as too slow"?
+ANSWER1: A runner in a race.
+ANSWER2: A ship setting sail.
+ANSWER3: Fire and powder.
+ANSWER4: A plant growing too fast.
+CORRECT: 3
+
+QUESTION:
+When Juliet says to Romeo in Act 2, Scene 2 (Balcony Scene), "Deny thy father and refuse thy name," what is her primary motivation for this request?
+ANSWER1: She hates the Montagues.
+ANSWER2: She believes their families' names are the only barrier to their love.
+ANSWER3: She wants Romeo to join her family.
+ANSWER4: She wants to defy her parents.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 2, Juliet feels conflicted upon learning that Romeo killed Tybalt. She lists several harsh names for Romeo, then immediately follows by defending him. What is the key reason she defends him?
+ANSWER1: He was provoked by Tybalt.
+ANSWER2: He killed Tybalt to prevent Tybalt from killing him (Romeo).
+ANSWER3: He is her husband.
+ANSWER4: She trusts Friar Lawrence's judgment.
+CORRECT: 3
+
+QUESTION:
+What specific items does the Nurse bring with her when she arrives at Juliet's chamber in Act 3, Scene 2?
+ANSWER1: News and flowers
+ANSWER2: News and cords
+ANSWER3: News and a letter
+ANSWER4: News and Romeo
+CORRECT: 2
+
+QUESTION:
+What does Romeo say to the dead Tybalt in Act 5, Scene 3 after opening the tomb?
+ANSWER1: That he forgives him.
+ANSWER2: That he is now joining him in death.
+ANSWER3: That Romeo has done him more favor than taking his life by killing his enemy (Romeo).
+ANSWER4: That Tybalt looks peaceful in death.
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 5, after the lamentations over Juliet's apparent death, the musicians are dismissed. What is the reason given by the First Musician for staying initially?
+ANSWER1: To perform music for the funeral.
+ANSWER2: To wait for payment.
+ANSWER3: To offer comfort.
+ANSWER4: To have dinner.
+CORRECT: 4 (Peter mentions "Have you dined at home?" and later the Nurse tells Juliet she'll go to dinner. The musicians are expecting payment for the feast, not funeral.)
+
+QUESTION:
+In Act 1, Scene 4, Mercutio describes Queen Mab's chariot as being made from what?
+ANSWER1: A snail shell
+ANSWER2: A nutshell
+ANSWER3: A beetle's wing
+ANSWER4: A spider web
+CORRECT: 2
+
+QUESTION:
+What is the name of the County who seeks Juliet's hand in marriage?
+ANSWER1: Mercutio
+ANSWER2: Tybalt
+ANSWER3: Paris
+ANSWER4: Petruchio
+CORRECT: 3
+
+QUESTION:
+In the sources' front matter, the Director of the Folger Shakespeare Library mentions the Moby™ Text reproduces a version of the plays from what period?
+ANSWER1: The Renaissance
+ANSWER2: The early 19th century
+ANSWER3: The late 19th century
+ANSWER4: The 20th century
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 4, the Nurse asks Romeo if his man is "secret." What proverb does she use to emphasize the need for secrecy?
+ANSWER1: "Loose lips sink ships."
+ANSWER2: "A secret shared is a secret lost."
+ANSWER3: "Two may keep counsel, putting one away."
+ANSWER4: "Walls have ears."
+CORRECT: 3
+
+QUESTION:
+According to Friar Lawrence in Act 4, Scene 1, what specific visual changes will the sleeping potion cause in Juliet?
+ANSWER1: Her skin will become pale, her eyes will close, and her body will appear stiff and cold.
+ANSWER2: Her lips will turn blue, and her hands will clench.
+ANSWER3: She will appear to be in a deep sleep, but otherwise unchanged.
+ANSWER4: Her breathing will stop, and her heart will cease beating.
+CORRECT: 1
+
+QUESTION:
+When Montague arrives at the tomb in Act 5, Scene 3, what news does he share about his wife?
+ANSWER1: She is ill with grief over Romeo's banishment.
+ANSWER2: She has died tonight from grief over Romeo's banishment.
+ANSWER3: She has gone to a convent.
+ANSWER4: She is waiting at home.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 5, after her parents leave, Juliet turns to the Nurse for help. What specific action does Juliet say she will seek if the Nurse cannot offer counsel and comfort?
+ANSWER1: Flee to Romeo
+ANSWER2: Confess to Friar Lawrence
+ANSWER3: End her life
+ANSWER4: Beg the Prince for mercy
+CORRECT: 3
+
+QUESTION:
+What does Romeo say he pays the Apothecary with in Act 5, Scene 1, describing it as "worse poison to men's souls"?
+ANSWER1: Jewels
+ANSWER2: Promises
+ANSWER3: Tears
+ANSWER4: Gold
+CORRECT: 4
+
+QUESTION:
+What does Friar Lawrence mean in Act 5, Scene 3 when he calls Juliet a "poor living corse, closed in a dead man's tomb"?
+ANSWER1: He thinks Juliet might still be alive.
+ANSWER2: He is referring to Juliet being alive but appearing dead in the tomb meant for deceased Capulets.
+ANSWER3: He believes Juliet has been cursed.
+ANSWER4: He is mistaken about Juliet's condition.
+CORRECT: 2
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet tells Romeo that she should have been more "strange" (reserved) but that she couldn't because he overheard her. What does she ask him not to impute (attribute) this yielding behavior to?
+ANSWER1: Lack of discretion
+ANSWER2: True love
+ANSWER3: Light love
+ANSWER4: Fear of discovery
+CORRECT: 3
+
+QUESTION:
+What does Mercutio call the fight between Romeo and Tybalt in Act 3, Scene 1, noting it happened while Romeo was trying to make peace?
+ANSWER1: A brave defense
+ANSWER2: An ill-advised intervention
+ANSWER3: A scratch, a scratch
+ANSWER4: A dueling match
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 1, Sampson, a Capulet servant, uses wordplay involving "coals," "colliers," and "choler." What is he implying about their willingness to fight the Montagues?
+ANSWER1: They will not be insulted ("carry coals") but are ready to fight if angered ("in choler").
+ANSWER2: They are dirty workers but clean fighters.
+ANSWER3: They are too proud to fight.
+ANSWER4: They are only good at digging.
+CORRECT: 1
+
+QUESTION:
+What is the name of the Boy who accompanies Paris to the tomb in Act 5, Scene 3?
+ANSWER1: Peter
+ANSWER2: Balthasar
+ANSWER3: Gregory
+ANSWER4: The text refers to him only as "Page".
+CORRECT: 4
+
+QUESTION:
+In Act 2, Scene 5, Juliet is frustrated by the Nurse's lengthy, indirect answers. She asks the Nurse to answer simply, stating she will "stay the circumstance" if she knows one thing. What does she want to know?
+ANSWER1: Is the news good or bad?
+ANSWER2: Where is Romeo?
+ANSWER3: Did Romeo receive the ring?
+ANSWER4: When can she be married?
+CORRECT: 1
+
+QUESTION:
+According to the front matter, how are editorial interventions signaled in the Folger Shakespeare texts?
+ANSWER1: By footnotes at the bottom of the page.
+ANSWER2: By square brackets, half-square brackets, or angle brackets.
+ANSWER3: By different font types.
+ANSWER4: By highlighting the altered text.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 2, what specific mythological figure does Juliet invoke, asking them to hasten the night, comparing Romeo to "day in night"?
+ANSWER1: Venus
+ANSWER2: Cupid
+ANSWER3: Phoebus and Phaëton
+ANSWER4: Hymen
+CORRECT: 3
+
+QUESTION:
+What specific object does Friar Lawrence carry with him when he goes to Juliet's tomb in Act 5, Scene 3?
+ANSWER1: A letter
+ANSWER2: A lamp, crow, and spade
+ANSWER3: A vial of potion
+ANSWER4: A torch and flowers
+CORRECT: 2
+
+QUESTION:
+What does Capulet say he will do to Juliet if she refuses to marry Paris in Act 3, Scene 5?
+ANSWER1: Send her to a convent.
+ANSWER2: Lock her in her room.
+ANSWER3: Disown her and cast her out.
+ANSWER4: Force her to marry Romeo.
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 3, when Romeo asks Friar Lawrence to marry him and Juliet "today," how does the Friar react initially?
+ANSWER1: He immediately agrees.
+ANSWER2: He is astonished by Romeo's sudden change from Rosaline.
+ANSWER3: He asks Romeo if Juliet loves him back.
+ANSWER4: He tells Romeo it is impossible.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 4, Mercutio mentions Queen Mab sometimes comes with a "tithe-pig's tail" to tickle the nose of a specific person as they sleep. Who is this person?
+ANSWER1: A soldier
+ANSWER2: A lawyer
+ANSWER3: A lady
+ANSWER4: A parson
+CORRECT: 4
+
+QUESTION:
+What does Romeo compare Juliet's tomb to in Act 5, Scene 3, just before entering it?
+ANSWER1: A palace of dim night
+ANSWER2: A bed of death
+ANSWER3: A feast of worms
+ANSWER4: A triumph of death
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 1, Benvolio warns that if he were as prone to quarrel as Mercutio, any man could buy the "fee simple" of his life for how long?
+ANSWER1: An hour and a quarter
+ANSWER2: A day
+ANSWER3: A week
+ANSWER4: A year
+CORRECT: 1
+
+QUESTION:
+What specific reason does Friar Lawrence give for being unable to leave Juliet alone in the tomb after she wakes in Act 5, Scene 3?
+ANSWER1: He needs to get help.
+ANSWER2: He is scared by a noise outside.
+ANSWER3: He doesn't trust Juliet not to harm herself.
+ANSWER4: The Watch is approaching.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 3, Lady Capulet compares Paris's face to a "volume of young Paris' face." What does she suggest Juliet should find "written in the margent of his eyes"?
+ANSWER1: His intentions
+ANSWER2: What is obscured in this fair volume
+ANSWER3: His fortune
+ANSWER4: True love
+CORRECT: 2
+
+QUESTION:
+What does Romeo mean in Act 1, Scene 5 when he says to Juliet, "You kiss by th' book"?
+ANSWER1: Your kiss is like one from a storybook.
+ANSWER2: Your kiss is formal and lacks passion.
+ANSWER3: Your kiss is perfect, as if you learned it from instructions.
+ANSWER4: Your kiss is recorded in the book of love.
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 3, Romeo is ready to stab himself. What specific part of his body does he ask Friar Lawrence in what vile part of this "anatomy" his name lodges, so he can "sack" the hateful mansion?
+ANSWER1: His heart
+ANSWER2: His hand
+ANSWER3: His head
+ANSWER4: His chest
+CORRECT: 1
+
+QUESTION:
+In Act 4, Scene 3, Juliet's fears before taking the potion include the possibility of waking up mad. What specific horrific image does she conjure of herself interacting with Tybalt's body in this madness?
+ANSWER1: Weeping over his grave.
+ANSWER2: Plucking the mangled Tybalt from his shroud.
+ANSWER3: Talking to his ghost.
+ANSWER4: Reburying him.
+CORRECT: 2
+
+QUESTION:
+What does Romeo say is his reason for entering the tomb in Act 5, Scene 3, besides beholding Juliet's face?
+ANSWER1: To get revenge on Tybalt.
+ANSWER2: To place flowers on her grave.
+ANSWER3: To take a precious ring from her finger.
+ANSWER4: To leave a letter for Juliet.
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Romeo overhears Juliet's soliloquy. He says, "Shall I hear more, or shall I speak at this?" This indicates he is doing what?
+ANSWER1: Entering the scene for the first time.
+ANSWER2: Hiding and listening to Juliet.
+ANSWER3: Approaching Juliet from a distance.
+ANSWER4: Deciding whether to interrupt her.
+CORRECT: 2
+
+QUESTION:
+What does Capulet call Tybalt in Act 1, Scene 5 when forbidding him to confront Romeo?
+ANSWER1: A saucy boy and a princox
+ANSWER2: A quarrelsome youth
+ANSWER3: A troublemaker
+ANSWER4: A kinsman
+CORRECT: 1
+
+QUESTION:
+In Act 3, Scene 5, after Romeo has left, the Nurse enters and believes Juliet is still weeping for Tybalt. What news does the Nurse bring to Juliet?
+ANSWER1: Romeo is safe in Mantua.
+ANSWER2: Juliet's father has news for her.
+ANSWER3: The Prince has pardoned Romeo.
+ANSWER4: Friar Lawrence has a plan.
+CORRECT: 2
+
+QUESTION:
+How does the Prince feel about his own role in the tragedy at the end of Act 5, Scene 3?
+ANSWER1: He blames the Friar.
+ANSWER2: He blames the Nurse and Page.
+ANSWER3: He accepts some responsibility for "winking" at the families' discords.
+ANSWER4: He believes he did everything he could.
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 1, Benvolio asks Romeo to tell him "in sadness" who he loves. What does "in sadness" mean here?
+ANSWER1: With sadness
+ANSWER2: In truth or seriousness
+ANSWER3: While feeling unwell
+ANSWER4: Secretly
+CORRECT: 2
+
+QUESTION:
+According to the front matter, Shakespeare's plays have come down to us in multiple published versions, represented by various Quartos (Qq) and the First Folio (F). In what year was the First Folio put together by Shakespeare's colleagues?
+ANSWER1: 1616
+ANSWER2: 1623
+ANSWER3: 1642
+ANSWER4: 1597
+CORRECT: 2
+
+QUESTION:
+In Act 2, Scene 4, how does Romeo describe his meeting and conversation with Mercutio after being lovesick over Rosaline?
+ANSWER1: He felt like a fool.
+ANSWER2: It brought him great joy and wit.
+ANSWER3: He preferred Benvolio's company.
+ANSWER4: He was still distracted by thoughts of Juliet.
+CORRECT: 2 (Mercutio says "Why, is not this better now than groaning for love? Now art thou sociable, now art thou Romeo..." and Romeo engages wittily with him.)
+
+QUESTION:
+What does the Nurse tell Romeo in Act 2, Scene 4 that Mercutio called her?
+ANSWER1: A talkative woman
+ANSWER2: A bawd and a hare
+ANSWER3: A kindly messenger
+ANSWER4: A flower of courtesy
+CORRECT: 2
+
+QUESTION:
+In Act 4, Scene 1, Friar Lawrence tells Juliet that when the potion takes effect, the "roses" in her lips and cheeks will fade to what color?
+ANSWER1: White
+ANSWER2: Blue
+ANSWER3: Paly ashes
+ANSWER4: Green
+CORRECT: 3
+
+QUESTION:
+What significant action does Juliet take just after waking up in the tomb in Act 5, Scene 3?
+ANSWER1: She calls out for Romeo.
+ANSWER2: She sees Romeo and Paris dead.
+ANSWER3: Friar Lawrence tries to persuade her to leave.
+ANSWER4: All of the above occur in quick succession.
+CORRECT: 4
+
+QUESTION:
+In Act 3, Scene 2, Juliet's lament over Romeo's banishment includes the line, "O, what a beast was I to chide at him!" Who was she referring to having just chided (scolded)?
+ANSWER1: Tybalt
+ANSWER2: The Nurse
+ANSWER3: Romeo
+ANSWER4: Her father
+CORRECT: 3
+
+QUESTION:
+What specific part of Queen Mab's wagon is described in Act 1, Scene 4 as being made of the wings of grasshoppers?
+ANSWER1: The traces
+ANSWER2: The collars
+ANSWER3: The cover
+ANSWER4: The wheels
+CORRECT: 3
+
+QUESTION:
+In Act 5, Scene 3, when Romeo is about to drink the poison, he raises it and calls it a "cordial." What is a cordial usually understood as?
+ANSWER1: A poison
+ANSWER2: A weapon
+ANSWER3: A heartwarming drink or medicine
+ANSWER4: A key
+CORRECT: 3 (Romeo is using irony; the substance will end his heart's suffering by ending his life.)
+
+QUESTION:
+According to Friar Lawrence's description in Act 4, Scene 1, Juliet's body will appear stiff, stark, and cold like death while under the potion's influence. What will happen to her eyes?
+ANSWER1: They will remain open but glassy.
+ANSWER2: They will fall like death when he shuts up the day of life.
+ANSWER3: They will roll back in her head.
+ANSWER4: They will close gently as if in sleep.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 2, when Romeo reads the list of guests for Capulet's feast, whose name does he recognize and react strongly to?
+ANSWER1: Tybalt's
+ANSWER2: Mercutio's
+ANSWER3: Rosaline's
+ANSWER4: Paris's
+CORRECT: 3
+
+QUESTION:
+In the sources' front matter, the Director of the Folger Shakespeare Library notes that the Folger Shakespeare texts are edited according to what level of knowledge about Shakespeare's texts?
+ANSWER1: Historically accurate
+ANSWER2: Twenty-first century knowledge
+ANSWER3: Standard scholarly conventions
+ANSWER4: Popular understanding
+CORRECT: 2
+
+QUESTION:
+What does the Nurse call Peter in Act 2, Scene 4, instructing him to stand between her and Mercutio?
+ANSWER1: My helper
+ANSWER2: My man
+ANSWER3: My protector
+ANSWER4: My safeguard
+CORRECT: 4
+
+QUESTION:
+In Act 3, Scene 5, Lady Capulet attempts to console Juliet by suggesting they will find joy after Tybalt's death. What does Juliet respond about joy coming well in a "needy time"?
+ANSWER1: That she doesn't believe joy is possible.
+ANSWER2: That she is eager to hear about it.
+ANSWER3: That joy feels out of place given her grief.
+ANSWER4: That she is too sad to care about joy.
+CORRECT: 2
+
+QUESTION:
+When Friar Lawrence scolds Romeo in Act 3, Scene 3, he compares Romeo's noble shape, love, and wit to a usurer who "abound'st in all" but does what?
+ANSWER1: Gives none away
+ANSWER2: Uses none in that true use indeed
+ANSWER3: Wastes them foolishly
+ANSWER4: Values them too highly
+CORRECT: 2
+
+QUESTION:
+What reason does Friar John give Friar Lawrence for his inability to find another messenger to take the letter to Romeo in Act 5, Scene 2?
+ANSWER1: Lack of available people.
+ANSWER2: Fear of infection.
+ANSWER3: The roads were impassable.
+ANSWER4: He forgot to look.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 1, what object does Benvolio draw in an attempt to stop the fight between the Capulet and Montague servants?
+ANSWER1: His dagger
+ANSWER2: His rapier
+ANSWER3: His sword
+ANSWER4: His staff
+CORRECT: 3
+
+QUESTION:
+What specific instruction does Romeo give the Nurse in Act 2, Scene 4 for Juliet regarding their marriage?
+ANSWER1: To come to Friar Lawrence's cell that afternoon for confession and marriage.
+ANSWER2: To meet him at the Capulet orchard that night.
+ANSWER3: To wait for a letter from him.
+ANSWER4: To tell her parents about their love.
+CORRECT: 1
+
+QUESTION:
+What does Juliet call her "true knight" when sending the ring to Romeo in Act 3, Scene 2?
+ANSWER1: Her husband
+ANSWER2: Romeo
+ANSWER3: Her love
+ANSWER4: The only living person for her
+CORRECT: 2
+
+QUESTION:
+In Act 5, Scene 3, Romeo enters the tomb saying he will set up his "everlasting rest" and shake the "yoke of inauspicious stars." What does this reveal about his view of fate?
+ANSWER1: He believes fate has been against him and is trying to escape it through death.
+ANSWER2: He believes fate is leading him to Juliet.
+ANSWER3: He accepts his fate peacefully.
+ANSWER4: He is indifferent to fate.
+CORRECT: 1
+
+QUESTION:
+In Act 1, Scene 1, when Romeo is speaking with Benvolio about Rosaline, he describes himself as being "Shut up in prison, kept without my food, Whipped and tormented." What is he describing here metaphorically?
+ANSWER1: The restrictions placed on him by the Montague family.
+ANSWER2: The pain and suffering caused by unrequited love for Rosaline.
+ANSWER3: His actual punishment from the Prince.
+ANSWER4: His general melancholy disposition.
+CORRECT: 2
+
+QUESTION:
+According to the Nurse in Act 2, Scene 5, while Romeo's face is better than any man's, what specific part of his body "excels all men's"?
+ANSWER1: His hand
+ANSWER2: His foot
+ANSWER3: His eyes
+ANSWER4: His leg
+CORRECT: 4
+
+QUESTION:
+What does Juliet say she would do if she thought Friar Lawrence's potion was poison in Act 4, Scene 3?
+ANSWER1: Not take it.
+ANSWER2: Confront the Friar.
+ANSWER3: Believe he has still been tried a holy man and take it anyway.
+ANSWER4: Give it to the Nurse.
+CORRECT: 3
+
+QUESTION:
+Who is the Director of the Folger Shakespeare Library, as listed in the front matter?
+ANSWER1: Barbara Mowat
+ANSWER2: Paul Werstine
+ANSWER3: Michael Witmore
+ANSWER4: Folger Shakespeare
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 1, after killing Tybalt, Romeo says he must be gone. Who urges him to run away immediately?
+ANSWER1: Mercutio
+ANSWER2: Benvolio
+ANSWER3: A Citizen
+ANSWER4: Friar Lawrence
+CORRECT: 2
+
+QUESTION:
+What specific word does Juliet repeat in Act 3, Scene 2, after hearing the Nurse's confusing news, trying to understand if Romeo is dead?
+ANSWER1: Romeo
+ANSWER2: Dead
+ANSWER3: Ay
+ANSWER4: Killèd
+CORRECT: 3 (Say thou but “Ay,” And that bare vowel “I” shall poison more Than the death-darting eye of cockatrice. I am not I if there be such an “I,” Or those eyes shut that makes thee answer “Ay.”)
+
+QUESTION:
+In Act 5, Scene 3, Paris is scattering flowers on Juliet's grave. What does he say he will water them with?
+ANSWER1: His tears
+ANSWER2: Morning dew
+ANSWER3: Perfumed water
+ANSWER4: Blood
+CORRECT: 1
+
+QUESTION:
+What does Romeo compare the gold he gives the Apothecary to in Act 5, Scene 1?
+ANSWER1: A remedy for poverty
+ANSWER2: A necessary evil
+ANSWER3: Worse poison to men's souls
+ANSWER4: The price of sin
+CORRECT: 3
+
+QUESTION:
+According to the front matter, who put together the great collection of Shakespeare's plays called the First Folio?
+ANSWER1: Shakespeare himself
+ANSWER2: Various printers
+ANSWER3: His colleagues in 1623
+ANSWER4: Editors in the 19th century
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet expresses concern that Romeo might think her "havior light" because she was "too fond." What does she promise to prove instead?
+ANSWER1: More coy
+ANSWER2: More strange
+ANSWER3: More true
+ANSWER4: More grateful
+CORRECT: 3
+
+QUESTION:
+What is the first line spoken in the play by Sampson in Act 1, Scene 1?
+ANSWER1: "A dog of the house of Montague moves me."
+ANSWER2: "I will be civil with the maids."
+ANSWER3: "Gregory, on my word we'll not carry coals."
+ANSWER4: "Let us take the air, and stir abroad."
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 3, Juliet considers the "loathsome smells" and "hideous fears" of the tomb. She compares shrieks she might hear to those of mandrakes being torn out of the earth, which are said to make living mortals do what upon hearing them?
+ANSWER1: Tremble with fear
+ANSWER2: Run mad
+ANSWER3: Faint
+ANSWER4: Weep uncontrollably
+CORRECT: 2
+
+QUESTION:
+What is the name of Romeo's man who brings him the news of Juliet's death in Mantua?
+ANSWER1: Peter
+ANSWER2: Friar John
+ANSWER3: Balthasar
+ANSWER4: Benvolio
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 5, Capulet, seeing Juliet weeping, compares her to various natural phenomena. He calls her a "conduit" and says her body is a "bark" sailing in what kind of flood?
+ANSWER1: A sea of sorrow
+ANSWER2: A salt flood
+ANSWER3: A river of tears
+ANSWER4: A tempest
+CORRECT: 2
+
+QUESTION:
+When Romeo and Juliet first speak in Act 1, Scene 5, their dialogue forms what poetic structure?
+ANSWER1: A couplet
+ANSWER2: A sonnet
+ANSWER3: Blank verse
+ANSWER4: A quatrain
+CORRECT: 2
+
+QUESTION:
+What specific mythological figures does Mercutio mention as Queen Mab's "coachmakers" in Act 1, Scene 4?
+ANSWER1: Fairies
+ANSWER2: Cupid and Venus
+ANSWER3: The joiner squirrel or old grub
+ANSWER4: Little atomi
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 3, Friar Lawrence suggests Romeo should visit Juliet one last time before going to Mantua, but must leave before what event?
+ANSWER1: The Prince finds out he is there.
+ANSWER2: The watch is set.
+ANSWER3: Morning prayers.
+ANSWER4: The lark sings.
+CORRECT: 4
+
+QUESTION:
+What does the Nurse ask Romeo for in Act 2, Scene 4, besides confirming his intentions towards Juliet?
+ANSWER1: Money
+ANSWER2: A gift for Juliet
+ANSWER3: To meet Juliet's parents
+ANSWER4: To promise not to harm Tybalt
+CORRECT: 1 (She offers him money, which he refuses, then asks for confidence and gives him a warning about Juliet.)
+
+QUESTION:
+In Act 4, Scene 1, Juliet tells Friar Lawrence she will follow his advice if it speaks not of remedy. What does she imply she will do if his counsel doesn't offer a solution?
+ANSWER1: Seek help elsewhere.
+ANSWER2: Give up hope.
+ANSWER3: Die.
+ANSWER4: Confront her parents.
+CORRECT: 3
+
+QUESTION:
+Who does Juliet mistake the Nurse is talking about initially in Act 3, Scene 2 when the Nurse cries "He's dead, he's dead"?
+ANSWER1: Tybalt
+ANSWER2: Mercutio
+ANSWER3: Romeo
+ANSWER4: Her father
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet asks Romeo how he found his way to her garden since the orchard walls are high and his kinsmen would kill him if they found him there. What does Romeo say his "night's cloak" is for?
+ANSWER1: To hide him from the Capulets' eyes.
+ANSWER2: To keep him warm.
+ANSWER3: To conceal his identity.
+ANSWER4: To help him climb the wall.
+CORRECT: 1
+
+QUESTION:
+According to the front matter, what is the name formerly used for the electronic texts now called The Folger Shakespeare?
+ANSWER1: Folger Digital Library
+ANSWER2: Folger Online Texts
+ANSWER3: Folger Digital Texts
+ANSWER4: Folger Electronic Texts
+CORRECT: 3
+
+QUESTION:
+In Act 5, Scene 3, upon seeing Juliet's body in the tomb, Romeo remarks that death has had no power yet upon her beauty. What specific details does he note about her appearance?
+ANSWER1: She looks asleep.
+ANSWER2: Beauty's ensign is crimson in her lips and cheeks.
+ANSWER3: Her hand is still warm.
+ANSWER4: She is smiling.
+CORRECT: 2
+
+QUESTION:
+When Friar Lawrence enters in Act 3, Scene 3, how does he greet Romeo, who is hiding in his cell?
+ANSWER1: "Romeo, come forth; come forth, thou fearful man."
+ANSWER2: "What news, my son?"
+ANSWER3: "Art thou here, Romeo?"
+ANSWER4: "Heaven shield thee from affliction!"
+CORRECT: 1
+
+QUESTION:
+In Act 4, Scene 2, after Juliet agrees to marry Paris, Capulet is so pleased that he decides to do what regarding the wedding day?
+ANSWER1: Postpone it to make it grander.
+ANSWER2: Keep it as planned.
+ANSWER3: Move it up to Wednesday.
+ANSWER4: Cancel it entirely.
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 1, Mercutio mocks Romeo's submission to Tybalt's insult. What Italian fencing term does Mercutio use?
+ANSWER1: Passado
+ANSWER2: Punto reverso
+ANSWER3: Alla stoccato
+ANSWER4: Montanto
+CORRECT: 3
+
+QUESTION:
+What specific instruction does Capulet give the Servingman regarding the guest list in Act 1, Scene 2?
+ANSWER1: Invite as many guests as are writ.
+ANSWER2: Ensure all the Montagues are excluded.
+ANSWER3: Read the list to him.
+ANSWER4: Deliver the invitations personally.
+CORRECT: 1
+
+QUESTION:
+In Act 3, Scene 2, Juliet asks the Nurse, "Is Romeo slaughtered and is Tybalt dead?" She then asks who is living if "those two are gone." What two people is she referring to here?
+ANSWER1: Her father and mother
+ANSWER2: Romeo and Tybalt
+ANSWER3: Mercutio and Tybalt
+ANSWER4: Romeo and the Nurse
+CORRECT: 2
+
+QUESTION:
+In Act 2, Scene 3, Friar Lawrence compares Romeo's sudden change in love from Rosaline to Juliet to what natural phenomenon?
+ANSWER1: The changing seasons
+ANSWER2: The tide
+ANSWER3: The sun clearing sighs from heaven
+ANSWER4: A plant changing soil
+CORRECT: 3
+
+QUESTION:
+What does Romeo pledge to do immediately after learning of Juliet's death in Act 5, Scene 1?
+ANSWER1: Return to Verona and lie with Juliet tonight.
+ANSWER2: Write to Friar Lawrence for guidance.
+ANSWER3: Seek revenge on the Capulets.
+ANSWER4: Mourn in Mantua.
+CORRECT: 1
+
+QUESTION:
+In Act 1, Scene 1, Romeo describes Rosaline as rich in beauty but poor in what, which will make her die with her beauty?
+ANSWER1: Friends
+ANSWER2: Marriage
+ANSWER3: Money
+ANSWER4: Virtue
+CORRECT: 2
+
+QUESTION:
+What warning does Friar Lawrence give Romeo and Juliet in Act 2, Scene 6 just before their marriage ceremony?
+ANSWER1: To cherish each other always.
+ANSWER2: That their parents will be angry.
+ANSWER3: To love moderately.
+ANSWER4: That he cannot keep their marriage a secret forever.
+CORRECT: 3
+
+QUESTION:
+Who first identifies Romeo at the Capulet feast by his voice in Act 1, Scene 5?
+ANSWER1: Capulet
+ANSWER2: Tybalt
+ANSWER3: A Servingman
+ANSWER4: The Nurse
+CORRECT: 2
+
+QUESTION:
+In Act 5, Scene 3, after Juliet wakes and finds Romeo dead, Friar Lawrence suggests she come away and not ask questions, as the Watch is coming. Where does he initially propose to keep her?
+ANSWER1: At the convent.
+ANSWER2: With her mother.
+ANSWER3: At his cell.
+ANSWER4: With Balthasar.
+CORRECT: 3
+
+QUESTION:
+What does Friar Lawrence compare Juliet's appearance to while under the potion's effect in Act 4, Scene 1?
+ANSWER1: Sleep
+ANSWER2: Death
+ANSWER3: A statue
+ANSWER4: An angel
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 4, what does Romeo say he dreams about?
+ANSWER1: Troubles and sorrow.
+ANSWER2: Queen Mab.
+ANSWER3: His love.
+ANSWER4: Nothing of significance.
+CORRECT: 1
+
+QUESTION:
+What specific object does the Prince ask for at the end of Act 5, Scene 3 that helps confirm the Friar's story?
+ANSWER1: Romeo's sword
+ANSWER2: Juliet's dagger
+ANSWER3: Romeo's letter to his father
+ANSWER4: Friar Lawrence's vial
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 5, Capulet, furious with Juliet, tells Lady Capulet and the Nurse to do what regarding Juliet if she does not obey him?
+ANSWER1: Reason with her.
+ANSWER2: Let her hang, beg, starve, and die in the streets.
+ANSWER3: Send her to Friar Lawrence.
+ANSWER4: Take her to the tomb now.
+CORRECT: 2
+
+QUESTION:
+What does Romeo say his life is, after learning from the Nurse in Act 1, Scene 5 that Juliet is a Capulet?
+ANSWER1: A debt to his foe's debt.
+ANSWER2: In his foe's debt.
+ANSWER3: Ruined.
+ANSWER4: Committed to his love.
+CORRECT: 2
+
+QUESTION:
+What reason does Mercutio give Benvolio for Romeo not coming home the previous night in Act 2, Scene 4?
+ANSWER1: He was hiding from Tybalt.
+ANSWER2: He was with Juliet.
+ANSWER3: Rosaline torments him so he will sure run mad.
+ANSWER4: He was at the Capulet feast.
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 5, who tries to find Juliet awake after her mother and the Nurse cannot rouse her?
+ANSWER1: Capulet
+ANSWER2: Paris
+ANSWER3: Friar Lawrence
+ANSWER4: The Servingman
+CORRECT: 1
+
+QUESTION:
+According to the source, editorial decisions sometimes involve changing unfamiliar words. They also mention accidentally included words through printing errors over how many years?
+ANSWER1: One hundred years
+ANSWER2: Two hundred years
+ANSWER3: Three hundred years
+ANSWER4: Four hundred years
+CORRECT: 4
+
+QUESTION:
+In Act 5, Scene 3, what reason does Paris's Page give the Prince for why his master was at the tomb?
+ANSWER1: To hide from Romeo.
+ANSWER2: To fight Romeo.
+ANSWER3: To strew his lady's grave with flowers.
+ANSWER4: To meet Friar Lawrence.
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 2 (Balcony Scene), Juliet tells Romeo that if he thinks she is "too quickly won," she will do what so he will woo?
+ANSWER1: Tell him to leave.
+ANSWER2: Frown and be perverse and say nay.
+ANSWER3: Pretend she doesn't love him.
+ANSWER4: Ask for time to consider.
+CORRECT: 2
+
+QUESTION:
+What does Friar Lawrence call the Earth in Act 2, Scene 3, comparing it to nature's mother?
+ANSWER1: Her garden
+ANSWER2: Her tomb and her womb
+ANSWER3: Her bounty
+ANSWER4: Her cradle
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 2, Juliet calls for night to come quickly and compares herself to a maiden who needs to be taught how to lose a winning match. What is the "match" she refers to?
+ANSWER1: Her love for Romeo
+ANSWER2: The feud between the families
+ANSWER3: Playing for a pair of stainless maidenhoods
+ANSWER4: Marrying Romeo instead of Paris
+CORRECT: 3
+
+QUESTION:
+In Act 5, Scene 3, the Prince says that some will be pardoned and some punished for the events. What is the final concluding thought he offers on the story?
+ANSWER1: That the feud is finally over.
+ANSWER2: That it is the saddest story ever told.
+ANSWER3: That lessons must be learned.
+ANSWER4: That he has lost two kinsmen.
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 4, when Romeo mentions dreaming, Mercutio launches into his speech about Queen Mab, whom he calls the fairies' what?
+ANSWER1: Queen
+ANSWER2: Messenger
+ANSWER3: Midwife
+ANSWER4: Gardener
+CORRECT: 3
+
+QUESTION:
+What does Romeo do immediately after killing Paris in Act 5, Scene 3?
+ANSWER1: He flees the scene.
+ANSWER2: He examines Paris's face and recognizes him as Mercutio's kinsman.
+ANSWER3: He enters the tomb.
+ANSWER4: He calls for help.
+CORRECT: 2
+
+QUESTION:
+What does Friar Lawrence give Juliet in Act 4, Scene 1?
+ANSWER1: A key to the tomb
+ANSWER2: A letter for Romeo
+ANSWER3: A sleeping potion in a vial
+ANSWER4: A crucifix
+CORRECT: 3
+
+QUESTION:
+In Act 1, Scene 1, after the brawl, who stays behind to speak with Benvolio about Romeo's melancholy?
+ANSWER1: Lady Montague
+ANSWER2: Lord Montague
+ANSWER3: The Prince
+ANSWER4: Both Lord and Lady Montague
+CORRECT: 4
+
+QUESTION:
+What is the name of the Servingman Capulet sends out with the guest list in Act 1, Scene 2?
+ANSWER1: Peter
+ANSWER2: Sampson
+ANSWER3: Gregory
+ANSWER4: The text does not give his name.
+CORRECT: 4
+
+QUESTION:
+In Act 5, Scene 3, what specific object does Juliet use to kill herself?
+ANSWER1: The remainder of Romeo's poison.
+ANSWER2: A knife hidden in her dress.
+ANSWER3: Romeo's dagger.
+ANSWER4: A sword found in the tomb.
+CORRECT: 3
+
+QUESTION:
+What is the primary message Romeo wants the Nurse to give Juliet in Act 2, Scene 4?
+ANSWER1: His undying love.
+ANSWER2: Instructions for meeting him at Friar Lawrence's cell for marriage.
+ANSWER3: That he is safe from Tybalt.
+ANSWER4: To wait for him in the orchard that night.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 3, Romeo feels that banishment is worse than death because he cannot be where Juliet lives. What does he say even "carrion flies" can do that he cannot?
+ANSWER1: See the sun.
+ANSWER2: Fly to Mantua.
+ANSWER3: Seize on Juliet's hand and steal blessings from her lips.
+ANSWER4: Sleep in Verona.
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 1, Juliet tells Friar Lawrence she will leap from a tower, walk in "thievish ways," hide with serpents, or be chained with bears rather than do what?
+ANSWER1: Be banished from Verona.
+ANSWER2: Marry Paris.
+ANSWER3: Disobey her parents.
+ANSWER4: Live without Romeo.
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 5, Lady Capulet misinterprets Juliet's grief. She believes Juliet is weeping for Tybalt and wishes to wreak her "love" for her cousin upon Romeo's body. What kind of "love" does Lady Capulet mean in this context?
+ANSWER1: Affection
+ANSWER2: Loyalty
+ANSWER3: Revenge
+ANSWER4: Sorrow
+CORRECT: 3
+
+QUESTION:
+What does Romeo say his "unrest" is "the more" for at the end of Act 1, Scene 5, after learning Juliet is a Capulet?
+ANSWER1: Because he has to leave.
+ANSWER2: Because the sport is at the best.
+ANSWER3: Because he met Juliet.
+ANSWER4: Because of his love for a foe.
+CORRECT: 2 (Benvolio says "Away, begone. The sport is at the best." Romeo replies, "Ay, so I fear. The more is my unrest.")
+
+QUESTION:
+According to Friar Lawrence's explanation in Act 5, Scene 3, how long was Juliet supposed to remain under the effect of the sleeping potion?
+ANSWER1: One day
+ANSWER2: Forty-two hours
+ANSWER3: Three days
+ANSWER4: Until Romeo arrived
+CORRECT: 2
+
+QUESTION:
+In Act 1, Scene 1, Romeo tells Benvolio he loves a woman. Benvolio guesses he is in love, and Romeo calls him a "right good markman." What does Romeo say makes Benvolio miss his shot?
+ANSWER1: She is too proud to be hit.
+ANSWER2: She has Dian's wit and is well armed in chastity.
+ANSWER3: His aim was off.
+ANSWER4: He aimed too low.
+CORRECT: 2
+
+QUESTION:
+Who is the first person to arrive at the tomb in Act 5, Scene 3?
+ANSWER1: Friar Lawrence
+ANSWER2: Romeo and Balthasar
+ANSWER3: Paris and his Page
+ANSWER4: The Watch
+CORRECT: 3
+
+QUESTION:
+In Act 2, Scene 5, Juliet says that love should be swift because it is drawn by nimble-pinioned doves and has the wind-swift Cupid wings. She contrasts this with "old folks" who feign as they were dead, describing them how?
+ANSWER1: Talkative and forgetful
+ANSWER2: Unwieldy, slow, heavy, and pale as lead
+ANSWER3: Wise and cautious
+ANSWER4: Prone to illness
+CORRECT: 2
+
+QUESTION:
+What is the last thing Juliet says before drinking the potion in Act 4, Scene 3?
+ANSWER1: "Romeo, Romeo, Romeo!"
+ANSWER2: "Here's drink. I drink to thee."
+ANSWER3: "Farewell!"
+ANSWER4: "Stay, Tybalt, stay!"
+CORRECT: 2
+
+QUESTION:
+In Act 5, Scene 3, the Prince refers to Mercutio and Paris together as what, implying their relation to him?
+ANSWER1: Noble friends
+ANSWER2: A brace of kinsmen
+ANSWER3: Unfortunate souls
+ANSWER4: Victims of the feud
+CORRECT: 2
+
+QUESTION:
+In Act 3, Scene 2, when Juliet first reacts to the news, she asks if heaven can be so envious. The Nurse replies, "Romeo can, Though heaven cannot." What does the Nurse mean by this confusing statement?
+ANSWER1: Romeo is capable of doing something unbelievable, like being dead.
+ANSWER2: Romeo is as powerful as heaven.
+ANSWER3: The Nurse is simply rambling and confused.
+ANSWER4: Romeo can be envious, unlike heaven.
+CORRECT: 1
+
+QUESTION:
+According to the front matter, the Folger Shakespeare texts are provided free of charge as a resource for study, artistic adaptation, and enjoyment, with confidence in their quality as texts of the plays. Who are these texts provided to?
+ANSWER1: Readers, scholars, teachers, actors, directors, and students.
+ANSWER2: Professional theater companies only.
+ANSWER3: Educational institutions.
+ANSWER4: The general public, but only for non-commercial use.
+CORRECT: 1
+
+QUESTION:
+What does Romeo say about gold when talking to the Apothecary in Act 5, Scene 1?
+ANSWER1: It is the root of all evil.
+ANSWER2: It is a worse poison to men's souls than the drugs the Apothecary sells.
+ANSWER3: It cannot buy happiness.
+ANSWER4: It is necessary for survival.
+CORRECT: 2
+
+QUESTION:
+Who tries to explain the reason for the deaths and events at the end of Act 5, Scene 3?
+ANSWER1: Balthasar
+ANSWER2: The Prince
+ANSWER3: Friar Lawrence
+ANSWER4: Capulet and Montague
+CORRECT: 3
+
+QUESTION:
+In Act 3, Scene 5, Juliet refuses to call Romeo "villain" even though he killed Tybalt. What reason does she give for not speaking ill of him?
+ANSWER1: He is banished.
+ANSWER2: He is her husband.
+ANSWER3: She is too grieved to speak.
+ANSWER4: Tybalt would have killed him.
+CORRECT: 2
+
+QUESTION:
+What does Capulet call Juliet in Act 3, Scene 5 when she refuses to marry Paris, using a term that implies stubbornness and willfulness?
+ANSWER1: A fool
+ANSWER2: A disobedient wretch
+ANSWER3: A saucy girl
+ANSWER4: A headstrong baggage
+CORRECT: 4 ("You are a disobedient wretch! ... hang thee, young baggage, disobedient wretch!")
+
+QUESTION:
+In Act 2, Scene 1, Mercutio refers to Cupid as "purblind." What does "purblind" mean?
+ANSWER1: All-seeing
+ANSWER2: Completely blind
+ANSWER3: Partially or dim-sighted
+ANSWER4: Cruel
+CORRECT: 3
+
+QUESTION:
+What does Romeo swear by in Act 2, Scene 2 (Balcony Scene) that Juliet immediately tells him not to swear by because it is inconstant?
+ANSWER1: His love
+ANSWER2: His name
+ANSWER3: The moon
+ANSWER4: Heaven
+CORRECT: 3
+
+QUESTION:
+In Act 4, Scene 1, Friar Lawrence tells Juliet that her "resolution" to kill herself if she cannot avoid marrying Paris is "desperate." What word does he use to describe the necessary "execution" of his potion plan?
+ANSWER1: Desperate
+ANSWER2: Dangerous
+ANSWER3: Unlikely
+ANSWER4: Simple
+CORRECT: 1
+
+QUESTION:
+What does the Prince's final couplet in Act 5, Scene 3 suggest about the overall mood and outcome?
+ANSWER1: There is hope for the future.
+ANSWER2: The morning brings a "glooming peace," and the story is one of immense woe.
+ANSWER3: Justice has been served.
+ANSWER4: The families will continue to feud.
+CORRECT: 2
