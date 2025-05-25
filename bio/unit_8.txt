@@ -1,0 +1,1279 @@
+QUESTION:
+According to the sources, what revolutionary technology, entering the stage around 2016, significantly reduced the cost and time required for gene editing?
+ANSWER1: PCR
+ANSWER2: Gel electrophoresis
+ANSWER3: CRISPR
+ANSWER4: Selective breeding
+CORRECT: 3
+
+QUESTION:
+Before the discovery of DNA, how did humans engineer life for thousands of years?
+ANSWER1: Through radiation-induced mutations
+ANSWER2: By inserting DNA snippets into organisms
+ANSWER3: Using recombinant plasmids
+ANSWER4: Through selective breeding to strengthen useful traits
+CORRECT: 4
+
+QUESTION:
+What complex molecule discovered in the 20th century guides the growth, development, function, and reproduction of all life?
+ANSWER1: RNA
+ANSWER2: Protein
+ANSWER3: DNA
+ANSWER4: Nucleotide
+CORRECT: 3
+
+QUESTION:
+Information in DNA is encoded in the structure of the molecule using how many types of paired nucleotides?
+ANSWER1: Two
+ANSWER2: Three
+ANSWER3: Four
+ANSWER4: Millions
+CORRECT: 3
+
+QUESTION:
+According to one source, what was the idea behind bombarding plants with radiation in the 1960s for genetic engineering?
+ANSWER1: To study DNA repair mechanisms
+ANSWER2: To cause random mutations in the genetic code hoping for a useful variation
+ANSWER3: To sterilize the plants before inserting new genes
+ANSWER4: To increase the plants' resistance to pests
+CORRECT: 2
+
+QUESTION:
+What was the earliest genetically modified animal, born in 1974, commonly used as a standard tool for research?
+ANSWER1: Dog
+ANSWER2: Rat
+ANSWER3: Mouse
+ANSWER4: Frog
+CORRECT: 3
+
+QUESTION:
+According to one source, the first patent for a microbe engineered to absorb oil was given in which decade?
+ANSWER1: 1960s
+ANSWER2: 1970s
+ANSWER3: 1980s
+ANSWER4: 1990s
+CORRECT: 3
+
+QUESTION:
+Before the advent of genetic engineering for production, from what source did scientists harvest chemicals like life-saving clotting factors, growth hormones, and insulin?
+ANSWER1: Bacteria
+ANSWER2: Plants
+ANSWER3: Fungi
+ANSWER4: The organs of animals
+CORRECT: 4
+
+QUESTION:
+What was the name of the first food modified in the lab that went on sale in 1994?
+ANSWER1: Endless Apple
+ANSWER2: Flavr Savr tomato
+ANSWER3: Super Potato
+ANSWER4: Mega Maize
+CORRECT: 2
+
+QUESTION:
+The Flavr Savr tomato was modified to have a much longer shelf life by adding an extra gene that suppresses the build-up of what?
+ANSWER1: Ripening agent
+ANSWER2: Rotting enzyme
+ANSWER3: Pectin
+ANSWER4: Water
+CORRECT: 2
+
+QUESTION:
+In the 1990s, there was a brief foray into human engineering to treat maternal infertility, resulting in babies carrying genetic information from how many humans?
+ANSWER1: One
+ANSWER2: Two
+ANSWER3: Three
+ANSWER4: Four
+CORRECT: 3
+
+QUESTION:
+Beyond practical applications, what is mentioned as a "fun side" result of genetic engineering, such as seen in fluorescent zebrafish?
+ANSWER1: Increased size
+ANSWER2: Ability to glow in the dark
+ANSWER3: Faster growth rate
+ANSWER4: Enhanced intelligence
+CORRECT: 2
+
+QUESTION:
+According to one source, approximately how much did the cost of genetic engineering shrink overnight with the introduction of CRISPR?
+ANSWER1: 50%
+ANSWER2: 75%
+ANSWER3: 90%
+ANSWER4: 99%
+CORRECT: 4
+
+QUESTION:
+The CRISPR system in bacteria is described as their most effective antivirus system. What does the bacterium save from a virus attack in a DNA archive called CRISPR?
+ANSWER1: A protein copy of the virus
+ANSWER2: A part of the virus DNA
+ANSWER3: The virus's RNA
+ANSWER4: Antibodies against the virus
+CORRECT: 2
+
+QUESTION:
+When a virus attacks a bacterium again, the bacterium makes an RNA copy from its CRISPR archive and arms a protein weapon. What is this protein called?
+ANSWER1: Restriction enzyme
+ANSWER2: DNA ligase
+ANSWER3: Cas9
+ANSWER4: Reverse transcriptase
+CORRECT: 3
+
+QUESTION:
+The Cas9 protein scans the bacterium's insides for signs of the virus invader by comparing DNA to what?
+ANSWER1: The bacterium's own genome
+ANSWER2: The RNA copy from the CRISPR archive
+ANSWER3: A standard viral database
+ANSWER4: Proteins produced by the virus
+CORRECT: 2
+
+QUESTION:
+When the Cas9 protein finds a 100-percent perfect match to the viral DNA sample, what does it do?
+ANSWER1: It replicates the viral DNA
+ANSWER2: It cuts out the viral DNA, making it useless
+ANSWER3: It encapsulates the viral DNA
+ANSWER4: It flags the viral DNA for later removal
+CORRECT: 2
+
+QUESTION:
+CRISPR/Cas9 is described as very precise, almost like a DNA surgeon. What characteristic makes the CRISPR system programmable for scientists?
+ANSWER1: The Cas9 protein's structure can be easily changed.
+ANSWER2: You can provide it with a copy of the DNA you want to modify.
+ANSWER3: It automatically identifies genes that need editing.
+ANSWER4: It can only target specific sequences found in bacteria.
+CORRECT: 2
+
+QUESTION:
+If old techniques of genetic manipulation were like a map, what is CRISPR compared to in the context of precision?
+ANSWER1: A compass
+ANSWER2: A telescope
+ANSWER3: A GPS system
+ANSWER4: A microscope
+CORRECT: 3
+
+QUESTION:
+Aside from being precise, cheap, and easy, what ability does CRISPR offer regarding live cells?
+ANSWER1: Inserting entire chromosomes
+ANSWER2: Creating new cell types from scratch
+ANSWER3: Editing live cells, switching genes on/off, and targeting specific DNA sequences
+ANSWER4: Converting one cell type into another
+CORRECT: 3
+
+QUESTION:
+What types of cells does CRISPR work for?
+ANSWER1: Only bacterial cells
+ANSWER2: Only plant and animal cells
+ANSWER3: Microorganisms, plants, animals, or humans (every type of cell)
+ANSWER4: Only human cells
+CORRECT: 3
+
+QUESTION:
+Despite the revolution CRISPR is for science, it is described as being just a first-generation tool. What is already being created and used?
+ANSWER1: Entirely new genomes
+ANSWER2: More precise tools
+ANSWER3: Artificial cells
+ANSWER4: Organisms without DNA
+CORRECT: 2
+
+QUESTION:
+In 2015, scientists used CRISPR to cut the HIV virus out of what, proving it was possible?
+ANSWER1: Bacterial cultures
+ANSWER2: Living cells from patients in the lab
+ANSWER3: Viral particles themselves
+ANSWER4: Plant cells
+CORRECT: 2
+
+QUESTION:
+Approximately how much of the HIV virus were scientists able to remove from cells all over the body in rats by injecting CRISPR into their tails?
+ANSWER1: Less than 10%
+ANSWER2: About 25%
+ANSWER3: More than 50%
+ANSWER4: Almost 100%
+CORRECT: 3
+
+QUESTION:
+What viruses, in addition to HIV and other retroviruses, are mentioned as potentially being eradicated with a future CRISPR therapy?
+ANSWER1: Influenza
+ANSWER2: Common cold viruses
+ANSWER3: Herpes (viruses that hide inside human DNA)
+ANSWER4: Measles
+CORRECT: 3
+
+QUESTION:
+How does cancer occur, according to one source?
+ANSWER1: When cells are attacked by viruses
+ANSWER2: When cells refuse to die and keep multiplying while concealing themselves from the immune system
+ANSWER3: When there is too much genetic diversity in cells
+ANSWER4: When cells age too quickly and break down
+CORRECT: 2
+
+QUESTION:
+CRISPR gives us the means to edit our immune cells to make them better at fighting what disease?
+ANSWER1: Diabetes
+ANSWER2: Cancer
+ANSWER3: Heart disease
+ANSWER4: Alzheimer's
+CORRECT: 2
+
+QUESTION:
+When was the first clinical trial for a CRISPR cancer treatment on human patients approved in the US?
+ANSWER1: Early 2015
+ANSWER2: Early 2016
+ANSWER3: Late 2016
+ANSWER4: Early 2017
+CORRECT: 2
+
+QUESTION:
+Around the same time the US approved a CRISPR cancer trial, scientists in which country announced they would treat lung cancer patients with immune cells modified with CRISPR?
+ANSWER1: Japan
+ANSWER2: Germany
+ANSWER3: China
+ANSWER4: United Kingdom
+CORRECT: 3
+
+QUESTION:
+Many genetic diseases are caused by what specific type of error in DNA, according to one source?
+ANSWER1: Missing genes
+ANSWER2: Extra chromosomes
+ANSWER3: A single incorrect letter (nucleotide)
+ANSWER4: Viral insertions
+CORRECT: 3
+
+QUESTION:
+A modified version of Cas9 is being built specifically to do what to fix genetic diseases caused by a single incorrect letter?
+ANSWER1: Cut out the entire gene
+ANSWER2: Insert a new, healthy gene
+ANSWER3: Change just a single letter in the DNA
+ANSWER4: Prevent the gene from being expressed
+CORRECT: 3
+
+QUESTION:
+According to one source, in a decade or two, CRISPR technology could potentially cure how many diseases forever?
+ANSWER1: Dozens
+ANSWER2: Hundreds
+ANSWER3: Thousands
+ANSWER4: Millions
+CORRECT: 3
+
+QUESTION:
+In 2015 and 2016, scientists in which country experimented with human embryos using gene editing, showing the enormous challenges but also that scientists are working on solutions?
+ANSWER1: United States
+ANSWER2: Germany
+ANSWER3: United Kingdom
+ANSWER4: China
+CORRECT: 4
+
+QUESTION:
+What is the potential long-term impact of modified humans passing engineered traits to their children?
+ANSWER1: It will only affect the immediate family.
+ANSWER2: It could alter the genome of our entire species, slowly modifying the whole gene pool of humanity.
+ANSWER3: The engineered traits will disappear within a few generations.
+ANSWER4: It will only create sterile offspring.
+CORRECT: 2
+
+QUESTION:
+According to one source, what is the most likely initial purpose for creating the first "designer babies"?
+ANSWER1: To give them enhanced intelligence
+ANSWER2: To eliminate a deadly genetic disease running in a family
+ANSWER3: To give them specific vanity traits like height or eye color
+ANSWER4: To make them immune to all known diseases
+CORRECT: 2
+
+QUESTION:
+As genetic modification technology progresses and becomes more refined, why might some people argue that *not* using it is unethical?
+ANSWER1: Because it is too expensive
+ANSWER2: Because it is unnatural
+ANSWER3: Because it condemns children to preventable suffering and death and denies them the cure
+ANSWER4: Because it could lead to overpopulation
+CORRECT: 3
+
+QUESTION:
+What is the "slippery slope" mentioned regarding genetic engineering?
+ANSWER1: The difficulty in controlling the technology
+ANSWER2: The increasing temptation to edit for vanity traits once disease elimination is accepted
+ANSWER3: The potential for the technology to become less precise
+ANSWER4: The risk of creating genetic disorders
+CORRECT: 2
+
+QUESTION:
+What single biggest mortality risk factor could potentially be solved as genetic engineering becomes more normal and knowledge improves?
+ANSWER1: Cancer
+ANSWER2: Infectious diseases
+ANSWER3: Aging
+ANSWER4: Genetic diseases
+CORRECT: 3
+
+QUESTION:
+What are two-thirds of the 150,000 people who die today expected to die from, according to one source?
+ANSWER1: Infectious diseases
+ANSWER2: Accidents
+ANSWER3: Age-related causes
+ANSWER4: Cancer
+CORRECT: 3
+
+QUESTION:
+Aging is thought to be caused by the accumulation of damage to cells, like DNA breaks. What else directly affects aging, according to the sources?
+ANSWER1: Diet
+ANSWER2: Exercise
+ANSWER3: Genes
+ANSWER4: Environment
+CORRECT: 3
+
+QUESTION:
+According to one source, who might be the first people to profit from effective anti-aging therapy?
+ANSWER1: Scientists
+ANSWER2: Billionaires convinced to solve the problem
+ANSWER3: Doctors
+ANSWER4: The general public
+CORRECT: 2
+
+QUESTION:
+How could engineered humans potentially be better equipped to cope with high-energy food, eliminating many diseases of civilization like obesity?
+ANSWER1: By having enhanced metabolism
+ANSWER2: By having stronger digestive systems
+ANSWER3: By requiring less food
+ANSWER4: By being immune to certain foods
+CORRECT: 1
+
+QUESTION:
+With a modified immune system, equipped with a library of potential threats, what might engineered humans become immune to?
+ANSWER1: All forms of cancer
+ANSWER2: All genetic diseases
+ANSWER3: Most diseases that haunt us today
+ANSWER4: Environmental toxins
+CORRECT: 3
+
+QUESTION:
+Even further into the future, for what purpose could humans be engineered to be equipped for?
+ANSWER1: Underwater exploration
+ANSWER2: Extended space travel and coping with different planetary conditions
+ANSWER3: Living underground
+ANSWER4: Surviving extreme temperatures on Earth
+CORRECT: 2
+
+QUESTION:
+What are some of the major challenges that await us with genetic engineering?
+ANSWER1: Only technological challenges
+ANSWER2: Only ethical challenges
+ANSWER3: Technological and ethical challenges
+ANSWER4: Political challenges only
+CORRECT: 3
+
+QUESTION:
+According to the sources, are we already living in a world where we pre-select features and qualities based on an idea of what's healthy or "non-perfect"?
+ANSWER1: No, this is a future concern.
+ANSWER2: Yes, through standard tests for genetic diseases in pregnancies, often leading to termination.
+ANSWER3: Only in certain countries, not globally.
+ANSWER4: This only happens with cosmetic procedures.
+CORRECT: 2
+
+QUESTION:
+What percentage of pregnancies in Europe are terminated when Down syndrome is detected, according to one source?
+ANSWER1: About 20%
+ANSWER2: About 50%
+ANSWER3: About 75%
+ANSWER4: About 92%
+CORRECT: 4
+
+QUESTION:
+According to one source, even though CRISPR is powerful, it is not infallible yet. What potential problem is mentioned?
+ANSWER1: It only works on single-celled organisms.
+ANSWER2: Wrong edits still happen, as well as unknown errors.
+ANSWER3: It requires extremely rare equipment.
+ANSWER4: It is very difficult to program.
+CORRECT: 2
+
+QUESTION:
+Why is our current knowledge insufficient to avoid unpredictable consequences when using gene editing?
+ANSWER1: We don't have enough scientists working on it.
+ANSWER2: We don't know enough about the complex interplay of our genes.
+ANSWER3: The technology is simply too new to understand fully.
+ANSWER4: Funding for research is inadequate.
+CORRECT: 2
+
+QUESTION:
+What is a major concern as the first human trials for gene editing begin?
+ANSWER1: The speed of the trials
+ANSWER2: Working on accuracy and monitoring methods
+ANSWER3: Getting enough volunteers
+ANSWER4: Public perception
+CORRECT: 2
+
+QUESTION:
+What darker vision is imagined regarding genetic engineering, mentioning a state like North Korea?
+ANSWER1: Engineering stronger animals for labor
+ANSWER2: Forcing gene editing on subjects or creating an army of modified super soldiers
+ANSWER3: Engineering crops that only grow in certain regions
+ANSWER4: Using it to track citizens' genetic information
+CORRECT: 2
+
+QUESTION:
+According to the sources, is the basic proof of concept for engineering modified super soldiers possible in theory today?
+ANSWER1: No, this is pure science fiction.
+ANSWER2: Yes, the technology is that powerful.
+ANSWER3: Only if significant technological breakthroughs occur first.
+ANSWER4: Only in very specific organisms, not humans.
+CORRECT: 2
+
+QUESTION:
+Why is banning human genetic engineering and related research considered a mistake by one source?
+ANSWER1: Because it would stop all medical progress.
+ANSWER2: Because it would only lead the science to wander off to places with uncomfortable jurisdiction and rules.
+ANSWER3: Because it would be impossible to enforce.
+ANSWER4: Because it would delay the eradication of genetic diseases.
+CORRECT: 2
+
+QUESTION:
+How can we ensure that further research in genetic engineering is guided by caution, reason, oversight, and transparency?
+ANSWER1: By ignoring the technology entirely.
+ANSWER2: By banning it in most countries.
+ANSWER3: Only by participating in the research and setting the rules.
+ANSWER4: By letting market forces decide.
+CORRECT: 3
+
+QUESTION:
+One source suggests that genetic engineering might just be a step in the natural evolution of what?
+ANSWER1: Viruses
+ANSWER2: Bacteria
+ANSWER3: Plants
+ANSWER4: Intelligent species in the universe
+CORRECT: 4
+
+QUESTION:
+What new versions of CRISPR gene editors are discussed as being able to fix RNA and DNA one typo at a time?
+ANSWER1: Molecular scissors
+ANSWER2: Base editors
+ANSWER3: Gene probes
+ANSWER4: Restriction enzymes
+CORRECT: 2
+
+QUESTION:
+In experiments mentioned in one source, these new "base editors" were used to reverse what?
+ANSWER1: Viral infections
+ANSWER2: Cellular aging
+ANSWER3: Disease-causing mutations (single-letter typos)
+ANSWER4: Chromosomal abnormalities
+CORRECT: 3
+
+QUESTION:
+How are the new base editors described as rewriting DNA, instead of cutting like traditional CRISPR/Cas9?
+ANSWER1: Like erasing
+ANSWER2: Like scanning
+ANSWER3: Like pencils
+ANSWER4: Like staplers
+CORRECT: 3
+
+QUESTION:
+Which researchers led studies on new CRISPR gene editors, reported in Nature and Science in October 2017?
+ANSWER1: Jennifer Doudna and Emmanuelle Charpentier
+ANSWER2: David Liu and Feng Zhang
+ANSWER3: James Watson and Francis Crick
+ANSWER4: Earl Washington and Kenneth Tinsley
+CORRECT: 2
+
+QUESTION:
+One new base editor reported by David Liu and colleagues can convert the DNA base adenine (A) to what base?
+ANSWER1: Cytosine (C)
+ANSWER2: Thymine (T)
+ANSWER3: Guanine (G)
+ANSWER4: Uracil (U)
+CORRECT: 3
+
+QUESTION:
+Another researcher, Feng Zhang, re-engineered a gene editor called CRISPR/Cas13 to correct typos in what molecule instead of DNA?
+ANSWER1: Protein
+ANSWER2: RNA
+ANSWER3: Lipids
+ANSWER4: Carbohydrates
+CORRECT: 2
+
+QUESTION:
+Traditional CRISPR/Cas9 is described as a molecular scissors that snips DNA. How does a guide RNA help this process?
+ANSWER1: It repairs the cut DNA.
+ANSWER2: It carries the Cas9 protein into the cell.
+ANSWER3: It matches DNA at the target site to guide the scissors.
+ANSWER4: It translates the DNA sequence.
+CORRECT: 3
+
+QUESTION:
+How do base editors differ from traditional CRISPR/Cas9 in their action on DNA?
+ANSWER1: They cut DNA at multiple sites.
+ANSWER2: They add entire genes to the DNA.
+ANSWER3: They fuse enzymes to a "dead" Cas9 that doesn't cut DNA to alter chemical structure.
+ANSWER4: They remove sections of DNA.
+CORRECT: 3
+
+QUESTION:
+According to Gene Yeo, noncutting gene editors (like base editors) are possibly safer than traditional DNA-cutting versions because mistakes often arise when cellular machinery attempts to repair what?
+ANSWER1: RNA damage
+ANSWER2: Protein misfolding
+ANSWER3: DNA breaks
+ANSWER4: Cell membranes
+CORRECT: 3
+
+QUESTION:
+Undesired "off-target" mutations are a risk with DNA editing. What type of edits are considered potentially bad because they are permanent and irreversible?
+ANSWER1: Temporary RNA edits
+ANSWER2: Edits that cut DNA at the wrong place
+ANSWER3: Edits that only affect protein structure
+ANSWER4: Edits that are corrected by cellular machinery
+CORRECT: 2
+
+QUESTION:
+The new base editors allow researchers to rewrite all four bases that store information in DNA and RNA. What are these four bases?
+ANSWER1: Alanine, Thymine, Cytosine, Glycine
+ANSWER2: Adenine, Thymine, Cytosine, Guanine
+ANSWER3: Arginine, Threonine, Cysteine, Glutamine
+ANSWER4: Asparagine, Tryptophan, Cysteine, Glutamine
+CORRECT: 2
+
+QUESTION:
+Mutations that change C-G base pairs to T-A pairs happen frequently in human cells. About half of the 32,000 mutations associated with human genetic diseases are this type of change. What did David Liu say was previously possible about this?
+ANSWER1: They could be easily fixed.
+ANSWER2: There was little anyone could do about it.
+ANSWER3: They were always benign.
+ANSWER4: They only occurred in specific cell types.
+CORRECT: 2
+
+QUESTION:
+In RNA, naturally occurring enzymes can convert adenine (A) to inosine (I). How does the cell interpret inosine (I)?
+ANSWER1: As Adenine (A)
+ANSWER2: As Thymine (T)
+ANSWER3: As Guanine (G)
+ANSWER4: As Cytosine (C)
+CORRECT: 3
+
+QUESTION:
+RNA editing with CRISPR-Cas13 (like the REPAIR tool) is described as good for what type of fixes?
+ANSWER1: Permanent fixes
+ANSWER2: Inheritable fixes
+ANSWER3: Temporary fixes, such as shutting down inflammation-promoting proteins
+ANSWER4: Large-scale genome restructuring
+CORRECT: 3
+
+QUESTION:
+For many mutations, what is required to fix them permanently?
+ANSWER1: Temporary RNA edits
+ANSWER2: Permanent DNA repairs
+ANSWER3: Protein therapy
+ANSWER4: Dietary changes
+CORRECT: 2
+
+QUESTION:
+David Liu's team made a base editor in 2016 that converted C to T. What opposite change could this editor *not* make?
+ANSWER1: T to C
+ANSWER2: A to G
+ANSWER3: G to A
+ANSWER4: T to A
+CORRECT: 2
+
+QUESTION:
+Unlike with RNA, no enzymes naturally make the A-to-I conversion in DNA. How did Nicole Gaudelli in Liu's lab develop an enzyme for this?
+ANSWER1: By isolating it from a rare plant
+ANSWER2: By synthesizing it chemically
+ANSWER3: By forcing E. coli bacteria to evolve one
+ANSWER4: By extracting it from human cells
+CORRECT: 3
+
+QUESTION:
+The result of bolting the E. coli DNA converter (TadA) to a "dead" version of Cas9 was a base editor called ABE. What type of base pair conversion could ABE make?
+ANSWER1: C-G to T-A
+ANSWER2: G-C to A-T
+ANSWER3: T-A to C-G
+ANSWER4: A-T to G-C
+CORRECT: 4
+
+QUESTION:
+In lab dishes, Liu's team used the ABE base editor to correct a mutation in human cells from a patient with an iron-storage blood disorder. What is this disorder called?
+ANSWER1: Sickle cell anemia
+ANSWER2: Beta-thalassemia
+ANSWER3: Hereditary hemochromatosis
+ANSWER4: Duchenne muscular dystrophy
+CORRECT: 3
+
+QUESTION:
+Liu's team also re-created beneficial mutations that allow blood cells to keep making fetal hemoglobin. Those mutations are known to protect against what disease?
+ANSWER1: Cystic fibrosis
+ANSWER2: Huntington's disease
+ANSWER3: Sickle cell anemia
+ANSWER4: Hemophilia
+CORRECT: 3
+
+QUESTION:
+Compared to traditional cut-and-paste CRISPR/Cas9, Liu's team found that the new A-to-G base editor (ABE) altered significantly fewer off-target sites. At 12 possible off-target sites tested, how many did ABE alter and at what percentage?
+ANSWER1: 12 sites, 14% of the time
+ANSWER2: 9 sites, 14% of the time
+ANSWER3: 4 sites, 1.3% of the time
+ANSWER4: 1 site, less than 1% of the time
+CORRECT: 3
+
+QUESTION:
+According to Liu, is cut-and-paste editing still useful despite the potential for off-target edits?
+ANSWER1: No, base editors have replaced it entirely.
+ANSWER2: Yes, sometimes if your task is to cut something, you need scissors, not a pencil.
+ANSWER3: Only for non-human applications.
+ANSWER4: Only for research purposes, not clinical.
+CORRECT: 2
+
+QUESTION:
+Duchenne muscular dystrophy (DMD) is a fatal genetic disease caused by a mutation in the gene encoding what protein vital to muscle function?
+ANSWER1: Hemoglobin
+ANSWER2: Insulin
+ANSWER3: Dystrophin
+ANSWER4: Rhodopsin
+CORRECT: 3
+
+QUESTION:
+Researchers have used a harmless virus to deliver gene-editing components to the muscles of dogs to halt DMD. Within weeks, what was restored?
+ANSWER1: Muscle mass
+ANSWER2: Normal dystrophin levels
+ANSWER3: The ability to walk
+ANSWER4: Full recovery from the disease
+CORRECT: 2
+
+QUESTION:
+Biotechnology, the manipulation of organisms or their components to make useful products, dates back to ancient practices like selective breeding. What is typically referred to when people use the term biotechnology today?
+ANSWER1: Traditional farming methods
+ANSWER2: DNA technology, modern laboratory techniques for studying and manipulating genetic material
+ANSWER3: Organic farming
+ANSWER4: Veterinary medicine
+CORRECT: 2
+
+QUESTION:
+Recombinant DNA is formed when scientists combine pieces of DNA from two different sources in vitro. What does "in vitro" mean?
+ANSWER1: In a living organism
+ANSWER2: In a test tube (outside of living cells)
+ANSWER3: In a natural environment
+ANSWER4: Using only plant cells
+CORRECT: 2
+
+QUESTION:
+What is genetic engineering defined as?
+ANSWER1: The study of genomes
+ANSWER2: The analysis of DNA samples for identification
+ANSWER3: The direct manipulation of genes for practical purposes
+ANSWER4: The process of cell division
+CORRECT: 3
+
+QUESTION:
+What are bacterial plasmids, small, circular DNA molecules that replicate separately from the bacterial chromosome, primarily used for in manipulating genes in the laboratory?
+ANSWER1: As energy sources for bacteria
+ANSWER2: As vectors (gene carriers) for DNA cloning
+ANSWER3: To store genetic information permanently
+ANSWER4: To fight viral infections
+CORRECT: 2
+
+QUESTION:
+What is DNA cloning?
+ANSWER1: Creating an exact copy of an organism
+ANSWER2: Producing many identical copies of a target segment of DNA
+ANSWER3: Analyzing DNA sequences
+ANSWER4: Repairing damaged DNA
+CORRECT: 2
+
+QUESTION:
+In the example of cloning a gene for a valuable protein (protein V) using bacterial plasmids, what is the main challenge described as being like "a needle in a haystack"?
+ANSWER1: Growing enough bacteria
+ANSWER2: Extracting the protein product
+ANSWER3: Identifying the correct bacterial strain
+ANSWER4: The gene of interest is a tiny segment embedded in a much longer DNA molecule
+CORRECT: 4
+
+QUESTION:
+What type of enzyme is used to "cut" both the bacterial plasmid and the source DNA containing the gene of interest at specific sequences?
+ANSWER1: DNA ligase
+ANSWER2: DNA polymerase
+ANSWER3: Reverse transcriptase
+ANSWER4: Restriction enzyme
+CORRECT: 4
+
+QUESTION:
+When a restriction enzyme cuts DNA, it often produces uneven cuts yielding single-stranded extensions. What are these extensions called?
+ANSWER1: Blunt ends
+ANSWER2: Sticky ends
+ANSWER3: Primer sites
+ANSWER4: Recognition sequences
+CORRECT: 2
+
+QUESTION:
+What enzyme is used to "paste" together the single-stranded ends (sticky ends) of DNA fragments from different sources, forming a recombinant DNA molecule?
+ANSWER1: Restriction enzyme
+ANSWER2: DNA polymerase
+ANSWER3: DNA ligase
+ANSWER4: Reverse transcriptase
+CORRECT: 3
+
+QUESTION:
+When the recombinant plasmid containing the targeted gene is mixed with bacteria, how does a bacterium take up the plasmid DNA?
+ANSWER1: By reproduction
+ANSWER2: By transformation
+ANSWER3: By secretion
+ANSWER4: By photosynthesis
+CORRECT: 2
+
+QUESTION:
+After a recombinant bacterium reproduces through repeated cell cycles, it forms a clone of cells. What does each bacterium in this clone carry?
+ANSWER1: The entire human genome
+ANSWER2: A copy of the foreign gene
+ANSWER3: Only bacterial genes
+ANSWER4: A mixture of RNA and DNA
+CORRECT: 2
+
+QUESTION:
+If researchers wish to clone eukaryotic genes (which contain introns) in prokaryotic cells (which lack machinery to remove introns), what starting material and enzyme can be used to overcome this problem?
+ANSWER1: DNA and DNA ligase
+ANSWER2: RNA and restriction enzymes
+ANSWER3: mRNA and reverse transcriptase
+ANSWER4: Proteins and proteinase
+CORRECT: 3
+
+QUESTION:
+What is complementary DNA (cDNA)?
+ANSWER1: DNA found only in prokaryotes
+ANSWER2: DNA that has been cut by restriction enzymes
+ANSWER3: DNA synthesized from an RNA template using reverse transcriptase
+ANSWER4: DNA used for DNA profiling
+CORRECT: 3
+
+QUESTION:
+Besides knocking out a gene, the CRISPR-Cas9 system can be used to edit a gene. How can it potentially fix mutations?
+ANSWER1: By deleting the entire mutated gene.
+ANSWER2: By preventing the cell from expressing the mutated gene.
+ANSWER3: By using a normal copy of the gene as a template for repair enzymes after Cas9 cuts the target DNA.
+ANSWER4: By adding methyl groups to the mutated site.
+CORRECT: 3
+
+QUESTION:
+Recombinant cells and organisms are used to mass-produce gene products, primarily proteins. Which organism is often the best choice for manufacturing a protein product due to available plasmids, rapid and cheap growth, and ease of engineering?
+ANSWER1: Yeast
+ANSWER2: Mammalian cells
+ANSWER3: Bacteria (most commonly E. coli)
+ANSWER4: Plant cells
+CORRECT: 3
+
+QUESTION:
+Despite the advantages of using bacteria, why is it sometimes necessary to use eukaryotic cells, such as mammalian cells, to produce a protein product?
+ANSWER1: Eukaryotic cells grow faster.
+ANSWER2: Mammalian cells can attach sugar chains correctly to glycoproteins.
+ANSWER3: Eukaryotic cells are less likely to be contaminated.
+ANSWER4: Eukaryotic cells produce more protein per cell.
+CORRECT: 2
+
+QUESTION:
+Genetically engineered animals produced using recombinant DNA are sometimes referred to as "pharm" animals. What is their purpose?
+ANSWER1: To serve as models for human diseases
+ANSWER2: To improve livestock health
+ANSWER3: To produce otherwise rare biological substances for medical use
+ANSWER4: To be used in gene therapy trials
+CORRECT: 3
+
+QUESTION:
+What was the first recombinant DNA drug approved by the U.S. Food and Drug Administration (FDA) in 1982?
+ANSWER1: Human growth hormone (HGH)
+ANSWER2: Insulin (Humulin)
+ANSWER3: Tissue plasminogen factor (TPA)
+ANSWER4: Human erythropoietin (EPO)
+CORRECT: 2
+
+QUESTION:
+Why was using human insulin produced by genetically engineered bacteria a significant improvement over harvesting it from slaughtered pigs and cattle?
+ANSWER1: Bacterial insulin was cheaper to produce.
+ANSWER2: Bacterial insulin was chemically identical to human insulin, avoiding allergic reactions.
+ANSWER3: Bacterial insulin was more potent.
+ANSWER4: Bacterial insulin was easier to purify.
+CORRECT: 2
+
+QUESTION:
+How is DNA technology used as a diagnostic tool?
+ANSWER1: To increase the amount of DNA
+ANSWER2: To cut DNA into fragments
+ANSWER3: To identify inherited diseases, symptomless carriers, or microorganisms responsible for outbreaks
+ANSWER4: To join DNA fragments together
+CORRECT: 3
+
+QUESTION:
+What is a vaccine, and how is DNA technology helping medical researchers develop them?
+ANSWER1: A cure for genetic diseases; by fixing mutated genes
+ANSWER2: A harmful pathogen; by making it stronger
+ANSWER3: A harmless variant of a pathogen; by producing pathogen surface proteins or artificial mutant pathogens
+ANSWER4: A tool for cutting DNA; by making cuts in viral genomes
+CORRECT: 3
+
+QUESTION:
+Organisms that have acquired one or more genes by artificial means are called GMOs. If a gene is transplanted from one organism into another, typically of another species, what is the recombinant organism called?
+ANSWER1: Clone
+ANSWER2: Hybrid
+ANSWER3: Transgenic organism
+ANSWER4: Mutant
+CORRECT: 3
+
+QUESTION:
+What is a common vector used to introduce new genes into plant cells?
+ANSWER1: A human virus
+ANSWER2: An animal plasmid
+ANSWER3: A plasmid from the soil bacterium Agrobacterium tumefaciens (Ti plasmid)
+ANSWER4: A synthetic chromosome
+CORRECT: 3
+
+QUESTION:
+Golden Rice is a transgenic variety created with daffodil or corn genes. What was it engineered to produce to help prevent Vitamin A deficiency?
+ANSWER1: Protein
+ANSWER2: Beta-carotene
+ANSWER3: Vitamin C
+ANSWER4: Essential fatty acids
+CORRECT: 2
+
+QUESTION:
+Transgenic animals are produced by genetically modifying the nuclei of embryos. What are some goals in creating them?
+ANSWER1: To make them smaller
+ANSWER2: To change their color
+ANSWER3: To improve quality (wool, meat), mature faster, or serve as disease models
+ANSWER4: To make them infertile
+CORRECT: 3
+
+QUESTION:
+In 2015, the FDA approved the sale of GMO salmon. What was this salmon genetically modified to do?
+ANSWER1: Be resistant to disease
+ANSWER2: Grow larger and mature in half the time
+ANSWER3: Produce omega-3 fatty acids
+ANSWER4: Change color based on diet
+CORRECT: 2
+
+QUESTION:
+Early concerns about recombinant DNA technology focused on creating new pathogens. What safeguards did scientists develop?
+ANSWER1: Banning all research
+ANSWER2: Strict laboratory safety/containment, genetic crippling of transgenic organisms, prohibition of certain dangerous experiments
+ANSWER3: Releasing modified organisms into the wild
+ANSWER4: Relying solely on natural processes
+CORRECT: 2
+
+QUESTION:
+What is the main public concern surrounding GMOs used for food?
+ANSWER1: That they are too expensive
+ANSWER2: That they taste different
+ANSWER3: Potential dangers to human and environmental health
+ANSWER4: That they reduce crop yields
+CORRECT: 3
+
+QUESTION:
+Do studies to date document health risks in humans from GMO foods on the market?
+ANSWER1: Yes, many studies show clear risks.
+ANSWER2: Some studies show risks, others do not.
+ANSWER3: No study has documented health risks, and there is general agreement among scientists that they are safe, but long-term effects are unknown.
+ANSWER4: Studies are inconclusive.
+CORRECT: 3
+
+QUESTION:
+What is a concern regarding environmental safety with GMO crops?
+ANSWER1: They require more water.
+ANSWER2: They might attract new pests.
+ANSWER3: Transgenic plants might pass their new genes to related species in nearby wild areas, disturbing the ecosystem.
+ANSWER4: They deplete soil nutrients faster.
+CORRECT: 3
+
+QUESTION:
+Although most staple crops grown in the US are GMOs, what is not required for products made from GMOs in the US?
+ANSWER1: Nutritional information
+ANSWER2: Ingredients list
+ANSWER3: Labeling as GMO
+ANSWER4: Expiration date
+CORRECT: 3
+
+QUESTION:
+How do advocates for labeling GMOs justify their position?
+ANSWER1: Consumers have a right to know.
+ANSWER2: GMOs are always less nutritious.
+ANSWER3: Labeling is required everywhere else.
+ANSWER4: Labeling would increase sales.
+CORRECT: 1
+
+QUESTION:
+Alteration of a diseased individual's genes for therapeutic purposes is called what?
+ANSWER1: Gene cloning
+ANSWER2: Gene therapy
+ANSWER3: Genetic screening
+ANSWER4: DNA profiling
+CORRECT: 2
+
+QUESTION:
+For gene therapy to be permanent, the normal allele would need to be transferred to cells that multiply throughout a person's life. Which type of cells are prime candidates for this?
+ANSWER1: Muscle cells
+ANSWER2: Skin cells
+ANSWER3: Brain cells
+ANSWER4: Bone marrow cells (including stem cells)
+CORRECT: 4
+
+QUESTION:
+In one type of gene therapy procedure described, how is a normal allele delivered into a patient's bone marrow cells?
+ANSWER1: By direct injection into the bloodstream
+ANSWER2: By infecting the cells with a harmless virus carrying the gene
+ANSWER3: By using CRISPR-Cas9 to insert the gene directly
+ANSWER4: By growing the cells in a special culture medium
+CORRECT: 2
+
+QUESTION:
+What difficult ethical questions are raised when researchers contemplate genetic manipulation of gamete-forming cells or zygotes?
+ANSWER1: It is technically impossible.
+ANSWER2: Such changes would be passed on to future generations, permanently altering the genetic lineage.
+ANSWER3: It would be too expensive.
+ANSWER4: It would only affect the current individual.
+CORRECT: 2
+
+QUESTION:
+What is eugenics, which critics worry that tampering with human genes might lead to?
+ANSWER1: The study of genetic diversity
+ANSWER2: The deliberate effort to control the genetic makeup of human populations
+ANSWER3: The treatment of genetic diseases
+ANSWER4: The creation of artificial genes
+CORRECT: 2
+
+QUESTION:
+From an evolutionary perspective, why is genetic variety considered a necessary ingredient for the survival of a species?
+ANSWER1: To make individuals unique
+ANSWER2: To provide resistance to current diseases
+ANSWER3: As environmental conditions change over time
+ANSWER4: To make individuals stronger
+CORRECT: 3
+
+QUESTION:
+The scientific analysis of evidence for crime scene investigations and other legal proceedings is called what?
+ANSWER1: Genomics
+ANSWER2: Bioinformatics
+ANSWER3: Forensics
+ANSWER4: Biotechnology
+CORRECT: 3
+
+QUESTION:
+What is DNA profiling?
+ANSWER1: The process of sequencing an entire genome.
+ANSWER2: The analysis of DNA samples to determine whether they came from the same individual.
+ANSWER3: The creation of genetically modified organisms.
+ANSWER4: The study of protein structure.
+CORRECT: 2
+
+QUESTION:
+When comparing two DNA samples for DNA profiling, why do scientists compare genetic markers rather than the entire genomes?
+ANSWER1: Comparing genetic markers is impractical and takes too long.
+ANSWER2: The entire genome is identical between individuals.
+ANSWER3: Comparing genetic markers is more practical, as these sequences vary from person to person.
+ANSWER4: Genetic markers are the only parts of DNA that can be analyzed.
+CORRECT: 3
+
+QUESTION:
+What is the polymerase chain reaction (PCR)?
+ANSWER1: A method to separate DNA fragments by size.
+ANSWER2: A technique to sequence DNA molecules.
+ANSWER3: A technique to amplify (copy) a specific segment of a DNA molecule quickly in the laboratory.
+ANSWER4: A method to cut DNA at specific sequences.
+CORRECT: 3
+
+QUESTION:
+Starting with a minute sample, automated PCR can generate how many copies of a DNA segment in just a few hours?
+ANSWER1: Thousands
+ANSWER2: Millions
+ANSWER3: Billions
+ANSWER4: Trillions
+CORRECT: 3
+
+QUESTION:
+What are the short, chemically synthesized single-stranded DNA molecules with sequences complementary to sequences at each end of the target sequence, which are key to amplifying one particular segment of DNA in PCR?
+ANSWER1: Plasmids
+ANSWER2: Restriction fragments
+ANSWER3: Primers
+ANSWER4: Probes
+CORRECT: 3
+
+QUESTION:
+In PCR, why is a heat-stable DNA polymerase (like one isolated from bacteria in hot springs) necessary?
+ANSWER1: It works faster than other polymerases.
+ANSWER2: It can withstand the high temperatures required to separate DNA strands at the start of each cycle.
+ANSWER3: It can add nucleotides in both directions.
+ANSWER4: It can repair mistakes made during replication.
+CORRECT: 2
+
+QUESTION:
+What method separates macromolecules, usually proteins or nucleic acids, on the basis of size, electrical charge, or other physical properties?
+ANSWER1: PCR
+ANSWER2: DNA sequencing
+ANSWER3: Gel electrophoresis
+ANSWER4: DNA cloning
+CORRECT: 3
+
+QUESTION:
+In gel electrophoresis, why do DNA molecules move toward the positive pole?
+ANSWER1: Because they have sticky ends.
+ANSWER2: Because they are attracted to the colored stain.
+ANSWER3: Because they carry negative charges on their phosphate groups.
+ANSWER4: Because of their nucleotide sequence.
+CORRECT: 3
+
+QUESTION:
+In gel electrophoresis, why do longer DNA fragments move more slowly than shorter fragments?
+ANSWER1: They have less electrical charge.
+ANSWER2: They get held back by the tangle of polymer fibers within the gel.
+ANSWER3: They denature at higher temperatures.
+ANSWER4: They bind more strongly to the gel material.
+CORRECT: 2
+
+QUESTION:
+DNA profiling by STR analysis involves analyzing segments of repetitive DNA. What does STR stand for?
+ANSWER1: Single Target Region
+ANSWER2: Short Tandem Repeat
+ANSWER3: Sequence Tagged Site
+ANSWER4: Specific Trait Recognition
+CORRECT: 2
+
+QUESTION:
+STRs consist of short nucleotide sequences repeated many times in a row. How do STRs vary from one person to the next?
+ANSWER1: They have different nucleotide sequences.
+ANSWER2: They are located at different places in the genome.
+ANSWER3: They have different numbers of repeats at the same locations.
+ANSWER4: They only occur in certain individuals.
+CORRECT: 3
+
+QUESTION:
+The current standard for DNA profiling in forensic and legal systems in the US compares the number of repeats of specific four-nucleotide DNA sequences at how many sites scattered throughout the genome?
+ANSWER1: 5
+ANSWER2: 8
+ANSWER3: 13
+ANSWER4: 20
+CORRECT: 3
+
+QUESTION:
+In the US, where is the number of repeats at each STR site entered into a database for law enforcement agencies?
+ANSWER1: GenBank
+ANSWER2: BLAST
+ANSWER3: CODIS (Combined DNA Index System)
+ANSWER4: Human Genome Project database
+CORRECT: 3
+
+QUESTION:
+When using the standard CODIS set of 13 STR sites correctly, what is the probability of finding the same DNA profile in randomly selected, unrelated individuals?
+ANSWER1: About 1 in a million
+ANSWER2: About 1 in a hundred million
+ANSWER3: Less than one in 10 billion
+ANSWER4: It is impossible to find the same profile.
+CORRECT: 3
+
+QUESTION:
+DNA profiling has provided evidence in many forensic investigations. Besides helping solve crimes and identify victims, what else can it conclusively settle?
+ANSWER1: The cause of death
+ANSWER2: The time of death
+ANSWER3: Questions of paternity
+ANSWER4: The suspect's motives
+CORRECT: 3
+
+QUESTION:
+DNA profiling was used to identify the remains of victims after the terrorist attack on the World Trade Center on September 11, 2001. How were DNA profiles of tissue samples from the disaster site matched to victims?
+ANSWER1: By comparing them to a global DNA database.
+ANSWER2: By comparing them to tissue obtained previously from victims or to close relatives.
+ANSWER3: By looking for specific mutations common in the victims.
+ANSWER4: By comparing them to the DNA of known terrorists.
+CORRECT: 2
+
+QUESTION:
+Beyond humans, DNA analysis has been used to probe the origin of nonhuman materials. What is an example mentioned?
+ANSWER1: Identifying the age of ancient artifacts
+ANSWER2: Identifying contraband animal products to prevent illegal capture of endangered animals
+ANSWER3: Determining the type of plant fiber in ancient textiles
+ANSWER4: Analyzing soil samples from crime scenes
+CORRECT: 2
+
+QUESTION:
+DNA profiling is considered highly reliable science, but problems can arise. What are some possible confounding factors mentioned?
+ANSWER1: The DNA sequence changes over time.
+ANSWER2: The technology is not accurate enough.
+ANSWER3: Insufficient data, human error, or flawed evidence.
+ANSWER4: The number of STRs varies too much.
+CORRECT: 3
+
+QUESTION:
+What process allows researchers to directly determine the complete nucleotide sequence of small DNA molecules?
+ANSWER1: PCR
+ANSWER2: Gel electrophoresis
+ANSWER3: DNA sequencing
+ANSWER4: STR analysis
+CORRECT: 3
+
+QUESTION:
+"Next-generation sequencing" techniques developed around 2001 can simultaneously sequence thousands or hundreds of thousands of DNA fragments. Approximately how long are these fragments typically?
+ANSWER1: 15-20 nucleotides
+ANSWER2: Hundreds of bases long
+ANSWER3: 300 nucleotides long
+ANSWER4: Thousands of nucleotides long
+CORRECT: 3
+
+QUESTION:
+In the whole-genome shotgun method of sequencing a genome, what mapping software does?
+ANSWER1: Identifies the function of each gene.
+ANSWER2: Assembles millions of overlapping short sequences into a single, continuous sequence for every chromosome.
+ANSWER3: Cuts the DNA into fragments.
+ANSWER4: Amplifies the DNA sequences.
+CORRECT: 2
+
+QUESTION:
+What are the primary advantages of the whole-genome shotgun method over previous methods of sequencing an entire genome?
+ANSWER1: It requires less DNA.
+ANSWER2: It is faster and less expensive.
+ANSWER3: It can sequence any type of nucleic acid.
+ANSWER4: It requires less computational power.
+CORRECT: 2
+
+QUESTION:
+What field, defined as the application of computational methods to the storage and analysis of biological data, arose from the need to collate and analyze the flood of sequence data from genome projects?
+ANSWER1: Genetics
+ANSWER2: Molecular biology
+ANSWER3: Genomics
+ANSWER4: Bioinformatics
+CORRECT: 4
+
+QUESTION:
+What is GenBank, maintained by the National Center for Biotechnology Information (NCBI)?
+ANSWER1: A collection of DNA samples.
+ANSWER2: A sequence database.
+ANSWER3: Software for designing primers.
+ANSWER4: A laboratory for sequencing DNA.
+CORRECT: 2
+
+QUESTION:
+What software program available on the NCBI website allows users to compare a DNA sequence with every sequence in GenBank, base by base, to search for similar regions?
+ANSWER1: CODIS
+ANSWER2: ABE
+ANSWER3: BLAST
+ANSWER4: REPAIR
+CORRECT: 3
+
+QUESTION:
+Scientists have begun systematic studies of the full protein sets encoded by genomes. What is this approach called?
+ANSWER1: Genomics
+ANSWER2: Proteomics
+ANSWER3: Transcriptomics
+ANSWER4: Metabolomics
+CORRECT: 2
+
+QUESTION:
+Why is studying sets of proteins (proteomes) beneficial to understanding how cells work, rather than just sets of genes (genomes)?
+ANSWER1: Genes carry out most of the activities of the cell.
+ANSWER2: Only proteins contain the genetic code.
+ANSWER3: Proteins, not genes, actually carry out most of the activities of the cell, and one gene may produce multiple proteins.
+ANSWER4: Proteins are easier to study than genes.
+CORRECT: 3
+
+QUESTION:
+How can comparing genome sequences from many species provide insight into human evolution?
+ANSWER1: It shows that all species have the same genes.
+ANSWER2: The more similar the sequence of the same gene is in two species, the more closely related they are evolutionarily.
+ANSWER3: It proves that evolution does not occur.
+ANSWER4: It only reveals differences, not similarities.
+CORRECT: 2
+
+QUESTION:
+The genome sequence for our closest-living relative, the chimpanzee (Pan troglodytes), was completed in 2005. How much do the chimpanzee and human genomes differ by in single-base substitutions?
+ANSWER1: 0.1%
+ANSWER2: 1.2%
+ANSWER3: 5%
+ANSWER4: 10%
+CORRECT: 2
+
+QUESTION:
+Besides single-base substitutions, what else contributes to the difference between the chimpanzee and human genomes (another 2.7%)?
+ANSWER1: Different number of chromosomes
+ANSWER2: Different types of nucleotides
+ANSWER3: Insertions or deletions of larger regions
+ANSWER4: Different ways of folding DNA
+CORRECT: 3
+
+QUESTION:
+Comparisons of human and chimpanzee genomes have identified genes that have evolved faster in humans. What is an example of a gene mentioned as having changed rapidly in the human lineage and implicated in speech and vocalization?
+ANSWER1: Dystrophin gene
+ANSWER2: Hemoglobin gene
+ANSWER3: FOXP2 gene
+ANSWER4: Lactase gene
+CORRECT: 3
+
+QUESTION:
+Studies comparing the completed genome sequences of bacteria, archaea, and eukaryotes support what biological theory?
+ANSWER1: The theory of spontaneous generation.
+ANSWER2: The theory that these are the three fundamental domains of life.
+ANSWER3: The theory of inheritance.
+ANSWER4: The theory of natural selection.
+CORRECT: 2
+
+QUESTION:
+What was the Human Genome Project (HGP)?
+ANSWER1: A project to cure all human genetic diseases.
+ANSWER2: A project to create a genetically engineered human.
+ANSWER3: A publically funded scientific endeavor to determine the nucleotide sequence of all DNA in the human genome and identify every gene.
+ANSWER4: A project to create a database of all known human proteins.
+CORRECT: 3
+
+QUESTION:
+When was the Human Genome Project completed?
+ANSWER1: 1990
+ANSWER2: 2001
+ANSWER3: 2003
+ANSWER4: 2016
+CORRECT: 3
+
+QUESTION:
+The haploid set of human chromosomes contains approximately how many billion nucleotide pairs of DNA?
+ANSWER1: 1.5 billion
+ANSWER2: 3 billion
+ANSWER3: 10 billion
+ANSWER4: 20 billion
+CORRECT: 2
+
+QUESTION:
+What was perhaps the biggest surprise from the Human Genome Project regarding the number of genes in the human genome?
+ANSWER1: The human genome contains millions of genes.
+ANSWER2: The human genome contains a comparatively low number of genes (just below 21,000).
+ANSWER3: The number of genes is exactly the same as in chimpanzees.
+ANSWER4: The human genome contains no genes, only regulatory sequences.
+CORRECT: 2
+
+QUESTION:
+In humans, as in most complex eukaryotes, what percentage of our total DNA is contained in genes that code for proteins, tRNAs, or rRNAs?
+ANSWER1: About 1.5%
+ANSWER2: About 19%
+ANSWER3: About 44%
+ANSWER4: About 98.5%
+CORRECT: 1
+
+QUESTION:
+What constitutes about one-quarter of our DNA, including noncoding stretches of nucleotides within genes and gene control sequences?
+ANSWER1: Exons
+ANSWER2: Introns and gene control sequences
+ANSWER3: Repetitive DNA
+ANSWER4: Single-copy noncoding DNA
+CORRECT: 2
+
+QUESTION:
+What is the main type of repetitive DNA, consisting of nucleotide sequences present in many copies, much of which lies between genes in humans?
+ANSWER1: Genes that code for proteins
+ANSWER2: Exons
+ANSWER3: Noncoding DNA
+ANSWER4: Repetitive DNA
+CORRECT: 4
+
+QUESTION:
+What are transposable elements ("jumping genes") associated with in the human genome?
+ANSWER1: Exons
+ANSWER2: Introns
+ANSWER3: Scattered repetitive DNA sequences hundreds of bases long
+ANSWER4: STRs
+CORRECT: 3
+
+QUESTION:
+The first human genome to be sequenced for the HGP was a reference genome compiled from a group of individuals. What was one of the first individual genomes sequenced shortly after the HGP?
+ANSWER1: The genome of the first person cured by gene therapy.
+ANSWER2: The genome of James Watson, codiscoverer of DNA structure.
+ANSWER3: The genome of a Neanderthal.
+ANSWER4: The genome of the oldest living person.
+CORRECT: 2
+
+QUESTION:
+Approximately how many different kinds of proteins do scientists think a typical human gene specifies due to alternative RNA splicing?
+ANSWER1: One
+ANSWER2: Several
+ANSWER3: Dozens
+ANSWER4: Hundreds
+CORRECT: 2
