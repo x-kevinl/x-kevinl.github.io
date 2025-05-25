@@ -5,31 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biology Honors Practice</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; max-width: 800px; }
-    .question-card { border: 1px solid #ccc; border-radius: 8px; padding: 16px; margin-top: 20px; }
-    .options { margin-top: 12px; }
-    .options label { display: block; margin-bottom: 8px; }
-    button { margin-right: 8px; padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; }
-    button:disabled { opacity: 0.6; cursor: not-allowed; }
-    .correct { color: green; margin-top: 12px; }
-    .incorrect { color: red; margin-top: 12px; }
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 40px 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 2rem;
+      text-align: center;
+      color: #2c3e50;
+    }
+    label[for="unitSelect"] {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+    select {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    /* Question card */
+    .question-card {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .question-card h2 {
+      margin: 0 0 12px;
+      font-size: 1.25rem;
+      color: #34495e;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .options label:hover {
+      background: #ecf0f1;
+    }
+    .options input[type="radio"] {
+      margin-right: 10px;
+    }
+    /* Highlight styles */
+    .option-correct {
+      background-color: #d4f5d4 !important;
+    }
+    .option-wrong {
+      background-color: #f5d4d4 !important;
+    }
+    button {
+      padding: 10px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .btn-check {
+      background: #3498db;
+      color: #fff;
+      margin-right: 10px;
+    }
+    .btn-check:hover:enabled {
+      background: #2980b9;
+    }
+    .btn-next {
+      background: #2ecc71;
+      color: #fff;
+    }
+    .btn-next:hover {
+      background: #27ae60;
+    }
+    .result-area {
+      margin-top: 16px;
+    }
+    .result {
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .result.correct {
+      background: #2ecc71;
+      color: #fff;
+    }
+    .result.incorrect {
+      background: #e74c3c;
+      color: #fff;
+    }
+    /* Loading state */
+    .loading {
+      text-align: center;
+      font-style: italic;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <h1>Biology Honors Practice</h1>
-  <label for="unitSelect">Select Unit:</label>
-  <select id="unitSelect">
-    <option value="6">Unit 6</option>
-    <option value="7">Unit 7</option>
-    <option value="8">Unit 8</option>
-    <option value="9">Unit 9</option>
-    <option value="10">Unit 10</option>
-    <option value="12">Unit 12</option>
-    <option value="13">Unit 13</option>
-    <option value="14">Unit 14</option>
-  </select>
+  <div class="container">
+    <h1>Biology Honors Practice</h1>
+    <label for="unitSelect">Select Unit:</label>
+    <select id="unitSelect">
+      <option value="6">Unit 6</option>
+      <option value="7">Unit 7</option>
+      <option value="8">Unit 8</option>
+      <option value="9">Unit 9</option>
+      <option value="10">Unit 10</option>
+      <option value="12">Unit 12</option>
+      <option value="13">Unit 13</option>
+      <option value="14">Unit 14</option>
+    </select>
 
-  <div id="quiz"></div>
+    <div id="quiz"></div>
+  </div>
 
   <script>
     let practiceData = {7:[],8:[],9:[],10:[],12:[],13:[],14:[]};
@@ -49,92 +169,91 @@
       });
     }
 
-    document.getElementById('unitSelect').addEventListener('change', e => {
-      loadUnit(parseInt(e.target.value));
-    });
+    document.getElementById('unitSelect').addEventListener('change', e => loadUnit(parseInt(e.target.value)));
 
     function loadUnit(unit) {
       qIndex = 0;
       selected = null;
+      const quiz = document.getElementById('quiz');
       if (unit === 6) {
-        document.getElementById('quiz').innerHTML = 'Loading Unit 6...';
+        quiz.innerHTML = '<p class="loading">Loading Unit 6...</p>';
         fetch('bio/unit_6.txt')
           .then(r => r.text())
           .then(text => {
             questions = parseU6(text);
-            renderQuestion();
+            nextQuestion(); // show random first
           });
       } else {
         questions = practiceData[unit];
-        renderQuestion();
+        nextQuestion();
       }
     }
 
     function renderQuestion() {
+      const quiz = document.getElementById('quiz');
       if (!questions.length) {
-        document.getElementById('quiz').innerHTML = '<p>No questions available.</p>';
+        quiz.innerHTML = '<p>No questions available.</p>';
         return;
       }
       const q = questions[qIndex];
-      const container = document.getElementById('quiz');
-      container.innerHTML = '';
+      quiz.innerHTML = `
+        <div class="question-card">
+          <h2>${q.question}</h2>
+          <div class="options">
+            ${q.options.map(opt => `
+              <label>
+                <input type="radio" name="option" value="${opt}" /> ${opt}
+              </label>
+            `).join('')}
+          </div>
+          <div>
+            <button class="btn-check" disabled>Check Answer</button>
+            <button class="btn-next">Next</button>
+          </div>
+          <div class="result-area"></div>
+        </div>`;
 
-      const card = document.createElement('div');
-      card.className = 'question-card';
-
-      const qEl = document.createElement('h2');
-      qEl.textContent = q.question;
-      card.appendChild(qEl);
-
-      const opts = document.createElement('div');
-      opts.className = 'options';
-      q.options.forEach(opt => {
-        const label = document.createElement('label');
-        const radio = document.createElement('input');
-        radio.type = 'radio';
-        radio.name = 'option';
-        radio.value = opt;
-        radio.addEventListener('change', () => selected = opt);
-        label.appendChild(radio);
-        label.append(opt);
-        opts.appendChild(label);
+      const quizCard = quiz.querySelector('.question-card');
+      const labels = quiz.querySelectorAll('.options label');
+      labels.forEach(label => label.classList.remove('option-correct','option-wrong'));
+      quiz.querySelectorAll('input[name="option"]').forEach(input => {
+        input.disabled = false;
+        input.checked = false;
+        input.addEventListener('change', () => {
+          selected = input.value;
+          quiz.querySelector('.btn-check').disabled = !selected;
+        });
       });
-      card.appendChild(opts);
+      selected = null;
 
-      const btnCheck = document.createElement('button');
-      btnCheck.textContent = 'Check Answer';
-      btnCheck.disabled = true;
-      btnCheck.addEventListener('click', () => showResult(q.answer));
-      card.appendChild(btnCheck);
-
-      const btnNext = document.createElement('button');
-      btnNext.textContent = 'Next';
-      btnNext.addEventListener('click', nextQuestion);
-      card.appendChild(btnNext);
-
-      container.appendChild(card);
-
-      // enable check when selected changes
-      opts.addEventListener('change', () => btnCheck.disabled = !selected);
+      quiz.querySelector('.btn-check').addEventListener('click', () => showResult(questions[qIndex].answer));
+      quiz.querySelector('.btn-next').addEventListener('click', nextQuestion);
     }
 
     function showResult(correct) {
-      const card = document.querySelector('.question-card');
-      let res = document.createElement('div');
-      if (selected === correct) {
-        res.className = 'correct';
-        res.textContent = 'Correct!';
-      } else {
-        res.className = 'incorrect';
-        res.textContent = 'Incorrect. Correct: ' + correct;
-      }
-      card.appendChild(res);
+      const quiz = document.getElementById('quiz');
+      const labels = quiz.querySelectorAll('.options label');
+      labels.forEach(label => {
+        const input = label.querySelector('input');
+        if (input.value === correct) {
+          label.classList.add('option-correct');
+        }
+        if (input.checked && input.value !== correct) {
+          label.classList.add('option-wrong');
+        }
+        input.disabled = true;
+      });
+      const resultArea = quiz.querySelector('.result-area');
+      const res = document.createElement('div');
+      res.className = 'result ' + (selected === correct ? 'correct' : 'incorrect');
+      res.textContent = selected === correct ? 'Correct!' : `Incorrect. Correct: ${correct}`;
+      resultArea.innerHTML = '';
+      resultArea.appendChild(res);
     }
 
     function nextQuestion() {
-      qIndex = (qIndex + 1) % questions.length;
-      selected = null;
-      loadUnit(parseInt(document.getElementById('unitSelect').value));
+      qIndex = Math.floor(Math.random() * questions.length);
+      renderQuestion();
     }
 
     // initial load
