@@ -152,41 +152,48 @@
   </div>
 
   <script>
-    let practiceData = {7:[],8:[],9:[],10:[],12:[],13:[],14:[]};
     let questions = [];
     let qIndex = 0;
     let selected = null;
 
     function parseUnit(text) {
-      const blocks = text.trim().split(/QUESTION:/).filter(b => b.trim());
-      return blocks.map(block => {
-        const qLine = block.match(/\n([^\n]+)/);
-        const question = qLine ? qLine[1].trim() : '';
-        const answers = [...block.matchAll(/ANSWER\d: ([^\n]+)/g)].map(m => m[1].trim());
-        const correct = block.match(/CORRECT:(\d+)/);
-        const ans = correct ? answers[parseInt(correct[1],10)-1] : '';
-        return { question, options: answers, answer: ans };
-      });
+      // Handles raw blocks with QUESTION:... ANSWER1:... appearing on single lines
+      return text.split(/QUESTION:/)
+        .map(block => block.trim())
+        .filter(block => block)
+        .map(block => {
+          const [qPart, restPart] = block.split(/ANSWER1:/);
+          const question = qPart.trim();
+          const rest = 'ANSWER1:' + (restPart || '');
+          const options = [];
+          for (let i = 1; i <= 4; i++) {
+            const regex = new RegExp(`ANSWER${i}:\\s*([^\\.]+)\\.`);
+            const match = rest.match(regex);
+            options.push(match ? match[1].trim() : '');
+          }
+          const corr = rest.match(/CORRECT:\s*(\d+)/);
+          const correctIndex = corr ? parseInt(corr[1], 10) - 1 : null;
+          const answer = (correctIndex !== null && correctIndex >= 0 && correctIndex < options.length)
+            ? options[correctIndex]
+            : '';
+          return { question, options, answer };
+        });
     }
 
     document.getElementById('unitSelect').addEventListener('change', e => loadUnit(parseInt(e.target.value)));
 
     function loadUnit(unit) {
       qIndex = 0;
-      selected = null;
       const quiz = document.getElementById('quiz');
-      quiz.innerHTML = `<p class="loading">Loading Unit ${unit}...</p>`;
+      quiz.innerHTML = `<p class="loading">Loading unit ${unit}...</p>`;
       fetch(`bio/unit_${unit}.txt`)
-        .then(r => {
-          if (!r.ok) throw new Error('File not found');
-          return r.text();
-        })
+        .then(r => r.ok ? r.text() : Promise.reject())
         .then(text => {
           questions = parseUnit(text);
           nextQuestion();
         })
         .catch(() => {
-          questions = practiceData[unit] || [];
+          questions = [];
           nextQuestion();
         });
     }
@@ -216,33 +223,29 @@
         </div>`;
 
       const labels = quiz.querySelectorAll('.options label');
-      labels.forEach(label => label.classList.remove('option-correct','option-wrong'));
-      quiz.querySelectorAll('input[name="option"]').forEach(input => {
-        input.disabled = false;
-        input.checked = false;
-        input.addEventListener('change', () => {
-          selected = input.value;
+      labels.forEach(lbl => {
+        lbl.classList.remove('option-correct', 'option-wrong');
+        const inp = lbl.querySelector('input');
+        inp.checked = false;
+        inp.disabled = false;
+        inp.onchange = () => {
+          selected = inp.value;
           quiz.querySelector('.btn-check').disabled = !selected;
-        });
+        };
       });
       selected = null;
-
-      quiz.querySelector('.btn-check').addEventListener('click', () => showResult(questions[qIndex].answer));
-      quiz.querySelector('.btn-next').addEventListener('click', nextQuestion);
+      quiz.querySelector('.btn-check').onclick = () => showResult(questions[qIndex].answer);
+      quiz.querySelector('.btn-next').onclick = nextQuestion;
     }
 
     function showResult(correct) {
       const quiz = document.getElementById('quiz');
       const labels = quiz.querySelectorAll('.options label');
-      labels.forEach(label => {
-        const input = label.querySelector('input');
-        if (input.value === correct) {
-          label.classList.add('option-correct');
-        }
-        if (input.checked && input.value !== correct) {
-          label.classList.add('option-wrong');
-        }
-        input.disabled = true;
+      labels.forEach(lbl => {
+        const inp = lbl.querySelector('input');
+        if (inp.value === correct) lbl.classList.add('option-correct');
+        if (inp.checked && inp.value !== correct) lbl.classList.add('option-wrong');
+        inp.disabled = true;
       });
       const resultArea = quiz.querySelector('.result-area');
       const res = document.createElement('div');
@@ -253,11 +256,11 @@
     }
 
     function nextQuestion() {
-      qIndex = Math.floor(Math.random() * questions.length);
+      if (questions.length) qIndex = Math.floor(Math.random() * questions.length);
       renderQuestion();
     }
 
-    // initial load
+    // load initial unit
     loadUnit(6);
   </script>
 </body>
