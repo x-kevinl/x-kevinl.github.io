@@ -1,0 +1,105 @@
+import { useState, useEffect } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
+
+// Parser for the raw text format
+function parseU6(text) {
+  const blocks = text.trim().split(/QUESTION:/).filter(Boolean);
+  return blocks.map(block => {
+    const qMatch = block.match(/\n([^\n]+)/);
+    const question = qMatch ? qMatch[1].trim() : '';
+    const answers = block.match(/ANSWER\d: ([^\n]+)/g) || [];
+    const options = answers.map(a => a.replace(/ANSWER\d: /, '').trim());
+    const correctMatch = block.match(/CORRECT:(\d+)/);
+    const correctIndex = correctMatch ? parseInt(correctMatch[1], 10) - 1 : null;
+    const answer = correctIndex !== null ? options[correctIndex] : '';
+    return { question, options, answer };
+  });
+}
+
+// Static practiceData for other units
+const practiceData = {
+  7: [],
+  8: [],
+  9: [],
+  10: [],
+  12: [],
+  13: [],
+  14: []
+};
+
+export default function BiologyPractice() {
+  const [unit, setUnit] = useState(6);
+  const [unit6Questions, setUnit6Questions] = useState([]);
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState('');
+  const [showResult, setShowResult] = useState(false);
+
+  // Fetch and parse Unit 6 file from public/bio/unit_6.txt
+  useEffect(() => {
+    if (unit === 6) {
+      fetch('/bio/unit_6.txt')
+        .then((res) => res.text())
+        .then((text) => setUnit6Questions(parseU6(text)))
+        .catch(console.error);
+    }
+  }, [unit]);
+
+  const questionSet = unit === 6 ? unit6Questions : practiceData[unit];
+  const currentQuestion = questionSet[questionIndex] || {};
+
+  const checkAnswer = () => setShowResult(true);
+  const nextQuestion = () => {
+    setSelectedOption('');
+    setShowResult(false);
+    setQuestionIndex(prev => (prev + 1) % questionSet.length);
+  };
+
+  return (
+    <div className="p-4 max-w-2xl mx-auto">
+      <div className="mb-4">
+        <Label className="block mb-2">Select Unit</Label>
+        <select
+          value={unit}
+          onChange={e => { setUnit(Number(e.target.value)); setQuestionIndex(0); setShowResult(false); setSelectedOption(''); }}
+          className="p-2 border rounded"
+        >
+          {[6,7,8,9,10,12,13,14].map(u => <option key={u} value={u}>Unit {u}</option>)}
+        </select>
+      </div>
+
+      {unit === 6 && unit6Questions.length === 0 ? (
+        <div>Loading Unit 6 questions...</div>
+      ) : (
+        <Card className="mb-4">
+          <CardContent>
+            <h2 className="text-lg font-semibold mb-4">{currentQuestion.question}</h2>
+            <RadioGroup onValueChange={setSelectedOption} value={selectedOption}>
+              {currentQuestion.options?.map((opt, idx) => (
+                <div key={idx} className="flex items-center space-x-2">
+                  <RadioGroupItem value={opt} id={`opt-${idx}`} />
+                  <Label htmlFor={`opt-${idx}`}>{opt}</Label>
+                </div>
+              ))}
+            </RadioGroup>
+
+            {showResult && (
+              <div className="mt-4 text-sm">
+                {selectedOption === currentQuestion.answer
+                  ? <span className="text-green-600">Correct!</span>
+                  : <span className="text-red-600">Incorrect. Correct: {currentQuestion.answer}</span>}
+              </div>
+            )}
+
+            <div className="mt-4">
+              <Button onClick={checkAnswer} disabled={!selectedOption} className="mr-2">Check Answer</Button>
+              <Button onClick={nextQuestion}>Next</Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+}
