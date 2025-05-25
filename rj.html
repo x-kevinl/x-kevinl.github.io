@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Romeo and Juliet Practice</title>
+  <style>
+    /* Base styles */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f9; color: #333; margin: 0; padding: 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; }
+    .container { width: 100%; max-width: 800px; margin: 40px 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; }
+    h1 { margin-top: 0; font-size: 2rem; text-align: center; color: #2c3e50; }
+    label[for="unitSelect"] { font-weight: bold; display: block; margin-bottom: 8px; }
+    select { width: 100%; padding: 8px 12px; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 20px; }
+    .question-card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin-bottom: 20px; }
+    .question-card h2 { margin: 0 0 12px; font-size: 1.25rem; color: #34495e; }
+    .options label { display: flex; align-items: center; padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 8px; cursor: pointer; transition: background 0.2s; }
+    .options label:hover { background: #ecf0f1; }
+    .options input[type="radio"] { margin-right: 10px; }
+    .option-correct { background-color: #d4f5d4 !important; }
+    .option-wrong { background-color: #f5d4d4 !important; }
+    button { padding: 10px 18px; font-size: 1rem; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s, opacity 0.2s; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-check { background: #3498db; color: #fff; margin-right: 10px; }
+    .btn-check:hover:enabled { background: #2980b9; }
+    .btn-next { background: #2ecc71; color: #fff; }
+    .btn-next:hover { background: #27ae60; }
+    .result-area { margin-top: 16px; }
+    .result { font-size: 1rem; padding: 10px; border-radius: 4px; text-align: center; }
+    .result.correct { background: #2ecc71; color: #fff; }
+    .result.incorrect { background: #e74c3c; color: #fff; }
+    .stats { display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 10px; padding: 8px 12px; background: #f0f3f5; border-radius: 4px; border: 1px solid #ddd; }
+    .loading { text-align: center; font-style: italic; color: #888; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Romeo and Juliet Practice</h1>
+    <label for="unitSelect">Select Unit:</label>
+    <select id="unitSelect">
+      <option value="6">Unit 6</option>
+      <option value="7">Unit 7</option>
+      <option value="8">Unit 8</option>
+      <option value="9">Unit 9</option>
+      <option value="10">Unit 10</option>
+      <option value="12">Unit 12</option>
+      <option value="13">Unit 13</option>
+      <option value="14">Unit 14</option>
+    </select>
+    <div id="quiz"></div>
+    <div class="stats">
+      <span id="score">Score: 0/0</span>
+      <span id="accuracy">Accuracy: 0%</span>
+      <span id="elapsed">Elapsed: 00:00</span>
+      <span id="qtime">Question time: 00:00</span>
+    </div>
+  </div>
+  <script>
+    let questions = [], qIndex = 0, selected = null;
+    let total = 0, correctCount = 0, startTime = Date.now(), questionStart = Date.now(), timerInterval;
+    function formatTime(ms) { const s=Math.floor(ms/1000),m=Math.floor(s/60); return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+    function updateStats(){ document.getElementById('score').textContent=`Score: ${correctCount}/${total}`; const acc= total?Math.round(correctCount/total*100):0; document.getElementById('accuracy').textContent=`Accuracy: ${acc}%`; }
+    function startTimers(){ clearInterval(timerInterval); timerInterval=setInterval(()=>{const now=Date.now(); document.getElementById('elapsed').textContent=`Elapsed: ${formatTime(now-startTime)}`; document.getElementById('qtime').textContent=`Question time: ${formatTime(now-questionStart)}`;},500); }
+    function parseUnit(text){ const qs=[]; text.split(/QUESTION:/).slice(1).forEach(block=>{ const qM=block.match(/^\s*([\s\S]*?)(?=ANSWER1:)/); const question=qM?qM[1].trim():''; const opts=[]; let m; const aRe=/ANSWER(\d+):\s*([\s\S]*?)(?=(?:ANSWER\d+:)|CORRECT:)/g; while(m=aRe.exec(block)) opts[parseInt(m[1],10)-1]=m[2].trim().replace(/\.$/,''); const cM=block.match(/CORRECT:\s*(\d+)/); const cIdx=cM?parseInt(cM[1],10)-1:null; const ans=(cIdx!==null&&opts[cIdx])?opts[cIdx]:''; qs.push({question,options:opts,answer:ans}); }); return qs; }
+    document.getElementById('unitSelect').addEventListener('change',e=>loadUnit(+e.target.value));
+    function loadUnit(u){ qIndex=0; total=0; correctCount=0; startTime=questionStart=Date.now(); updateStats(); document.getElementById('quiz').innerHTML=`<p class="loading">Loading unit ${u}...</p>`; fetch(`rj/unit_${u}.txt`).then(r=>r.ok?r.text():Promise.reject()).then(t=>{questions=parseUnit(t); nextQuestion();}).catch(_=>{questions=[]; nextQuestion();}); startTimers(); }
+    function renderQuestion(){ const quiz=document.getElementById('quiz'); if(!questions.length){quiz.innerHTML='<p>No questions available.</p>';return;} const q=questions[qIndex]; questionStart=Date.now(); quiz.innerHTML=`<div class="question-card"><h2>${q.question}</h2><div class="options">${q.options.map(o=>`<label><input type="radio" name="opt" value="${o}"/> ${o}</label>`).join('')}</div><div><button class="btn-check" disabled>Check Answer</button><button class="btn-next">Next</button></div><div class="result-area"></div></div>`; quiz.querySelectorAll('.options label').forEach(lbl=>{ lbl.classList.remove('option-correct','option-wrong'); const inp=lbl.querySelector('input'); inp.checked=false; inp.disabled=false; inp.onchange=()=>{selected=inp.value; quiz.querySelector('.btn-check').disabled=!selected;};}); selected=null; quiz.querySelector('.btn-check').onclick=()=>showResult(questions[qIndex].answer); quiz.querySelector('.btn-next').onclick=nextQuestion; }
+    function showResult(correct){ total++; const quiz=document.getElementById('quiz'); quiz.querySelectorAll('.options label').forEach(lbl=>{ const inp=lbl.querySelector('input'); if(inp.value===correct)lbl.classList.add('option-correct'); if(inp.checked&&inp.value!==correct)lbl.classList.add('option-wrong'); inp.disabled=true; }); if(selected===correct)correctCount++; updateStats(); const res=document.createElement('div');res.className='result '+(selected===correct?'correct':'incorrect'); res.textContent=selected===correct?'Correct!':`Incorrect. Correct: ${correct}`; const ra=quiz.querySelector('.result-area'); ra.innerHTML=''; ra.appendChild(res);}    
+    function nextQuestion(){ if(questions.length)qIndex=Math.floor(Math.random()*questions.length); renderQuestion(); }
+    loadUnit(6);
+  </script>
+</body>
+</html>
