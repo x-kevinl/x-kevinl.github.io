@@ -22,7 +22,8 @@
   </div>
   <pre id="ascii">Loading...</pre>
   <canvas id="canvas" style="display:none;"></canvas>
-  <img id="sourceImg" src="tree.webp" style="display:none;" crossorigin="anonymous">
+  <!-- Updated image path -->
+  <img id="sourceImg" src="gardensprites/tree.webp" style="display:none;" crossorigin="anonymous">
 
   <script>
     const asciiChars = ['@','%','#','*','+','=','- ',':','.',' '];
@@ -60,7 +61,6 @@
       const delay = parseInt(document.getElementById('delay').value, 10);
       const baseWidth = parseInt(document.getElementById('baseWidth').value, 10);
       const asciiEl = document.getElementById('ascii');
-      // build scale array: grow then shrink
       const scales = [];
       for (let i = 1; i <= steps; i++) scales.push(i / steps);
       for (let i = steps-1; i >= 1; i--) scales.push(i / steps);
