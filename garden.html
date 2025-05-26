@@ -6,7 +6,7 @@
   <title>Tree ASCII Growth Simulator</title>
   <style>
     body { font-family: monospace; background: #222; color: #eee; padding: 20px; }
-    #ascii { white-space: pre; line-height: 1; font-size: 8px; }
+    #ascii { white-space: pre; line-height: 1; font-size: 8px; height: 80vh; overflow: auto; background: #000; padding: 5px; }
     #controls { margin-bottom: 10px; }
     label, button { margin-right: 8px; }
     input { width: 50px; }
@@ -16,13 +16,12 @@
   <h1>Tree ASCII Growth Simulator</h1>
   <div id="controls">
     <label>Steps: <input type="number" id="steps" value="8" min="2"></label>
-    <label>Delay (ms): <input type="number" id="delay" value="500" min="50"></label>
+    <label>Delay (ms): <input type="number" id="delay" value="100" min="20"></label>
     <label>Base Width (chars): <input type="number" id="baseWidth" value="80" min="10"></label>
     <button id="startBtn">Start Simulation</button>
   </div>
-  <pre id="ascii">Loading...</pre>
+  <pre id="ascii">Click "Start Simulation" to begin.</pre>
   <canvas id="canvas" style="display:none;"></canvas>
-  <!-- Updated image path -->
   <img id="sourceImg" src="gardensprites/tree.webp" style="display:none;" crossorigin="anonymous">
 
   <script>
@@ -33,7 +32,7 @@
     function imageToASCII(img, newWidth) {
       const canvas = document.getElementById('canvas');
       const ctx = canvas.getContext('2d');
-      const [w, h] = [img.width, img.height];
+      const w = img.naturalWidth, h = img.naturalHeight;
       const aspect = h / w;
       const charAspect = 0.5;
       const newHeight = Math.floor(newWidth * aspect * charAspect);
@@ -41,7 +40,7 @@
       canvas.height = newHeight;
       ctx.drawImage(img, 0, 0, newWidth, newHeight);
       const data = ctx.getImageData(0, 0, newWidth, newHeight).data;
-      let ascii = '';
+      let lines = [];
       for (let y = 0; y < newHeight; y++) {
         let line = '';
         for (let x = 0; x < newWidth; x++) {
@@ -50,28 +49,38 @@
           const v = (r + g + b) / 3;
           line += mapPixel(v);
         }
-        ascii += line + '\n';
+        lines.push(line);
       }
-      return ascii;
+      return lines;
     }
 
-    document.getElementById('startBtn').addEventListener('click', () => {
+    document.getElementById('startBtn').addEventListener('click', async () => {
       const img = document.getElementById('sourceImg');
       const steps = parseInt(document.getElementById('steps').value, 10);
       const delay = parseInt(document.getElementById('delay').value, 10);
       const baseWidth = parseInt(document.getElementById('baseWidth').value, 10);
       const asciiEl = document.getElementById('ascii');
+
+      // Pre-generate ASCII frames
       const scales = [];
       for (let i = 1; i <= steps; i++) scales.push(i / steps);
-      for (let i = steps-1; i >= 1; i--) scales.push(i / steps);
-      let idx = 0;
-      clearInterval(window._sim);
-      window._sim = setInterval(() => {
-        const factor = scales[idx % scales.length];
+      const frames = [];
+      for (let factor of scales) {
         const w = Math.max(10, Math.floor(baseWidth * factor));
-        asciiEl.textContent = imageToASCII(img, w);
-        idx++;
-      }, delay);
+        const asciiLines = imageToASCII(img, w);
+        frames.push(asciiLines);
+      }
+
+      // Animate growth bottom-up
+      asciiEl.textContent = '';
+      for (let frame of frames) {
+        for (let rowCount = 1; rowCount <= frame.length; rowCount++) {
+          // show bottom rowCount lines
+          const segment = frame.slice(frame.length - rowCount).join('\n');
+          asciiEl.textContent = segment;
+          await new Promise(res => setTimeout(res, delay));
+        }
+      }
     });
   </script>
 </body>
