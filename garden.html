@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow a Garden ASCII</title>
+  <style>
+    body { font-family: monospace; margin: 20px; }
+    #garden { line-height: 1.2; white-space: pre; background: #f0f0f0; padding: 10px; border-radius: 4px; }
+    .controls, .shop { margin-top: 10px; }
+    input[type=number] { width: 3em; }
+    button { margin-left: 5px; }
+    .plot-mature { color: green; }
+  </style>
+</head>
+<body>
+  <h1>Grow a Garden ASCII</h1>
+  <div id="status">Coins: <span id="coins">0</span></div>
+  <div id="garden"></div>
+
+  <div class="controls">
+    <h3>Actions</h3>
+    <label>X: <input type="number" id="inputX" min="0" value="0"></label>
+    <label>Y: <input type="number" id="inputY" min="0" value="0"></label>
+    <label>Seed:
+      <select id="seedSelect"></select>
+    </label>
+    <button id="plantBtn">Plant</button>
+    <button id="harvestBtn">Harvest</button>
+  </div>
+
+  <div class="shop">
+    <h3>Shop</h3>
+    <ul id="shopList"></ul>
+  </div>
+
+  <script>
+    // Utility
+    function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // SeedType with base properties
+    class SeedType {
+      constructor(name, price, baseStages, baseYield, growthTime) {
+        this.name = name;
+        this.price = price;
+        this.baseStages = baseStages;
+        this.baseYield = baseYield;
+        this.growthTime = growthTime; // in ticks
+      }
+    }
+
+    // Each planted seed becomes a Plant with unique parameters
+    class Plant {
+      constructor(seedType) {
+        this.seedType = seedType;
+        this.growthRate = 0.8 + Math.random() * 0.4; // variation [0.8,1.2]
+        this.maxStage = Math.max(1, seedType.baseStages + randomInt(-1, 1));
+        this.yieldAmount = Math.max(1, seedType.baseYield + randomInt(-2, 2));
+        this.age = 0; // ticks
+        this.stage = 0;
+      }
+      update() {
+        this.age += this.growthRate;
+        const fraction = Math.min(1, this.age / this.seedType.growthTime);
+        this.stage = Math.floor(fraction * this.maxStage);
+      }
+      isMature() {
+        return this.stage >= this.maxStage;
+      }
+      renderASCII() {
+        const txt = this.isMature() ? `*${this.maxStage}*` : `${this.stage}`;
+        return `[\${txt}]`;
+      }
+    }
+
+    // Plot holds either null or a Plant
+    class Plot {
+      constructor() { this.plant = null; }
+      plantSeed(seedType) {
+        if (!this.plant) {
+          this.plant = new Plant(seedType);
+          return true;
+        }
+        return false;
+      }
+      update() {
+        if (this.plant) this.plant.update();
+      }
+      harvest() {
+        if (this.plant && this.plant.isMature()) {
+          const amount = this.plant.yieldAmount;
+          this.plant = null;
+          return amount;
+        }
+        return 0;
+      }
+      toString() {
+        if (!this.plant) return `[ ]`;
+        const ascii = this.plant.renderASCII();
+        return ascii;
+      }
+    }
+
+    // Main Game
+    class Game {
+      constructor(width=5, height=3, tickInterval=3000) {
+        this.width = width;
+        this.height = height;
+        this.coins = 10;
+        this.garden = Array.from({ length: height }, () => Array.from({ length: width }, () => new Plot()));
+        this.seedCatalog = {
+          carrot: new SeedType('Carrot', 5, 3, 3, 5),
+          lettuce: new SeedType('Lettuce', 8, 4, 4, 7)
+        };
+        this.tickInterval = tickInterval;
+        this.initUI();
+        this.startTicks();
+        this.render();
+      }
+      initUI() {
+        const seedSelect = document.getElementById('seedSelect');
+        const shopList = document.getElementById('shopList');
+        for (const key in this.seedCatalog) {
+          const s = this.seedCatalog[key];
+          const opt = document.createElement('option'); opt.value = key;
+          opt.textContent = `${s.name} (${s.price} coins)`;
+          seedSelect.appendChild(opt);
+          const li = document.createElement('li');
+          li.textContent = `${s.name}: ${s.price} coins`;
+          shopList.appendChild(li);
+        }
+        document.getElementById('plantBtn').onclick = () => { this.uiPlant(); };
+        document.getElementById('harvestBtn').onclick = () => { this.uiHarvest(); };
+      }
+      uiPlant() {
+        const x = parseInt(document.getElementById('inputX').value);
+        const y = parseInt(document.getElementById('inputY').value);
+        const key = document.getElementById('seedSelect').value;
+        this.plant(x, y, this.seedCatalog[key]);
+        this.render();
+      }
+      uiHarvest() {
+        const x = parseInt(document.getElementById('inputX').value);
+        const y = parseInt(document.getElementById('inputY').value);
+        this.harvest(x, y);
+        this.render();
+      }
+      plant(x, y, seedType) {
+        if (x < 0||y < 0||y>=this.height||x>=this.width) return;
+        if (this.coins < seedType.price) { alert('Not enough coins'); return; }
+        if (this.garden[y][x].plantSeed(seedType)) {
+          this.coins -= seedType.price;
+        } else alert('Plot occupied');
+      }
+      harvest(x, y) {
+        if (x < 0||y < 0||y>=this.height||x>=this.width) return;
+        const amount = this.garden[y][x].harvest();
+        if (amount) this.coins += amount;
+        else alert('Nothing to harvest');
+      }
+      startTicks() {
+        setInterval(() =>
