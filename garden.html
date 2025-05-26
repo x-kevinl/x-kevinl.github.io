@@ -1,69 +1,78 @@
-# tree_ascii_simulator.py
-# Simulates growth/shrink of a tree image by resizing and converting to ASCII art
-# Requires pillow: pip install pillow
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree ASCII Growth Simulator</title>
+  <style>
+    body { font-family: monospace; background: #222; color: #eee; padding: 20px; }
+    #ascii { white-space: pre; line-height: 1; font-size: 8px; }
+    #controls { margin-bottom: 10px; }
+    label, button { margin-right: 8px; }
+    input { width: 50px; }
+  </style>
+</head>
+<body>
+  <h1>Tree ASCII Growth Simulator</h1>
+  <div id="controls">
+    <label>Steps: <input type="number" id="steps" value="8" min="2"></label>
+    <label>Delay (ms): <input type="number" id="delay" value="500" min="50"></label>
+    <label>Base Width (chars): <input type="number" id="baseWidth" value="80" min="10"></label>
+    <button id="startBtn">Start Simulation</button>
+  </div>
+  <pre id="ascii">Loading...</pre>
+  <canvas id="canvas" style="display:none;"></canvas>
+  <img id="sourceImg" src="tree.webp" style="display:none;" crossorigin="anonymous">
 
-import sys
-import time
-from PIL import Image
+  <script>
+    const asciiChars = ['@','%','#','*','+','=','- ',':','.',' '];
+    function mapPixel(v) {
+      return asciiChars[Math.floor(v / 255 * (asciiChars.length - 1))];
+    }
+    function imageToASCII(img, newWidth) {
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const [w, h] = [img.width, img.height];
+      const aspect = h / w;
+      const charAspect = 0.5;
+      const newHeight = Math.floor(newWidth * aspect * charAspect);
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+      ctx.drawImage(img, 0, 0, newWidth, newHeight);
+      const data = ctx.getImageData(0, 0, newWidth, newHeight).data;
+      let ascii = '';
+      for (let y = 0; y < newHeight; y++) {
+        let line = '';
+        for (let x = 0; x < newWidth; x++) {
+          const i = (y * newWidth + x) * 4;
+          const r = data[i], g = data[i+1], b = data[i+2];
+          const v = (r + g + b) / 3;
+          line += mapPixel(v);
+        }
+        ascii += line + '\n';
+      }
+      return ascii;
+    }
 
-# ASCII characters from dark to light
-ASCII_CHARS = ['@', '%', '#', '*', '+', '=', '-', ':', '.', ' ']
-
-def map_pixel_to_ascii(pixel_value):
-    """Map a single grayscale pixel to an ASCII char."""
-    # pixel_value: 0 (black) to 255 (white)
-    index = int(pixel_value / 255 * (len(ASCII_CHARS) - 1))
-    return ASCII_CHARS[index]
-
-def image_to_ascii(img, new_width=80):
-    """Convert PIL Image to ASCII art string with given width, preserving aspect ratio."""
-    # convert to grayscale
-    gray = img.convert('L')
-    width, height = gray.size
-    aspect_ratio = height / width
-    # approximate factor to compensate for console char ratio
-    new_height = int(new_width * aspect_ratio * 0.5)
-    resized = gray.resize((new_width, new_height))
-
-    pixels = resized.getdata()
-    # build string
-    ascii_str = ''.join(map(map_pixel_to_ascii, pixels))
-    # split into lines
-    ascii_lines = [ascii_str[i:i+new_width] for i in range(0, len(ascii_str), new_width)]
-    return "\n".join(ascii_lines)
-
-def simulate_growth(path, scales, width_base=80, delay=1.0):
-    """
-    Simulate tree growth by resizing according to scales list.
-    - path: image file path
-    - scales: list of floats, scale factors relative to base width
-    - width_base: base width in characters
-    - delay: seconds between frames
-    """
-    try:
-        img = Image.open(path)
-    except Exception as e:
-        print(f"Error loading image: {e}")
-        sys.exit(1)
-
-    for factor in scales:
-        new_w = max(10, int(width_base * factor))
-        ascii_art = image_to_ascii(img, new_width=new_w)
-        # clear screen
-        print("\033[H\033[J", end="")
-        print(ascii_art)
-        time.sleep(delay)
-
-if __name__ == '__main__':
-    import argparse
-    parser = argparse.ArgumentParser(description='Simulate ASCII growth of a tree image')
-    parser.add_argument('image_path', help='Path to the tree image, e.g. tree-2027899_1280.webp')
-    parser.add_argument('--steps', type=int, default=5, help='Number of growth steps')
-    parser.add_argument('--delay', type=float, default=1.0, help='Seconds between frames')
-    args = parser.parse_args()
-
-    # generate scale factors from small to full size
-    steps = args.steps
-    scales = [i/steps for i in range(1, steps+1)]
-
-    simulate_growth(args.image_path, scales, width_base=80, delay=args.delay)
+    document.getElementById('startBtn').addEventListener('click', () => {
+      const img = document.getElementById('sourceImg');
+      const steps = parseInt(document.getElementById('steps').value, 10);
+      const delay = parseInt(document.getElementById('delay').value, 10);
+      const baseWidth = parseInt(document.getElementById('baseWidth').value, 10);
+      const asciiEl = document.getElementById('ascii');
+      // build scale array: grow then shrink
+      const scales = [];
+      for (let i = 1; i <= steps; i++) scales.push(i / steps);
+      for (let i = steps-1; i >= 1; i--) scales.push(i / steps);
+      let idx = 0;
+      clearInterval(window._sim);
+      window._sim = setInterval(() => {
+        const factor = scales[idx % scales.length];
+        const w = Math.max(10, Math.floor(baseWidth * factor));
+        asciiEl.textContent = imageToASCII(img, w);
+        idx++;
+      }, delay);
+    });
+  </script>
+</body>
+</html>
