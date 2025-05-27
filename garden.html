@@ -82,7 +82,7 @@
         segment = segment.replace(/@/g, ' ');
         asciiEl.textContent = (blanks ? blanks + '\n' : '') + segment;
         // auto-scroll to bottom
-        asciiEl.scrollTop = asciiEl.scrollHeight;
+        
         await new Promise(res => setTimeout(res, delay));
       }
     });
