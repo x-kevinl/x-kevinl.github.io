@@ -6,7 +6,7 @@
   <title>Tree ASCII Growth Simulator</title>
   <style>
     body { font-family: monospace; background: #222; color: #eee; padding: 20px; }
-    /* Make ASCII container scrollable both horizontally and vertically and anchor growth at bottom */
+    /* Make ASCII container scrollable and anchor growth at bottom via auto-scroll */
     #ascii {
       white-space: pre;
       line-height: 1;
@@ -15,9 +15,6 @@
       overflow: auto;
       background: #000;
       padding: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
     }
     #controls { margin-bottom: 10px; }
     label, button { margin-right: 8px; }
@@ -76,7 +73,7 @@
       const frame = imageToASCII(img, baseWidth);
       const totalRows = frame.length;
 
-      // Animate growth bottom-up, anchored at bottom
+      // Animate growth bottom-up
       asciiEl.textContent = '';
       for (let rowCount = 1; rowCount <= totalRows; rowCount++) {
         const blanks = Array(totalRows - rowCount).fill('').join('\n');
@@ -84,6 +81,8 @@
         // replace all '@' with space in final output
         segment = segment.replace(/@/g, ' ');
         asciiEl.textContent = (blanks ? blanks + '\n' : '') + segment;
+        // auto-scroll to bottom
+        asciiEl.scrollTop = asciiEl.scrollHeight;
         await new Promise(res => setTimeout(res, delay));
       }
     });
