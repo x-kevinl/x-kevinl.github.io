@@ -24,6 +24,7 @@
   <img id="sourceImg" src="gardensprites/tree.webp" style="display:none;" crossorigin="anonymous">
 
   <script>
+    // Characters from dark to light
     const asciiChars = ['@','%','#','*','+','=','- ',':','.',' '];
     function mapPixel(v) {
       return asciiChars[Math.floor(v / 255 * (asciiChars.length - 1))];
@@ -67,7 +68,9 @@
       asciiEl.textContent = '';
       for (let rowCount = 1; rowCount <= totalRows; rowCount++) {
         const blanks = Array(totalRows - rowCount).fill('').join('\n');
-        const segment = frame.slice(totalRows - rowCount).join('\n');
+        let segment = frame.slice(totalRows - rowCount).join('\n');
+        // replace all '@' with space in final output
+        segment = segment.replace(/@/g, ' ');
         asciiEl.textContent = (blanks ? blanks + '\n' : '') + segment;
         await new Promise(res => setTimeout(res, delay));
       }
