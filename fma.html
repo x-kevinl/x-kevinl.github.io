@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>F=ma Practice</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    #problem-container {
+      text-align: center;
+    }
+    #problem-image {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      margin-bottom: 1em;
+    }
+    #answer-box {
+      margin-top: 1em;
+    }
+    #answer-box input {
+      width: 60%;
+      padding: 0.5em;
+      font-size: 1em;
+    }
+    #answer-box button {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      margin-left: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div id="problem-container">
+    <h1>F=ma Practice Problem</h1>
+    <img id="problem-image" src="" alt="F=ma problem" />
+    <div id="answer-box">
+      <label for="answer">Your answer:</label>
+      <input type="text" id="answer" name="answer" placeholder="Enter answer here" />
+      <button id="submit-btn">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    // Configuration: years & how many problems each has
+    const config = {
+      years: [2023, 2024],
+      maxProblems: { 2023: 25, 2024: 25 }
+    };
+
+    function loadRandomProblem() {
+      const yearList = config.years;
+      const year = yearList[Math.floor(Math.random() * yearList.length)];
+      const max = config.maxProblems[year];
+      const num = Math.floor(Math.random() * max) + 1;
+
+      const img = document.getElementById('problem-image');
+      img.src = `/static/images/fma/${year}/${num}.webp`;
+      img.alt = `F=ma ${year} Problem ${num}`;
+
+      // Clear any previous answer
+      document.getElementById('answer').value = '';
+    }
+
+    // Load a problem when the page finishes loading
+    window.addEventListener('DOMContentLoaded', loadRandomProblem);
+
+    // (Optional) you could handle the submit button here:
+    document.getElementById('submit-btn').addEventListener('click', () => {
+      const ans = document.getElementById('answer').value.trim();
+      if (!ans) {
+        alert('Please enter an answer before submitting.');
+      } else {
+        // For now, just acknowledge receipt:
+        alert(`You answered: ${ans}`);
+        // You could extend this to check answers, load a new problem, etc.
+      }
+    });
+  </script>
+</body>
+</html>
