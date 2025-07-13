@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The International Variable Star Index</title>
+  <style>
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #f2f2f2;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    /* Logos */
+    .logo {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+    .wave-logo {
+      width: 140px;
+      margin-bottom: 1rem;
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .subtitle strong {
+      color: #1f3a93;
+    }
+
+    /* Menu box */
+    .menu-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    .star {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+    }
+    .menu {
+      background-color: #fff;
+      border: 1px solid #d4b45e;
+      padding: 2rem 1rem 1rem;
+      width: 200px;
+    }
+    .menu a {
+      display: block;
+      margin: 0.5rem 0;
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .menu a:hover {
+      color: #d4b45e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- inspired by aavso homepage :) -->
+    <img src="static/images/olympiadlogo.png" class="logo">
+    <img src="static/images/wavey.png" class="wave-logo">
+
+    <h1>Olympiad Trainer</h1>
+    <p class="subtitle">
+       Over <strong>100</strong> problems to solve.
+    </p>
+
+    <div class="menu-wrapper">
+      <img src="images/star-icon.png" alt="" class="star">
+      <nav class="menu">
+        <a href="about">About</a>
+        <a href="/fma">F=ma</a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>
