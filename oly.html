@@ -6,8 +6,14 @@
   <style>
     /* Reset & base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+    }
     body {
-      background-color: #f2f2f2;
+      background-image: url('background.jpg');
+      background-repeat: no-repeat;
+      background-size: auto;             /* do not scale */
+      background-position: center center;/* start centered */
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: #2c3e50;
       display: flex;
@@ -16,11 +22,16 @@
       min-height: 100vh;
       text-align: center;
       padding: 1rem;
+      overflow: hidden;                  /* hide any scrollbars */
     }
 
     .container {
       max-width: 400px;
       width: 100%;
+      background: rgba(255,255,255,0.8);
+      padding: 2rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     /* Logos */
@@ -28,14 +39,10 @@
       width: 50px;
       margin-bottom: 1rem;
     }
-    .wave-logo {
-      width: 140px;
-      margin-bottom: 1rem;
-    }
 
     /* Headings */
     h1 {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       margin-bottom: 0.5rem;
       line-height: 1.2;
     }
@@ -52,18 +59,12 @@
       position: relative;
       display: inline-block;
     }
-    .star {
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 36px;
-    }
     .menu {
       background-color: #fff;
       border: 1px solid #d4b45e;
-      padding: 2rem 1rem 1rem;
+      padding: 1.5rem 1rem;
       width: 200px;
+      border-radius: 4px;
     }
     .menu a {
       display: block;
@@ -80,14 +81,11 @@
 </head>
 <body>
   <div class="container">
-    <!-- inspired by aavso homepage :) -->
-    <img src="static/images/olympiadlogo.png" class="logo">
-
+    <img src="static/images/olympiadlogo.png" class="logo" alt="Olympiad Logo">
     <h1>Olympiad Trainer</h1>
     <p class="subtitle">
-       Over <strong>100</strong> problems to solve.
+      Over <strong>100</strong> problems to solve.
     </p>
-
     <div class="menu-wrapper">
       <nav class="menu">
         <a href="/about">About</a>
@@ -95,5 +93,20 @@
       </nav>
     </div>
   </div>
+
+  <script>
+    // parallax strength: bigger divisor → subtler movement
+    const strength = 30;
+
+    document.addEventListener('mousemove', e => {
+      // calculate offset from center
+      const offsetX = (e.clientX - window.innerWidth / 2) / strength;
+      const offsetY = (e.clientY - window.innerHeight / 2) / strength;
+
+      // shift background-position around its center
+      document.body.style.backgroundPosition =
+        `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
+    });
+  </script>
 </body>
 </html>
