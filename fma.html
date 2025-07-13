@@ -3,43 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <title>F=ma Practice</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 600px;
-      margin: 2em auto;
-      padding: 0 1em;
-    }
-    #problem-container {
-      text-align: center;
-    }
-    #problem-image {
-  display: block;          /* make margin: auto work */
-  margin: 0 auto 1em;      /* center and add bottom spacing */
-  width: 75%;              /* 3/4 of the container’s width */
-  max-width: 100%;         /* never overflow the container */
-  height: auto;            /* keep aspect ratio */
-  border: 1px solid #ccc;
-}
-    #answer-box {
-      margin-top: 1em;
-    }
-    #answer-box input {
-      width: 60%;
-      padding: 0.5em;
-      font-size: 1em;
-      text-transform: uppercase;
-    }
-    #answer-box button {
-      padding: 0.5em 1em;
-      font-size: 1em;
-      margin-left: 0.5em;
-    }
-    #feedback {
-      margin-top: 1em;
-      font-weight: bold;
-    }
-  </style>
+<style>
+  body {
+    font-family: sans-serif;
+    /* bump this up (or remove it entirely) so the page can be wider */
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 0 1em;
+  }
+
+  #problem-container {
+    text-align: center;
+  }
+
+  #problem-image {
+    display: block;          /* so margin:0 auto works */
+    margin: 0 auto 1em;      /* center horizontally + 1em bottom gap */
+    width: 100%;             /* fill the container width */
+    max-width: 100%;         /* never exceed it */
+    height: auto;            /* maintain aspect ratio */
+    border: 1px solid #ccc;
+  }
+
+  #answer-box {
+    margin-top: 1em;
+  }
+  #answer-box input {
+    width: 60%;
+    padding: 0.5em;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  #answer-box button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    margin-left: 0.5em;
+  }
+  #feedback {
+    margin-top: 1em;
+    font-weight: bold;
+  }
+</style>
+
 </head>
 <body>
   <div id="problem-container">
