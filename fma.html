@@ -19,22 +19,22 @@
       font-style: italic;
     }
 
-    /* THE NEW “ONE BOX” AROUND ALL IMAGE PARTS */
+    /* wrapper now centered at 90% width with a darker box */
     #image-wrapper {
-      border: 2px solid #000;    /* darker, “blacker” box */
+      display: block;            /* so margin auto centers it */
+      width: 90%;                /* fill 90% of the page width */
+      max-width: 800px;          /* never exceed the container */
+      margin: 0 auto 1em;        /* center + bottom gap */
+      border: 2px solid #000;    /* thick black border */
       padding: 0.5em;
-      margin: 0 auto 1em;
-      display: inline-block;     /* shrink-wrap to the images */
-      width: 100%;               /* or a % you like (e.g. 90%) */
       box-sizing: border-box;
     }
-
-    /* images now just fill the wrapper, no individual border */
+    /* images fill the wrapper and stack */
     .problem-image {
       display: block;
       width: 100%;
       height: auto;
-      margin-bottom: 1em;
+      margin-bottom: 1em;        /* gap between parts */
       border: none;
     }
 
@@ -42,14 +42,19 @@
       margin-top: 1em;
     }
     #answer-box input {
-      width: 60%; padding: 0.5em; font-size: 1em;
+      width: 60%;
+      padding: 0.5em;
+      font-size: 1em;
       text-transform: uppercase;
     }
     #answer-box button {
-      padding: 0.5em 1em; font-size: 1em; margin-left: 0.5em;
+      padding: 0.5em 1em;
+      font-size: 1em;
+      margin-left: 0.5em;
     }
     #feedback {
-      margin-top: 1em; font-weight: bold;
+      margin-top: 1em;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -58,7 +63,6 @@
     <h1>F=ma Practice Problem</h1>
     <div id="exam-label"></div>
     <div id="image-wrapper"></div>
-
     <div id="answer-box">
       <label for="answer">Your answer (A–E):</label>
       <input type="text" id="answer" maxlength="1" />
@@ -81,25 +85,41 @@
       const parts = [];
       for (let sfx of ['a','b']) {
         const url = base + sfx + ext;
-        try { if ((await fetch(url,{method:'HEAD'})).ok) parts.push(url); }
-        catch{}
+        try {
+          if ((await fetch(url, {method:'HEAD'})).ok) {
+            parts.push(url);
+          }
+        } catch {}
       }
       if (!parts.length) {
         const url = base + ext;
-        try { if ((await fetch(url,{method:'HEAD'})).ok) parts.push(url); }
-        catch{}
+        try {
+          if ((await fetch(url, {method:'HEAD'})).ok) {
+            parts.push(url);
+          }
+        } catch {}
       }
       return parts;
     }
 
     async function loadRandomProblem() {
-      currentExam = config.exams[Math.floor(Math.random()*config.exams.length)];
-      currentNum  = Math.floor(Math.random()*config.maxProblems[currentExam]) + 1;
+      // pick a random exam and problem number
+      currentExam = config.exams[
+        Math.floor(Math.random() * config.exams.length)
+      ];
+      currentNum = Math.floor(
+        Math.random() * config.maxProblems[currentExam]
+      ) + 1;
 
-      document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
+      // update exam label
+      document.getElementById('exam-label').textContent =
+        `Exam ${currentExam}`;
 
+      // clear previous images
       const wrapper = document.getElementById('image-wrapper');
       wrapper.innerHTML = '';
+
+      // fetch and append all parts (a/b or base)
       const imgs = await fetchImageParts(currentExam, currentNum);
       imgs.forEach(src => {
         const img = document.createElement('img');
@@ -109,14 +129,15 @@
         wrapper.appendChild(img);
       });
 
+      // reset answer UI
       document.getElementById('answer').value = '';
       document.getElementById('feedback').textContent = '';
       document.getElementById('submit-btn').textContent = 'Submit';
 
+      // load the answer key
       try {
-        const keyTxt = await (await fetch(
-          `/static/images/fma/${currentExam}/key.txt`
-        )).text();
+        const keyUrl = `/static/images/fma/${currentExam}/key.txt`;
+        const keyTxt = await (await fetch(keyUrl)).text();
         answerLines = keyTxt
           .split(/\r?\n/)
           .map(l => l.trim().toUpperCase())
@@ -139,14 +160,14 @@
           fb.style.color = 'darkorange';
           return;
         }
-        const raw     = answerLines[currentNum-1]||'';
-        const correct = raw.split('').filter(c=>/[A-E]/.test(c));
+        const raw = answerLines[currentNum - 1] || '';
+        const correct = raw.split('').filter(c => /[A-E]/.test(c));
 
         if (correct.includes(ans)) {
           fb.textContent = '✅ Correct!';
           fb.style.color = 'green';
         } else {
-          const plural = correct.length>1;
+          const plural = correct.length > 1;
           fb.textContent = `❌ Incorrect — the right answer${plural?'s are':' is'} ${correct.join(' & ')}.`;
           fb.style.color = 'red';
         }
