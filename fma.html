@@ -10,22 +10,37 @@
       margin: 2em auto;
       padding: 0 1em;
     }
-    #problem-container { text-align: center; }
+    #problem-container {
+      text-align: center;
+    }
     #exam-label {
       margin-bottom: 0.5em;
       color: gray;
       font-style: italic;
     }
-    #image-wrapper { margin-bottom: 1em; }
+
+    /* THE NEW “ONE BOX” AROUND ALL IMAGE PARTS */
+    #image-wrapper {
+      border: 2px solid #000;    /* darker, “blacker” box */
+      padding: 0.5em;
+      margin: 0 auto 1em;
+      display: inline-block;     /* shrink-wrap to the images */
+      width: 100%;               /* or a % you like (e.g. 90%) */
+      box-sizing: border-box;
+    }
+
+    /* images now just fill the wrapper, no individual border */
     .problem-image {
       display: block;
-      margin: 0 auto 1em;
-      width: 150%;
-      max-width: 150%;
+      width: 100%;
       height: auto;
-      border: 1px solid #ccc;
+      margin-bottom: 1em;
+      border: none;
     }
-    #answer-box { margin-top: 1em; }
+
+    #answer-box {
+      margin-top: 1em;
+    }
     #answer-box input {
       width: 60%; padding: 0.5em; font-size: 1em;
       text-transform: uppercase;
@@ -33,14 +48,19 @@
     #answer-box button {
       padding: 0.5em 1em; font-size: 1em; margin-left: 0.5em;
     }
-    #feedback { margin-top: 1em; font-weight: bold; }
+    #feedback {
+      margin-top: 1em; font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <div id="problem-container">
+    <h1>F=ma Practice Problem</h1>
     <div id="exam-label"></div>
     <div id="image-wrapper"></div>
+
     <div id="answer-box">
+      <label for="answer">Your answer (A–E):</label>
       <input type="text" id="answer" maxlength="1" />
       <button id="submit-btn">Submit</button>
     </div>
@@ -49,15 +69,12 @@
 
   <script>
     const config = {
-      // List all “exam” folders here:
       exams: ['2022A','2022B','2023','2024'],
-      // How many problems per exam:
       maxProblems: { '2022A':25, '2022B':25, '2023':25, '2024':25 }
     };
 
     let currentExam, currentNum, answerLines = [];
 
-    // Find available images: try “a” and “b” suffixes, else base .webp
     async function fetchImageParts(exam, num) {
       const base = `/static/images/fma/${exam}/${num}`;
       const ext  = '.webp';
@@ -76,14 +93,11 @@
     }
 
     async function loadRandomProblem() {
-      // pick exam and problem number
       currentExam = config.exams[Math.floor(Math.random()*config.exams.length)];
       currentNum  = Math.floor(Math.random()*config.maxProblems[currentExam]) + 1;
 
-      // label
       document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
 
-      // clear and load images
       const wrapper = document.getElementById('image-wrapper');
       wrapper.innerHTML = '';
       const imgs = await fetchImageParts(currentExam, currentNum);
@@ -95,7 +109,6 @@
         wrapper.appendChild(img);
       });
 
-      // reset UI & load key
       document.getElementById('answer').value = '';
       document.getElementById('feedback').textContent = '';
       document.getElementById('submit-btn').textContent = 'Submit';
@@ -106,8 +119,8 @@
         )).text();
         answerLines = keyTxt
           .split(/\r?\n/)
-          .map(l=>l.trim().toUpperCase())
-          .filter(l=>l);
+          .map(l => l.trim().toUpperCase())
+          .filter(l => l);
       } catch {
         answerLines = [];
       }
@@ -123,19 +136,19 @@
       if (btn.textContent === 'Submit') {
         if (!/^[A-E]$/.test(ans)) {
           fb.textContent = 'Please enter A, B, C, D, or E.';
-          fb.style.color   = 'darkorange';
+          fb.style.color = 'darkorange';
           return;
         }
-        const raw = answerLines[currentNum-1]||'';
+        const raw     = answerLines[currentNum-1]||'';
         const correct = raw.split('').filter(c=>/[A-E]/.test(c));
 
         if (correct.includes(ans)) {
           fb.textContent = '✅ Correct!';
-          fb.style.color   = 'green';
+          fb.style.color = 'green';
         } else {
           const plural = correct.length>1;
           fb.textContent = `❌ Incorrect — the right answer${plural?'s are':' is'} ${correct.join(' & ')}.`;
-          fb.style.color   = 'red';
+          fb.style.color = 'red';
         }
         btn.textContent = 'Next Question';
       } else {
