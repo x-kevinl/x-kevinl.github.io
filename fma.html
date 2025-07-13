@@ -14,7 +14,7 @@
       text-align: center;
     }
     #problem-image {
-      width: 75%;        /* now occupies 3/4 of the container */
+      width: 75%;
       height: auto;
       border: 1px solid #ccc;
       margin-bottom: 1em;
@@ -26,11 +26,16 @@
       width: 60%;
       padding: 0.5em;
       font-size: 1em;
+      text-transform: uppercase;
     }
     #answer-box button {
       padding: 0.5em 1em;
       font-size: 1em;
       margin-left: 0.5em;
+    }
+    #feedback {
+      margin-top: 1em;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -39,43 +44,80 @@
     <h1>F=ma Practice Problem</h1>
     <img id="problem-image" src="" alt="F=ma problem" />
     <div id="answer-box">
-      <label for="answer">Your answer:</label>
-      <input type="text" id="answer" name="answer" placeholder="Enter answer here" />
+      <label for="answer">Your answer (A–E):</label>
+      <input type="text" id="answer" name="answer" maxlength="1" placeholder="A, B, C, D, or E" />
       <button id="submit-btn">Submit</button>
     </div>
+    <div id="feedback"></div>
   </div>
 
   <script>
-    // Configuration: years & how many problems each has
     const config = {
       years: [2023, 2024],
       maxProblems: { 2023: 25, 2024: 25 }
     };
 
-    function loadRandomProblem() {
-      const yearList = config.years;
-      const year = yearList[Math.floor(Math.random() * yearList.length)];
-      const max = config.maxProblems[year];
-      const num = Math.floor(Math.random() * max) + 1;
+    let currentYear, currentNum, answerLines = [];
 
+    async function loadRandomProblem() {
+      currentYear = config.years[Math.floor(Math.random() * config.years.length)];
+      currentNum  = Math.floor(Math.random() * config.maxProblems[currentYear]) + 1;
+
+      // Display the problem image
       const img = document.getElementById('problem-image');
-      img.src = `/static/images/fma/${year}/${num}.webp`;
-      img.alt = `F=ma ${year} Problem ${num}`;
+      img.src = `/static/images/fma/${currentYear}/${currentNum}.webp`;
+      img.alt = `F=ma ${currentYear} Problem ${currentNum}`;
 
-      // Clear any previous answer
-      document.getElementById('answer').value = '';
+      // Clear previous input/feedback
+      document.getElementById('answer').value = "";
+      const fb = document.getElementById('feedback');
+      fb.textContent = "";
+      fb.style.color = "";
+
+      // Fetch and split key.txt
+      try {
+        const resp = await fetch(`/static/images/fma/${currentYear}/key.txt`);
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const text = await resp.text();
+        answerLines = text
+          .split(/\r?\n/)
+          .map(line => line.trim().toUpperCase())
+          .filter(line => line);
+      } catch (err) {
+        console.error("Failed to load key:", err);
+        answerLines = [];
+      }
     }
 
-    // Load a problem when the page finishes loading
     window.addEventListener('DOMContentLoaded', loadRandomProblem);
 
-    // Handle the submit button
     document.getElementById('submit-btn').addEventListener('click', () => {
-      const ans = document.getElementById('answer').value.trim();
-      if (!ans) {
-        alert('Please enter an answer before submitting.');
+      const userAns = document.getElementById('answer').value.toUpperCase().trim();
+      const fb = document.getElementById('feedback');
+
+      if (!/^[A-E]$/.test(userAns)) {
+        fb.textContent = "Please enter A, B, C, D, or E.";
+        fb.style.color = "darkorange";
+        return;
+      }
+      if (answerLines.length < currentNum) {
+        fb.textContent = "Answer key not available for this problem.";
+        fb.style.color = "gray";
+        return;
+      }
+
+      // raw string for this problem, e.g. "BC" or "A"
+      const raw = answerLines[currentNum - 1];
+      // split each character into array: "BC" → ["B","C"]
+      const correctArr = raw.split('').filter(ch => /[A-E]/.test(ch));
+
+      if (correctArr.includes(userAns)) {
+        fb.textContent = "✅ Correct!";
+        fb.style.color = "green";
       } else {
-        alert(`You answered: ${ans}`);
+        const plural = correctArr.length > 1;
+        fb.textContent = `❌ Incorrect — the right answer${plural ? 's are' : ' is'} ${correctArr.join(' & ')}.`;
+        fb.style.color = "red";
       }
     });
   </script>
