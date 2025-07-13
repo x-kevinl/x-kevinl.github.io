@@ -14,7 +14,7 @@
       text-align: center;
     }
     #problem-image {
-      max-width: 100%;
+      width: 75%;        /* now occupies 3/4 of the container */
       height: auto;
       border: 1px solid #ccc;
       margin-bottom: 1em;
@@ -69,15 +69,13 @@
     // Load a problem when the page finishes loading
     window.addEventListener('DOMContentLoaded', loadRandomProblem);
 
-    // (Optional) you could handle the submit button here:
+    // Handle the submit button
     document.getElementById('submit-btn').addEventListener('click', () => {
       const ans = document.getElementById('answer').value.trim();
       if (!ans) {
         alert('Please enter an answer before submitting.');
       } else {
-        // For now, just acknowledge receipt:
         alert(`You answered: ${ans}`);
-        // You could extend this to check answers, load a new problem, etc.
       }
     });
   </script>
