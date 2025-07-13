@@ -13,6 +13,16 @@
     #problem-container {
       text-align: center;
     }
+    h1 {
+      margin-bottom: 0.2em;
+    }
+    /* Timer styling */
+    #timer {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 1em;
+      color: #333;
+    }
     #exam-label {
       margin-bottom: 0.5em;
       color: gray;
@@ -59,6 +69,7 @@
 <body>
   <div id="problem-container">
     <h1>F=ma Practice</h1>
+    <div id="timer">03:00</div>
     <div id="exam-label"></div>
     <div id="image-wrapper"></div>
     <div id="answer-box">
@@ -75,6 +86,34 @@
     };
 
     let currentExam, currentNum, answerLines = [];
+    let timeLeft = 180;        // seconds
+    let timerInterval = null;
+
+    function updateTimerDisplay() {
+      const timerEl = document.getElementById('timer');
+      if (timeLeft <= 0) {
+        timerEl.textContent = 'OVERTIME';
+        timerEl.style.color = 'red';
+      } else {
+        const m = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+        const s = String(timeLeft % 60).padStart(2, '0');
+        timerEl.textContent = `${m}:${s}`;
+        timerEl.style.color = '#333';
+      }
+    }
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      timeLeft = 180;
+      updateTimerDisplay();
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+        }
+      }, 1000);
+    }
 
     async function fetchImageParts(exam, num) {
       const base = `/static/images/fma/${exam}/${num}`;
@@ -83,7 +122,7 @@
       for (let sfx of ['a','b']) {
         const url = base + sfx + ext;
         try {
-          if ((await fetch(url, {method:'HEAD'})).ok) {
+          if ((await fetch(url, { method:'HEAD' })).ok) {
             parts.push(url);
           }
         } catch {}
@@ -91,7 +130,7 @@
       if (!parts.length) {
         const url = base + ext;
         try {
-          if ((await fetch(url, {method:'HEAD'})).ok) {
+          if ((await fetch(url, { method:'HEAD' })).ok) {
             parts.push(url);
           }
         } catch {}
@@ -142,6 +181,9 @@
       } catch {
         answerLines = [];
       }
+
+      // start/reset timer
+      startTimer();
     }
 
     window.addEventListener('DOMContentLoaded', loadRandomProblem);
