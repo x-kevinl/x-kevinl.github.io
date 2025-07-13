@@ -14,11 +14,13 @@
       text-align: center;
     }
     #problem-image {
-      width: 200%;
-      height: auto;
-      border: 1px solid #ccc;
-      margin-bottom: 1em;
-    }
+  display: block;          /* make margin: auto work */
+  margin: 0 auto 1em;      /* center and add bottom spacing */
+  width: 75%;              /* 3/4 of the container’s width */
+  max-width: 100%;         /* never overflow the container */
+  height: auto;            /* keep aspect ratio */
+  border: 1px solid #ccc;
+}
     #answer-box {
       margin-top: 1em;
     }
