@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Olympiad Trainer</title>
+  <style>
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+    }
+    body {
+      background-image: url('/static/images/background.jpg');
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center center;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    /* Fade‐in container once body gets .loaded */
+    .container {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      max-width: 400px;
+      width: 100%;
+      background: rgba(255,255,255,0.8);
+      padding: 2rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    body.loaded .container {
+      opacity: 1;
+    }
+
+    /* Logos */
+    .logo {
+      width: 50px;
+      margin-bottom: 1rem;
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .subtitle strong {
+      color: #1f3a93;
+    }
+
+    /* Menu box */
+    .menu-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    .menu {
+      background-color: #fff;
+      border: 1px solid #d4b45e;
+      padding: 1.5rem 1rem;
+      width: 200px;
+      border-radius: 4px;
+    }
+    .menu a {
+      display: block;
+      margin: 0.5rem 0;
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .menu a:hover {
+      color: #d4b45e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="static/images/logo.png" class="logo" alt="Olympiad Logo">
+    <h1>About</h1>
+    <p class="subtitle">
+      Olympiad Trainer is meant to help you train for olympiads.
+    </p>
+    <div class="menu-wrapper">
+      Built by Kevin Li in 2025.
+    </div>
+  </div>
+
+  <script>
+    // Parallax strength: smaller = more movement
+    const strength = 10000;
+    document.addEventListener('mousemove', e => {
+      const offsetX = (e.clientX - window.innerWidth / 2) / strength;
+      const offsetY = (e.clientY - window.innerHeight / 2) / strength;
+      document.body.style.backgroundPosition =
+        `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
+    });
+
+    // Fade in the container once page finishes loading
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>
