@@ -164,29 +164,34 @@
     }
 
     async function loadRandomProblem() {
-      let imgs = [];
-      const wrapper = document.getElementById('image-wrapper');
-      while (!imgs.length) {
-        currentExam = config.exams[
-          Math.floor(Math.random() * config.exams.length)
-        ];
-        currentNum = Math.floor(
-          Math.random() * config.maxProblems[currentExam]
-        ) + 1;
-        // show loader
-        wrapper.innerHTML = '<div class="loader"></div>';
-        imgs = await fetchImageParts(currentExam, currentNum);
-      }
+  const wrapper = document.getElementById('image-wrapper');
 
-      document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
-      wrapper.innerHTML = '';
-      imgs.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = `F=ma ${currentExam} #${currentNum}`;
-        img.className = 'problem-image';
-        wrapper.appendChild(img);
-      });
+  // Show loader once
+  wrapper.innerHTML = '<div class="loader"></div>';
+
+  let imgs = [];
+  // Keep trying new (exam, num) until we find an existing image
+  while (!imgs.length) {
+    currentExam = config.exams[
+      Math.floor(Math.random() * config.exams.length)
+    ];
+    currentNum = Math.floor(
+      Math.random() * config.maxProblems[currentExam]
+    ) + 1;
+
+    imgs = await fetchImageParts(currentExam, currentNum);
+  }
+
+  // Now that we have images, replace loader with them
+  document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
+  wrapper.innerHTML = '';  // clear loader
+  imgs.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `F=ma ${currentExam} #${currentNum}`;
+    img.className = 'problem-image';
+    wrapper.appendChild(img);
+  });
 
       document.getElementById('answer').value = '';
       document.getElementById('feedback').textContent = '';
