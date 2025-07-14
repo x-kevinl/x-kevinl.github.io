@@ -13,9 +13,7 @@
     #problem-container {
       text-align: center;
     }
-    h1 {
-      margin-bottom: 0.2em;
-    }
+    h1 { margin-bottom: 0.2em; }
     /* Timer styling */
     #timer {
       font-size: 1.2em;
@@ -28,7 +26,6 @@
       color: gray;
       font-style: italic;
     }
-    /* wrapper now centered at 90% width with a darker box */
     #image-wrapper {
       display: block;
       width: 90%;
@@ -38,7 +35,6 @@
       padding: 0.5em;
       box-sizing: border-box;
     }
-    /* images fill the wrapper and stack */
     .problem-image {
       display: block;
       width: 100%;
@@ -46,24 +42,15 @@
       margin-bottom: 1em;
       border: none;
     }
-    #answer-box {
-      margin-top: 1em;
-    }
+    #answer-box { margin-top: 1em; }
     #answer-box input {
-      width: 60%;
-      padding: 0.5em;
-      font-size: 1em;
+      width: 60%; padding: 0.5em; font-size: 1em;
       text-transform: uppercase;
     }
     #answer-box button {
-      padding: 0.5em 1em;
-      font-size: 1em;
-      margin-left: 0.5em;
+      padding: 0.5em 1em; font-size: 1em; margin-left: 0.5em;
     }
-    #feedback {
-      margin-top: 1em;
-      font-weight: bold;
-    }
+    #feedback { margin-top: 1em; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -94,22 +81,20 @@
     };
 
     let currentExam, currentNum, answerLines = [];
-    let timeLeft = 180;        // seconds
-    let timerInterval = null;
+    let timeLeft = 180, timerInterval = null;
 
     function updateTimerDisplay() {
-      const timerEl = document.getElementById('timer');
+      const el = document.getElementById('timer');
       if (timeLeft <= 0) {
-        timerEl.textContent = 'OVERTIME';
-        timerEl.style.color = 'red';
+        el.textContent = 'OVERTIME';
+        el.style.color = 'red';
       } else {
-        const m = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-        const s = String(timeLeft % 60).padStart(2, '0');
-        timerEl.textContent = `${m}:${s}`;
-        timerEl.style.color = '#333';
+        const m = String(Math.floor(timeLeft/60)).padStart(2,'0'),
+              s = String(timeLeft%60).padStart(2,'0');
+        el.textContent = `${m}:${s}`;
+        el.style.color = '#333';
       }
     }
-
     function startTimer() {
       clearInterval(timerInterval);
       timeLeft = 180;
@@ -117,50 +102,43 @@
       timerInterval = setInterval(() => {
         timeLeft--;
         updateTimerDisplay();
-        if (timeLeft <= 0) {
-          clearInterval(timerInterval);
-        }
+        if (timeLeft <= 0) clearInterval(timerInterval);
       }, 1000);
     }
 
     async function fetchImageParts(exam, num) {
-      const base = `/static/images/fma/${exam}/${num}`;
-      const ext  = '.webp';
-      const parts = [];
+      const base = `/static/images/fma/${exam}/${num}`, ext = '.webp', parts = [];
       for (let sfx of ['a','b']) {
-        const url = base + sfx + ext;
         try {
-          if ((await fetch(url, { method:'HEAD' })).ok) {
-            parts.push(url);
-          }
+          const url = `${base}${sfx}${ext}`;
+          if ((await fetch(url,{method:'HEAD'})).ok) parts.push(url);
         } catch {}
       }
       if (!parts.length) {
-        const url = base + ext;
         try {
-          if ((await fetch(url, { method:'HEAD' })).ok) {
-            parts.push(url);
-          }
+          const url = `${base}${ext}`;
+          if ((await fetch(url,{method:'HEAD'})).ok) parts.push(url);
         } catch {}
       }
       return parts;
     }
 
     async function loadRandomProblem() {
-      currentExam = config.exams[
-        Math.floor(Math.random() * config.exams.length)
-      ];
-      currentNum = Math.floor(
-        Math.random() * config.maxProblems[currentExam]
-      ) + 1;
+      let imgs = [];
+      // keep retrying until we find existing image(s)
+      while (!imgs.length) {
+        currentExam = config.exams[
+          Math.floor(Math.random() * config.exams.length)
+        ];
+        currentNum = Math.floor(
+          Math.random() * config.maxProblems[currentExam]
+        ) + 1;
+        imgs = await fetchImageParts(currentExam, currentNum);
+      }
 
-      document.getElementById('exam-label').textContent =
-        `Exam ${currentExam}`;
-
+      document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
       const wrapper = document.getElementById('image-wrapper');
       wrapper.innerHTML = '';
-
-      const imgs = await fetchImageParts(currentExam, currentNum);
       imgs.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
@@ -174,12 +152,10 @@
       document.getElementById('submit-btn').textContent = 'Submit';
 
       try {
-        const keyUrl = `/static/images/fma/${currentExam}/key.txt`;
-        const keyTxt = await (await fetch(keyUrl)).text();
-        answerLines = keyTxt
-          .split(/\r?\n/)
-          .map(l => l.trim().toUpperCase())
-          .filter(l => l);
+        const keyTxt = await (await fetch(
+          `/static/images/fma/${currentExam}/key.txt`
+        )).text();
+        answerLines = keyTxt.split(/\r?\n/).map(l => l.trim().toUpperCase()).filter(l => l);
       } catch {
         answerLines = [];
       }
@@ -190,9 +166,8 @@
     window.addEventListener('DOMContentLoaded', loadRandomProblem);
 
     document.getElementById('submit-btn').addEventListener('click', async function() {
-      const btn = this;
-      const fb  = document.getElementById('feedback');
-      const ans = document.getElementById('answer').value.toUpperCase().trim();
+      const btn = this, fb = document.getElementById('feedback'),
+            ans = document.getElementById('answer').value.toUpperCase().trim();
 
       if (btn.textContent === 'Submit') {
         if (!/^[A-E]$/.test(ans)) {
@@ -200,8 +175,8 @@
           fb.style.color = 'darkorange';
           return;
         }
-        const raw = answerLines[currentNum - 1] || '';
-        const correct = raw.split('').filter(c => /[A-E]/.test(c));
+        const raw = answerLines[currentNum - 1] || '',
+              correct = raw.split('').filter(c => /[A-E]/.test(c));
 
         if (correct.includes(ans)) {
           fb.textContent = '✅ Correct!';
