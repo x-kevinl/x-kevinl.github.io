@@ -12,26 +12,30 @@
     body {
       background-image: url('/static/images/background.jpg');
       background-repeat: no-repeat;
-      background-size: auto;             /* do not scale */
-      background-position: center center;/* start centered */
+      background-size: auto;
+      background-position: center center;
+      overflow: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: #2c3e50;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       text-align: center;
       padding: 1rem;
-      overflow: hidden;                  /* hide any scrollbars */
     }
-
+    /* Fade‐in container once body gets .loaded */
     .container {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
       max-width: 400px;
       width: 100%;
       background: rgba(255,255,255,0.8);
       padding: 2rem 1rem;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    body.loaded .container {
+      opacity: 1;
     }
 
     /* Logos */
@@ -95,17 +99,18 @@
   </div>
 
   <script>
-    // parallax strength: bigger divisor → subtler movement
+    // Parallax strength: smaller = more movement
     const strength = 10;
-
     document.addEventListener('mousemove', e => {
-      // calculate offset from center
       const offsetX = (e.clientX - window.innerWidth / 2) / strength;
       const offsetY = (e.clientY - window.innerHeight / 2) / strength;
-
-      // shift background-position around its center
       document.body.style.backgroundPosition =
         `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
+    });
+
+    // Fade in the container once page finishes loading
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
     });
   </script>
 </body>
