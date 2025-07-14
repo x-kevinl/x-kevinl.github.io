@@ -81,8 +81,16 @@
 
   <script>
     const config = {
-      exams: ['2022A','2022B','2023','2024'],
-      maxProblems: { '2022A':25, '2022B':25, '2023':25, '2024':25 }
+      exams: [
+        '2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017',
+        '2018A','2018B','2019A','2019B','2020A','2020B','2021',
+        '2022A','2022B','2023','2024'
+      ],
+      maxProblems: {
+        '2007':25,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,
+        '2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,
+        '2022A':25,'2022B':25,'2023':25,'2024':25
+      }
     };
 
     let currentExam, currentNum, answerLines = [];
@@ -139,7 +147,6 @@
     }
 
     async function loadRandomProblem() {
-      // pick a random exam and problem number
       currentExam = config.exams[
         Math.floor(Math.random() * config.exams.length)
       ];
@@ -147,15 +154,12 @@
         Math.random() * config.maxProblems[currentExam]
       ) + 1;
 
-      // update exam label
       document.getElementById('exam-label').textContent =
         `Exam ${currentExam}`;
 
-      // clear previous images
       const wrapper = document.getElementById('image-wrapper');
       wrapper.innerHTML = '';
 
-      // fetch and append all parts (a/b or base)
       const imgs = await fetchImageParts(currentExam, currentNum);
       imgs.forEach(src => {
         const img = document.createElement('img');
@@ -165,12 +169,10 @@
         wrapper.appendChild(img);
       });
 
-      // reset answer UI
       document.getElementById('answer').value = '';
       document.getElementById('feedback').textContent = '';
       document.getElementById('submit-btn').textContent = 'Submit';
 
-      // load the answer key
       try {
         const keyUrl = `/static/images/fma/${currentExam}/key.txt`;
         const keyTxt = await (await fetch(keyUrl)).text();
@@ -182,7 +184,6 @@
         answerLines = [];
       }
 
-      // start/reset timer
       startTimer();
     }
 
