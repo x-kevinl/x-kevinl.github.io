@@ -34,7 +34,7 @@
       border: 2px solid #000;
       padding: 0.5em;
       box-sizing: border-box;
-      min-height: 100px; /* ensure loader has space */
+      min-height: 100px;
       position: relative;
     }
     #previous-wrapper {
@@ -46,7 +46,6 @@
       width: 100%;
       height: auto;
       margin-bottom: 1em;
-      border: none;
     }
 
     #answer-box { margin-top: 1em; }
@@ -59,7 +58,7 @@
     }
     #feedback { margin-top: 1em; font-weight: bold; }
 
-    /* Loader animation by temani afif */
+    /* Loader animation */
     .loader {
       width: 15px;
       aspect-ratio: 1;
@@ -85,16 +84,9 @@
       transform: translateX(13px) rotate(0deg) translateX(13px);
       animation: l9-2 .75s infinite linear alternate;
     }
-    @keyframes l9-0 {
-      0%, 49.9% { transform: scale(1) }
-      50%, 100% { transform: scale(-1) }
-    }
-    @keyframes l9-1 {
-      100% { box-shadow: 52px 0 }
-    }
-    @keyframes l9-2 {
-      100% { transform: translateX(13px) rotate(-180deg) translateX(13px) }
-    }
+    @keyframes l9-0 { 0%,49.9%{transform:scale(1)} 50%,100%{transform:scale(-1)} }
+    @keyframes l9-1 { 100%{box-shadow:52px 0} }
+    @keyframes l9-2 { 100%{transform:translateX(13px) rotate(-180deg) translateX(13px)} }
   </style>
 </head>
 <body>
@@ -126,30 +118,24 @@
       }
     };
 
-    let currentExam, currentNum, previousExam, previousNum;
-    let currentImgs = [], previousImgs = [];
-    let answerLines = [];
+    let currentExam, currentNum, answerLines = [];
     let timeLeft = 180, timerInterval = null;
 
     function updateTimerDisplay() {
       const el = document.getElementById('timer');
       if (timeLeft <= 0) {
-        el.textContent = 'OVERTIME';
-        el.style.color = 'red';
+        el.textContent = 'OVERTIME'; el.style.color = 'red';
       } else {
         const m = String(Math.floor(timeLeft/60)).padStart(2,'0'),
               s = String(timeLeft%60).padStart(2,'0');
-        el.textContent = `${m}:${s}`;
-        el.style.color = '#333';
+        el.textContent = `${m}:${s}`; el.style.color = '#333';
       }
     }
     function startTimer() {
       clearInterval(timerInterval);
-      timeLeft = 180;
-      updateTimerDisplay();
+      timeLeft = 180; updateTimerDisplay();
       timerInterval = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay();
+        timeLeft--; updateTimerDisplay();
         if (timeLeft <= 0) clearInterval(timerInterval);
       }, 1000);
     }
@@ -157,14 +143,12 @@
     async function fetchImageParts(exam, num) {
       const base = `/static/images/fma/${exam}/${num}`, ext = '.webp', parts = [];
       for (let sfx of ['a','b']) {
-        try {
-          const url = `${base}${sfx}${ext}`;
+        try { const url = `${base}${sfx}${ext}`;
           if ((await fetch(url,{method:'HEAD'})).ok) parts.push(url);
         } catch {}
       }
       if (!parts.length) {
-        try {
-          const url = `${base}${ext}`;
+        try { const url = `${base}${ext}`;
           if ((await fetch(url,{method:'HEAD'})).ok) parts.push(url);
         } catch {}
       }
@@ -172,13 +156,6 @@
     }
 
     async function loadRandomProblem() {
-      // Shift current to previous
-      if (currentImgs.length) {
-        previousImgs = [...currentImgs];
-        previousExam = currentExam;
-        previousNum = currentNum;
-      }
-      // Hide previous on new load
       document.getElementById('previous-wrapper').style.display = 'none';
       document.getElementById('show-prev-btn').textContent = 'Show Previous Problem';
 
@@ -187,86 +164,67 @@
 
       let imgs = [];
       while (!imgs.length) {
-        currentExam = config.exams[Math.floor(Math.random() * config.exams.length)];
-        currentNum = Math.floor(Math.random() * config.maxProblems[currentExam]) + 1;
+        currentExam = config.exams[Math.floor(Math.random()*config.exams.length)];
+        currentNum = Math.floor(Math.random()*config.maxProblems[currentExam])+1;
         imgs = await fetchImageParts(currentExam, currentNum);
       }
 
-      currentImgs = imgs;
-      document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
+      document.getElementById('exam-label').textContent = `Exam ${currentExam} #${currentNum}`;
       wrapper.innerHTML = '';
       imgs.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
+        const img = document.createElement('img'); img.src = src;
         img.alt = `F=ma ${currentExam} #${currentNum}`;
-        img.className = 'problem-image';
-        wrapper.appendChild(img);
+        img.className = 'problem-image'; wrapper.appendChild(img);
       });
-
       document.getElementById('answer').value = '';
       document.getElementById('feedback').textContent = '';
       document.getElementById('submit-btn').textContent = 'Submit';
 
       try {
-        const keyTxt = await (await fetch(
-          `/static/images/fma/${currentExam}/key.txt`
-        )).text();
-        answerLines = keyTxt
-          .split(/\r?\n/)
-          .map(l => l.trim().toUpperCase())
-          .filter(l => l);
-      } catch {
-        answerLines = [];
-      }
+        const keyTxt = await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text();
+        answerLines = keyTxt.split(/\r?\n/).map(l=>l.trim().toUpperCase()).filter(l=>l);
+      } catch { answerLines = []; }
 
       startTimer();
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('show-prev-btn').addEventListener('click', function() {
+      document.getElementById('show-prev-btn').addEventListener('click', async function() {
         const pw = document.getElementById('previous-wrapper');
         if (pw.style.display === 'none') {
-          if (previousImgs.length) {
+          // Only show if a valid previous exists
+          if (currentNum > 1) {
+            pw.innerHTML = '<div class="loader"></div>';
+            const prevImgs = await fetchImageParts(currentExam, currentNum-1);
             pw.innerHTML = '';
-            previousImgs.forEach(src => {
-              const img = document.createElement('img');
-              img.src = src;
-              img.alt = `F=ma ${previousExam} #${previousNum}`;
-              img.className = 'problem-image';
-              pw.appendChild(img);
+            if (prevImgs.length) prevImgs.forEach(src => {
+              const img = document.createElement('img'); img.src = src;
+              img.alt = `F=ma ${currentExam} #${currentNum-1}`;
+              img.className = 'problem-image'; pw.appendChild(img);
             });
           } else {
-            pw.textContent = 'No previous problem available.';
+            pw.textContent = 'No previous problem (this is #1).';
           }
-          pw.style.display = 'block';
-          this.textContent = 'Hide Previous Problem';
+          pw.style.display = 'block'; this.textContent = 'Hide Previous Problem';
         } else {
-          pw.style.display = 'none';
-          this.textContent = 'Show Previous Problem';
+          pw.style.display = 'none'; this.textContent = 'Show Previous Problem';
         }
       });
       loadRandomProblem();
     });
 
     document.getElementById('submit-btn').addEventListener('click', async function() {
-      const btn = this, fb = document.getElementById('feedback'),
-            ans = document.getElementById('answer').value.toUpperCase().trim();
-
+      const btn = this, fb = document.getElementById('feedback');
+      const ans = document.getElementById('answer').value.toUpperCase().trim();
       if (btn.textContent === 'Submit') {
         if (!/^[A-E]$/.test(ans)) {
-          fb.textContent = 'Please enter A, B, C, D, or E.';
-          fb.style.color = 'darkorange';
-          return;
+          fb.textContent = 'Please enter A, B, C, D, or E.'; fb.style.color = 'darkorange'; return;
         }
-        const raw = answerLines[currentNum - 1] || '',
-              correct = raw.split('').filter(c => /[A-E]/.test(c));
-
+        const raw = answerLines[currentNum-1]||'', correct = raw.split('').filter(c=>/[A-E]/.test(c));
         if (correct.includes(ans)) {
-          fb.textContent = '✅ Correct!';
-          fb.style.color = 'green';
+          fb.textContent = '✅ Correct!'; fb.style.color = 'green';
         } else {
-          const plural = correct.length > 1;
-          fb.textContent = `❌ Incorrect — the right answer${plural?'s are':' is'} ${correct.join(' & ')}.`;
+          fb.textContent = `❌ Incorrect — the right answer${correct.length>1?'s are':' is'} ${correct.join(' & ')}.`;
           fb.style.color = 'red';
         }
         btn.textContent = 'Next Question';
