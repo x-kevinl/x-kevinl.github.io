@@ -161,8 +161,6 @@
           for(let i=currentNum-2; i<currentNum; i++){
             if(i>=1){
               const secDiv=document.createElement('div'); secDiv.className='prev-section';
-              const title=document.createElement('div'); title.className='prev-title'; title.textContent=`Problem #${i}`;
-              secDiv.appendChild(title);
               const imgs=await fetchImageParts(currentExam,i);
               imgs.forEach(src=>{ const img=document.createElement('img'); img.src=src; img.alt=`F=ma ${currentExam} #${i}`; img.className='problem-image'; secDiv.appendChild(img); });
               sections.push(secDiv);
