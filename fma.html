@@ -139,7 +139,7 @@
 
     // Preload images for neighbors: n-2, n-1, n+1 and their prevs
     function preloadNeighborhood(exam, center) {
-      const candidates = [center-2, center-1, center+1, center-2, center-1]
+      const candidates = [center-2, center-1, center+1]
         .filter((n,i,arr) => n >= 1 && n <= config.maxProblems[exam] && arr.indexOf(n) === i);
       candidates.forEach(num => {
         ['a','b',''].forEach(sfx => {
@@ -184,38 +184,38 @@
       startTimer();
     }
 
-    window.addEventListener('DOMContentLoaded', ()=>{
-n      document.getElementById('show-prev-btn').addEventListener('click',async function(){
-        const pw=document.getElementById('previous-wrapper');
-        if(pw.style.display==='none'){
-          pw.innerHTML='';
-          const sections=[];
-          for(let i=currentNum-2; i<currentNum; i++){
-            if(i>=1){
-              const secDiv=document.createElement('div'); secDiv.className='prev-section';
-              const title=document.createElement('div'); title.className='prev-title'; title.textContent=`${i}`;
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('show-prev-btn').addEventListener('click', async function() {
+        const pw = document.getElementById('previous-wrapper');
+        if (pw.style.display === 'none') {
+          pw.innerHTML = '';
+          const sections = [];
+          for (let i = currentNum - 2; i < currentNum; i++) {
+            if (i >= 1) {
+              const secDiv = document.createElement('div'); secDiv.className = 'prev-section';
+              const title = document.createElement('div'); title.className = 'prev-title'; title.textContent = `${i}`;
               secDiv.appendChild(title);
-              const imgs=await fetchImageParts(currentExam,i);
-              imgs.forEach(src=>{ const img=document.createElement('img'); img.src=src; img.alt=`F=ma ${currentExam} #${i}`; img.className='problem-image'; secDiv.appendChild(img); });
+              const imgs = await fetchImageParts(currentExam, i);
+              imgs.forEach(src => { const img = document.createElement('img'); img.src = src; img.alt = `F=ma ${currentExam} #${i}`; img.className = 'problem-image'; secDiv.appendChild(img); });
               sections.push(secDiv);
             }
           }
-          if(sections.length) sections.forEach(sec=>pw.appendChild(sec));
-          else pw.textContent='No previous problems available.';
-          pw.style.display='block'; this.textContent='Hide Previous Problems';
-        } else { pw.style.display='none'; this.textContent='Show Previous Problems'; }
+          if (sections.length) sections.forEach(sec => pw.appendChild(sec));
+          else pw.textContent = 'No previous problems available.';
+          pw.style.display = 'block'; this.textContent = 'Hide Previous Problems';
+        } else { pw.style.display = 'none'; this.textContent = 'Show Previous Problems'; }
       });
       loadRandomProblem();
     });
 
-    document.getElementById('submit-btn').addEventListener('click',async function(){
-      const btn=this, fb=document.getElementById('feedback'), ans=document.getElementById('answer').value.toUpperCase().trim();
-      if(btn.textContent==='Submit'){
-        if(!/^[A-E]$/.test(ans)){ fb.textContent='Please enter A, B, C, D, or E.'; fb.style.color='darkorange'; return; }
-        const raw=answerLines[currentNum-1]||'', correct=raw.split('').filter(c=>/[A-E]/.test(c));
-        if(correct.includes(ans)){ fb.textContent='✅ Correct!'; fb.style.color='green'; }
-        else { fb.textContent=`❌ Incorrect — the right answer${correct.length>1?'s are':' is'} ${correct.join(' & ')}.`; fb.style.color='red'; }
-        btn.textContent='Next Question';
+    document.getElementById('submit-btn').addEventListener('click', async function() {
+      const btn = this, fb = document.getElementById('feedback'), ans = document.getElementById('answer').value.toUpperCase().trim();
+      if (btn.textContent === 'Submit') {
+        if (!/^[A-E]$/.test(ans)) { fb.textContent = 'Please enter A, B, C, D, or E.'; fb.style.color = 'darkorange'; return; }
+        const raw = answerLines[currentNum - 1] || '', correct = raw.split('').filter(c => /[A-E]/.test(c));
+        if (correct.includes(ans)) { fb.textContent = '✅ Correct!'; fb.style.color = 'green'; }
+        else { fb.textContent = `❌ Incorrect — the right answer${correct.length>1?'s are':' is'} ${correct.join(' & ')}.`; fb.style.color = 'red'; }
+        btn.textContent = 'Next Question';
       } else { await loadRandomProblem(); }
     });
   </script>
