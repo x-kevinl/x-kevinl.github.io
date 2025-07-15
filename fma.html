@@ -26,7 +26,7 @@
     }
 
     /* wrapper now centered at 90% width with a darker box */
-    #image-wrapper {
+    #image-wrapper, #previous-wrapper {
       display: block;
       width: 90%;
       max-width: 800px;
@@ -36,6 +36,10 @@
       box-sizing: border-box;
       min-height: 100px; /* ensure loader has space */
       position: relative;
+    }
+    #previous-wrapper {
+      border-color: #ccc;
+      display: none;
     }
     .problem-image {
       display: block;
@@ -99,6 +103,8 @@
     <div id="timer">03:00</div>
     <div id="exam-label"></div>
     <div id="image-wrapper"></div>
+    <button id="show-prev-btn" style="margin-bottom:1em;">Show Previous Problem</button>
+    <div id="previous-wrapper"></div>
     <div id="answer-box">
       <input type="text" id="answer" maxlength="1" />
       <button id="submit-btn">Submit</button>
@@ -120,7 +126,9 @@
       }
     };
 
-    let currentExam, currentNum, answerLines = [];
+    let currentExam, currentNum, previousExam, previousNum;
+    let currentImgs = [], previousImgs = [];
+    let answerLines = [];
     let timeLeft = 180, timerInterval = null;
 
     function updateTimerDisplay() {
@@ -164,34 +172,36 @@
     }
 
     async function loadRandomProblem() {
-  const wrapper = document.getElementById('image-wrapper');
+      // Shift current to previous
+      if (currentImgs.length) {
+        previousImgs = [...currentImgs];
+        previousExam = currentExam;
+        previousNum = currentNum;
+      }
+      // Hide previous on new load
+      document.getElementById('previous-wrapper').style.display = 'none';
+      document.getElementById('show-prev-btn').textContent = 'Show Previous Problem';
 
-  // Show loader once
-  wrapper.innerHTML = '<div class="loader"></div>';
+      const wrapper = document.getElementById('image-wrapper');
+      wrapper.innerHTML = '<div class="loader"></div>';
 
-  let imgs = [];
-  // Keep trying new (exam, num) until we find an existing image
-  while (!imgs.length) {
-    currentExam = config.exams[
-      Math.floor(Math.random() * config.exams.length)
-    ];
-    currentNum = Math.floor(
-      Math.random() * config.maxProblems[currentExam]
-    ) + 1;
+      let imgs = [];
+      while (!imgs.length) {
+        currentExam = config.exams[Math.floor(Math.random() * config.exams.length)];
+        currentNum = Math.floor(Math.random() * config.maxProblems[currentExam]) + 1;
+        imgs = await fetchImageParts(currentExam, currentNum);
+      }
 
-    imgs = await fetchImageParts(currentExam, currentNum);
-  }
-
-  // Now that we have images, replace loader with them
-  document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
-  wrapper.innerHTML = '';  // clear loader
-  imgs.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = `F=ma ${currentExam} #${currentNum}`;
-    img.className = 'problem-image';
-    wrapper.appendChild(img);
-  });
+      currentImgs = imgs;
+      document.getElementById('exam-label').textContent = `Exam ${currentExam}`;
+      wrapper.innerHTML = '';
+      imgs.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `F=ma ${currentExam} #${currentNum}`;
+        img.className = 'problem-image';
+        wrapper.appendChild(img);
+      });
 
       document.getElementById('answer').value = '';
       document.getElementById('feedback').textContent = '';
@@ -212,7 +222,31 @@
       startTimer();
     }
 
-    window.addEventListener('DOMContentLoaded', loadRandomProblem);
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('show-prev-btn').addEventListener('click', function() {
+        const pw = document.getElementById('previous-wrapper');
+        if (pw.style.display === 'none') {
+          if (previousImgs.length) {
+            pw.innerHTML = '';
+            previousImgs.forEach(src => {
+              const img = document.createElement('img');
+              img.src = src;
+              img.alt = `F=ma ${previousExam} #${previousNum}`;
+              img.className = 'problem-image';
+              pw.appendChild(img);
+            });
+          } else {
+            pw.textContent = 'No previous problem available.';
+          }
+          pw.style.display = 'block';
+          this.textContent = 'Hide Previous Problem';
+        } else {
+          pw.style.display = 'none';
+          this.textContent = 'Show Previous Problem';
+        }
+      });
+      loadRandomProblem();
+    });
 
     document.getElementById('submit-btn').addEventListener('click', async function() {
       const btn = this, fb = document.getElementById('feedback'),
