@@ -4,273 +4,285 @@
   <meta charset="UTF-8" />
   <title>F=ma Practice</title>
   <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1em;
-    }
-    #problem-container { text-align: center; }
-    h1 { margin-bottom: 0.2em; }
-    /* Timer styling */
-    #timer {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 1em;
-      color: #333;
-    }
-    #exam-label {
-      margin-bottom: 0.5em;
-      color: gray;
-      font-style: italic;
-    }
-
-    /* Practice toggle */
-    #practice-toggle-container {
-      margin-bottom: 1em;
-      text-align: center;
-    }
-
-    /* Problem and previous wrappers */
-    #image-wrapper, #previous-wrapper {
-      width: 90%;
-      max-width: 800px;
-      margin: 0 auto 1em;
-      border: 2px solid #000;
-      padding: 0.5em;
-      box-sizing: border-box;
-      min-height: 100px;
-      position: relative;
-    }
-    #previous-wrapper {
-      border-color: #ccc;
-      display: none;
-      text-align: left;
-    }
-    .problem-image {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin-bottom: 1em;
-    }
-    .prev-section {
-      margin-bottom: 1em;
-    }
-    .prev-title {
-      font-weight: bold;
-      margin-bottom: 0.5em;
-    }
-
-    #answer-box { margin-top: 1em; }
-    #answer-box input {
-      width: 60%; padding: 0.5em; font-size: 1em;
-      text-transform: uppercase;
-    }
-    #answer-box button {
-      padding: 0.5em 1em; font-size: 1em; margin-left: 0.5em;
-    }
-    #feedback { margin-top: 1em; font-weight: bold; }
-
-    /* Loader animation */
-    .loader {
-      width: 15px;
-      aspect-ratio: 1;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      animation: l9-0 1.5s infinite steps(2);
-    }
-    .loader::before,
-    .loader::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: #000;
-    }
-    .loader::before { box-shadow: 26px 0; transform: translateX(-26px); animation: l9-1 .75s infinite linear alternate; }
-    .loader::after { transform: translateX(13px) rotate(0deg) translateX(13px); animation: l9-2 .75s infinite linear alternate; }
-    @keyframes l9-0 { 0%,49.9%{transform:scale(1)} 50%,100%{transform:scale(-1)} }
-    @keyframes l9-1 { 100%{box-shadow:52px 0} }
-    @keyframes l9-2 { 100%{transform:translateX(13px) rotate(-180deg) translateX(13px)} }
+    body { font-family: sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; }
+    #welcome-page, #practice-container, #test-container, #speed-container, #summary-container { text-align: center; }
+    .hidden { display: none; }
+    button { padding: 0.5em 1em; margin: 0.5em; font-size: 1em; }
+    #mode-buttons button { width: 200px; }
+    #timer { font-size: 1.2em; font-weight: bold; margin: 1em 0; color: #333; }
+    #problem-counter, #accuracy-summary { margin: 1em 0; font-weight: bold; }
+    .problem-wrapper { margin-bottom: 1.5em; }
+    .problem-image { display: block; width: 100%; height: auto; margin-bottom: 0.5em; }
+    .result-text { font-weight: bold; margin-top: 0.5em; }
   </style>
 </head>
 <body>
-  <div id="problem-container">
-    <div id="practice-toggle-container">
-      <label><input type="checkbox" id="practice-toggle"> Practice selected problems only</label>
+  <!-- Welcome Page -->
+  <div id="welcome-page">
+    <h1>Welcome Back!</h1>
+    <p>Choose a mode to start:</p>
+    <div id="mode-buttons">
+      <button id="zen-btn">Zen - Unlimited Problems</button>
+      <button id="test-btn">Test - Fixed Problems</button>
+      <button id="speed-btn">Speed - Time Attack</button>
     </div>
-    <h1>F=ma Practice</h1>
+  </div>
+
+  <!-- Zen Practice Container -->
+  <div id="practice-container" class="hidden">
+    <div id="problem-counter">Problems: 0</div>
+    <div id="accuracy-summary">CORRECT: 0 | OVERTIME: 0 | INCORRECT: 0</div>
+    <button id="end-practice-btn">End Practice</button>
     <div id="timer">03:00</div>
     <div id="exam-label"></div>
     <div id="image-wrapper"></div>
-    <button id="show-prev-btn" style="margin-bottom:1em;">Show Previous Problems</button>
-    <div id="previous-wrapper"></div>
     <div id="answer-box">
-      <input type="text" id="answer" maxlength="1" />
+      <input type="text" id="answer" maxlength="1" placeholder="A-E" />
       <button id="submit-btn">Submit</button>
     </div>
     <div id="feedback"></div>
   </div>
 
-  <script>
-    // practiceList will be populated by loading practice.txt
-    let practiceList = [];
-    async function loadPracticeList() {
-      try {
-        const res = await fetch('/static/practice.txt');
-        const text = await res.text();
-        practiceList = text.split(/[\s,]+/)
-          .map(s => s.trim())
-          .filter(s => s);
-      } catch (e) {
-        console.error('Failed to load practice.txt:', e);
-      }
-    }
+  <!-- Test Container -->
+  <div id="test-container" class="hidden">
+    <h2>Test Mode</h2>
+    <button id="start-test-btn">Start Test</button>
+    <div id="test-form" class="hidden">
+      <form id="test-questions-form">
+        <div id="test-questions"></div>
+        <button type="button" id="submit-test-btn">Submit Test</button>
+      </form>
+    </div>
+  </div>
 
+  <!-- Speed Container -->
+  <div id="speed-container" class="hidden">
+    <h2>Speed Mode</h2>
+    <button id="start-speed-btn">Start Time Attack</button>
+    <div id="speed-timer" class="hidden"></div>
+    <div id="speed-problem-area" class="hidden">
+      <div id="speed-counter">Solved: 0</div>
+      <div id="speed-timer-display"></div>
+      <div id="exam-label-speed"></div>
+      <div id="image-wrapper-speed"></div>
+      <div id="answer-box-speed">
+        <input type="text" id="answer-speed" maxlength="1" placeholder="A-E" />
+        <button id="submit-speed-btn">Submit</button>
+      </div>
+      <div id="feedback-speed"></div>
+    </div>
+  </div>
+
+  <!-- Summary Container -->
+  <div id="summary-container" class="hidden">
+    <h2>Session Summary</h2>
+    <div id="final-summary"></div>
+    <button id="restart-btn">Restart</button>
+  </div>
+
+  <script>
+    // Shared config
     const config = {
       exams: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018A','2018B','2019A','2019B','2020A','2020B','2021','2022A','2022B','2023','2024'],
-      maxProblems: {
-        '2007':38,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,
-        '2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,
-        '2022A':25,'2022B':25,'2023':25,'2024':25
-      }
+      maxProblems: { '2007':38,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,'2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,'2022A':25,'2022B':25,'2023':25,'2024':25 }
     };
+    
+    // Elements
+    const welcome = document.getElementById('welcome-page');
+    const practice = document.getElementById('practice-container');
+    const testMode = document.getElementById('test-container');
+    const speedMode = document.getElementById('speed-container');
+    const summary = document.getElementById('summary-container');
 
-    let currentExam, currentNum, answerLines = [];
-    let timeLeft = 180, timerInterval = null;
+    // Mode buttons
+    document.getElementById('zen-btn').onclick = () => startZen();
+    document.getElementById('test-btn').onclick = () => startTestMode();
+    document.getElementById('speed-btn').onclick = () => startSpeedMode();
+    document.getElementById('restart-btn').onclick = () => location.reload();
 
-    function updateTimerDisplay() {
-      const el = document.getElementById('timer');
-      if (timeLeft <= 0) { el.textContent = 'OVERTIME'; el.style.color = 'red'; }
-      else {
-        const m = String(Math.floor(timeLeft/60)).padStart(2,'0');
-        const s = String(timeLeft%60).padStart(2,'0');
-        el.textContent = `${m}:${s}`;
-        el.style.color = '#333';
-      }
-    }
-    function startTimer() {
-      clearInterval(timerInterval);
-      timeLeft = 180;
-      updateTimerDisplay();
-      timerInterval = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay();
-        if (timeLeft <= 0) clearInterval(timerInterval);
-      }, 1000);
-    }
+    // Zen variables
+    let zenCount = 0, zenCorrect = 0, zenOvertime = 0, zenIncorrect = 0;
+    let currentExam, currentNum, keyAnswers = [], zenTimer, zenTimeLeft;
 
+    // Speed variables
+    let speedTime, speedTimerInterval, speedCount = 0;    
+
+    // Utility fetch image parts
     async function fetchImageParts(exam, num) {
       const base = `/static/images/fma/${exam}/${num}`;
-      const ext = '.webp';
-      const parts = [];
-      for (let sfx of ['a','b']) {
-        try {
-          const url = `${base}${sfx}${ext}`;
-          if ((await fetch(url, { method: 'HEAD' })).ok) parts.push(url);
-        } catch {}
-      }
-      if (!parts.length) {
-        try {
-          const url = `${base}${ext}`;
-          if ((await fetch(url, { method: 'HEAD' })).ok) parts.push(url);
-        } catch {}
+      const ext = '.webp'; let parts = [];
+      for (let sfx of ['a','b','']) {
+        try { if ((await fetch(`${base}${sfx}${ext}`, {method:'HEAD'})).ok) parts.push(`${base}${sfx}${ext}`); }
+        catch{};
       }
       return parts;
     }
 
-    function preloadNeighborhood(exam, center) {
-      const candidates = [center-2, center-1, center+1]
-        .filter((n, i, arr) => n >= 1 && n <= config.maxProblems[exam] && arr.indexOf(n) === i);
-      candidates.forEach(num => {
-        ['a','b',''].forEach(sfx => {
-          const suffix = sfx ? sfx : '';
-          const url = `/static/images/fma/${exam}/${num}${suffix}.webp`;
-          const img = new Image();
-          img.src = url;
-        });
-      });
+    // Timer display
+    function displayTimer(el, time) {
+      if (time <= 0) { el.textContent = 'OVERTIME'; el.style.color = 'red'; }
+      else { const m = String(Math.floor(time/60)).padStart(2,'0'); const s = String(time%60).padStart(2,'0'); el.textContent = `${m}:${s}`; el.style.color='#333'; }
     }
 
-    async function loadRandomProblem() {
-      document.getElementById('previous-wrapper').style.display = 'none';
-      document.getElementById('show-prev-btn').textContent = 'Show Previous Problems';
+    // START ZEN MODE
+    async function startZen() {
+      welcome.classList.add('hidden'); practice.classList.remove('hidden');
+      document.getElementById('end-practice-btn').onclick = showZenSummary;
+      await loadZenProblem();
+    }
 
-      const wrapper = document.getElementById('image-wrapper');
-      wrapper.innerHTML = '<div class="loader"></div>';
-
-      let imgs = [];
-      while (!imgs.length) {
-        if (document.getElementById('practice-toggle').checked && practiceList.length) {
-          const entry = practiceList[Math.floor(Math.random() * practiceList.length)];
-          const [exam, numStr] = entry.split('.');
-          currentExam = exam;
-          currentNum = parseInt(numStr, 10);
-        } else {
-          currentExam = config.exams[Math.floor(Math.random() * config.exams.length)];
-          currentNum = Math.floor(Math.random() * config.maxProblems[currentExam]) + 1;
-        }
-        imgs = await fetchImageParts(currentExam, currentNum);
-      }
-
+    async function loadZenProblem() {
+      zenCount++; updateZenDisplay();
+      // fetch new random problem
+      [currentExam, currentNum] = getRandomProblem();
       document.getElementById('exam-label').textContent = `Exam ${currentExam} #${currentNum}`;
+      // load images
+      const wrapper = document.getElementById('image-wrapper'); wrapper.innerHTML = '<div class="loader"></div>';
+      const imgs = await fetchImageParts(currentExam, currentNum);
       wrapper.innerHTML = '';
-      imgs.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = `F=ma ${currentExam} #${currentNum}`;
-        img.className = 'problem-image';
-        wrapper.appendChild(img);
-      });
+      imgs.forEach(src => { let img = document.createElement('img'); img.src=src; img.className='problem-image'; wrapper.appendChild(img); });
+      // load answer key
+      try { const keyTxt = await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); keyAnswers = keyTxt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }catch{ keyAnswers = []; }
+      // reset answer and feedback
+      document.getElementById('answer').value=''; document.getElementById('feedback').textContent=''; document.getElementById('submit-btn').textContent='Submit';
+      // start timer
+      zenTimeLeft = 180; clearInterval(zenTimer); zenTimer = setInterval(()=>{
+        zenTimeLeft--; displayTimer(document.getElementById('timer'), zenTimeLeft);
+        if (zenTimeLeft<=0) clearInterval(zenTimer);
+      },1000);
 
-      document.getElementById('answer').value = '';
-      document.getElementById('feedback').textContent = '';
-      document.getElementById('submit-btn').textContent = 'Submit';
-      try {
-        const keyTxt = await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text();
-        answerLines = keyTxt.split(/\r?\n/).map(l => l.trim().toUpperCase()).filter(l => l);
-      } catch {}
-
-      preloadNeighborhood(currentExam, currentNum);
-      startTimer();
+      document.getElementById('submit-btn').onclick = () => handleZenSubmission();
     }
 
-    window.addEventListener('DOMContentLoaded', async () => {
-      await loadPracticeList();
-      document.getElementById('show-prev-btn').addEventListener('click', async function() {
-        const pw = document.getElementById('previous-wrapper');
-        if (pw.style.display === 'none') {
-          pw.innerHTML = '';
-          const sections = [];
-          for (let i = currentNum - 2; i < currentNum; i++) {
-            if (i >= 1) {
-              const secDiv = document.createElement('div'); secDiv.className = 'prev-section';
-              const title = document.createElement('div'); title.className = 'prev-title'; title.textContent = `${i}`;
-              secDiv.appendChild(title);
-              const imgs = await fetchImageParts(currentExam, i);
-              imgs.forEach(src => { const img = document.createElement('img'); img.src = src; img.alt = `F=ma ${currentExam} #${i}`; img.className = 'problem-image'; secDiv.appendChild(img); });
-              sections.push(secDiv);
-            }
-          }
-          if (sections.length) sections.forEach(sec => pw.appendChild(sec));
-          else pw.textContent = 'No previous problems available.';
-          pw.style.display = 'block'; this.textContent = 'Hide Previous Problems';
-        } else { pw.style.display = 'none'; this.textContent = 'Show Previous Problems'; }
-      });
-      loadRandomProblem();
-    });
+    function handleZenSubmission() {
+      const ans = document.getElementById('answer').value.toUpperCase().trim(); const fb = document.getElementById('feedback');
+      const raw = keyAnswers[currentNum-1]||''; const corrects = raw.split('').filter(c=>/[A-E]/.test(c));
+      let status;
+      if (!/^[A-E]$/.test(ans)) { fb.textContent='Enter A-E'; fb.style.color='darkorange'; return; }
+      if (corrects.includes(ans)) {
+        if (zenTimeLeft>0) { zenCorrect++; status='CORRECT'; fb.textContent='✅ CORRECT'; fb.style.color='green'; }
+        else { zenOvertime++; status='OVERTIME'; fb.textContent='⏰ OVERTIME'; fb.style.color='orange'; }
+      } else { zenIncorrect++; status='INCORRECT'; fb.textContent=`❌ INCORRECT (Ans: ${corrects.join(' & ')})`; fb.style.color='red'; }
+      updateZenDisplay();
+      document.getElementById('submit-btn').textContent='Next'; document.getElementById('submit-btn').onclick = () => loadZenProblem();
+    }
 
-    document.getElementById('submit-btn').addEventListener('click', async function() {
-      const btn = this, fb = document.getElementById('feedback'), ans = document.getElementById('answer').value.toUpperCase().trim();
-      if (btn.textContent === 'Submit') {
-        if (!/^[A-E]$/.test(ans)) { fb.textContent = 'Please enter A, B, C, D, or E.'; fb.style.color = 'darkorange'; return; }
-        const raw = answerLines[currentNum - 1] || '', correct = raw.split('').filter(c => /[A-E]/.test(c));
-        if (correct.includes(ans)) { fb.textContent = '✅ Correct!'; fb.style.color = 'green'; }
-        else { fb.textContent = `❌ Incorrect — the right answer${correct.length>1?'s are':' is'} ${correct.join(' & ')}.`; fb.style.color = 'red'; }
-        btn.textContent = 'Next Question';
-      } else { await loadRandomProblem(); }
-    });
+    function updateZenDisplay() {
+      document.getElementById('problem-counter').textContent = `Problems: ${zenCount}`;
+      document.getElementById('accuracy-summary').textContent = `CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect}`;
+    }
+
+    function showZenSummary() {
+      practice.classList.add('hidden'); summary.classList.remove('hidden');
+      document.getElementById('final-summary').innerHTML = `Total: ${zenCount}<br>Correct (fast): ${zenCorrect}<br>Correct (overtime): ${zenOvertime}<br>Incorrect: ${zenIncorrect}`;
+    }
+
+    // GET RANDOM PROBLEM HELPER
+    function getRandomProblem() {
+      const exam = config.exams[Math.floor(Math.random()*config.exams.length)];
+      const num = Math.floor(Math.random()*config.maxProblems[exam]) + 1;
+      return [exam, num];
+    }
+
+    // TEST MODE
+    function startTestMode() {
+      welcome.classList.add('hidden'); testMode.classList.remove('hidden');
+      document.getElementById('start-test-btn').onclick = () => setupTest();
+    }
+
+    async function setupTest() {
+      document.getElementById('start-test-btn').classList.add('hidden'); document.getElementById('test-form').classList.remove('hidden');
+      const totalTime = prompt('Enter total time (minutes):'); const totalProblems = prompt('Enter number of problems:');
+      const count = parseInt(totalProblems,10);
+      const questionsDiv = document.getElementById('test-questions'); questionsDiv.innerHTML='';
+      const testProblems = [];
+      for (let i=0;i<count;i++) {
+        const [exam,num] = getRandomProblem(); testProblems.push({exam,num});
+        const wrapper = document.createElement('div'); wrapper.className='problem-wrapper';
+        wrapper.innerHTML = `<h4>${i+1}. Exam ${exam} #${num}</h4><div id="test-img-${i}"><div class=\"loader\"></div></div><input type=\"text\" id=\"ans-${i}\" maxlength=\"1\" placeholder=\"A-E\"/>`;
+        questionsDiv.appendChild(wrapper);
+        // fetch and display image
+        (async()=>{
+          const parts = await fetchImageParts(exam,num);
+          const cont = document.getElementById(`test-img-${i}`); cont.innerHTML=''; parts.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';cont.appendChild(img);});
+        })();
+      }
+      document.getElementById('submit-test-btn').onclick = () => gradeTest(testProblems);
+    }
+
+    async function gradeTest(probs) {
+      let correct=0;
+      const results=[];
+      // fetch all keys
+      const keys={}; for (let p of probs) {
+        const txt = await (await fetch(`/static/images/fma/${p.exam}/key.txt`)).text();
+        keys[`${p.exam}.${p.num}`] = txt.split(/\r?\n/).map(l=>l.trim().toUpperCase());
+      }
+      // grade
+      probs.forEach((p,i)=>{
+        const ans = document.getElementById(`ans-${i}`).value.toUpperCase().trim();
+        const raw = keys[`${p.exam}.${p.num}`][p.num-1]||''; const corr = raw.split('').filter(c=>/[A-E]/.test(c));
+        const ok = corr.includes(ans);
+        results.push(ok ? '✅' : `❌ (Ans: ${corr.join(' & ')})`);
+        if(ok) correct++;
+      });
+      // display results
+      const questionsDiv = document.getElementById('test-questions');
+      questionsDiv.querySelectorAll('.problem-wrapper').forEach((w,i)=>{
+        const res = document.createElement('div'); res.className='result-text'; res.textContent = results[i]; w.appendChild(res);
+      });
+      questionsDiv.insertAdjacentHTML('beforeend', `<h3>Score: ${correct}/${probs.length}</h3>`);
+      document.getElementById('submit-test-btn').disabled = true;
+    }
+
+    // SPEED MODE
+    function startSpeedMode() {
+      welcome.classList.add('hidden'); speedMode.classList.remove('hidden');
+      document.getElementById('start-speed-btn').onclick = () => initSpeed();
+    }
+
+    function initSpeed() {
+      const minutes = parseFloat(prompt('Enter total time (minutes):'));
+      if (isNaN(minutes) || minutes<=0) return;
+      speedTime = minutes*60; speedCount=0;
+      document.getElementById('start-speed-btn').classList.add('hidden');
+      document.getElementById('speed-timer').classList.remove('hidden');
+      document.getElementById('speed-timer').textContent = `Time Left: ${minutes.toFixed(0)}:00`;
+      document.getElementById('speed-problem-area').classList.remove('hidden');
+      loadSpeedProblem();
+      speedTimerInterval = setInterval(()=>{
+        speedTime--;
+        const m = String(Math.floor(speedTime/60)).padStart(2,'0');
+        const s = String(speedTime%60).padStart(2,'0');
+        document.getElementById('speed-timer-display').textContent = `${m}:${s}`;
+        if(speedTime<=0) finishSpeed();
+      },1000);
+      document.getElementById('submit-speed-btn').onclick = () => handleSpeedSubmission();
+    }
+
+    async function loadSpeedProblem() {
+      speedCount++; document.getElementById('speed-counter').textContent = `Solved: ${speedCount-1}`;
+      [currentExam, currentNum] = getRandomProblem();
+      document.getElementById('exam-label-speed').textContent = `Exam ${currentExam} #${currentNum}`;
+      const wrapper = document.getElementById('image-wrapper-speed'); wrapper.innerHTML = '<div class="loader"></div>';
+      const imgs = await fetchImageParts(currentExam, currentNum);
+      wrapper.innerHTML=''; imgs.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';wrapper.appendChild(img);});
+      document.getElementById('answer-speed').value=''; document.getElementById('feedback-speed').textContent='';
+    }
+
+    function handleSpeedSubmission() {
+      const ans = document.getElementById('answer-speed').value.toUpperCase().trim();
+      const raw = keyAnswers[currentNum-1]||''; const corrects = raw.split('').filter(c=>/[A-E]/.test(c));
+      const fb = document.getElementById('feedback-speed');
+      if(corrects.includes(ans)) fb.textContent='✅'; else fb.textContent=`❌ (${corrects.join('/')})`;
+      loadSpeedProblem();
+    }
+
+    function finishSpeed() {
+      clearInterval(speedTimerInterval);
+      speedMode.classList.add('hidden'); summary.classList.remove('hidden');
+      document.getElementById('final-summary').innerHTML = `Problems Solved: ${speedCount-1}`;
+    }
   </script>
 </body>
 </html>
