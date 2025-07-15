@@ -25,6 +25,12 @@
       font-style: italic;
     }
 
+    /* Practice toggle */
+    #practice-toggle-container {
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
     /* Problem and previous wrappers */
     #image-wrapper, #previous-wrapper {
       width: 90%;
@@ -91,6 +97,9 @@
 </head>
 <body>
   <div id="problem-container">
+    <div id="practice-toggle-container">
+      <label><input type="checkbox" id="practice-toggle"> Practice selected problems only</label>
+    </div>
     <h1>F=ma Practice</h1>
     <div id="timer">03:00</div>
     <div id="exam-label"></div>
@@ -105,10 +114,24 @@
   </div>
 
   <script>
+    // practiceList will be populated by loading practice.txt
+    let practiceList = [];
+    async function loadPracticeList() {
+      try {
+        const res = await fetch('/static/practice.txt');
+        const text = await res.text();
+        practiceList = text.split(/[\s,]+/)
+          .map(s => s.trim())
+          .filter(s => s);
+      } catch (e) {
+        console.error('Failed to load practice.txt:', e);
+      }
+    }
+
     const config = {
       exams: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018A','2018B','2019A','2019B','2020A','2020B','2021','2022A','2022B','2023','2024'],
       maxProblems: {
-        '2007':25,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,
+        '2007':38,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,
         '2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,
         '2022A':25,'2022B':25,'2023':25,'2024':25
       }
@@ -120,27 +143,46 @@
     function updateTimerDisplay() {
       const el = document.getElementById('timer');
       if (timeLeft <= 0) { el.textContent = 'OVERTIME'; el.style.color = 'red'; }
-      else { const m=String(Math.floor(timeLeft/60)).padStart(2,'0'), s=String(timeLeft%60).padStart(2,'0'); el.textContent=`${m}:${s}`; el.style.color='#333'; }
+      else {
+        const m = String(Math.floor(timeLeft/60)).padStart(2,'0');
+        const s = String(timeLeft%60).padStart(2,'0');
+        el.textContent = `${m}:${s}`;
+        el.style.color = '#333';
+      }
     }
     function startTimer() {
       clearInterval(timerInterval);
-      timeLeft = 180; updateTimerDisplay();
-      timerInterval = setInterval(() => { timeLeft--; updateTimerDisplay(); if(timeLeft<=0) clearInterval(timerInterval); }, 1000);
+      timeLeft = 180;
+      updateTimerDisplay();
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) clearInterval(timerInterval);
+      }, 1000);
     }
 
-    async function fetchImageParts(exam,num) {
-      const base=`/static/images/fma/${exam}/${num}`, ext='.webp', parts=[];
-      for(let sfx of ['a','b']){
-        try{ const url=`${base}${sfx}${ext}`; if((await fetch(url,{method:'HEAD'})).ok) parts.push(url);}catch{}
+    async function fetchImageParts(exam, num) {
+      const base = `/static/images/fma/${exam}/${num}`;
+      const ext = '.webp';
+      const parts = [];
+      for (let sfx of ['a','b']) {
+        try {
+          const url = `${base}${sfx}${ext}`;
+          if ((await fetch(url, { method: 'HEAD' })).ok) parts.push(url);
+        } catch {}
       }
-      if(!parts.length){ try{ const url=`${base}${ext}`; if((await fetch(url,{method:'HEAD'})).ok) parts.push(url);}catch{} }
+      if (!parts.length) {
+        try {
+          const url = `${base}${ext}`;
+          if ((await fetch(url, { method: 'HEAD' })).ok) parts.push(url);
+        } catch {}
+      }
       return parts;
     }
 
-    // Preload images for neighbors: n-2, n-1, n+1 and their prevs
     function preloadNeighborhood(exam, center) {
       const candidates = [center-2, center-1, center+1]
-        .filter((n,i,arr) => n >= 1 && n <= config.maxProblems[exam] && arr.indexOf(n) === i);
+        .filter((n, i, arr) => n >= 1 && n <= config.maxProblems[exam] && arr.indexOf(n) === i);
       candidates.forEach(num => {
         ['a','b',''].forEach(sfx => {
           const suffix = sfx ? sfx : '';
@@ -152,39 +194,50 @@
     }
 
     async function loadRandomProblem() {
-      document.getElementById('previous-wrapper').style.display='none';
-      document.getElementById('show-prev-btn').textContent='Show Previous Problems';
+      document.getElementById('previous-wrapper').style.display = 'none';
+      document.getElementById('show-prev-btn').textContent = 'Show Previous Problems';
 
-      const wrapper=document.getElementById('image-wrapper'); wrapper.innerHTML='<div class="loader"></div>';
-      let imgs=[];
-      while(!imgs.length) {
-        currentExam=config.exams[Math.floor(Math.random()*config.exams.length)];
-        currentNum=Math.floor(Math.random()*config.maxProblems[currentExam])+1;
-        imgs=await fetchImageParts(currentExam,currentNum);
+      const wrapper = document.getElementById('image-wrapper');
+      wrapper.innerHTML = '<div class="loader"></div>';
+
+      let imgs = [];
+      while (!imgs.length) {
+        if (document.getElementById('practice-toggle').checked && practiceList.length) {
+          const entry = practiceList[Math.floor(Math.random() * practiceList.length)];
+          const [exam, numStr] = entry.split('.');
+          currentExam = exam;
+          currentNum = parseInt(numStr, 10);
+        } else {
+          currentExam = config.exams[Math.floor(Math.random() * config.exams.length)];
+          currentNum = Math.floor(Math.random() * config.maxProblems[currentExam]) + 1;
+        }
+        imgs = await fetchImageParts(currentExam, currentNum);
       }
-      document.getElementById('exam-label').textContent=`Exam ${currentExam} #${currentNum}`;
-      wrapper.innerHTML='';
+
+      document.getElementById('exam-label').textContent = `Exam ${currentExam} #${currentNum}`;
+      wrapper.innerHTML = '';
       imgs.forEach(src => {
-        const img=document.createElement('img'); img.src=src;
-        img.alt=`F=ma ${currentExam} #${currentNum}`;
-        img.className='problem-image'; wrapper.appendChild(img);
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `F=ma ${currentExam} #${currentNum}`;
+        img.className = 'problem-image';
+        wrapper.appendChild(img);
       });
 
-      document.getElementById('answer').value='';
-      document.getElementById('feedback').textContent='';
-      document.getElementById('submit-btn').textContent='Submit';
-      try{
-        const keyTxt=await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text();
-        answerLines=keyTxt.split(/\r?\n/).map(l=>l.trim().toUpperCase()).filter(l=>l);
-      } catch { answerLines=[]; }
+      document.getElementById('answer').value = '';
+      document.getElementById('feedback').textContent = '';
+      document.getElementById('submit-btn').textContent = 'Submit';
+      try {
+        const keyTxt = await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text();
+        answerLines = keyTxt.split(/\r?\n/).map(l => l.trim().toUpperCase()).filter(l => l);
+      } catch {}
 
-      // Preload neighbor images after rendering
       preloadNeighborhood(currentExam, currentNum);
-
       startTimer();
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadPracticeList();
       document.getElementById('show-prev-btn').addEventListener('click', async function() {
         const pw = document.getElementById('previous-wrapper');
         if (pw.style.display === 'none') {
