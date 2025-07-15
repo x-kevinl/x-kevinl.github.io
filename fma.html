@@ -137,30 +137,64 @@
       return parts;
     }
 
+    // Preload images for neighbors: n-2, n-1, n+1 and their prevs
+    function preloadNeighborhood(exam, center) {
+      const candidates = [center-2, center-1, center+1, center-2, center-1]
+        .filter((n,i,arr) => n >= 1 && n <= config.maxProblems[exam] && arr.indexOf(n) === i);
+      candidates.forEach(num => {
+        ['a','b',''].forEach(sfx => {
+          const suffix = sfx ? sfx : '';
+          const url = `/static/images/fma/${exam}/${num}${suffix}.webp`;
+          const img = new Image();
+          img.src = url;
+        });
+      });
+    }
+
     async function loadRandomProblem() {
       document.getElementById('previous-wrapper').style.display='none';
       document.getElementById('show-prev-btn').textContent='Show Previous Problems';
 
       const wrapper=document.getElementById('image-wrapper'); wrapper.innerHTML='<div class="loader"></div>';
       let imgs=[];
-      while(!imgs.length){ currentExam=config.exams[Math.floor(Math.random()*config.exams.length)]; currentNum=Math.floor(Math.random()*config.maxProblems[currentExam])+1; imgs=await fetchImageParts(currentExam,currentNum); }
+      while(!imgs.length) {
+        currentExam=config.exams[Math.floor(Math.random()*config.exams.length)];
+        currentNum=Math.floor(Math.random()*config.maxProblems[currentExam])+1;
+        imgs=await fetchImageParts(currentExam,currentNum);
+      }
       document.getElementById('exam-label').textContent=`Exam ${currentExam} #${currentNum}`;
-      wrapper.innerHTML=''; imgs.forEach(src=>{ const img=document.createElement('img'); img.src=src; img.alt=`F=ma ${currentExam} #${currentNum}`; img.className='problem-image'; wrapper.appendChild(img); });
-      document.getElementById('answer').value=''; document.getElementById('feedback').textContent=''; document.getElementById('submit-btn').textContent='Submit';
-      try{ const keyTxt=await(await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); answerLines=keyTxt.split(/\r?\n/).map(l=>l.trim().toUpperCase()).filter(l=>l);}catch{answerLines=[];}
+      wrapper.innerHTML='';
+      imgs.forEach(src => {
+        const img=document.createElement('img'); img.src=src;
+        img.alt=`F=ma ${currentExam} #${currentNum}`;
+        img.className='problem-image'; wrapper.appendChild(img);
+      });
+
+      document.getElementById('answer').value='';
+      document.getElementById('feedback').textContent='';
+      document.getElementById('submit-btn').textContent='Submit';
+      try{
+        const keyTxt=await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text();
+        answerLines=keyTxt.split(/\r?\n/).map(l=>l.trim().toUpperCase()).filter(l=>l);
+      } catch { answerLines=[]; }
+
+      // Preload neighbor images after rendering
+      preloadNeighborhood(currentExam, currentNum);
+
       startTimer();
     }
 
-    window.addEventListener('DOMContentLoaded',()=>{
-      document.getElementById('show-prev-btn').addEventListener('click',async function(){
+    window.addEventListener('DOMContentLoaded', ()=>{
+n      document.getElementById('show-prev-btn').addEventListener('click',async function(){
         const pw=document.getElementById('previous-wrapper');
         if(pw.style.display==='none'){
-          pw.innerHTML='<div class="loader"></div>';
           pw.innerHTML='';
           const sections=[];
           for(let i=currentNum-2; i<currentNum; i++){
             if(i>=1){
               const secDiv=document.createElement('div'); secDiv.className='prev-section';
+              const title=document.createElement('div'); title.className='prev-title'; title.textContent=`${i}`;
+              secDiv.appendChild(title);
               const imgs=await fetchImageParts(currentExam,i);
               imgs.forEach(src=>{ const img=document.createElement('img'); img.src=src; img.alt=`F=ma ${currentExam} #${i}`; img.className='problem-image'; secDiv.appendChild(img); });
               sections.push(secDiv);
