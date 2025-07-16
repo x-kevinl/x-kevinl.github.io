@@ -8,7 +8,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   <script>
-    // TODO: replace with your Firebase config
+    // Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyBCVNoQO6IZtvfHBEl9UkSAYNHqlvJWA9s",
       authDomain: "olympustrain-2fdbb.firebaseapp.com",
@@ -22,41 +22,87 @@
     const db = firebase.firestore();
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
-    // Redirect to login if not authenticated
     auth.onAuthStateChanged(user => {
       if (!user) {
-        window.location.href = '/'; // go back to index.html login
+        window.location.href = '/';
+      } else {
+        showGreeting(user);
+        computeStats();
       }
+    });
+
+    function showGreeting(user) {
+      const name = user.displayName || user.email.split('@')[0];
+      document.getElementById('greeting').textContent = `Welcome back, ${name}!`;
+    }
+
+    async function computeStats() {
+      const user = auth.currentUser;
+      const snapshot = await db.collection('users').doc(user.uid).collection('history').get();
+      const statsMap = {};
+      let total = {correct:0, overtime:0, incorrect:0, skipped:0};
+      snapshot.forEach(doc => {
+        const {exam, num, result} = doc.data();
+        const key = `${exam}.${num}`;
+        if (!statsMap[key]) statsMap[key] = {exam, num, correct:0, overtime:0, incorrect:0, skipped:0};
+        statsMap[key][result]++;
+        total[result]++;
+      });
+      document.getElementById('total-correct').textContent = total.correct;
+      document.getElementById('total-overtime').textContent = total.overtime;
+      document.getElementById('total-incorrect').textContent = total.incorrect;
+      document.getElementById('total-skipped').textContent = total.skipped;
+      return statsMap;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('download-stats-btn').onclick = async () => {
+        const statsMap = await computeStats();
+        const rows = ['Exam,Num,Correct,Overtime,Incorrect,Skipped'];
+        Object.values(statsMap).forEach(({exam, num, correct, overtime, incorrect, skipped}) => {
+          rows.push([exam, num, correct, overtime, incorrect, skipped].join(','));
+        });
+        const csv = rows.join('\n');
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a'); a.href = url;
+        a.download = 'stats.csv'; a.click();
+        URL.revokeObjectURL(url);
+      };
     });
   </script>
   <style>
-    /* Base layout */
     body { font-family: sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; }
+    #stats-container { text-align: center; margin-bottom: 1.5em; }
+    #stats-summary p { margin: 0.2em 0; }
+    button { padding: 0.5em 1em; margin: 0.5em; font-size: 1em; }
     #welcome-page, #practice-container, #test-container, #speed-container, #summary-container { text-align: center; }
     .hidden { display: none; }
-
-    /* Center menu container */
     .menu-wrapper { display: inline-block; margin: 0 0 1rem; }
     .menu { background-color: #fff; border: 1px solid #d4b45e; padding: 1rem; width: 220px; border-radius: 4px; text-align: center; }
     .menu a { display: block; margin: 0.5rem 0; color: #2c3e50; text-decoration: none; font-weight: bold; font-size: 1rem; cursor: pointer; }
     .menu a:hover { color: #d4b45e; }
-
-    /* Timer, counters, and problem styling */
-    button { padding: 0.5em 1em; margin: 0.5em; font-size: 1em; }
     #timer, #speed-timer-display, #test-timer-display { font-size: 1.2em; font-weight: bold; margin: 1em 0; color: #333; }
     #problem-counter, #accuracy-summary, #speed-counter { margin: 1em 0; font-weight: bold; }
-    .problem-wrapper { border: 2px solid #000; border-radius: 0; padding: 0.5em; margin-bottom: 1.5em; }
-    .problem-image { display: block; width: 100%; height: auto; margin-bottom: 0.5em; }
-    .result-text { font-weight: bold; margin-top: 0.5em; }
-
-    /* Answer area: no box, inline elements */
-    #answer-box, #answer-box-speed { border: none; padding: 0; margin: 1em auto; display: flex; justify-content: center; align-items: center; gap: 0.5em; }
+    .problem-wrapper { border: 2px solid #000; padding: 0.5em; margin-bottom: 1.5em; }
+    .problem-image { width: 100%; height: auto; margin-bottom: 0.5em; }
+    #answer-box, #answer-box-speed { display: flex; justify-content: center; align-items: center; gap: 0.5em; margin: 1em 0; }
     #answer-box input, #answer-box-speed input { width: 60%; padding: 0.5em; font-size: 1em; text-transform: uppercase; }
     #answer-box button, #answer-box-speed button { padding: 0.5em 1em; font-size: 1em; margin: 0; }
-    #practice-toggle-container { margin: 1em 0; }
   </style>
 </head>
 <body>
+  <div id="stats-container">
+    <h2 id="greeting">Welcome back!</h2>
+    <div id="stats-summary">
+      <p>Total Correct: <span id="total-correct">0</span></p>
+      <p>Total Overtime: <span id="total-overtime">0</span></p>
+      <p>Total Incorrect: <span id="total-incorrect">0</span></p>
+      <p>Total Skipped: <span id="total-skipped">0</span></p>
+    </div>
+    <button id="download-stats-btn">Download your stats CSV</button>
+  </div>
+
   <!-- Welcome Page -->
   <div id="welcome-page">
     <h1>Welcome Back!</h1>
