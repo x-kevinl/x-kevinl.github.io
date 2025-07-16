@@ -22,14 +22,15 @@
     const db = firebase.firestore();
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
+    // Ensure user signed in
     auth.onAuthStateChanged(user => {
-      if (!user) {
-        window.location.href = '/';
-      } else {
-        showGreeting(user);
-        computeStats();
-      }
+      if (!user) window.location.href = '/';
+      else { showGreeting(user); computeStats(); }
     });
+
+    // Mapping of exams to row index
+    const examOrder = ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018A','2018B','2019A','2019B','2020A','2020B','2021','2022A','2022B','2023','2024'];
+    const problemCount = 38;
 
     function showGreeting(user) {
       const name = user.displayName || user.email.split('@')[0];
@@ -38,43 +39,58 @@
 
     async function computeStats() {
       const user = auth.currentUser;
+      // Initialize 2D stats array
+      const stats = examOrder.map(() => Array.from({length: problemCount}, () => ({correct:0, overtime:0, incorrect:0, skipped:0})));
       const snapshot = await db.collection('users').doc(user.uid).collection('history').get();
-      const statsMap = {};
-      let total = {correct:0, overtime:0, incorrect:0, skipped:0};
       snapshot.forEach(doc => {
         const {exam, num, result} = doc.data();
-        const key = `${exam}.${num}`;
-        if (!statsMap[key]) statsMap[key] = {exam, num, correct:0, overtime:0, incorrect:0, skipped:0};
-        statsMap[key][result]++;
-        total[result]++;
+        const row = examOrder.indexOf(exam);
+        const col = num - 1;
+        if (row >= 0 && col >= 0 && col < problemCount) {
+          stats[row][col][result]++;
+        }
       });
-      document.getElementById('total-correct').textContent = total.correct;
-      document.getElementById('total-overtime').textContent = total.overtime;
-      document.getElementById('total-incorrect').textContent = total.incorrect;
-      document.getElementById('total-skipped').textContent = total.skipped;
-      return statsMap;
+      // Update summary totals
+      let totals = {correct:0, overtime:0, incorrect:0, skipped:0};
+      examOrder.forEach((_,i) => stats[i].forEach(cell => {
+        totals.correct += cell.correct;
+        totals.overtime += cell.overtime;
+        totals.incorrect += cell.incorrect;
+        totals.skipped += cell.skipped;
+      }));
+      document.getElementById('total-correct').textContent = totals.correct;
+      document.getElementById('total-overtime').textContent = totals.overtime;
+      document.getElementById('total-incorrect').textContent = totals.incorrect;
+      document.getElementById('total-skipped').textContent = totals.skipped;
+      return stats;
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('download-stats-btn').onclick = async () => {
-        const statsMap = await computeStats();
-        const rows = ['Exam,Num,Correct,Overtime,Incorrect,Skipped'];
-        Object.values(statsMap).forEach(({exam, num, correct, overtime, incorrect, skipped}) => {
-          rows.push([exam, num, correct, overtime, incorrect, skipped].join(','));
+        const stats = await computeStats();
+        // Build CSV with template format
+        const header = ['Year\\Problem'];
+        for (let p=1; p<=problemCount; p++) header.push(p);
+        const rows = [header.join(',')];
+        examOrder.forEach((year, i) => {
+          const row = [year];
+          stats[i].forEach(cell => {
+            row.push(`${cell.correct}/${cell.overtime}/${cell.incorrect}/${cell.skipped}`);
+          });
+          rows.push(row.join(','));
         });
         const csv = rows.join('\n');
         const blob = new Blob([csv], { type: 'text/csv' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a'); a.href = url;
-        a.download = 'stats.csv'; a.click();
-        URL.revokeObjectURL(url);
+        a.download = 'stats.csv'; a.click(); URL.revokeObjectURL(url);
       };
     });
   </script>
   <style>
     body { font-family: sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; }
     #stats-container { text-align: center; margin-bottom: 1.5em; }
-    #stats-summary p { margin: 0.2em 0; }
+    #stats-container p { margin: 0.2em 0; }
     button { padding: 0.5em 1em; margin: 0.5em; font-size: 1em; }
     #welcome-page, #practice-container, #test-container, #speed-container, #summary-container { text-align: center; }
     .hidden { display: none; }
@@ -94,12 +110,10 @@
 <body>
   <div id="stats-container">
     <h2 id="greeting">Welcome back!</h2>
-    <div id="stats-summary">
-      <p>Total Correct: <span id="total-correct">0</span></p>
-      <p>Total Overtime: <span id="total-overtime">0</span></p>
-      <p>Total Incorrect: <span id="total-incorrect">0</span></p>
-      <p>Total Skipped: <span id="total-skipped">0</span></p>
-    </div>
+    <p>Total Correct: <span id="total-correct">0</span></p>
+    <p>Total Overtime: <span id="total-overtime">0</span></p>
+    <p>Total Incorrect: <span id="total-incorrect">0</span></p>
+    <p>Total Skipped: <span id="total-skipped">0</span></p>
     <button id="download-stats-btn">Download your stats CSV</button>
   </div>
 
@@ -118,6 +132,7 @@
       </nav>
     </div>
   </div>
+
 
   <!-- Zen Practice Container -->
   <div id="practice-container" class="hidden">
