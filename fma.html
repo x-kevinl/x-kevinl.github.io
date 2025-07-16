@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>F=ma Practice</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1Cmck+1F1Lq8KN5wJpYVvx2gMlIkT+O8t0FSO30RtzwZ9jwOoUeOAK+c74qRr2Ti+GLbZxOm2wDv0jKP4Y1zw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
     /* Base layout */
     body { font-family: sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; }
@@ -12,10 +11,9 @@
     .hidden { display: none; }
 
     /* Center menu container */
-    .menu-wrapper { display: inline-block; margin-bottom: 1rem; }
-    .menu { background-color: #fff; border: 1px solid #d4b45e; padding: 1rem; width: 240px; border-radius: 4px; text-align: center; }
+    .menu-wrapper { display: inline-block; margin: 0 0 1rem; }
+    .menu { background-color: #fff; border: 1px solid #d4b45e; padding: 1rem; width: 220px; border-radius: 4px; text-align: center; }
     .menu a { display: block; margin: 0.5rem 0; color: #2c3e50; text-decoration: none; font-weight: bold; font-size: 1rem; cursor: pointer; }
-    .menu a i { margin-right: 0.5em; }
     .menu a:hover { color: #d4b45e; }
 
     /* Timer, counters, and problem styling */
@@ -43,9 +41,9 @@
     </div>
     <div class="menu-wrapper">
       <nav class="menu" id="mode-buttons">
-        <a id="zen-btn"><i class="fas fa-cloud"></i>Zen - Unlimited Problems</a>
-        <a id="test-btn"><i class="fas fa-scroll"></i>Test - Fixed Problems</a>
-        <a id="speed-btn"><i class="fas fa-stopwatch"></i>Speed - Time Attack</a>
+        <a id="zen-btn">Zen - Unlimited Problems</a>
+        <a id="test-btn">Test - Fixed Problems</a>
+        <a id="speed-btn">Speed - Time Attack</a>
       </nav>
     </div>
   </div>
@@ -59,7 +57,7 @@
     <div id="exam-label"></div>
     <div id="image-wrapper" class="problem-wrapper"></div>
     <div id="answer-box">
-      <input type="text" id="answer" maxlength="1" placeholder="A-E" />
+      <input type="text" id="answer" maxlength="1" placeholder="" />
       <button id="submit-btn">Submit</button>
       <button id="skip-btn">Give Up</button>
     </div>
@@ -96,7 +94,7 @@
       <div id="exam-label-speed"></div>
       <div id="image-wrapper-speed" class="problem-wrapper"></div>
       <div id="answer-box-speed">
-        <input type="text" id="answer-speed" maxlength="1" placeholder="A-E" />
+        <input type="text" id="answer-speed" maxlength="1" placeholder="" />
         <button id="submit-speed-btn">Submit</button>
       </div>
       <div id="feedback-speed"></div>
@@ -111,7 +109,7 @@
   </div>
 
   <script>
-    // Practice list loader
+    // Practice list
     let practiceList = [];
     async function loadPracticeList() {
       try {
@@ -268,7 +266,7 @@
         }
       } else {
         zenIncorrect++;
-        fb.textContent = `❌ INCORRECT (Ans: ${corr.join(' & ')})`;
+        fb.textContent = `❌ INCORRECT (Answer: ${corr.join(' & ')})`;
         fb.style.color = 'red';
       }
       updateZenDisplay();
@@ -285,7 +283,7 @@
       const corr = raw.split('').filter(c => /[A-E]/.test(c));
       zenSkipped++;
       skippedProblems.push(`Exam ${currentExam} #${currentNum}`);
-      fb.textContent = `❌ Gave Up (Ans: ${corr.join(' & ')})`;
+      fb.textContent = `❌ Gave Up (Answer: ${corr.join(' & ')})`;
       fb.style.color = 'red';
       updateZenDisplay();
       const skipBtn = document.getElementById('skip-btn');
@@ -370,7 +368,7 @@
         const res = document.createElement('div');
         res.className = 'result-text';
         if (corr.includes(ans)) { correct++; res.textContent = '✅'; }
-        else { res.textContent = `❌ (Ans: ${corr.join(',')})`; }
+        else { res.textContent = `❌ (Answer: ${corr.join(',')})`; }
         wrappers[i].appendChild(res);
       });
       document.getElementById('test-questions').insertAdjacentHTML('beforeend', `<h3>Score: ${correct}/${probs.length}</h3>`);
@@ -424,7 +422,7 @@
       const fb = document.getElementById('feedback-speed');
       const raw = keyAnswers[currentNum - 1] || '';
       const corr = raw.split('').filter(c => /[A-E]/.test(c));
-      fb.textContent = corr.includes(ans) ? '✅' : `❌ (Ans: ${corr.join('/')})`;
+      fb.textContent = corr.includes(ans) ? '✅' : `❌ (Answer: ${corr.join('/')})`;
       loadSpeedProblem();
     }
     function finishSpeed() {
