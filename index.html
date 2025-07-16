@@ -24,34 +24,30 @@
       text-align: center;
       padding: 1rem;
     }
-    /* Fade‐in container once body gets .loaded */
+    /* Fade-in container */
     .container { opacity: 0; transition: opacity 1s ease-in-out; max-width: 400px; width: 100%; background: rgba(255,255,255,0.8); padding: 2rem 1rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     body.loaded .container { opacity: 1; }
-
-    /* Login UI */
-    #login-container input { display: block; margin: 0.5em auto; padding: 0.5em; width: 80%; }
-    #login-container button { margin: 0.5em; padding: 0.5em 1em; }
-
+    /* Hide by default */
+    #login-ui, #app-ui { display: none; }
     /* Logos */
     .logo { width: 50px; margin-bottom: 1rem; }
-
     /* Headings */
     h1 { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1.2; }
     .subtitle { font-size: 1rem; margin-bottom: 2rem; }
     .subtitle strong { color: #1f3a93; }
-
     /* Menu box */
     .menu-wrapper { position: relative; display: inline-block; }
     .menu { background-color: #fff; border: 1px solid #d4b45e; padding: 1.5rem 1rem; width: 200px; border-radius: 4px; }
     .menu a { display: block; margin: 0.5rem 0; color: #2c3e50; text-decoration: none; font-weight: bold; font-size: 1rem; }
     .menu a:hover { color: #d4b45e; }
-
-    /* Hide containers by default */
-    #main-container, #logout-btn { display: none; }
+    /* Login form */
+    #login-ui input { display: block; margin: 0.5em auto; padding: 0.5em; width: 80%; }
+    #login-ui button { margin: 0.5em; padding: 0.5em 1em; }
+    #login-error { color: red; min-height: 1.2em; }
   </style>
 </head>
 <body>
-  <!-- Firebase config -->
+  <!-- Firebase config & init -->
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyBCVNoQO6IZtvfHBEl9UkSAYNHqlvJWA9s",
@@ -66,73 +62,65 @@
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
   </script>
 
-  <!-- Login Container -->
-  <div id="login-container" class="container">
+  <!-- Login UI -->
+  <div id="login-ui" class="container">
     <h2>Log In to Olympiad Trainer</h2>
     <input type="email" id="email" placeholder="Email" />
     <input type="password" id="password" placeholder="Password" />
     <button id="login-btn">Log In</button>
     <button id="signup-btn">Sign Up</button>
-    <p id="login-error" style="color:red;"></p>
+    <p id="login-error"></p>
   </div>
 
-  <!-- Main App Container -->
-  <div id="main-container" class="container">
+  <!-- App UI -->
+  <div id="app-ui" class="container">
     <img src="static/images/logo.png" class="logo" alt="Olympiad Logo">
     <h1>Olympiad Trainer</h1>
     <p class="subtitle">Over <strong>500</strong> problems to solve.</p>
     <div class="menu-wrapper">
       <nav class="menu">
         <a href="/about">About</a>
-        <a href="/fma">F=ma</a>
+        <a href="/fma.html">F=ma</a>
       </nav>
     </div>
+    <button id="logout-btn">Log Out</button>
   </div>
-  <button id="logout-btn">Log Out</button>
 
   <script>
-    // Auth state listener
+    // Auth listener toggles UI
     auth.onAuthStateChanged(user => {
-      const loginUI = document.getElementById('login-container');
-      const mainUI = document.getElementById('main-container');
-      const logoutBtn = document.getElementById('logout-btn');
+      const loginUI = document.getElementById('login-ui');
+      const appUI = document.getElementById('app-ui');
       if (user) {
         loginUI.style.display = 'none';
-        mainUI.style.display = 'block';
-        logoutBtn.style.display = 'block';
+        appUI.style.display = 'block';
         document.body.classList.add('loaded');
       } else {
         loginUI.style.display = 'block';
-        mainUI.style.display = 'none';
-        logoutBtn.style.display = 'none';
+        appUI.style.display = 'none';
         document.body.classList.remove('loaded');
       }
     });
-    // Login
+    // Login & signup
     document.getElementById('login-btn').onclick = () => {
       const email = document.getElementById('email').value;
       const pass = document.getElementById('password').value;
       auth.signInWithEmailAndPassword(email, pass)
         .catch(e => document.getElementById('login-error').textContent = e.message);
     };
-    // Sign up
     document.getElementById('signup-btn').onclick = () => {
       const email = document.getElementById('email').value;
       const pass = document.getElementById('password').value;
       auth.createUserWithEmailAndPassword(email, pass)
         .catch(e => document.getElementById('login-error').textContent = e.message);
     };
-    // Logout
     document.getElementById('logout-btn').onclick = () => auth.signOut();
-
-    // Parallax on main-container only
+    // Parallax & fade-in always active
     const strength = 10000;
     document.addEventListener('mousemove', e => {
-      if (auth.currentUser) {
-        const offsetX = (e.clientX - window.innerWidth/2)/strength;
-        const offsetY = (e.clientY - window.innerHeight/2)/strength;
-        document.body.style.backgroundPosition = `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
-      }
+      const offsetX = (e.clientX - window.innerWidth/2)/strength;
+      const offsetY = (e.clientY - window.innerHeight/2)/strength;
+      document.body.style.backgroundPosition = `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
     });
   </script>
 </body>
