@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Olympiad Trainer</title>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <style>
     /* Reset & base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      height: 100%;
-    }
+    html, body { height: 100%; }
     body {
       background-image: url('/static/images/background.jpg');
       background-repeat: no-repeat;
@@ -24,72 +25,62 @@
       padding: 1rem;
     }
     /* Fade‐in container once body gets .loaded */
-    .container {
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      max-width: 400px;
-      width: 100%;
-      background: rgba(255,255,255,0.8);
-      padding: 2rem 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    body.loaded .container {
-      opacity: 1;
-    }
+    .container { opacity: 0; transition: opacity 1s ease-in-out; max-width: 400px; width: 100%; background: rgba(255,255,255,0.8); padding: 2rem 1rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    body.loaded .container { opacity: 1; }
+
+    /* Login UI */
+    #login-container input { display: block; margin: 0.5em auto; padding: 0.5em; width: 80%; }
+    #login-container button { margin: 0.5em; padding: 0.5em 1em; }
 
     /* Logos */
-    .logo {
-      width: 50px;
-      margin-bottom: 1rem;
-    }
+    .logo { width: 50px; margin-bottom: 1rem; }
 
     /* Headings */
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-    .subtitle {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-    .subtitle strong {
-      color: #1f3a93;
-    }
+    h1 { font-size: 1.6rem; margin-bottom: 0.5rem; line-height: 1.2; }
+    .subtitle { font-size: 1rem; margin-bottom: 2rem; }
+    .subtitle strong { color: #1f3a93; }
 
     /* Menu box */
-    .menu-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-    .menu {
-      background-color: #fff;
-      border: 1px solid #d4b45e;
-      padding: 1.5rem 1rem;
-      width: 200px;
-      border-radius: 4px;
-    }
-    .menu a {
-      display: block;
-      margin: 0.5rem 0;
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .menu a:hover {
-      color: #d4b45e;
-    }
+    .menu-wrapper { position: relative; display: inline-block; }
+    .menu { background-color: #fff; border: 1px solid #d4b45e; padding: 1.5rem 1rem; width: 200px; border-radius: 4px; }
+    .menu a { display: block; margin: 0.5rem 0; color: #2c3e50; text-decoration: none; font-weight: bold; font-size: 1rem; }
+    .menu a:hover { color: #d4b45e; }
+
+    /* Hide containers by default */
+    #main-container, #logout-btn { display: none; }
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- Firebase config -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBCVNoQO6IZtvfHBEl9UkSAYNHqlvJWA9s",
+      authDomain: "olympustrain-2fdbb.firebaseapp.com",
+      projectId: "olympustrain-2fdbb",
+      storageBucket: "olympustrain-2fdbb.firebasestorage.app",
+      messagingSenderId: "45269833079",
+      appId: "1:45269833079:web:09559f64361350cf8c7d72"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+  </script>
+
+  <!-- Login Container -->
+  <div id="login-container" class="container">
+    <h2>Log In to Olympiad Trainer</h2>
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="login-btn">Log In</button>
+    <button id="signup-btn">Sign Up</button>
+    <p id="login-error" style="color:red;"></p>
+  </div>
+
+  <!-- Main App Container -->
+  <div id="main-container" class="container">
     <img src="static/images/logo.png" class="logo" alt="Olympiad Logo">
     <h1>Olympiad Trainer</h1>
-    <p class="subtitle">
-      Over <strong>500</strong> problems to solve.
-    </p>
+    <p class="subtitle">Over <strong>500</strong> problems to solve.</p>
     <div class="menu-wrapper">
       <nav class="menu">
         <a href="/about">About</a>
@@ -97,20 +88,51 @@
       </nav>
     </div>
   </div>
+  <button id="logout-btn">Log Out</button>
 
   <script>
-    // Parallax strength: smaller = more movement
+    // Auth state listener
+    auth.onAuthStateChanged(user => {
+      const loginUI = document.getElementById('login-container');
+      const mainUI = document.getElementById('main-container');
+      const logoutBtn = document.getElementById('logout-btn');
+      if (user) {
+        loginUI.style.display = 'none';
+        mainUI.style.display = 'block';
+        logoutBtn.style.display = 'block';
+        document.body.classList.add('loaded');
+      } else {
+        loginUI.style.display = 'block';
+        mainUI.style.display = 'none';
+        logoutBtn.style.display = 'none';
+        document.body.classList.remove('loaded');
+      }
+    });
+    // Login
+    document.getElementById('login-btn').onclick = () => {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      auth.signInWithEmailAndPassword(email, pass)
+        .catch(e => document.getElementById('login-error').textContent = e.message);
+    };
+    // Sign up
+    document.getElementById('signup-btn').onclick = () => {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      auth.createUserWithEmailAndPassword(email, pass)
+        .catch(e => document.getElementById('login-error').textContent = e.message);
+    };
+    // Logout
+    document.getElementById('logout-btn').onclick = () => auth.signOut();
+
+    // Parallax on main-container only
     const strength = 10000;
     document.addEventListener('mousemove', e => {
-      const offsetX = (e.clientX - window.innerWidth / 2) / strength;
-      const offsetY = (e.clientY - window.innerHeight / 2) / strength;
-      document.body.style.backgroundPosition =
-        `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
-    });
-
-    // Fade in the container once page finishes loading
-    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
+      if (auth.currentUser) {
+        const offsetX = (e.clientX - window.innerWidth/2)/strength;
+        const offsetY = (e.clientY - window.innerHeight/2)/strength;
+        document.body.style.backgroundPosition = `calc(50% + ${offsetX}px) calc(50% + ${offsetY}px)`;
+      }
     });
   </script>
 </body>

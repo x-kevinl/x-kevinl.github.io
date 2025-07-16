@@ -3,7 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <title>F=ma Practice</title>
-  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script>
+    // TODO: replace with your Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBCVNoQO6IZtvfHBEl9UkSAYNHqlvJWA9s",
+      authDomain: "olympustrain-2fdbb.firebaseapp.com",
+      projectId: "olympustrain-2fdbb",
+      storageBucket: "olympustrain-2fdbb.firebasestorage.app",
+      messagingSenderId: "45269833079",
+      appId: "1:45269833079:web:09559f64361350cf8c7d72"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
+    // Redirect to login if not authenticated
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        window.location.href = '/'; // go back to index.html login
+      }
+    });
+  </script>
   <style>
     /* Base layout */
     body { font-family: sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; }
@@ -109,6 +134,16 @@
   </div>
 
   <script>
+    // Helper to log user actions
+    function logHistory(data) {
+      const user = auth.currentUser;
+      if (!user) return;
+      db.collection('users').doc(user.uid).collection('history').add({
+        ...data,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    }
+
     // Practice list
     let practiceList = [];
     async function loadPracticeList() {
@@ -133,7 +168,6 @@
     const summary = document.getElementById('summary-container');
     const practiceToggle = document.getElementById('practice-toggle');
 
-    // Init
     window.addEventListener('DOMContentLoaded', async () => {
       await loadPracticeList();
       document.getElementById('zen-btn').onclick = startZen;
