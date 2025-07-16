@@ -51,10 +51,11 @@
     .menu a:hover { color: #d4b45e; }
     /* Login form */
     #login-error { color: red; min-height: 1.2em; }
-    input, button { font-size: 1rem; }
+    input, button, a { font-size: 1rem; }
     input { width: 80%; padding: 0.5em; margin: 0.5em auto; display: block; }
-    button { padding: 0.5em 1em; margin: 0.5em; }
-    #greeting { margin-bottom: 1rem; font-weight: bold; }
+    button, a.logout-link { padding: 0.5em 1em; margin: 0.5em; cursor: pointer; }
+    #greeting { margin-bottom: 0.5rem; font-weight: bold; }
+    a.logout-link { color: #2c3e50; text-decoration: underline; background: none; border: none; }
   </style>
 </head>
 <body>
@@ -82,13 +83,13 @@
     <button id="signup-btn">Sign Up</button>
     <button id="login-btn">Log In</button>
     <button id="reset-btn">Forgot Password?</button>
-    <button id="logout-btn">Log Out</button>
     <p id="login-error"></p>
   </div>
 
   <!-- Main Menu -->
   <div class="container" id="main-container">
     <div id="greeting"></div>
+    <a class="logout-link" id="logout-link">Logout</a>
     <img src="static/images/logo.png" class="logo" alt="Olympiad Logo">
     <h1>Olympiad Trainer</h1>
     <p class="subtitle">Over <strong>500</strong> problems to solve.</p>
@@ -120,12 +121,12 @@
 
     // Auth state listener
     auth.onAuthStateChanged(user => {
-      document.getElementById('login-container').style.display = 'block';
-      document.getElementById('main-container').style.display = 'block';
+      const loginUI = document.getElementById('login-container');
+      loginUI.style.display = user ? 'none' : 'block';
       showGreeting(user);
     });
 
-    // Sign up with displayName
+    // Sign up with displayName (auto-signin)
     document.getElementById('signup-btn').onclick = () => {
       const email = document.getElementById('email').value;
       const pass = document.getElementById('password').value;
@@ -135,7 +136,6 @@
       }
       auth.createUserWithEmailAndPassword(email, pass)
         .then(({ user }) => user.updateProfile({ displayName: username }))
-        .then(() => document.getElementById('login-error').textContent = '')
         .catch(e => document.getElementById('login-error').textContent = e.message);
     };
 
@@ -144,7 +144,6 @@
       const email = document.getElementById('email').value;
       const pass = document.getElementById('password').value;
       auth.signInWithEmailAndPassword(email, pass)
-        .then(() => document.getElementById('login-error').textContent = '')
         .catch(e => document.getElementById('login-error').textContent = e.message);
     };
 
@@ -159,8 +158,8 @@
         .catch(e => document.getElementById('login-error').textContent = e.message);
     };
 
-    // Log out
-    document.getElementById('logout-btn').onclick = () => auth.signOut();
+    // Logout link
+    document.getElementById('logout-link').onclick = () => auth.signOut();
   </script>
 </body>
 </html>
