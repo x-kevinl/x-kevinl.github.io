@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>F=ma Practice</title>
   <style>
-    body { font-family: 'Times New Roman', serif; max-width: 800px; margin: 2em auto; padding: 0 1em; }
+    body { font-family: sans-serif; max-width: 800px; margin: 2em auto; padding: 0 1em; }
     #welcome-page, #practice-container, #test-container, #speed-container, #summary-container { text-align: center; }
     .hidden { display: none; }
     button { padding: 0.5em 1em; margin: 0.5em; font-size: 1em; }
@@ -38,15 +38,14 @@
   <!-- Zen Practice Container -->
   <div id="practice-container" class="hidden">
     <div id="problem-counter">Problems: 0</div>
-    <div id="accuracy-summary">CORRECT: 0 | OVERTIME: 0 | INCORRECT: 0 | SKIPPED: 0</div>
+    <div id="accuracy-summary">CORRECT: 0 | OVERTIME: 0 | INCORRECT: 0</div>
     <button id="end-practice-btn">End Practice</button>
     <div id="timer">03:00</div>
     <div id="exam-label"></div>
     <div id="image-wrapper"></div>
     <div id="answer-box">
-      <input type="text" id="answer" maxlength="1" />
+      <input type="text" id="answer" maxlength="1" placeholder="A-E" />
       <button id="submit-btn">Submit</button>
-      <button id="skip-btn">Skip</button>
     </div>
     <div id="feedback"></div>
   </div>
@@ -81,7 +80,7 @@
       <div id="exam-label-speed"></div>
       <div id="image-wrapper-speed"></div>
       <div id="answer-box-speed">
-        <input type="text" id="answer-speed" maxlength="1" />
+        <input type="text" id="answer-speed" maxlength="1" placeholder="A-E" />
         <button id="submit-speed-btn">Submit</button>
       </div>
       <div id="feedback-speed"></div>
@@ -106,10 +105,13 @@
       } catch(e){ console.error(e); }
     }
 
-    // Config
-    const config = { exams: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018A','2018B','2019A','2019B','2020A','2020B','2021','2022A','2022B','2023','2024'], maxProblems: {'2007':38,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,'2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,'2022A':25,'2022B':25,'2023':25,'2024':25} };
+    // Shared config
+    const config = {
+      exams: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018A','2018B','2019A','2019B','2020A','2020B','2021','2022A','2022B','2023','2024'],
+      maxProblems: {'2007':38,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,'2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,'2022A':25,'2022B':25,'2023':25,'2024':25}
+    };
 
-    // Element refs
+    // Elements
     const welcome = document.getElementById('welcome-page');
     const practice = document.getElementById('practice-container');
     const testMode = document.getElementById('test-container');
@@ -117,6 +119,7 @@
     const summary = document.getElementById('summary-container');
     const practiceToggle = document.getElementById('practice-toggle');
 
+    // Load practice list then attach events
     window.addEventListener('DOMContentLoaded', async()=>{
       await loadPracticeList();
       document.getElementById('zen-btn').onclick = startZen;
@@ -127,102 +130,125 @@
       document.getElementById('submit-test-btn').onclick = ()=>{ clearInterval(testTimerInterval); gradeTest(currentTestProblems); };
       document.getElementById('begin-speed-btn').onclick = initSpeed;
       document.getElementById('submit-speed-btn').onclick = handleSpeedSubmission;
-      document.getElementById('skip-btn').onclick = skipZen;
     });
 
-    // Helpers
+    // GET RANDOM PROBLEM
     function getRandomProblem() {
       if(practiceToggle.checked && practiceList.length) {
         const entry = practiceList[Math.floor(Math.random()*practiceList.length)];
-        const [exam,num] = entry.split('.'); return [exam,parseInt(num,10)];
+        const [exam, num] = entry.split('.');
+        return [exam, parseInt(num,10)];
       }
       const exam = config.exams[Math.floor(Math.random()*config.exams.length)];
-      const num = Math.floor(Math.random()*config.maxProblems[exam])+1;
-      return [exam,num];
+      const num = Math.floor(Math.random()*config.maxProblems[exam]) +1;
+      return [exam, num];
     }
+
+    // Fetch image helper
     async function fetchImageParts(exam,num) {
-      const base = `/static/images/fma/${exam}/${num}`, ext='.webp', parts=[];
-      for(let sfx of ['a','b','']){ try{ if((await fetch(`${base}${sfx}${ext}`,{method:'HEAD'})).ok) parts.push(`${base}${sfx}${ext}`);}catch{} }
+      const base = `/static/images/fma/${exam}/${num}`;
+      const ext = '.webp'; let parts=[];
+      for(let sfx of ['a','b','']){
+        try{ if((await fetch(`${base}${sfx}${ext}`,{method:'HEAD'})).ok) parts.push(`${base}${sfx}${ext}`);}catch{}
+      }
       return parts;
     }
-    function displayTimer(el,time){ if(time<=0){ el.textContent='OVERTIME'; el.style.color='red'; } else{ const m=String(Math.floor(time/60)).padStart(2,'0'),s=String(time%60).padStart(2,'0'); el.textContent=`${m}:${s}`; el.style.color='#333'; }}
 
-    // ZEN MODE vars
-    let zenCount=0,zenCorrect=0,zenOvertime=0,zenIncorrect=0,zenSkipped=0;
-    let zenSkippedList=[];
-    let currentExam,currentNum,keyAnswers=[],zenTimer,zenTimeLeft;
+    // Display timer
+    function displayTimer(el,time){
+      if(time<=0){ el.textContent='OVERTIME'; el.style.color='red'; }
+      else{ const m=String(Math.floor(time/60)).padStart(2,'0'), s=String(time%60).padStart(2,'0'); el.textContent=`${m}:${s}`; el.style.color='#333'; }
+    }
 
-    function startZen(){ welcome.classList.add('hidden'); practice.classList.remove('hidden'); document.getElementById('end-practice-btn').onclick=showZenSummary; loadZenProblem(); }
+    // ---------- ZEN MODE ----------
+    let zenCount=0, zenCorrect=0, zenOvertime=0, zenIncorrect=0;
+    let currentExam, currentNum, keyAnswers=[], zenTimer, zenTimeLeft;
+    function startZen(){
+      welcome.classList.add('hidden'); practice.classList.remove('hidden');
+      document.getElementById('end-practice-btn').onclick = showZenSummary;
+      loadZenProblem();
+    }
     async function loadZenProblem(){
       zenCount++; updateZenDisplay();
-      [currentExam,currentNum]=getRandomProblem(); document.getElementById('exam-label').textContent=`Exam ${currentExam} #${currentNum}`;
-      const wrap=document.getElementById('image-wrapper'); wrap.innerHTML='<div class="loader"></div>';
-      const imgs=await fetchImageParts(currentExam,currentNum); wrap.innerHTML=''; imgs.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';wrap.appendChild(img);});
-      try{ const txt=await(await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); keyAnswers=txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }catch{ keyAnswers=[]; }
+      [currentExam,currentNum] = getRandomProblem();
+      document.getElementById('exam-label').textContent = `Exam ${currentExam} #${currentNum}`;
+      const wrapper=document.getElementById('image-wrapper'); wrapper.innerHTML='<div class="loader"></div>';
+      const imgs = await fetchImageParts(currentExam,currentNum);
+      wrapper.innerHTML=''; imgs.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';wrapper.appendChild(img);});
+      try{ const txt = await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); keyAnswers = txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }catch{ keyAnswers=[]; }
       document.getElementById('answer').value=''; document.getElementById('feedback').textContent=''; document.getElementById('submit-btn').textContent='Submit';
-      clearInterval(zenTimer); zenTimeLeft=180; zenTimer=setInterval(()=>{ zenTimeLeft--; displayTimer(document.getElementById('timer'),zenTimeLeft); if(zenTimeLeft<=0) clearInterval(zenTimer); },1000);
-      document.getElementById('submit-btn').onclick=handleZenSubmission;
+      zenTimeLeft=180; clearInterval(zenTimer); zenTimer=setInterval(()=>{zenTimeLeft--; displayTimer(document.getElementById('timer'),zenTimeLeft); if(zenTimeLeft<=0) clearInterval(zenTimer);},1000);
+      document.getElementById('submit-btn').onclick = handleZenSubmission;
     }
     function handleZenSubmission(){
-      const ans=document.getElementById('answer').value.toUpperCase().trim(),fb=document.getElementById('feedback');
-      const raw=keyAnswers[currentNum-1]||'',corr=raw.split('').filter(c=>/[A-E]/.test(c));
+      const ans=document.getElementById('answer').value.toUpperCase().trim(); const fb=document.getElementById('feedback');
+      const raw=keyAnswers[currentNum-1]||''; const corr=raw.split('').filter(c=>/[A-E]/.test(c));
       if(!/^[A-E]$/.test(ans)){ fb.textContent='Enter A-E'; fb.style.color='darkorange'; return; }
-      if(corr.includes(ans)){ if(zenTimeLeft>0){ zenCorrect++; fb.textContent='✅ CORRECT'; fb.style.color='green'; } else{ zenOvertime++; fb.textContent='⏰ OVERTIME'; fb.style.color='orange'; }} else{ zenIncorrect++; fb.textContent=`❌ INCORRECT (Ans: ${corr.join(' & ')})`; fb.style.color='red'; }
+      if(corr.includes(ans)){ if(zenTimeLeft>0){ zenCorrect++; fb.textContent='✅ CORRECT'; fb.style.color='green'; } else{ zenOvertime++; fb.textContent='⏰ OVERTIME'; fb.style.color='orange'; }}
+      else{ zenIncorrect++; fb.textContent=`❌ INCORRECT (Ans: ${corr.join(' & ')})`; fb.style.color='red'; }
       updateZenDisplay(); document.getElementById('submit-btn').textContent='Next'; document.getElementById('submit-btn').onclick=loadZenProblem;
     }
-    function skipZen(){ zenSkipped++; zenSkippedList.push(`Exam ${currentExam} #${currentNum}`); loadZenProblem(); }
     function updateZenDisplay(){ document.getElementById('problem-counter').textContent=`Problems: ${zenCount}`;
-      document.getElementById('accuracy-summary').textContent=`CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect} | SKIPPED: ${zenSkipped}`;
-    }
+      document.getElementById('accuracy-summary').textContent=`CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect}`; }
     function showZenSummary(){ practice.classList.add('hidden'); summary.classList.remove('hidden');
-      let html=`Total: ${zenCount}<br>Correct (fast): ${zenCorrect}<br>Correct (overtime): ${zenOvertime}<br>Incorrect: ${zenIncorrect}<br>Skipped: ${zenSkipped}`;
-      if(zenSkippedList.length) html+=`<br>Skipped Problems:<br>${zenSkippedList.join('<br>')}`;
-      document.getElementById('final-summary').innerHTML=html;
+      document.getElementById('final-summary').innerHTML=`Total: ${zenCount}<br>Correct (fast): ${zenCorrect}<br>Correct (overtime): ${zenOvertime}<br>Incorrect: ${zenIncorrect}`;
     }
 
-    // TEST MODE vars
-    let currentTestProblems=[],testTimeLeft,testTimerInterval;
+    // ---------- TEST MODE ----------
+    let currentTestProblems = [], testTimeLeft, testTimerInterval;
     function startTestMode(){ welcome.classList.add('hidden'); testMode.classList.remove('hidden'); }
-    function setupTest(){
-      const mins=parseInt(document.getElementById('test-time-input').value,10),cnt=parseInt(document.getElementById('test-count-input').value,10);
-      if(isNaN(mins)||isNaN(cnt)||mins<=0||cnt<=0) return;
-      currentTestProblems=[];
+    async function setupTest(){
+      const mins = parseInt(document.getElementById('test-time-input').value,10);
+      const count = parseInt(document.getElementById('test-count-input').value,10);
+      if(isNaN(mins)||isNaN(count)||mins<=0||count<=0) return;
+      currentTestProblems = [];
       document.getElementById('test-settings').classList.add('hidden');
       const form=document.getElementById('test-questions-form'); form.classList.remove('hidden');
-      testTimeLeft=mins*60; displayTimer(document.getElementById('test-timer-display'),testTimeLeft);
-      clearInterval(testTimerInterval); testTimerInterval=setInterval(()=>{ testTimeLeft--; displayTimer(document.getElementById('test-timer-display'),testTimeLeft); if(testTimeLeft<=0) clearInterval(testTimerInterval); },1000);
-      const qdiv=document.getElementById('test-questions'); qdiv.innerHTML='';
-      for(let i=0;i<cnt;i++){ const [ex,num]=getRandomProblem(); currentTestProblems.push({exam:ex,num});
+      // init timer
+      testTimeLeft = mins*60;
+      displayTimer(document.getElementById('test-timer-display'), testTimeLeft);
+      clearInterval(testTimerInterval);
+      testTimerInterval = setInterval(() => {
+        testTimeLeft--;
+        displayTimer(document.getElementById('test-timer-display'), testTimeLeft);
+        if(testTimeLeft <= 0) clearInterval(testTimerInterval);
+      }, 1000);
+      const questionsDiv=document.getElementById('test-questions'); questionsDiv.innerHTML='';
+      for(let i=0;i<count;i++){ const [ex,num]=getRandomProblem(); currentTestProblems.push({exam:ex,num});
         const wrapper=document.createElement('div'); wrapper.className='problem-wrapper';
-        wrapper.innerHTML=`<h4>${i+1}. Exam ${ex} #${num}</h4><div id=\`test-img-${i}\`><div class=\"loader\"></div></div><div class=\"answer-box\"><input type=\"text\" id=\`ans-${i}\` maxlength=\"1\" /></div>`;
-        qdiv.appendChild(wrapper);
+        wrapper.innerHTML=`<h4>${i+1}. Exam ${ex} #${num}</h4><div id="test-img-${i}"><div class=\"loader\"></div></div><div class=\"answer-box\"><input type=\"text\" id=\"ans-${i}\" maxlength=\"1\" placeholder=\"A-E\" /></div>`;
+        questionsDiv.appendChild(wrapper);
         (async()=>{ const parts=await fetchImageParts(ex,num); const cont=document.getElementById(`test-img-${i}`); cont.innerHTML=''; parts.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';cont.appendChild(img);}); })();
       }
     }
     async function gradeTest(probs){ clearInterval(testTimerInterval);
-      const keys={}; for(let p of probs){ const txt=await(await fetch(`/static/images/fma/${p.exam}/key.txt`)).text(); keys[`${p.exam}.${p.num}`]=txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }
-      let correct=0; const wrappers=document.querySelectorAll('#test-questions .problem-wrapper');
-      probs.forEach((p,i)=>{ const ans=document.getElementById(`ans-${i}`).value.toUpperCase().trim(),raw=keys[`${p.exam}.${p.num}`][p.num-1]||'',corr=raw.split('').filter(c=>/[A-E]/.test(c));
-        const res=document.createElement('div'); res.className='result-text'; if(corr.includes(ans)){ correct++; res.textContent='✅'; } else{ res.textContent=`❌ (Ans: ${corr.join(',')})`; } wrappers[i].appendChild(res);
+      const keys={}; for(let p of probs){ const txt=await (await fetch(`/static/images/fma/${p.exam}/key.txt`)).text(); keys[`${p.exam}.${p.num}`] = txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }
+      let correct=0;
+      const wrappers=document.querySelectorAll('#test-questions .problem-wrapper');
+      probs.forEach((p,i)=>{ const ans=document.getElementById(`ans-${i}`).value.toUpperCase().trim(); const raw=keys[`${p.exam}.${p.num}`][p.num-1]||''; const corr=raw.split('').filter(c=>/[A-E]/.test(c));
+        const res = document.createElement('div'); res.className='result-text'; if(corr.includes(ans)){ correct++; res.textContent='✅'; } else{ res.textContent=`❌ (Ans: ${corr.join(',')})`; }
+        wrappers[i].appendChild(res);
       });
       document.getElementById('test-questions').insertAdjacentHTML('beforeend',`<h3>Score: ${correct}/${probs.length}</h3>`);
+      document.getElementById('submit-test-btn').disabled=true;
     }
 
-    // SPEED MODE vars
-    let speedTime,speedTimerInterval,speedCount=0;
+    // ---------- SPEED MODE ----------
+    let speedTime, speedTimerInterval, speedCount=0;
     function startSpeedMode(){ welcome.classList.add('hidden'); speedMode.classList.remove('hidden'); }
-    function initSpeed(){ const mins=parseInt(document.getElementById('speed-time-input').value,10); if(isNaN(mins)||mins<=0) return; speedTime=mins*60; speedCount=0;
+    function initSpeed(){ const mins=parseInt(document.getElementById('speed-time-input').value,10);
+      if(isNaN(mins)||mins<=0) return; speedTime=mins*60; speedCount=0;
       document.getElementById('speed-settings').classList.add('hidden'); document.getElementById('speed-problem-area').classList.remove('hidden');
-      loadSpeedProblem(); speedTimerInterval=setInterval(()=>{ speedTime--; displayTimer(document.getElementById('speed-timer-display'),speedTime); if(speedTime<=0){ clearInterval(speedTimerInterval); finishSpeed(); } },1000);
+      loadSpeedProblem(); speedTimerInterval=setInterval(()=>{ speedTime--; displayTimer(document.getElementById('speed-timer-display'),speedTime); if(speedTime<=0) finishSpeed(); },1000);
     }
     async function loadSpeedProblem(){ speedCount++; document.getElementById('speed-counter').textContent=`Solved: ${speedCount-1}`;
       [currentExam,currentNum]=getRandomProblem(); document.getElementById('exam-label-speed').textContent=`Exam ${currentExam} #${currentNum}`;
-      const wrap=document.getElementById('image-wrapper-speed'); wrap.innerHTML='<div class="loader"></div>';
-      const imgs=await fetchImageParts(currentExam,currentNum); wrap.innerHTML=''; imgs.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';wrap.appendChild(img);});
+      const wrapper=document.getElementById('image-wrapper-speed'); wrapper.innerHTML='<div class="loader"></div>';
+      const imgs=await fetchImageParts(currentExam,currentNum); wrapper.innerHTML=''; imgs.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';wrapper.appendChild(img);});
       document.getElementById('answer-speed').value=''; document.getElementById('feedback-speed').textContent='';
       try{ const txt=await(await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); keyAnswers=txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }catch{ keyAnswers=[]; }
     }
-    function handleSpeedSubmission(){ const ans=document.getElementById('answer-speed').value.toUpperCase().trim(),fb=document.getElementById('feedback-speed'),raw=keyAnswers[currentNum-1]||'',corr=raw.split('').filter(c=>/[A-E]/.test(c)); fb.textContent=corr.includes(ans)?'✅':`❌ (${corr.join('/')})`; loadSpeedProblem(); }
+    function handleSpeedSubmission(){ const ans=document.getElementById('answer-speed').value.toUpperCase().trim(); const fb=document.getElementById('feedback-speed'); const raw=keyAnswers[currentNum-1]||''; const corr=raw.split('').filter(c=>/[A-E]/.test(c)); fb.textContent=corr.includes(ans)?'✅':`❌ (${corr.join('/')})`; loadSpeedProblem(); }
     function finishSpeed(){ clearInterval(speedTimerInterval); speedMode.classList.add('hidden'); summary.classList.remove('hidden'); document.getElementById('final-summary').innerHTML=`Problems Solved: ${speedCount-1}`; }
   </script>
 </body>
