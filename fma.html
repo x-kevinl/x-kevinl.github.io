@@ -9,11 +9,15 @@
     .hidden { display: none; }
     button { padding: 0.5em 1em; margin: 0.5em; font-size: 1em; }
     #mode-buttons button { width: 200px; }
-    #timer { font-size: 1.2em; font-weight: bold; margin: 1em 0; color: #333; }
-    #problem-counter, #accuracy-summary { margin: 1em 0; font-weight: bold; }
-    .problem-wrapper { margin-bottom: 1.5em; }
+    #timer, #speed-timer-display { font-size: 1.2em; font-weight: bold; margin: 1em 0; color: #333; }
+    #problem-counter, #accuracy-summary, #speed-counter { margin: 1em 0; font-weight: bold; }
+    .problem-wrapper { border: 2px solid #000; border-radius: 8px; padding: 0.5em; margin-bottom: 1.5em; }
     .problem-image { display: block; width: 100%; height: auto; margin-bottom: 0.5em; }
     .result-text { font-weight: bold; margin-top: 0.5em; }
+    /* Answer box styling */
+    #answer-box input, #answer-box-speed input { width: 60%; padding: 0.5em; font-size: 1em; text-transform: uppercase; }
+    #answer-box button, #answer-box-speed button { padding: 0.5em 1em; font-size: 1em; margin-left: 0.5em; }
+    #practice-toggle-container { margin: 1em 0; }
   </style>
 </head>
 <body>
@@ -21,6 +25,9 @@
   <div id="welcome-page">
     <h1>Welcome Back!</h1>
     <p>Choose a mode to start:</p>
+    <div id="practice-toggle-container">
+      <label><input type="checkbox" id="practice-toggle"> Practice selected problems only</label>
+    </div>
     <div id="mode-buttons">
       <button id="zen-btn">Zen - Unlimited Problems</button>
       <button id="test-btn">Test - Fixed Problems</button>
@@ -46,9 +53,13 @@
   <!-- Test Container -->
   <div id="test-container" class="hidden">
     <h2>Test Mode</h2>
-    <button id="start-test-btn">Start Test</button>
-    <div id="test-form" class="hidden">
-      <form id="test-questions-form">
+    <div id="test-form">
+      <div id="test-settings">
+        <input type="number" id="test-time-input" placeholder="Time (min)" min="1" />
+        <input type="number" id="test-count-input" placeholder="Number of problems" min="1" />
+        <button id="begin-test-btn">Begin Test</button>
+      </div>
+      <form id="test-questions-form" class="hidden">
         <div id="test-questions"></div>
         <button type="button" id="submit-test-btn">Submit Test</button>
       </form>
@@ -58,8 +69,10 @@
   <!-- Speed Container -->
   <div id="speed-container" class="hidden">
     <h2>Speed Mode</h2>
-    <button id="start-speed-btn">Start Time Attack</button>
-    <div id="speed-timer" class="hidden"></div>
+    <div id="speed-settings">
+      <input type="number" id="speed-time-input" placeholder="Time (min)" min="1" />
+      <button id="begin-speed-btn">Begin Time Attack</button>
+    </div>
     <div id="speed-problem-area" class="hidden">
       <div id="speed-counter">Solved: 0</div>
       <div id="speed-timer-display"></div>
@@ -81,208 +94,153 @@
   </div>
 
   <script>
+    // practice list
+    let practiceList = [];
+    async function loadPracticeList() {
+      try {
+        const res = await fetch('/static/practice.txt');
+        const text = await res.text();
+        practiceList = text.split(/[,\s]+/).map(s=>s.trim()).filter(s=>s);
+      } catch(e){ console.error(e); }
+    }
+
     // Shared config
     const config = {
       exams: ['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018A','2018B','2019A','2019B','2020A','2020B','2021','2022A','2022B','2023','2024'],
-      maxProblems: { '2007':38,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,'2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,'2022A':25,'2022B':25,'2023':25,'2024':25 }
+      maxProblems: {'2007':38,'2008':25,'2009':25,'2010':25,'2011':25,'2012':25,'2013':25,'2014':25,'2015':25,'2016':25,'2017':25,'2018A':25,'2018B':25,'2019A':25,'2019B':25,'2020A':25,'2020B':25,'2021':25,'2022A':25,'2022B':25,'2023':25,'2024':25}
     };
-    
+
     // Elements
     const welcome = document.getElementById('welcome-page');
     const practice = document.getElementById('practice-container');
     const testMode = document.getElementById('test-container');
     const speedMode = document.getElementById('speed-container');
     const summary = document.getElementById('summary-container');
+    const practiceToggle = document.getElementById('practice-toggle');
 
-    // Mode buttons
-    document.getElementById('zen-btn').onclick = () => startZen();
-    document.getElementById('test-btn').onclick = () => startTestMode();
-    document.getElementById('speed-btn').onclick = () => startSpeedMode();
-    document.getElementById('restart-btn').onclick = () => location.reload();
+    // Load practice list then attach events
+    window.addEventListener('DOMContentLoaded', async()=>{
+      await loadPracticeList();
+      document.getElementById('zen-btn').onclick = startZen;
+      document.getElementById('test-btn').onclick = startTestMode;
+      document.getElementById('speed-btn').onclick = startSpeedMode;
+      document.getElementById('restart-btn').onclick = ()=>location.reload();
+      document.getElementById('begin-test-btn').onclick = setupTest;
+      document.getElementById('submit-test-btn').onclick = ()=>gradeTest(currentTestProblems);
+      document.getElementById('begin-speed-btn').onclick = initSpeed;
+      document.getElementById('submit-speed-btn').onclick = handleSpeedSubmission;
+    });
 
-    // Zen variables
-    let zenCount = 0, zenCorrect = 0, zenOvertime = 0, zenIncorrect = 0;
-    let currentExam, currentNum, keyAnswers = [], zenTimer, zenTimeLeft;
+    // GET RANDOM PROBLEM
+    function getRandomProblem() {
+      if(practiceToggle.checked && practiceList.length) {
+        const entry = practiceList[Math.floor(Math.random()*practiceList.length)];
+        const [exam, num] = entry.split('.');
+        return [exam, parseInt(num,10)];
+      }
+      const exam = config.exams[Math.floor(Math.random()*config.exams.length)];
+      const num = Math.floor(Math.random()*config.maxProblems[exam]) +1;
+      return [exam, num];
+    }
 
-    // Speed variables
-    let speedTime, speedTimerInterval, speedCount = 0;    
-
-    // Utility fetch image parts
-    async function fetchImageParts(exam, num) {
+    // Fetch image helper
+    async function fetchImageParts(exam,num) {
       const base = `/static/images/fma/${exam}/${num}`;
-      const ext = '.webp'; let parts = [];
-      for (let sfx of ['a','b','']) {
-        try { if ((await fetch(`${base}${sfx}${ext}`, {method:'HEAD'})).ok) parts.push(`${base}${sfx}${ext}`); }
-        catch{};
+      const ext = '.webp'; let parts=[];
+      for(let sfx of ['a','b','']){
+        try{ if((await fetch(`${base}${sfx}${ext}`,{method:'HEAD'})).ok) parts.push(`${base}${sfx}${ext}`);}catch{}
       }
       return parts;
     }
 
-    // Timer display
-    function displayTimer(el, time) {
-      if (time <= 0) { el.textContent = 'OVERTIME'; el.style.color = 'red'; }
-      else { const m = String(Math.floor(time/60)).padStart(2,'0'); const s = String(time%60).padStart(2,'0'); el.textContent = `${m}:${s}`; el.style.color='#333'; }
+    // Display timer
+    function displayTimer(el,time){
+      if(time<=0){ el.textContent='OVERTIME'; el.style.color='red'; }
+      else{ const m=String(Math.floor(time/60)).padStart(2,'0'), s=String(time%60).padStart(2,'0'); el.textContent=`${m}:${s}`; el.style.color='#333'; }
     }
 
-    // START ZEN MODE
-    async function startZen() {
+    // ---------- ZEN MODE ----------
+    let zenCount=0, zenCorrect=0, zenOvertime=0, zenIncorrect=0;
+    let currentExam, currentNum, keyAnswers=[], zenTimer, zenTimeLeft;
+    function startZen(){
       welcome.classList.add('hidden'); practice.classList.remove('hidden');
       document.getElementById('end-practice-btn').onclick = showZenSummary;
-      await loadZenProblem();
+      loadZenProblem();
     }
-
-    async function loadZenProblem() {
+    async function loadZenProblem(){
       zenCount++; updateZenDisplay();
-      // fetch new random problem
-      [currentExam, currentNum] = getRandomProblem();
+      [currentExam,currentNum] = getRandomProblem();
       document.getElementById('exam-label').textContent = `Exam ${currentExam} #${currentNum}`;
-      // load images
-      const wrapper = document.getElementById('image-wrapper'); wrapper.innerHTML = '<div class="loader"></div>';
-      const imgs = await fetchImageParts(currentExam, currentNum);
-      wrapper.innerHTML = '';
-      imgs.forEach(src => { let img = document.createElement('img'); img.src=src; img.className='problem-image'; wrapper.appendChild(img); });
-      // load answer key
-      try { const keyTxt = await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); keyAnswers = keyTxt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }catch{ keyAnswers = []; }
-      // reset answer and feedback
-      document.getElementById('answer').value=''; document.getElementById('feedback').textContent=''; document.getElementById('submit-btn').textContent='Submit';
-      // start timer
-      zenTimeLeft = 180; clearInterval(zenTimer); zenTimer = setInterval(()=>{
-        zenTimeLeft--; displayTimer(document.getElementById('timer'), zenTimeLeft);
-        if (zenTimeLeft<=0) clearInterval(zenTimer);
-      },1000);
-
-      document.getElementById('submit-btn').onclick = () => handleZenSubmission();
-    }
-
-    function handleZenSubmission() {
-      const ans = document.getElementById('answer').value.toUpperCase().trim(); const fb = document.getElementById('feedback');
-      const raw = keyAnswers[currentNum-1]||''; const corrects = raw.split('').filter(c=>/[A-E]/.test(c));
-      let status;
-      if (!/^[A-E]$/.test(ans)) { fb.textContent='Enter A-E'; fb.style.color='darkorange'; return; }
-      if (corrects.includes(ans)) {
-        if (zenTimeLeft>0) { zenCorrect++; status='CORRECT'; fb.textContent='✅ CORRECT'; fb.style.color='green'; }
-        else { zenOvertime++; status='OVERTIME'; fb.textContent='⏰ OVERTIME'; fb.style.color='orange'; }
-      } else { zenIncorrect++; status='INCORRECT'; fb.textContent=`❌ INCORRECT (Ans: ${corrects.join(' & ')})`; fb.style.color='red'; }
-      updateZenDisplay();
-      document.getElementById('submit-btn').textContent='Next'; document.getElementById('submit-btn').onclick = () => loadZenProblem();
-    }
-
-    function updateZenDisplay() {
-      document.getElementById('problem-counter').textContent = `Problems: ${zenCount}`;
-      document.getElementById('accuracy-summary').textContent = `CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect}`;
-    }
-
-    function showZenSummary() {
-      practice.classList.add('hidden'); summary.classList.remove('hidden');
-      document.getElementById('final-summary').innerHTML = `Total: ${zenCount}<br>Correct (fast): ${zenCorrect}<br>Correct (overtime): ${zenOvertime}<br>Incorrect: ${zenIncorrect}`;
-    }
-
-    // GET RANDOM PROBLEM HELPER
-    function getRandomProblem() {
-      const exam = config.exams[Math.floor(Math.random()*config.exams.length)];
-      const num = Math.floor(Math.random()*config.maxProblems[exam]) + 1;
-      return [exam, num];
-    }
-
-    // TEST MODE
-    function startTestMode() {
-      welcome.classList.add('hidden'); testMode.classList.remove('hidden');
-      document.getElementById('start-test-btn').onclick = () => setupTest();
-    }
-
-    async function setupTest() {
-      document.getElementById('start-test-btn').classList.add('hidden'); document.getElementById('test-form').classList.remove('hidden');
-      const totalTime = prompt('Enter total time (minutes):'); const totalProblems = prompt('Enter number of problems:');
-      const count = parseInt(totalProblems,10);
-      const questionsDiv = document.getElementById('test-questions'); questionsDiv.innerHTML='';
-      const testProblems = [];
-      for (let i=0;i<count;i++) {
-        const [exam,num] = getRandomProblem(); testProblems.push({exam,num});
-        const wrapper = document.createElement('div'); wrapper.className='problem-wrapper';
-        wrapper.innerHTML = `<h4>${i+1}. Exam ${exam} #${num}</h4><div id="test-img-${i}"><div class=\"loader\"></div></div><input type=\"text\" id=\"ans-${i}\" maxlength=\"1\" placeholder=\"A-E\"/>`;
-        questionsDiv.appendChild(wrapper);
-        // fetch and display image
-        (async()=>{
-          const parts = await fetchImageParts(exam,num);
-          const cont = document.getElementById(`test-img-${i}`); cont.innerHTML=''; parts.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';cont.appendChild(img);});
-        })();
-      }
-      document.getElementById('submit-test-btn').onclick = () => gradeTest(testProblems);
-    }
-
-    async function gradeTest(probs) {
-      let correct=0;
-      const results=[];
-      // fetch all keys
-      const keys={}; for (let p of probs) {
-        const txt = await (await fetch(`/static/images/fma/${p.exam}/key.txt`)).text();
-        keys[`${p.exam}.${p.num}`] = txt.split(/\r?\n/).map(l=>l.trim().toUpperCase());
-      }
-      // grade
-      probs.forEach((p,i)=>{
-        const ans = document.getElementById(`ans-${i}`).value.toUpperCase().trim();
-        const raw = keys[`${p.exam}.${p.num}`][p.num-1]||''; const corr = raw.split('').filter(c=>/[A-E]/.test(c));
-        const ok = corr.includes(ans);
-        results.push(ok ? '✅' : `❌ (Ans: ${corr.join(' & ')})`);
-        if(ok) correct++;
-      });
-      // display results
-      const questionsDiv = document.getElementById('test-questions');
-      questionsDiv.querySelectorAll('.problem-wrapper').forEach((w,i)=>{
-        const res = document.createElement('div'); res.className='result-text'; res.textContent = results[i]; w.appendChild(res);
-      });
-      questionsDiv.insertAdjacentHTML('beforeend', `<h3>Score: ${correct}/${probs.length}</h3>`);
-      document.getElementById('submit-test-btn').disabled = true;
-    }
-
-    // SPEED MODE
-    function startSpeedMode() {
-      welcome.classList.add('hidden'); speedMode.classList.remove('hidden');
-      document.getElementById('start-speed-btn').onclick = () => initSpeed();
-    }
-
-    function initSpeed() {
-      const minutes = parseFloat(prompt('Enter total time (minutes):'));
-      if (isNaN(minutes) || minutes<=0) return;
-      speedTime = minutes*60; speedCount=0;
-      document.getElementById('start-speed-btn').classList.add('hidden');
-      document.getElementById('speed-timer').classList.remove('hidden');
-      document.getElementById('speed-timer').textContent = `Time Left: ${minutes.toFixed(0)}:00`;
-      document.getElementById('speed-problem-area').classList.remove('hidden');
-      loadSpeedProblem();
-      speedTimerInterval = setInterval(()=>{
-        speedTime--;
-        const m = String(Math.floor(speedTime/60)).padStart(2,'0');
-        const s = String(speedTime%60).padStart(2,'0');
-        document.getElementById('speed-timer-display').textContent = `${m}:${s}`;
-        if(speedTime<=0) finishSpeed();
-      },1000);
-      document.getElementById('submit-speed-btn').onclick = () => handleSpeedSubmission();
-    }
-
-    async function loadSpeedProblem() {
-      speedCount++; document.getElementById('speed-counter').textContent = `Solved: ${speedCount-1}`;
-      [currentExam, currentNum] = getRandomProblem();
-      document.getElementById('exam-label-speed').textContent = `Exam ${currentExam} #${currentNum}`;
-      const wrapper = document.getElementById('image-wrapper-speed'); wrapper.innerHTML = '<div class="loader"></div>';
-      const imgs = await fetchImageParts(currentExam, currentNum);
+      const wrapper=document.getElementById('image-wrapper'); wrapper.innerHTML='<div class="loader"></div>';
+      const imgs = await fetchImageParts(currentExam,currentNum);
       wrapper.innerHTML=''; imgs.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';wrapper.appendChild(img);});
+      try{ const txt = await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); keyAnswers = txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }catch{ keyAnswers=[]; }
+      document.getElementById('answer').value=''; document.getElementById('feedback').textContent=''; document.getElementById('submit-btn').textContent='Submit';
+      zenTimeLeft=180; clearInterval(zenTimer); zenTimer=setInterval(()=>{zenTimeLeft--; displayTimer(document.getElementById('timer'),zenTimeLeft); if(zenTimeLeft<=0) clearInterval(zenTimer);},1000);
+      document.getElementById('submit-btn').onclick = handleZenSubmission;
+    }
+    function handleZenSubmission(){
+      const ans=document.getElementById('answer').value.toUpperCase().trim(); const fb=document.getElementById('feedback');
+      const raw=keyAnswers[currentNum-1]||''; const corr=raw.split('').filter(c=>/[A-E]/.test(c));
+      if(!/^[A-E]$/.test(ans)){ fb.textContent='Enter A-E'; fb.style.color='darkorange'; return; }
+      if(corr.includes(ans)){ if(zenTimeLeft>0){ zenCorrect++; fb.textContent='✅ CORRECT'; fb.style.color='green'; } else{ zenOvertime++; fb.textContent='⏰ OVERTIME'; fb.style.color='orange'; }}
+      else{ zenIncorrect++; fb.textContent=`❌ INCORRECT (Ans: ${corr.join(' & ')})`; fb.style.color='red'; }
+      updateZenDisplay(); document.getElementById('submit-btn').textContent='Next'; document.getElementById('submit-btn').onclick=loadZenProblem;
+    }
+    function updateZenDisplay(){ document.getElementById('problem-counter').textContent=`Problems: ${zenCount}`;
+      document.getElementById('accuracy-summary').textContent=`CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect}`; }
+    function showZenSummary(){ practice.classList.add('hidden'); summary.classList.remove('hidden');
+      document.getElementById('final-summary').innerHTML=`Total: ${zenCount}<br>Correct (fast): ${zenCorrect}<br>Correct (overtime): ${zenOvertime}<br>Incorrect: ${zenIncorrect}`;
+    }
+
+    // ---------- TEST MODE ----------
+    let currentTestProblems = [];
+    function startTestMode(){ welcome.classList.add('hidden'); testMode.classList.remove('hidden'); }
+    async function setupTest(){
+      const mins = parseInt(document.getElementById('test-time-input').value,10);
+      const count = parseInt(document.getElementById('test-count-input').value,10);
+      if(isNaN(mins)||isNaN(count)||mins<=0||count<=0) return;
+      currentTestProblems = [];
+      document.getElementById('test-settings').classList.add('hidden');
+      const form=document.getElementById('test-questions-form'); form.classList.remove('hidden');
+      const questionsDiv=document.getElementById('test-questions'); questionsDiv.innerHTML='';
+      for(let i=0;i<count;i++){ const [ex,num]=getRandomProblem(); currentTestProblems.push({exam:ex,num});
+        const wrapper=document.createElement('div'); wrapper.className='problem-wrapper';
+        wrapper.innerHTML=`<h4>${i+1}. Exam ${ex} #${num}</h4><div id="test-img-${i}"><div class=\"loader\"></div></div><div class=\"answer-box\"><input type=\"text\" id=\"ans-${i}\" maxlength=\"1\" placeholder=\"A-E\" /></div>`;
+        questionsDiv.appendChild(wrapper);
+        (async()=>{ const parts=await fetchImageParts(ex,num); const cont=document.getElementById(`test-img-${i}`); cont.innerHTML=''; parts.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';cont.appendChild(img);}); })();
+      }
+    }
+    async function gradeTest(probs){
+      const keys={}; for(let p of probs){ const txt=await (await fetch(`/static/images/fma/${p.exam}/key.txt`)).text(); keys[`${p.exam}.${p.num}`] = txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }
+      let correct=0;
+      const wrappers=document.querySelectorAll('#test-questions .problem-wrapper');
+      probs.forEach((p,i)=>{ const ans=document.getElementById(`ans-${i}`).value.toUpperCase().trim(); const raw=keys[`${p.exam}.${p.num}`][p.num-1]||''; const corr=raw.split('').filter(c=>/[A-E]/.test(c));
+        const res = document.createElement('div'); res.className='result-text'; if(corr.includes(ans)){ correct++; res.textContent='✅'; } else{ res.textContent=`❌ (Ans: ${corr.join(',')})`; }
+        wrappers[i].appendChild(res);
+      });
+      document.getElementById('test-questions').insertAdjacentHTML('beforeend',`<h3>Score: ${correct}/${probs.length}</h3>`);
+      document.getElementById('submit-test-btn').disabled=true;
+    }
+
+    // ---------- SPEED MODE ----------
+    let speedTime, speedTimerInterval, speedCount=0;
+    function startSpeedMode(){ welcome.classList.add('hidden'); speedMode.classList.remove('hidden'); }
+    function initSpeed(){ const mins=parseInt(document.getElementById('speed-time-input').value,10);
+      if(isNaN(mins)||mins<=0) return; speedTime=mins*60; speedCount=0;
+      document.getElementById('speed-settings').classList.add('hidden'); document.getElementById('speed-problem-area').classList.remove('hidden');
+      loadSpeedProblem(); speedTimerInterval=setInterval(()=>{ speedTime--; displayTimer(document.getElementById('speed-timer-display'),speedTime); if(speedTime<=0) finishSpeed(); },1000);
+    }
+    async function loadSpeedProblem(){ speedCount++; document.getElementById('speed-counter').textContent=`Solved: ${speedCount-1}`;
+      [currentExam,currentNum]=getRandomProblem(); document.getElementById('exam-label-speed').textContent=`Exam ${currentExam} #${currentNum}`;
+      const wrapper=document.getElementById('image-wrapper-speed'); wrapper.innerHTML='<div class="loader"></div>';
+      const imgs=await fetchImageParts(currentExam,currentNum); wrapper.innerHTML=''; imgs.forEach(src=>{let img=new Image();img.src=src;img.className='problem-image';wrapper.appendChild(img);});
       document.getElementById('answer-speed').value=''; document.getElementById('feedback-speed').textContent='';
+      // reload key
+      try{ const txt=await(await fetch(`/static/images/fma/${currentExam}/key.txt`)).text(); keyAnswers=txt.split(/\r?\n/).map(l=>l.trim().toUpperCase()); }catch{ keyAnswers=[]; }
     }
-
-    function handleSpeedSubmission() {
-      const ans = document.getElementById('answer-speed').value.toUpperCase().trim();
-      const raw = keyAnswers[currentNum-1]||''; const corrects = raw.split('').filter(c=>/[A-E]/.test(c));
-      const fb = document.getElementById('feedback-speed');
-      if(corrects.includes(ans)) fb.textContent='✅'; else fb.textContent=`❌ (${corrects.join('/')})`;
-      loadSpeedProblem();
-    }
-
-    function finishSpeed() {
-      clearInterval(speedTimerInterval);
-      speedMode.classList.add('hidden'); summary.classList.remove('hidden');
-      document.getElementById('final-summary').innerHTML = `Problems Solved: ${speedCount-1}`;
-    }
+    function handleSpeedSubmission(){ const ans=document.getElementById('answer-speed').value.toUpperCase().trim(); const fb=document.getElementById('feedback-speed'); const raw=keyAnswers[currentNum-1]||''; const corr=raw.split('').filter(c=>/[A-E]/.test(c)); fb.textContent=corr.includes(ans)?'✅':`❌ (${corr.join('/')})`; loadSpeedProblem(); }
+    function finishSpeed(){ clearInterval(speedTimerInterval); speedMode.classList.add('hidden'); summary.classList.remove('hidden'); document.getElementById('final-summary').innerHTML=`Problems Solved: ${speedCount-1}`; }
   </script>
 </body>
 </html>
