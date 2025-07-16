@@ -78,11 +78,24 @@
     <input type="email" id="email" placeholder="Email" />
     <input type="password" id="password" placeholder="Password" />
     <button id="login-btn">Log In</button>
+    <button id="reset-btn" type="button">Forgot Password?</button>
+
     <button id="signup-btn">Sign Up</button>
     <button id="logout-btn">Log Out</button>
     <p id="login-error"></p>
   </div>
+  <script>
+    document.getElementById('reset-btn').onclick = () => {
+  const email = document.getElementById('email').value.trim();
+  if (!email) {
+    return alert('Please enter your email first.');
+  }
+  auth.sendPasswordResetEmail(email)
+    .then(() => alert('✅ Reset email sent! Check your inbox.'))
+    .catch(err => alert('❌ ' + err.message));
+};
 
+  </script>
   <!-- Main Menu -->
   <div class="container" id="main-container">
     <img src="static/images/logo.png" class="logo" alt="Olympiad Logo">
