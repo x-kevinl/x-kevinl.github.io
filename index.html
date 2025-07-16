@@ -54,6 +54,7 @@
     input, button { font-size: 1rem; }
     input { width: 80%; padding: 0.5em; margin: 0.5em auto; display: block; }
     button { padding: 0.5em 1em; margin: 0.5em; }
+    #greeting { margin-bottom: 1rem; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -75,29 +76,19 @@
   <!-- Login (optional) -->
   <div class="container" id="login-container">
     <h2>Account (Optional)</h2>
+    <input type="text" id="username" placeholder="Username (for sign-up)" />
     <input type="email" id="email" placeholder="Email" />
     <input type="password" id="password" placeholder="Password" />
-    <button id="login-btn">Log In</button>
-    <button id="reset-btn" type="button">Forgot Password?</button>
-
     <button id="signup-btn">Sign Up</button>
+    <button id="login-btn">Log In</button>
+    <button id="reset-btn">Forgot Password?</button>
     <button id="logout-btn">Log Out</button>
     <p id="login-error"></p>
   </div>
-  <script>
-    document.getElementById('reset-btn').onclick = () => {
-  const email = document.getElementById('email').value.trim();
-  if (!email) {
-    return alert('Please enter your email first.');
-  }
-  auth.sendPasswordResetEmail(email)
-    .then(() => alert('✅ Reset email sent! Check your inbox.'))
-    .catch(err => alert('❌ ' + err.message));
-};
 
-  </script>
   <!-- Main Menu -->
   <div class="container" id="main-container">
+    <div id="greeting"></div>
     <img src="static/images/logo.png" class="logo" alt="Olympiad Logo">
     <h1>Olympiad Trainer</h1>
     <p class="subtitle">Over <strong>500</strong> problems to solve.</p>
@@ -119,7 +110,36 @@
     });
     window.addEventListener('load', () => document.body.classList.add('loaded'));
 
-    // Auth handlers
+    // Utility: update greeting
+    function showGreeting(user) {
+      const greeting = document.getElementById('greeting');
+      if (!user) { greeting.textContent = ''; return; }
+      const name = user.displayName || user.email.split('@')[0];
+      greeting.textContent = `Hello, ${name}!`;
+    }
+
+    // Auth state listener
+    auth.onAuthStateChanged(user => {
+      document.getElementById('login-container').style.display = 'block';
+      document.getElementById('main-container').style.display = 'block';
+      showGreeting(user);
+    });
+
+    // Sign up with displayName
+    document.getElementById('signup-btn').onclick = () => {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      const username = document.getElementById('username').value.trim();
+      if (!username) {
+        return document.getElementById('login-error').textContent = 'Enter a username.';
+      }
+      auth.createUserWithEmailAndPassword(email, pass)
+        .then(({ user }) => user.updateProfile({ displayName: username }))
+        .then(() => document.getElementById('login-error').textContent = '')
+        .catch(e => document.getElementById('login-error').textContent = e.message);
+    };
+
+    // Log in
     document.getElementById('login-btn').onclick = () => {
       const email = document.getElementById('email').value;
       const pass = document.getElementById('password').value;
@@ -127,13 +147,19 @@
         .then(() => document.getElementById('login-error').textContent = '')
         .catch(e => document.getElementById('login-error').textContent = e.message);
     };
-    document.getElementById('signup-btn').onclick = () => {
-      const email = document.getElementById('email').value;
-      const pass = document.getElementById('password').value;
-      auth.createUserWithEmailAndPassword(email, pass)
-        .then(() => document.getElementById('login-error').textContent = '')
+
+    // Password reset
+    document.getElementById('reset-btn').onclick = () => {
+      const email = document.getElementById('email').value.trim();
+      if (!email) {
+        return document.getElementById('login-error').textContent = 'Enter your email to reset password.';
+      }
+      auth.sendPasswordResetEmail(email)
+        .then(() => document.getElementById('login-error').textContent = 'Reset email sent!')
         .catch(e => document.getElementById('login-error').textContent = e.message);
     };
+
+    // Log out
     document.getElementById('logout-btn').onclick = () => auth.signOut();
   </script>
 </body>
