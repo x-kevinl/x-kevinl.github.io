@@ -111,8 +111,10 @@
         examOrder.forEach((year,i) => {
           const row = [year];
           stats[i].forEach(cell => {
-            row.push(`${cell.correct}/${cell.overtime}/${cell.incorrect}/${cell.skipped}`);
-          });
+  const missed = cell.incorrect + cell.skipped;
+  row.push(`${cell.correct}/${cell.overtime}/${missed}`);
+});
+
           rows.push(row.join(','));
         });
         const csv = rows.join('\n');
