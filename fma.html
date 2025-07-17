@@ -574,6 +574,21 @@ body {
       summary.classList.remove('hidden');
       document.getElementById('final-summary').textContent=`Problems Solved: ${speedCount-1}`;
     }
+    // helper to hide header + menu
+function hideHeaderAndMenu() {
+  document.getElementById('stats-container').classList.add('hidden');
+  document.getElementById('welcome-page').classList.add('hidden');
+}
+
+// wrap the existing start functions
+const _origStartZen   = startZen;
+const _origStartTest  = startTestMode;
+const _origStartSpeed = startSpeedMode;
+
+startZen       = () => { hideHeaderAndMenu(); _origStartZen(); };
+startTestMode  = () => { hideHeaderAndMenu(); _origStartTest(); };
+startSpeedMode = () => { hideHeaderAndMenu(); _origStartSpeed(); };
+
   </script>
 </body>
 </html>
