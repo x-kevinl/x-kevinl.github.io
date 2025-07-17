@@ -427,7 +427,7 @@ body {
 
       document.getElementById('answer').value=''; document.getElementById('feedback').textContent='';
       clearInterval(zenTimer);
-      zenTimeLeft=180; displayTimer(document.getElementById('timer'),zenTimeLeft);
+      zenTimeLeft=240; displayTimer(document.getElementById('timer'),zenTimeLeft);
       zenTimer = setInterval(()=>{
         zenTimeLeft--; displayTimer(document.getElementById('timer'),zenTimeLeft);
         if (zenTimeLeft<=0) clearInterval(zenTimer);
