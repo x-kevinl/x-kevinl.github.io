@@ -73,24 +73,25 @@
 
     function getRandomProblem() {
       const exam = config.exams[Math.floor(Math.random() * config.exams.length)];
-      const type = exam.slice(-1);
-      const year = exam.slice(0, -1);
+      const type = exam.endsWith('II') ? 'II' : 'I';
+      const year = exam.slice(0, exam.length - type.length);
       const num = Math.floor(Math.random() * config.maxProblems[type]) + 1;
       return { year, type, num, exam };
     }
 
     async function loadProblem() {
       current = getRandomProblem();
-      document.getElementById('problem-label').textContent = `AIME ${current.year}${current.type} #${current.num}`;
+      document.getElementById('problem-label').textContent = `AIME ${current.year} ${current.type} #${current.num}`;
+      // Fetch from Problems/<year>/<type>/<num>/Problem.txt
       const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
       try {
         const txt = await fetch(url).then(res => res.ok ? res.text() : Promise.reject(res.status));
         const container = document.getElementById('problem-container');
         container.innerHTML = txt;
         document.getElementById('submit-btn').disabled = false;
-        // First render Asymptote diagrams
+        // Render Asymptote diagrams first
         await renderAsyDiagrams(container);
-        // Then typeset any LaTeX
+        // Then typeset LaTeX with MathJax
         await MathJax.typesetPromise();
       } catch (err) {
         document.getElementById('problem-container').textContent = 'Failed to load problem.';
@@ -116,7 +117,7 @@
 
     function handleSubmit() {
       const ans = document.getElementById('answer').value.trim();
-      alert(`Your answer to AIME ${current.year}${current.type} #${current.num}: ${ans}`);
+      alert(`Your answer to AIME ${current.year} ${current.type} #${current.num}: ${ans}`);
       document.getElementById('submit-btn').disabled = true;
     }
 
