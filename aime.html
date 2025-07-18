@@ -27,6 +27,7 @@
     #answer-box { margin:1em 0; }
     #answer-box input { width:60px; padding:0.5em; text-align:center; }
     #answer-box button { padding:0.5em 1em; margin-left:0.5em; }
+    #feedback { font-size:1.1em; margin-top:0.5em; }
   </style>
 </head>
 <body>
@@ -38,6 +39,7 @@
     <button id="submit-btn" disabled>Submit</button>
     <button id="next-btn">Next</button>
   </div>
+  <div id="feedback"></div>
 
   <script>
     const RAW_BASE = 'https://raw.githubusercontent.com/x-kevinl/ui/main/Problems';
@@ -66,17 +68,14 @@
         // Remove wiki markers and headings
         raw = raw.replace(/\[\[|\]\]/g, '').replace(/==[^=]+==/g, '');
         // Convert <cmath> to display math
-        raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi,
-          (_m,p1) => `$$${p1}$$`
-        );
+        raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi, (_m,p1) => `$$${p1}$$`);
         // Convert <math> to inline math
-        raw = raw.replace(/<math>([\s\S]*?)<\/math>/gi,
-          (_m,p1) => `$${p1}$`
-        );
+        raw = raw.replace(/<math>([\s\S]*?)<\/math>/gi, (_m,p1) => `$${p1}$`);
 
         const container = document.getElementById('problem-container');
         container.innerHTML = raw;
         document.getElementById('submit-btn').disabled = false;
+        document.getElementById('feedback').textContent = ''; // clear previous feedback
         await renderAsyDiagrams(container);
         await MathJax.typesetPromise([container]);
       } catch(err) {
@@ -97,9 +96,29 @@
       }
     }
 
-    function handleSubmit() {
-      const ans = document.getElementById('answer').value.trim();
-      alert(`Answer for AIME ${current.year}${current.type} #${current.num}: ${ans}`);
+    async function handleSubmit() {
+      const ansStr = document.getElementById('answer').value.trim();
+      const feedbackEl = document.getElementById('feedback');
+      const ansUrl = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Answer.txt`;
+      try {
+        const rawAns = await fetch(ansUrl).then(r => r.ok ? r.text() : Promise.reject(r.status));
+        const correctNum = parseInt(rawAns.trim(), 10);
+        const userNum = parseInt(ansStr, 10);
+        if (isNaN(userNum)) {
+          feedbackEl.textContent = 'Enter a numeric answer';
+          feedbackEl.style.color = 'orange';
+        } else if (userNum === correctNum) {
+          feedbackEl.textContent = '✅ Correct!';
+          feedbackEl.style.color = 'green';
+        } else {
+          feedbackEl.textContent = `❌ Incorrect. Answer: ${correctNum}`;
+          feedbackEl.style.color = 'red';
+        }
+      } catch (e) {
+        console.error('Answer fetch error', e);
+        feedbackEl.textContent = 'Could not load answer file.';
+        feedbackEl.style.color = 'darkred';
+      }
       document.getElementById('submit-btn').disabled = true;
     }
 
@@ -107,6 +126,7 @@
     document.getElementById('next-btn').onclick = () => {
       document.getElementById('answer').value = '';
       document.getElementById('submit-btn').disabled = true;
+      document.getElementById('feedback').textContent = '';
       loadProblem();
     };
 
