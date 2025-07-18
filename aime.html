@@ -7,8 +7,8 @@
   <script>
     window.MathJax = {
       tex: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\\[','\\]']]
+        inlineMath: [['$','$'], ['\\(','\\)'], ['<math>','</math>']],
+        displayMath: [['$$','$$'], ['\\[','\\]'], ['<cmath>', '</cmath>']]
       },
       options: {
         skipHtmlTags: ['script','noscript','style','textarea','pre','asy']
@@ -42,7 +42,17 @@
   <script>
     const RAW_BASE = 'https://raw.githubusercontent.com/x-kevinl/ui/main/Problems';
     const config = {
-      exams: [ '2000I','2000II','2001I','2001II','2002I','2002II' /* … through 2024I,2024II */ ],
+      exams: [
+        '2000I','2000II','2001I','2001II','2002I','2002II',
+        '2003I','2003II','2004I','2004II','2005I','2005II',
+        '2006I','2006II','2007I','2007II','2008I','2008II',
+        '2009I','2009II','2010I','2010II','2011I','2011II',
+        '2012I','2012II','2013I','2013II','2014I','2014II',
+        '2015I','2015II','2016I','2016II','2017I','2017II',
+        '2018I','2018II','2019I','2019II','2020I','2020II',
+        '2021I','2021II','2022I','2022II','2023I','2023II',
+        '2024I','2024II'
+      ],
       maxProblems: { I:15, II:15 }
     };
     let current;
