@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIME Practice</title>
+  <!-- Load MathJax to render LaTeX -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea','pre']
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1em;
+      text-align: center;
+    }
+    .problem-container {
+      border: 2px solid #000;
+      padding: 1em;
+      margin-bottom: 1em;
+      text-align: left;
+    }
+    #answer-box {
+      margin: 1em 0;
+    }
+    #answer-box input {
+      width: 60px;
+      padding: 0.5em;
+      text-align: center;
+    }
+    #answer-box button {
+      padding: 0.5em 1em;
+      margin-left: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>AIME Practice</h1>
+  <div id="problem-label">Loading...</div>
+  <div id="problem-container" class="problem-container">Loading problem...</div>
+  <div id="answer-box">
+    <input type="text" id="answer" placeholder="Answer" />
+    <button id="submit-btn" disabled>Submit</button>
+    <button id="next-btn">Next</button>
+  </div>
+
+  <script>
+    // Base URL to raw content in your 'ui' repo
+    const RAW_BASE = 'https://raw.githubusercontent.com/x-kevinl/ui/main/Problems';
+
+    // Configure available AIME exams and problem counts
+    const config = {
+      exams: [
+        '2000I','2000II','2001I','2001II','2002I','2002II',
+        // … add all up through '2024I','2024II'
+      ],
+      maxProblems: { I: 15, II: 15 }
+    };
+
+    let current;
+
+    function getRandomProblem() {
+      const exam = config.exams[Math.floor(Math.random() * config.exams.length)];
+      const type = exam.slice(-1);        // 'I' or 'II'
+      const year = exam.slice(0, -1);
+      const num = Math.floor(Math.random() * config.maxProblems[type]) + 1;
+      return { year, type, num, exam };
+    }
+
+    async function loadProblem() {
+      current = getRandomProblem();
+      document.getElementById('problem-label').textContent = `AIME ${current.year}${current.type} #${current.num}`;
+      const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
+      try {
+        const txt = await fetch(url).then(res => res.ok ? res.text() : Promise.reject(res.status));
+        document.getElementById('problem-container').innerHTML = txt;
+        document.getElementById('submit-btn').disabled = false;
+        MathJax.typesetPromise();
+      } catch (err) {
+        document.getElementById('problem-container').textContent = 'Failed to load problem.';
+        console.error('Fetch error', err);
+      }
+    }
+
+    function handleSubmit() {
+      const ans = document.getElementById('answer').value.trim();
+      alert(`Your answer to AIME ${current.year}${current.type} #${current.num}: ${ans}`);
+      document.getElementById('submit-btn').disabled = true;
+    }
+
+    document.getElementById('submit-btn').onclick = handleSubmit;
+    document.getElementById('next-btn').onclick = () => {
+      document.getElementById('answer').value = '';
+      document.getElementById('submit-btn').disabled = true;
+      loadProblem();
+    };
+
+    window.addEventListener('DOMContentLoaded', loadProblem);
+  </script>
+</body>
+</html>
