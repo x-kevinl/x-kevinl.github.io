@@ -11,11 +11,13 @@
         displayMath: [['$$','$$'], ['\\[','\\]']]
       },
       options: {
-        skipHtmlTags: ['script','noscript','style','textarea','pre']
+        skipHtmlTags: ['script','noscript','style','textarea','pre','asy']
       }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Load Asymptote.js for client-side Asy rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/asymptote.js@0.3.0/dist/asy.min.js"></script>
   <style>
     body {
       font-family: sans-serif;
@@ -71,7 +73,7 @@
 
     function getRandomProblem() {
       const exam = config.exams[Math.floor(Math.random() * config.exams.length)];
-      const type = exam.slice(-1);        // 'I' or 'II'
+      const type = exam.slice(-1);
       const year = exam.slice(0, -1);
       const num = Math.floor(Math.random() * config.maxProblems[type]) + 1;
       return { year, type, num, exam };
@@ -83,12 +85,32 @@
       const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
       try {
         const txt = await fetch(url).then(res => res.ok ? res.text() : Promise.reject(res.status));
-        document.getElementById('problem-container').innerHTML = txt;
+        const container = document.getElementById('problem-container');
+        container.innerHTML = txt;
         document.getElementById('submit-btn').disabled = false;
-        MathJax.typesetPromise();
+        // First render Asymptote diagrams
+        await renderAsyDiagrams(container);
+        // Then typeset any LaTeX
+        await MathJax.typesetPromise();
       } catch (err) {
         document.getElementById('problem-container').textContent = 'Failed to load problem.';
         console.error('Fetch error', err);
+      }
+    }
+
+    // Find <asy> blocks, compile them to SVG, and replace
+    async function renderAsyDiagrams(root) {
+      const asyElems = root.querySelectorAll('asy');
+      for (const elem of asyElems) {
+        const code = elem.textContent;
+        try {
+          const svg = await Asy.render(code);
+          const wrapper = document.createElement('div');
+          wrapper.innerHTML = svg;
+          elem.replaceWith(wrapper);
+        } catch (e) {
+          console.error('Asy render error:', e);
+        }
       }
     }
 
