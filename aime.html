@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>AIME Practice</title>
-  <!-- Load MathJax to render LaTeX -->
+  <!-- Configure MathJax but delay initial typesetting -->
   <script>
     window.MathJax = {
       tex: {
@@ -12,38 +12,21 @@
       },
       options: {
         skipHtmlTags: ['script','noscript','style','textarea','pre','asy']
+      },
+      startup: {
+        typeset: false
       }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <!-- Load Asymptote.js for client-side Asy rendering -->
+  <!-- Asymptote.js for <asy> diagrams -->
   <script src="https://cdn.jsdelivr.net/npm/asymptote.js@0.3.0/dist/asy.min.js"></script>
   <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1em;
-      text-align: center;
-    }
-    .problem-container {
-      border: 2px solid #000;
-      padding: 1em;
-      margin-bottom: 1em;
-      text-align: left;
-    }
-    #answer-box {
-      margin: 1em 0;
-    }
-    #answer-box input {
-      width: 60px;
-      padding: 0.5em;
-      text-align: center;
-    }
-    #answer-box button {
-      padding: 0.5em 1em;
-      margin-left: 0.5em;
-    }
+    body { font-family: sans-serif; max-width:800px; margin:2em auto; text-align:center; }
+    .problem-container { border:2px solid #000; padding:1em; margin-bottom:1em; text-align:left; }
+    #answer-box { margin:1em 0; }
+    #answer-box input { width:60px; padding:0.5em; text-align:center; }
+    #answer-box button { padding:0.5em 1em; margin-left:0.5em; }
   </style>
 </head>
 <body>
@@ -51,73 +34,66 @@
   <div id="problem-label">Loading...</div>
   <div id="problem-container" class="problem-container">Loading problem...</div>
   <div id="answer-box">
-    <input type="text" id="answer" placeholder="Answer" />
+    <input id="answer" placeholder="Answer" />
     <button id="submit-btn" disabled>Submit</button>
     <button id="next-btn">Next</button>
   </div>
 
   <script>
-    // Base URL to raw content in your 'ui' repo
     const RAW_BASE = 'https://raw.githubusercontent.com/x-kevinl/ui/main/Problems';
-
-    // Configure available AIME exams and problem counts
     const config = {
-      exams: [
-        '2000I','2000II','2001I','2001II','2002I','2002II',
-        // … add all up through '2024I','2024II'
-      ],
-      maxProblems: { I: 15, II: 15 }
+      exams: [ '2000I','2000II','2001I','2001II','2002I','2002II' /* … through 2024I,2024II */ ],
+      maxProblems: { I:15, II:15 }
     };
-
     let current;
 
     function getRandomProblem() {
-      const exam = config.exams[Math.floor(Math.random() * config.exams.length)];
+      const exam = config.exams[Math.floor(Math.random()*config.exams.length)];
       const type = exam.endsWith('II') ? 'II' : 'I';
       const year = exam.slice(0, exam.length - type.length);
-      const num = Math.floor(Math.random() * config.maxProblems[type]) + 1;
-      return { year, type, num, exam };
+      const num = Math.floor(Math.random()*config.maxProblems[type]) + 1;
+      return { year, type, num };
     }
 
     async function loadProblem() {
       current = getRandomProblem();
-      document.getElementById('problem-label').textContent = `AIME ${current.year} ${current.type} #${current.num}`;
-      // Fetch from Problems/<year>/<type>/<num>/Problem.txt
+      document.getElementById('problem-label').textContent = `AIME ${current.year}${current.type} #${current.num}`;
       const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
       try {
-        const txt = await fetch(url).then(res => res.ok ? res.text() : Promise.reject(res.status));
+        const raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
         const container = document.getElementById('problem-container');
-        container.innerHTML = txt;
+        // Insert raw HTML: preserves <math> (MathML) and <asy> tags
+        container.innerHTML = raw;
         document.getElementById('submit-btn').disabled = false;
         // Render Asymptote diagrams first
         await renderAsyDiagrams(container);
-        // Then typeset LaTeX with MathJax
-        await MathJax.typesetPromise();
-      } catch (err) {
-        document.getElementById('problem-container').textContent = 'Failed to load problem.';
+        // Then typeset all math (TeX & MathML)
+        await MathJax.typesetPromise([container]);
+      } catch(err) {
+        const container = document.getElementById('problem-container');
+        container.textContent = 'Failed to load problem.';
         console.error('Fetch error', err);
       }
     }
 
-    // Find <asy> blocks, compile them to SVG, and replace
+    // Compile <asy> blocks to SVG
     async function renderAsyDiagrams(root) {
       const asyElems = root.querySelectorAll('asy');
       for (const elem of asyElems) {
         const code = elem.textContent;
         try {
           const svg = await Asy.render(code);
-          const wrapper = document.createElement('div');
-          wrapper.innerHTML = svg;
-          elem.replaceWith(wrapper);
-        } catch (e) {
-          console.error('Asy render error:', e);
+          const div = document.createElement('div'); div.innerHTML = svg;
+          elem.replaceWith(div);
+        } catch(e) {
+          console.error('Asy error', e);
         }
       }
     }
 
     function handleSubmit() {
       const ans = document.getElementById('answer').value.trim();
-      alert(`Your answer to AIME ${current.year} ${current.type} #${current.num}: ${ans}`);
+      alert(`Answer for AIME ${current.year}${current.type} #${current.num}: ${ans}`);
       document.getElementById('submit-btn').disabled = true;
     }
 
