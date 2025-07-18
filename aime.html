@@ -70,14 +70,16 @@
       document.getElementById('problem-label').textContent = `AIME ${current.year}${current.type} #${current.num}`;
       const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
       try {
-        const raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
+        let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
+        // Strip unwanted markers: [[, ]], and ==Problem==
+        raw = raw
+          .replace(/\[\[/g, '')
+          .replace(/\]\]/g, '')
+          .replace(/==\s*Problem\s*==/gi, '');
         const container = document.getElementById('problem-container');
-        // Insert raw HTML: preserves <math> (MathML) and <asy> tags
         container.innerHTML = raw;
         document.getElementById('submit-btn').disabled = false;
-        // Render Asymptote diagrams first
         await renderAsyDiagrams(container);
-        // Then typeset all math (TeX & MathML)
         await MathJax.typesetPromise([container]);
       } catch(err) {
         const container = document.getElementById('problem-container');
