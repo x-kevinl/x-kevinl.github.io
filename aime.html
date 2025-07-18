@@ -44,9 +44,7 @@
   <script>
     const RAW_BASE = 'https://raw.githubusercontent.com/x-kevinl/ui/main/Problems';
     const config = {
-      // Years 2000–2024, I and II
-      exams: Array.from({length:25}, (_,i) => `${2000+i}I`)
-             .concat(Array.from({length:25}, (_,i) => `${2000+i}II`)),
+      exams: Array.from({length:25}, (_,i) => `${2000+i}I`).concat(Array.from({length:25}, (_,i) => `${2000+i}II`)),
       maxProblems: { I:15, II:15 }
     };
     let current;
@@ -65,17 +63,13 @@
       const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
       try {
         let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
-        // Remove wiki markers and headings
         raw = raw.replace(/\[\[|\]\]/g, '').replace(/==[^=]+==/g, '');
-        // Convert <cmath> to display math
         raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi, (_m,p1) => `$$${p1}$$`);
-        // Convert <math> to inline math
         raw = raw.replace(/<math>([\s\S]*?)<\/math>/gi, (_m,p1) => `$${p1}$`);
-
         const container = document.getElementById('problem-container');
         container.innerHTML = raw;
         document.getElementById('submit-btn').disabled = false;
-        document.getElementById('feedback').textContent = ''; // clear previous feedback
+        document.getElementById('feedback').textContent = '';
         await renderAsyDiagrams(container);
         await MathJax.typesetPromise([container]);
       } catch(err) {
@@ -99,15 +93,17 @@
     async function handleSubmit() {
       const ansStr = document.getElementById('answer').value.trim();
       const feedbackEl = document.getElementById('feedback');
+      const userNum = parseInt(ansStr, 10);
+      if (isNaN(userNum)) {
+        feedbackEl.textContent = 'Enter a numeric answer';
+        feedbackEl.style.color = 'orange';
+        return; // do not disable submit, allow retry
+      }
       const ansUrl = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Answer.txt`;
       try {
         const rawAns = await fetch(ansUrl).then(r => r.ok ? r.text() : Promise.reject(r.status));
         const correctNum = parseInt(rawAns.trim(), 10);
-        const userNum = parseInt(ansStr, 10);
-        if (isNaN(userNum)) {
-          feedbackEl.textContent = 'Enter a numeric answer';
-          feedbackEl.style.color = 'orange';
-        } else if (userNum === correctNum) {
+        if (userNum === correctNum) {
           feedbackEl.textContent = '✅ Correct!';
           feedbackEl.style.color = 'green';
         } else {
