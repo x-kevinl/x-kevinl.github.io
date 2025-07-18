@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>AIME Practice</title>
-  <!-- Configure MathJax but delay initial typesetting -->
+  <!-- MathJax configuration: TeX and MathML input, delay typesetting -->
   <script>
     window.MathJax = {
+      loader: {load: ['input/tex', 'input/mml', 'output/chtml']},
       tex: {
-        inlineMath: [['$','$'], ['\\(','\\)'], ['<math>','</math>']],
-        displayMath: [['$$','$$'], ['\\[','\\]'], ['<cmath>', '</cmath>']]
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']]
       },
       options: {
-        skipHtmlTags: ['script','noscript','style','textarea','pre','asy']
+        skipHtmlTags: ['script','noscript','style','textarea','pre','asy'],
+        enableMenu: false
       },
-      startup: {
-        typeset: false
-      }
+      startup: { typeset: false }
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -31,8 +31,8 @@
 </head>
 <body>
   <h1>AIME Practice</h1>
-  <div id="problem-label">Loading...</div>
-  <div id="problem-container" class="problem-container">Loading problem...</div>
+  <div id="problem-label">Loading…</div>
+  <div id="problem-container" class="problem-container">Loading problem…</div>
   <div id="answer-box">
     <input id="answer" placeholder="Answer" />
     <button id="submit-btn" disabled>Submit</button>
@@ -42,17 +42,9 @@
   <script>
     const RAW_BASE = 'https://raw.githubusercontent.com/x-kevinl/ui/main/Problems';
     const config = {
-      exams: [
-        '2000I','2000II','2001I','2001II','2002I','2002II',
-        '2003I','2003II','2004I','2004II','2005I','2005II',
-        '2006I','2006II','2007I','2007II','2008I','2008II',
-        '2009I','2009II','2010I','2010II','2011I','2011II',
-        '2012I','2012II','2013I','2013II','2014I','2014II',
-        '2015I','2015II','2016I','2016II','2017I','2017II',
-        '2018I','2018II','2019I','2019II','2020I','2020II',
-        '2021I','2021II','2022I','2022II','2023I','2023II',
-        '2024I','2024II'
-      ],
+      // Years 2000–2024, I and II
+      exams: Array.from({length:25}, (_,i) => `${2000+i}I`)
+             .concat(Array.from({length:25}, (_,i) => `${2000+i}II`)),
       maxProblems: { I:15, II:15 }
     };
     let current;
@@ -71,33 +63,31 @@
       const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
       try {
         let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
-        // Strip unwanted markers: [[, ]], and ==Problem==
-        raw = raw
-          .replace(/\[\[/g, '')
-          .replace(/\]\]/g, '')
-          .replace(/==\s*Problem\s*==/gi, '');
+        // Remove wiki markers and headings
+        raw = raw.replace(/\[\[|\]\]/g, '').replace(/==[^=]+==/g, '');
+        // Convert any <math> or <cmath> blocks into display-mode $$...$$
+        raw = raw.replace(/<(?:math|cmath)>([\s\S]*?)<\/(?:math|cmath)>/gi,
+          (_,p1) => `$$${p1}$$`
+        );
+
         const container = document.getElementById('problem-container');
         container.innerHTML = raw;
         document.getElementById('submit-btn').disabled = false;
         await renderAsyDiagrams(container);
         await MathJax.typesetPromise([container]);
       } catch(err) {
-        const container = document.getElementById('problem-container');
-        container.textContent = 'Failed to load problem.';
         console.error('Fetch error', err);
+        document.getElementById('problem-container').textContent = 'Failed to load problem.';
       }
     }
 
-    // Compile <asy> blocks to SVG
     async function renderAsyDiagrams(root) {
-      const asyElems = root.querySelectorAll('asy');
-      for (const elem of asyElems) {
-        const code = elem.textContent;
+      for (const elem of root.querySelectorAll('asy')) {
         try {
-          const svg = await Asy.render(code);
+          const svg = await Asy.render(elem.textContent);
           const div = document.createElement('div'); div.innerHTML = svg;
           elem.replaceWith(div);
-        } catch(e) {
+        } catch (e) {
           console.error('Asy error', e);
         }
       }
