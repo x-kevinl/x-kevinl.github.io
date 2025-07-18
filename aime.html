@@ -65,9 +65,13 @@
         let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
         // Remove wiki markers and headings
         raw = raw.replace(/\[\[|\]\]/g, '').replace(/==[^=]+==/g, '');
-        // Convert any <math> or <cmath> blocks into display-mode $$...$$
-        raw = raw.replace(/<(?:math|cmath)>([\s\S]*?)<\/(?:math|cmath)>/gi,
-          (_,p1) => `$$${p1}$$`
+        // Convert <cmath> to display math
+        raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi,
+          (_m,p1) => `$$${p1}$$`
+        );
+        // Convert <math> to inline math
+        raw = raw.replace(/<math>([\s\S]*?)<\/math>/gi,
+          (_m,p1) => `$${p1}$`
         );
 
         const container = document.getElementById('problem-container');
