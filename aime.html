@@ -57,38 +57,44 @@
       return { year, type, num };
     }
 
-    async function loadProblem() {
-      current = getRandomProblem();
-      document.getElementById('problem-label').textContent = `AIME ${current.year}${current.type} #${current.num}`;
-      const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
-      try {
-        let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
-        raw = raw.replace(/\[\[|\]\]/g, '').replace(/==[^=]+==/g, '');
-        raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi, (_m,p1) => `$$${p1}$$`);
-        raw = raw.replace(/<math>([\s\S]*?)<\/math>/gi, (_m,p1) => `$${p1}$`);
-        const container = document.getElementById('problem-container');
-        container.innerHTML = raw;
-        document.getElementById('submit-btn').disabled = false;
-        document.getElementById('feedback').textContent = '';
-        await renderAsyDiagrams(container);
-        await MathJax.typesetPromise([container]);
-      } catch(err) {
-        console.error('Fetch error', err);
-        document.getElementById('problem-container').textContent = 'Failed to load problem.';
-      }
-    }
+     window.addEventListener('DOMContentLoaded', loadProblem);
 
-    async function renderAsyDiagrams(root) {
-      for (const elem of root.querySelectorAll('asy')) {
+  async function loadProblem() {
+    // fetch + clean the raw Problem.txt just like you have it…
+    const raw = await fetchProblemTxt();
+    const container = document.getElementById('problem-container');
+    container.innerHTML = raw;
+
+    // 2) Render *all* <asy> blocks to SVG:
+    await Promise.all(
+      Array.from(container.querySelectorAll('asy')).map(async asyElem => {
         try {
-          const svg = await Asy.render(elem.textContent);
-          const div = document.createElement('div'); div.innerHTML = svg;
-          elem.replaceWith(div);
-        } catch (e) {
-          console.error('Asy error', e);
+          // Asy.render returns an SVG string
+          const svg = await Asy.render(asyElem.textContent);
+          const wrapper = document.createElement('div');
+          wrapper.innerHTML = svg;
+          asyElem.replaceWith(wrapper);
+        } catch(err) {
+          console.error('Asy render failed:', err);
         }
-      }
-    }
+      })
+    );
+
+    // 3) Only *then* let MathJax typeset the math around your freshly inlined SVGs:
+    await MathJax.typesetPromise([container]);
+  }
+
+  async function renderAsyDiagrams(root) {
+    // (If you prefer carving it out into its own fn)
+    return Promise.all(
+      Array.from(root.querySelectorAll('asy')).map(async asyElem => {
+        const svg = await Asy.render(asyElem.textContent);
+        const div = document.createElement('div');
+        div.innerHTML = svg;
+        asyElem.replaceWith(div);
+      })
+    );
+  }
 
     async function handleSubmit() {
       const ansStr = document.getElementById('answer').value.trim();
