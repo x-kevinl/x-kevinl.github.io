@@ -55,56 +55,66 @@
     let current;
 
     function parseCustom(str) {
-      const parts = str.split('.');
-      if (parts.length !== 4) return null;
-      const [year, examNum, div, numStr] = parts;
-      const type = `${examNum}${div}`; // e.g. '10A' or '12B'
-      const num = parseInt(numStr, 10);
-      if (!/^[0-9]{4}$/.test(year) || isNaN(num) || !config.exams.includes(`${year}${type}`)) return null;
-      return { year, type, num };
-    }
+  const m = str.trim().toUpperCase()
+    .match(/^(\d{4})\.(8|10A|10B|12A|12B|I|II)\.(\d{1,2})$/);
+  if (!m) return null;
+  const [, year, examPart, numStr] = m;
+  const num = parseInt(numStr,10);
+  return { year, examPart, num };
+}
 
-    async function loadProblem(override) {
-      if (override) {
-        current = override;
-      } else {
-        const rand = config.exams[Math.floor(Math.random()*config.exams.length)];
-        const type = rand.endsWith('II') ? 'II' : 'I';
-        const year = rand.slice(0, rand.length - type.length);
-        const num = Math.floor(Math.random()*config.maxProblems[type]) + 1;
-        current = { year, type, num };
-      }
-      document.getElementById('problem-label').textContent =
-        `AIME ${current.year}${current.type} #${current.num}`;
+async function loadProblem(override) {
+  // if override from custom loader, use it; otherwise pick random AIME
+  if (override) {
+    current = override;
+  } else {
+    const code = config.exams[Math.floor(Math.random()*config.exams.length)];
+    const type = code.endsWith('II') ? 'II' : 'I';
+    current = {
+      year: code.slice(0, -type.length),
+      examPart: type,
+      num: Math.floor(Math.random()*config.maxProblems[type]) + 1
+    };
+  }
 
-      const url = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Problem.txt`;
-      const container = document.getElementById('problem-container');
-      container.textContent = 'Loading problem…';
-      document.getElementById('submit-btn').disabled = true;
-      try {
-        let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
-        raw = raw.replace(/\[\[|\]\]/g,'').replace(/==[^=]+==/g,'');
-        raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi,(_m,p1)=>`$$${p1}$$`);
-        raw = raw.replace(/<math>([\s\S]*?)<\/math>/gi,(_m,p1)=>`$${p1}$`);
-        container.innerHTML = raw;
+  document.getElementById('problem-label').textContent =
+    `AIME ${current.year}${current.examPart} #${current.num}`;
 
-        // render Asymptote
-        await Promise.all(
-          Array.from(container.querySelectorAll('asy')).map(async el=>{
-            const svg = await Asy.render(el.textContent);
-            const d = document.createElement('div'); d.innerHTML=svg;
-            el.replaceWith(d);
-          })
-        );
+  // build the right URL depending on examPart
+  let url;
+  if (current.examPart === 'I' || current.examPart === 'II' || current.examPart === '8') {
+    // AIME I/II or AMC 8
+    url = `${RAW_BASE}/${current.year}/${current.examPart}/${current.num}/Problem.txt`;
+  } else {
+    // AMC10/12 with A/B
+    const parts = current.examPart.match(/^(10|12)([AB])$/);
+    const exam = parts[1], div = parts[2];
+    url = `${RAW_BASE}/${current.year}/${exam}/${div}/${current.num}/Problem.txt`;
+  }
 
-        await MathJax.typesetPromise([container]);
-        document.getElementById('submit-btn').disabled = false;
-        document.getElementById('feedback').textContent = '';
-      } catch(err) {
-        console.error('Fetch error', err);
-        container.textContent = 'Failed to load problem.';
-      }
-    }
+  // now fetch + render exactly as before
+  const container = document.getElementById('problem-container');
+  try {
+    let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
+    raw = raw.replace(/\[\[|\]\]/g, '')
+             .replace(/==[^=]+==/g, '');
+    raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi, (_m,p1) => `$$${p1}$$`)
+             .replace(/<math>([\s\S]*?)<\/math>/gi, (_m,p1) => `$${p1}$`);
+    // … after your existing raw = raw.replace(...) calls …
+raw = raw
+  .replace(/</g, '\\lt')
+  .replace(/>/g, '\\gt');
+
+    container.innerHTML = raw;
+    await renderAsyDiagrams(container);
+    await MathJax.typesetPromise([container]);
+    document.getElementById('submit-btn').disabled = false;
+    document.getElementById('feedback').textContent = '';
+  } catch (err) {
+    console.error('Fetch error', err);
+    container.textContent = 'Failed to load problem.';
+  }
+}
 
     async function handleSubmit() {
       const ansStr = document.getElementById('answer').value.trim();
@@ -132,12 +142,11 @@
       document.getElementById('submit-btn').disabled = true;
     }
 
-    document.getElementById('custom-btn').onclick = ()=>{
-      const v = document.getElementById('custom-input').value.trim();
-      const o = parseCustom(v);
-      if (o) loadProblem(o);
-      else alert('Invalid format or unsupported exam code');
-    };
+    document.getElementById('custom-btn').onclick = () => {
+  const o = parseCustom(document.getElementById('custom-input').value);
+  if (o) loadProblem(o);
+  else alert('Invalid format or unsupported exam code');
+};
     document.getElementById('submit-btn').onclick = handleSubmit;
     document.getElementById('next-btn').onclick = ()=>{
       document.getElementById('answer').value = '';
