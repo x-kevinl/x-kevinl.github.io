@@ -69,7 +69,7 @@
       // init 2D stats array
       const stats = examOrder.map(() =>
         Array.from({length: problemCount}, () =>
-          ({ correct:0, overtime:0, incorrect:0, skipped:0 })
+          ({ correct:0, overtime:0, incorrect:0 })
         )
       );
       const snap = await db
@@ -86,20 +86,18 @@
       });
 
       // compute totals
-      const tot = { correct:0, overtime:0, incorrect:0, skipped:0 };
+      const tot = { correct:0, overtime:0, incorrect:0};
       stats.forEach(row =>
         row.forEach(cell => {
           tot.correct   += cell.correct;
           tot.overtime  += cell.overtime;
           tot.incorrect += cell.incorrect;
-          tot.skipped   += cell.skipped;
         })
       );
       // update DOM
       document.getElementById('total-correct').textContent   = tot.correct;
       document.getElementById('total-overtime').textContent  = tot.overtime;
       document.getElementById('total-incorrect').textContent = tot.incorrect;
-      document.getElementById('total-skipped').textContent   = tot.skipped;
 
       return stats;
     }
@@ -124,7 +122,7 @@ window.addEventListener('load', () => {
         stats.forEach((rowStats, rowIdx) => {
           const row = [examOrder[rowIdx]];
           rowStats.forEach(cell =>
-            row.push(`${cell.correct}/${cell.overtime}/${cell.incorrect + cell.skipped}`)
+            row.push(`${cell.correct}/${cell.overtime}/${cell.incorrect}`)
           );
           ws.addRow(row);
         });
@@ -239,7 +237,6 @@ body {
     <p>Correct:   <span id="total-correct">0</span></p>
     <p>Overtime:  <span id="total-overtime">0</span></p>
     <p>Incorrect: <span id="total-incorrect">0</span></p>
-    <p>Skipped:   <span id="total-skipped">0</span></p>
 
     <button id="download-stats-btn">Download Stats</button>
   </div>
@@ -273,7 +270,7 @@ body {
     <div id="answer-box">
       <input type="text" id="answer" maxlength="1" placeholder="A–E" />
       <button id="submit-btn">Submit</button>
-      <button id="skip-btn">Give Up</button>
+      <button id="giveup-btn">Give Up</button>
     </div>
     <div id="feedback"></div>
   </div>
@@ -416,19 +413,19 @@ body {
     }
 
     // ----- ZEN MODE -----
-    let zenCount=0, zenCorrect=0, zenOvertime=0, zenIncorrect=0, zenSkipped=0;
-    let skippedProblems=[]; let currentExam, currentNum, keyAnswers=[], zenTimer, zenTimeLeft;
+    let zenCount=0, zenCorrect=0, zenOvertime=0, zenIncorrect=0;
+    let gaveupProblems=[]; let currentExam, currentNum, keyAnswers=[], zenTimer, zenTimeLeft;
 
     function startZen() {
       welcome.classList.add('hidden');
       practice.classList.remove('hidden');
       document.getElementById('end-practice-btn').onclick = showZenSummary;
-      document.getElementById('skip-btn').onclick = handleZenSkip;
+      document.getElementById('giveup-btn').onclick = handleZenSkip;
       loadZenProblem();
     }
     async function loadZenProblem() {
       // reset
-      const submitBtn = document.getElementById('submit-btn'), skipBtn = document.getElementById('skip-btn');
+      const submitBtn = document.getElementById('submit-btn'), skipBtn = document.getElementById('giveup-btn');
       submitBtn.disabled = skipBtn.disabled = false;
       skipBtn.textContent = 'Give Up'; skipBtn.onclick = handleZenSkip;
 
@@ -486,25 +483,25 @@ body {
       updateZenDisplay();
       const sb=document.getElementById('submit-btn');
       sb.textContent='Next'; sb.onclick=loadZenProblem; sb.disabled=false;
-      document.getElementById('skip-btn').disabled=true;
+      document.getElementById('giveup-btn').disabled=true;
     }
     function handleZenSkip() {
       clearInterval(zenTimer);
       const fb=document.getElementById('feedback');
       const raw=keyAnswers[currentNum-1]||'';
       const corr=raw.split('').filter(c=>/[A-E]/.test(c));
-      zenSkipped++; skippedProblems.push(`Exam ${currentExam} #${currentNum}`);
+      zenIncorrect++; gaveupProblems.push(`Exam ${currentExam} #${currentNum}`);
       fb.textContent=`❌ Gave Up (Answer: ${corr.join(' & ')})`; fb.style.color='red';
-      logHistory({mode:'zen',exam:currentExam,num:currentNum,result:'skipped'});
+      logHistory({mode:'zen',exam:currentExam,num:currentNum,result:'incorrect'});
       updateZenDisplay();
-      const sk=document.getElementById('skip-btn');
+      const sk=document.getElementById('giveup-btn');
       sk.textContent='Next'; sk.onclick=loadZenProblem; sk.disabled=false;
       document.getElementById('submit-btn').disabled=true;
     }
     function updateZenDisplay() {
       document.getElementById('problem-counter').textContent=`Problems: ${zenCount}`;
       document.getElementById('accuracy-summary').textContent=
-        `CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect} | GAVE UP: ${zenSkipped}`;
+        `Correct: ${zenCorrect} | Overtime: ${zenOvertime} | Incorrect: ${zenIncorrect}`;
     }
     function showZenSummary() {
       practice.classList.add('hidden');
@@ -513,9 +510,7 @@ body {
         `Total: ${zenCount}<br>`+
         `Correct (fast): ${zenCorrect}<br>`+
         `Correct (overtime): ${zenOvertime}<br>`+
-        `Incorrect: ${zenIncorrect}<br>`+
-        `Gave Up: ${zenSkipped}`+
-        (zenSkipped?`<br>Gave Up Problems:<br>${skippedProblems.join('<br>')}`:'');
+        `Incorrect: ${zenIncorrect}<br>`;
     }
 
     // ----- TEST MODE -----
