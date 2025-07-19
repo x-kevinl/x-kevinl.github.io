@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>F=ma Practice</title>
+  <link rel="stylesheet" href="fma.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+  <script src="fma.js" defer></script>
+</head>
+<body>
+  <div id="stats-container">
+    <h1 id="greeting">Welcome back!</h1>
+    <p>Correct: <span id="total-correct">0</span></p>
+    <p>Overtime: <span id="total-overtime">0</span></p>
+    <p>Incorrect: <span id="total-incorrect">0</span></p>
+    <button id="download-stats-btn">Download Stats</button>
+  </div>
+
+  <div id="welcome-page">
+    <p>Choose a mode to start:</p>
+    <div id="practice-toggle-container">
+      <label>
+        <input type="checkbox" id="practice-toggle" />
+        Practice selected problems only
+      </label>
+    </div>
+    <div class="menu-wrapper">
+      <nav class="menu" id="mode-buttons">
+        <a id="zen-btn">Zen - Unlimited Problems</a>
+        <a id="test-btn">Test - Fixed Problems</a>
+        <a id="speed-btn">Speed - Time Attack</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Zen Mode -->
+  <div id="practice-container" class="hidden">
+    <div id="problem-counter">Problems: 0</div>
+    <div id="accuracy-summary">CORRECT: 0 | OVERTIME: 0 | INCORRECT: 0 | GAVE UP: 0</div>
+    <button id="end-practice-btn">End Practice</button>
+    <div id="timer">03:00</div>
+    <div id="exam-label"></div>
+    <button id="toggle-previous-btn" class="toggle-previous-btn">Show Previous Problems</button>
+    <div id="previous-wrapper" class="problem-wrapper hidden"></div>
+    <div id="image-wrapper" class="problem-wrapper"></div>
+    <div id="answer-box">
+      <input type="text" id="answer" maxlength="1" placeholder="A–E" />
+      <button id="submit-btn">Submit</button>
+      <button id="skip-btn">Give Up</button>
+    </div>
+    <div id="feedback"></div>
+  </div>
+
+  <!-- Test Mode -->
+  <div id="test-container" class="hidden">
+    <h2>Test Mode</h2>
+    <div id="test-settings">
+      <input type="number" id="test-time-input" placeholder="Time (min)" min="1" />
+      <input type="number" id="test-count-input" placeholder="Number of problems" min="1" />
+      <button id="begin-test-btn">Begin Test</button>
+    </div>
+    <form id="test-questions-form" class="hidden">
+      <div id="test-timer-display">00:00</div>
+      <div id="test-questions"></div>
+      <button type="button" id="submit-test-btn">Submit Test</button>
+    </form>
+  </div>
+
+  <!-- Speed Mode -->
+  <div id="speed-container" class="hidden">
+    <h2>Speed Mode</h2>
+    <div id="speed-settings">
+      <input type="number" id="speed-time-input" placeholder="Time (min)" min="1" />
+      <button id="begin-speed-btn">Begin Time Attack</button>
+    </div>
+    <div id="speed-problem-area" class="hidden">
+      <div id="speed-counter">Solved: 0</div>
+      <div id="speed-timer-display">00:00</div>
+      <div id="exam-label-speed"></div>
+      <button id="toggle-previous-speed-btn" class="toggle-previous-btn">Show Previous Problems</button>
+      <div id="previous-wrapper-speed" class="problem-wrapper hidden"></div>
+      <div id="image-wrapper-speed" class="problem-wrapper"></div>
+      <div id="answer-box-speed">
+        <input type="text" id="answer-speed" maxlength="1" placeholder="A–E" />
+        <button id="submit-speed-btn">Submit</button>
+      </div>
+      <div id="feedback-speed"></div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div id="summary-container" class="hidden">
+    <h2>Session Summary</h2>
+    <div id="final-summary"></div>
+    <button id="restart-btn">Restart</button>
+  </div>
+</body>
+</html>
