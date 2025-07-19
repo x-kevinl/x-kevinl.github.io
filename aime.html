@@ -104,6 +104,8 @@ async function loadProblem(override) {
 raw = raw
   .replace(/</g, '\\lt')
   .replace(/>/g, '\\gt');
+  raw = raw
+  .replace(/__TOC__/g, '');
 
     container.innerHTML = raw;
     await renderAsyDiagrams(container);
