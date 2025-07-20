@@ -238,7 +238,6 @@ function startZen() {
   hideHeaderAndMenu();
   practiceEl.classList.remove('hidden');
   document.getElementById('end-practice-btn').onclick = showZenSummary;
-  document.getElementById('skip-btn').onclick       = handleZenSkip;
   loadZenProblem();
 }
 
@@ -346,23 +345,9 @@ function handleZenSubmission() {
   const sb = document.getElementById('submit-btn');
   sb.textContent = 'Next';
   sb.onclick = loadZenProblem;
-  document.getElementById('skip-btn').disabled = true;
 }
 
-function handleZenSkip() {
-  clearInterval(zenTimer);
-  const corr = keyAnswers[currentNum-1]?.split('').filter(c=>/[A-E]/.test(c))||[];
-  zenIncorrect++;
-  const fb = document.getElementById('feedback');
-  fb.textContent = `❌ Gave Up (Answer: ${corr.join(' & ')})`;
-  fb.style.color = 'red';
-  logHistory({mode:'zen',exam:currentExam,num:currentNum,result:'incorrect'});
-  updateZenDisplay();
-  const sk = document.getElementById('skip-btn');
-  sk.textContent='Next';
-  sk.onclick = loadZenProblem;
-  document.getElementById('submit-btn').disabled = true;
-}
+
 
 function updateZenDisplay() {
   document.getElementById('problem-counter').textContent =
