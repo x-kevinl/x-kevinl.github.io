@@ -85,43 +85,84 @@ async function computeStats() {
   return stats;
 }
 
-// CSV export hook
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('download-stats-btn').onclick = async () => {
+// Build & download CSV matching your template
+window.addEventListener('load', () => {
+document
+.getElementById('download-stats-btn')
+.addEventListener('click', async () => {
+    try {
     const stats = await computeStats();
-    const wb = new ExcelJS.Workbook();
-    const ws = wb.addWorksheet('F=ma Stats');
-    ws.addRow(['Year\\Problem', ...Array.from({length:problemCount},(_,i)=>i+1)]);
-    stats.forEach((row,rowIdx) => {
-      const r = [ examOrder[rowIdx] ];
-      row.forEach(cell => {
-        const missed = cell.incorrect + cell.skipped;
-        r.push(`${cell.correct}/${cell.overtime}/${missed}`);
-      });
-      ws.addRow(r);
+    const workbook = new ExcelJS.Workbook();
+    const ws = workbook.addWorksheet('F=ma Stats');
+
+    // header row
+    ws.addRow([
+        'Year\\Problem',
+        ...Array.from({ length: problemCount }, (_, i) => i + 1),
+    ]);
+
+    // data rows
+    stats.forEach((rowStats, rowIdx) => {
+        const row = [examOrder[rowIdx]];
+        rowStats.forEach(cell =>
+        row.push(`${cell.correct}/${cell.overtime}/${cell.incorrect}`)
+        );
+        ws.addRow(row);
     });
-    // Color coding
-    ws.eachRow((row,rowNum) => {
-      if (rowNum===1) return;
-      row.eachCell((cell,colNum) => {
-        if (colNum===1) return;
-        const [c,o,m] = cell.value.split('/').map(Number);
-        const score = c + o*(-0.5) + m*(-2);
-        let color = null;
-        if (score > 0) color = 'FF8BC34A';
-        else if (score === -0.5) color = 'FFFFEB3B';
-        else if (score < -0.5) color = 'FFF44336';
-        if (color) cell.fill = { type:'pattern', pattern:'solid', fgColor:{argb:color} };
-      });
+
+    // apply coloring based on weighted score
+    ws.eachRow((row, rowNumber) => {
+        if (rowNumber === 1) return; // skip header
+
+        row.eachCell((cell, colNumber) => {
+        if (colNumber === 1) return; // skip the Year label
+
+        const [correct, overtime, wrong] = cell.value
+            .split('/')
+            .map(Number);
+
+        // 1) if it's 0/0/0 → leave white
+        if (correct === 0 && overtime === 0 && wrong === 0) {
+            return;
+        }
+
+        // 2) compute weighted score
+        const score = correct - 0.5 * overtime - 2 * wrong;
+
+        // 3) pick fill color
+        let fillColor;
+        if (score > 0) {
+            fillColor = 'FF8BC34A';   // green
+        } else if (score >= -0.5) {
+            fillColor = 'FFFFEB3B';   // yellow
+        } else {
+            fillColor = 'FFF44336';   // red
+        }
+
+        // 4) apply it
+        cell.fill = {
+            type: 'pattern',
+            pattern: 'solid',
+            fgColor: { argb: fillColor },
+        };
+        });
     });
-    const buf = await wb.xlsx.writeBuffer();
-    const blob = new Blob([buf],{type:'application/octet-stream'});
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement('a');
-    a.href = url; a.download = 'fma-stats.xlsx'; a.click();
+
+    // write out and trigger download
+    const buffer = await workbook.xlsx.writeBuffer();
+    const blob = new Blob([buffer], { type: 'application/octet-stream' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'fma-stats.xlsx';
+    a.click();
     URL.revokeObjectURL(url);
-  };
+    } catch (e) {
+    console.error('Download error', e);
+    }
 });
+});
+
 
 // ---- Problem Loader & Helpers ----
 let practiceList = [];
