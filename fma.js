@@ -13,7 +13,17 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db   = firebase.firestore();
 auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-
+async function ensureExcelJS() {
+  if (typeof ExcelJS === 'undefined') {
+    await new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js';
+      script.onload  = () => resolve();
+      script.onerror = () => reject(new Error('Failed to load ExcelJS'));
+      document.head.appendChild(script);
+    });
+  }
+}
 // ---- Auth & Greeting ----
 auth.onAuthStateChanged(user => {
   if (!user) {
@@ -78,40 +88,55 @@ async function computeStats() {
 // CSV export hook
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('download-stats-btn').onclick = async () => {
-    const stats = await computeStats();
-    const wb = new ExcelJS.Workbook();
-    const ws = wb.addWorksheet('F=ma Stats');
-    ws.addRow(['Year\\Problem', ...Array.from({length:problemCount},(_,i)=>i+1)]);
-    stats.forEach((row,rowIdx) => {
-      const r = [ examOrder[rowIdx] ];
-      row.forEach(cell => {
-        const missed = cell.incorrect + cell.skipped;
-        r.push(`${cell.correct}/${cell.overtime}/${missed}`);
+    try {
+      await ensureExcelJS();
+      const stats = await computeStats();
+      const wb = new ExcelJS.Workbook();
+      const ws = wb.addWorksheet('F=ma Stats');
+
+      ws.addRow(['Year\\Problem', ...Array.from({ length: problemCount }, (_, i) => i+1)]);
+      stats.forEach((rowStats, rowIdx) => {
+        const row = [ examOrder[rowIdx] ];
+        rowStats.forEach(cell => {
+          const missed = cell.incorrect + cell.skipped;
+          row.push(`${cell.correct}/${cell.overtime}/${missed}`);
+        });
+        ws.addRow(row);
       });
-      ws.addRow(r);
-    });
-    // Color coding
-    ws.eachRow((row,rowNum) => {
-      if (rowNum===1) return;
-      row.eachCell((cell,colNum) => {
-        if (colNum===1) return;
-        const [c,o,m] = cell.value.split('/').map(Number);
-        const score = c + o*(-0.5) + m*(-2);
-        let color = null;
-        if (score > 0) color = 'FF8BC34A';
-        else if (score === -0.5) color = 'FFFFEB3B';
-        else if (score < -0.5) color = 'FFF44336';
-        if (color) cell.fill = { type:'pattern', pattern:'solid', fgColor:{argb:color} };
+
+      ws.eachRow((row, rowNum) => {
+        if (rowNum === 1) return;
+        row.eachCell((cell, colNum) => {
+          if (colNum === 1) return;
+          const [c,o,m] = cell.value.split('/').map(Number);
+          const score = c - 0.5*o - 2*m;
+          let color = null;
+          if      (score > 0)      color = 'FF8BC34A';
+          else if (score === -0.5) color = 'FFFFEB3B';
+          else if (score < -0.5)   color = 'FFF44336';
+          if (color) cell.fill = {
+            type: 'pattern', pattern: 'solid',
+            fgColor: { argb: color }
+          };
+        });
       });
-    });
-    const buf = await wb.xlsx.writeBuffer();
-    const blob = new Blob([buf],{type:'application/octet-stream'});
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement('a');
-    a.href = url; a.download = 'fma-stats.xlsx'; a.click();
-    URL.revokeObjectURL(url);
+
+      const buf  = await wb.xlsx.writeBuffer();
+      const blob = new Blob([buf], { type: 'application/octet-stream' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href       = url;
+      a.download   = 'fma‑stats.xlsx';
+      a.click();
+      URL.revokeObjectURL(url);
+
+    } catch (err) {
+      console.error('Excel download failed', err);
+      alert('Could not generate Excel file:\n' + err.message);
+    }
   };
 });
+
 
 // ---- Problem Loader & Helpers ----
 let practiceList = [];
