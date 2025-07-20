@@ -61,7 +61,7 @@ function logHistory(data) {
 async function computeStats() {
   const u = auth.currentUser;
   const stats = examOrder.map(() =>
-    Array.from({length:problemCount}, () => ({correct:0,overtime:0,incorrect:0,skipped:0}))
+    Array.from({length:problemCount}, () => ({correct:0,overtime:0,incorrect:0}))
   );
   const snap = await db.collection('users').doc(u.uid).collection('history').get();
   snap.forEach(doc => {
@@ -71,17 +71,15 @@ async function computeStats() {
       stats[r][c][result]++;
     }
   });
-  const tot = {correct:0,overtime:0,incorrect:0,skipped:0};
+  const tot = {correct:0,overtime:0,incorrect:0};
   stats.flat().forEach(cell => {
     tot.correct   += cell.correct;
     tot.overtime  += cell.overtime;
     tot.incorrect += cell.incorrect;
-    tot.skipped   += cell.skipped;
   });
   document.getElementById('total-correct').textContent = tot.correct;
   document.getElementById('total-overtime').textContent = tot.overtime;
   document.getElementById('total-incorrect').textContent = tot.incorrect;
-  document.getElementById('total-skipped').textContent = tot.skipped;
   return stats;
 }
 
@@ -232,8 +230,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ---- Zen Mode ----
-let zenCount=0, zenCorrect=0, zenOvertime=0, zenIncorrect=0, zenSkipped=0;
-let skippedProblems=[], currentExam, currentNum, keyAnswers = [];
+let zenCount=0, zenCorrect=0, zenOvertime=0, zenIncorrect=0;
+let currentExam, currentNum, keyAnswers = [];
 let zenTimer, zenTimeLeft, showPrev = false;
 
 function startZen() {
@@ -354,12 +352,11 @@ function handleZenSubmission() {
 function handleZenSkip() {
   clearInterval(zenTimer);
   const corr = keyAnswers[currentNum-1]?.split('').filter(c=>/[A-E]/.test(c))||[];
-  zenSkipped++;
-  skippedProblems.push(`Exam ${currentExam} #${currentNum}`);
+  zenIncorrect++;
   const fb = document.getElementById('feedback');
   fb.textContent = `❌ Gave Up (Answer: ${corr.join(' & ')})`;
   fb.style.color = 'red';
-  logHistory({mode:'zen',exam:currentExam,num:currentNum,result:'skipped'});
+  logHistory({mode:'zen',exam:currentExam,num:currentNum,result:'incorrect'});
   updateZenDisplay();
   const sk = document.getElementById('skip-btn');
   sk.textContent='Next';
@@ -371,7 +368,7 @@ function updateZenDisplay() {
   document.getElementById('problem-counter').textContent =
     `Problems: ${zenCount}`;
   document.getElementById('accuracy-summary').textContent =
-    `CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect} | GAVE UP: ${zenSkipped}`;
+    `CORRECT: ${zenCorrect} | OVERTIME: ${zenOvertime} | INCORRECT: ${zenIncorrect}`;
 }
 
 function showZenSummary() {
@@ -381,9 +378,7 @@ function showZenSummary() {
     `Total: ${zenCount}<br>` +
     `Correct (fast): ${zenCorrect}<br>` +
     `Correct (overtime): ${zenOvertime}<br>` +
-    `Incorrect: ${zenIncorrect}<br>` +
-    `Gave Up: ${zenSkipped}` +
-    (zenSkipped ? `<br>Gave Up Problems:<br>${skippedProblems.join('<br>')}` : '');
+    `Incorrect: ${zenIncorrect}<br>`;
 }
 
 // ---- Test Mode ----
