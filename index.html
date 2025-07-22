@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin Li</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 3rem;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #fff;
+      display: inline-block;
+    }
+    .projects, .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      flex: 1 1 300px;
+      backdrop-filter: blur(5px);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    .card h3 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .card p {
+      margin: 0;
+    }
+    a {
+      color: #a0cfff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1>Hi, I'm Kevin.</h1>
+      <p></p>
+    </header>
+
+    <section>
+      <div class="section-title">Accomplishments</div>
+      <div class="projects">
+        <div class="card">
+          <h3>USAJMO Qualifier</h3>
+          <p>USAJMO 2024</p>
+        </div>
+        <div class="card">
+          <h3>USAPhO Qualifier</h3>
+          <p>USAPhO 2025</p>
+        </div>
+        <div class="card">
+          <h3>AIME Qualifier</h3>
+          <p>Qualified 2020–2024</p>
+        </div>
+        <div class="card">
+          <h3>AMC 10</h3>
+          <p>DHR (Distinguished Honor Roll) 2023, 2024</p>
+        </div>
+        <div class="card">
+          <h3>AMC 12</h3>
+          <p>Honor Roll 2024</p>
+        </div>
+        <div class="card">
+          <h3>MathCounts</h3>
+          <p>SoCal 2024 #16<br>Orange County 2024 #3</p>
+        </div>
+        <div class="card">
+          <h3>VEX Robotics</h3>
+          <p>
+            VEX IQ National Champion (Next Level) 2018–2019 Elementary<br>
+            VEX IQ Research Div. #2 (Pitching In) 2021–2022 MS<br>
+            VEX IQ Research Div. Finalist (Slapshot) MS<br>
+            VEX VRC Engineering Div. Finalist (High Stakes) 2024–2025 MS<br>
+            VEX VRC Skills World Champion 2024 MS<br>
+            <em>All VEX awards were team-based.</em>
+          </p>
+        </div>
+        <div class="card">
+          <h3>Math Tournaments</h3>
+          <p>
+            Stanford Math Tournament: Honorable Mention (Geometry Round)<br>
+            WinMac 2021: Team #2<br>
+            Cowconuts 2024: Individual #3 (Div B)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Current Projects</div>
+      <div class="projects">
+        <div class="card">
+          <h3>Astrophysics Research</h3>
+          <p>
+            First-author publication:<br>
+            <a href="https://doublestarsjournal.org/index.php/jdso/article/view/59/39" target="_blank">
+              Astrometric Analysis of Four Double Star Candidates
+            </a><br>
+            Published in the Journal of Double Star Observations.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Game AI Development</h3>
+          <p>Building a high-performance AI bot for a browser-based fighting game using JavaScript and advanced algorithms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Photo Gallery</div>
+      <div class="gallery">
+        <div class="card"><img src="your_photo1.jpg" alt="Project Presentation"></div>
+        <div class="card"><img src="your_photo2.jpg" alt="Award Ceremony"></div>
+        <!-- Add more photos here -->
+      </div>
+    </section>
+  </div>
+</body>
+</html>
