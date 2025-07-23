@@ -41,11 +41,34 @@ function showGreeting(user) {
 
 // ---- Stats & CSV Download ----
 const examOrder = [
-  '2007','2008','2009','2010','2011','2012','2013','2014',
-  '2015','2016','2017','2018A','2018B','2019A','2019B',
-  '2020A','2020B','2021','2022A','2022B','2023','2024'
+  '2000I', '2000II',
+  '2001I', '2001II',
+  '2002I', '2002II',
+  '2003I', '2003II',
+  '2004I', '2004II',
+  '2005I', '2005II',
+  '2006I', '2006II',
+  '2007I', '2007II',
+  '2008I', '2008II',
+  '2009I', '2009II',
+  '2010I', '2010II',
+  '2011I', '2011II',
+  '2012I', '2012II',
+  '2013I', '2013II',
+  '2014I', '2014II',
+  '2015I', '2015II',
+  '2016I', '2016II',
+  '2017I', '2017II',
+  '2018I', '2018II',
+  '2019I', '2019II',
+  '2020I', '2020II',
+  '2021I', '2021II',
+  '2022I', '2022II',
+  '2023I', '2023II',
+  '2024I', '2024II',
+  '2025I', '2025II'
 ];
-const problemCount = 38;
+const problemCount = 15;
 
 // Log into Firestore
 function logHistory(data) {
@@ -83,83 +106,77 @@ async function computeStats() {
   return stats;
 }
 
-// Build & download CSV matching your template
+// ---- Build & download CSV matching your template (transposed) ----
 window.addEventListener('load', () => {
-document
-.getElementById('download-stats-btn')
-.addEventListener('click', async () => {
-    try {
-    const stats = await computeStats();
-    const workbook = new ExcelJS.Workbook();
-    const ws = workbook.addWorksheet('F=ma Stats');
+  document
+    .getElementById('download-stats-btn')
+    .addEventListener('click', async () => {
+      try {
+        const stats = await computeStats();  // stats[examIdx][problemIdx]
 
-    // header row
-    ws.addRow([
-        'Year\\Problem',
-        ...Array.from({ length: problemCount }, (_, i) => i + 1),
-    ]);
+        const workbook = new ExcelJS.Workbook();
+        const ws = workbook.addWorksheet('AIME Stats');
 
-    // data rows
-    stats.forEach((rowStats, rowIdx) => {
-        const row = [examOrder[rowIdx]];
-        rowStats.forEach(cell =>
-        row.push(`${cell.correct}/${cell.overtime}/${cell.incorrect}`)
-        );
-        ws.addRow(row);
-    });
+        // 1) Header row: first cell = 'Problem', then all exam codes
+        ws.addRow([
+          'Problem',
+          ...examOrder
+        ]);
 
-    // apply coloring based on weighted score
-    ws.eachRow((row, rowNumber) => {
-        if (rowNumber === 1) return; // skip header
-
-        row.eachCell((cell, colNumber) => {
-        if (colNumber === 1) return; // skip the Year label
-
-        const [correct, overtime, wrong] = cell.value
-            .split('/')
-            .map(Number);
-
-        // 1) if it's 0/0/0 → leave white
-        if (correct === 0 && overtime === 0 && wrong === 0) {
-            return;
+        // 2) One row per problem number
+        for (let prob = 1; prob <= problemCount; prob++) {
+          const row = [ prob ];
+          // for each exam, grab that problem's counts
+          examOrder.forEach((examCode, examIdx) => {
+            const cell = stats[examIdx][prob - 1];
+            row.push(`${cell.correct}/${cell.overtime}/${cell.incorrect}`);
+          });
+          ws.addRow(row);
         }
 
-        // 2) compute weighted score
-        const score = correct - 0.5 * overtime - 2 * wrong;
+        // 3) Apply coloring exactly as before, but skip col 1 (the Problem-# column)
+        ws.eachRow((row, rowNumber) => {
+          if (rowNumber === 1) return;       // skip header
+          row.eachCell((cell, colNumber) => {
+            if (colNumber === 1) return;     // skip problem-number label
+            const [correct, overtime, wrong] = cell.value
+              .split('/')
+              .map(Number);
+            // leave blank if all zero
+            if (correct === 0 && overtime === 0 && wrong === 0) return;
 
-        // 3) pick fill color
-        let fillColor;
-        if (score > 0) {
-            fillColor = 'FF8BC34A';   // green
-        } else if (score >= -0.5) {
-            fillColor = 'FFFFEB3B';   // yellow
-        } else {
-            fillColor = 'FFF44336';   // red
-        }
+            const score = correct - 0.5 * overtime - 2 * wrong;
+            let fillColor;
+            if (score > 0) fillColor = 'FF8BC34A';      // green
+            else if (score >= -0.5) fillColor = 'FFFFEB3B'; // yellow
+            else fillColor = 'FFF44336';               // red
 
-        // 4) apply it
-        cell.fill = {
-            type: 'pattern',
-            pattern: 'solid',
-            fgColor: { argb: fillColor },
-        };
+            cell.fill = {
+              type: 'pattern',
+              pattern: 'solid',
+              fgColor: { argb: fillColor },
+            };
+          });
         });
-    });
 
-    // write out and trigger download
-    const buffer = await workbook.xlsx.writeBuffer();
-    const blob = new Blob([buffer], { type: 'application/octet-stream' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'math-stats.xlsx';
-    a.click();
-    URL.revokeObjectURL(url);
-    } catch (e) {
-    console.error('Download error', e);
-    }
+        // 4) Trigger download
+        const buffer = await workbook.xlsx.writeBuffer();
+        const blob   = new Blob([buffer], { type: 'application/octet-stream' });
+        const url    = URL.createObjectURL(blob);
+        const a      = document.createElement('a');
+        a.href       = url;
+        a.download   = 'aime-stats.xlsx';
+        a.click();
+        URL.revokeObjectURL(url);
+
+      } catch (e) {
+        console.error('Download error', e);
+      }
+    });
 });
-});
+
+
+
 // ---- Problem Loader & Helpers ----
 let practiceList = [];
 async function loadPracticeList() {
@@ -191,7 +208,7 @@ function getRandomProblem() {
 }
 
 async function fetchImageParts(exam,num) {
-  const base = `/static/images/fma/${exam}/${num}`, ext = '.webp', parts = [];
+  const base = `/static/images/aime/${exam}/${num}`, ext = '.png', parts = [];
   for (let s of ['a','b','']) {
     try { if ((await fetch(base+s+ext,{method:'HEAD'})).ok) parts.push(base+s+ext); }
     catch {}
@@ -266,7 +283,7 @@ async function loadZenProblem() {
 
   // Load answer key
   try {
-    keyAnswers = (await (await fetch(`/static/images/fma/${currentExam}/key.txt`)).text())
+    keyAnswers = (await (await fetch(`/static/images/aime/${currentExam}/key.txt`)).text())
       .split(/\r?\n/).map(l=>l.trim().toUpperCase());
   } catch {
     keyAnswers = [];
@@ -320,30 +337,48 @@ async function loadZenProblem() {
 
 function handleZenSubmission() {
   clearInterval(zenTimer);
-  const ans = document.getElementById('answer').value.toUpperCase().trim();
-  const corr = keyAnswers[currentNum-1]?.split('').filter(c=>/[A-E]/.test(c))||[];
-  const fb   = document.getElementById('feedback');
-  let  res;
-  if (!/^[A-E]$/.test(ans)) {
-    fb.textContent = 'Enter A–E';
+  const fb = document.getElementById('feedback');
+  const raw = document.getElementById('answer').value.trim();
+  // only 1–3 digits allowed
+  if (!/^\d{1,3}$/.test(raw)) {
+    fb.textContent = 'Enter a number 0–999';
     fb.style.color = 'darkorange';
     return;
   }
-  if (corr.includes(ans)) {
-    if (zenTimeLeft>0)  { zenCorrect++; fb.textContent='✅ CORRECT';     fb.style.color='green';   res='correct';  }
-    else                { zenOvertime++;fb.textContent='⏰ OVERTIME';    fb.style.color='orange';  res='overtime'; }
+  const ansNum = parseInt(raw, 10);
+  const keyRaw = keyAnswers[currentNum-1] || '';
+  const keyNum = parseInt(keyRaw, 10);
+
+  let res;
+  if (ansNum === keyNum) {
+    if (zenTimeLeft > 0) {
+      zenCorrect++;
+      fb.textContent = '✅ CORRECT';
+      fb.style.color = 'green';
+      res = 'correct';
+    } else {
+      zenOvertime++;
+      fb.textContent = '⏰ OVERTIME';
+      fb.style.color = 'orange';
+      res = 'overtime';
+    }
   } else {
     zenIncorrect++;
-    fb.textContent = `❌ INCORRECT (Answer: ${corr.join(' & ')})`;
+    fb.textContent = `❌ INCORRECT (Answer: ${keyNum})`;
     fb.style.color = 'red';
     res = 'incorrect';
   }
-  logHistory({mode:'zen',exam:currentExam,num:currentNum,result:res});
+
+  logHistory({ mode: 'zen', exam: currentExam, num: currentNum, result: res });
   updateZenDisplay();
+
   const sb = document.getElementById('submit-btn');
   sb.textContent = 'Next';
   sb.onclick = loadZenProblem;
 }
+
+
+
 
 function updateZenDisplay() {
   document.getElementById('problem-counter').textContent =
@@ -481,29 +516,35 @@ async function gradeTest() {
   // Load all keys first
   const keyMap = {};
   for (const p of currentTestProblems) {
-    const txt = await (await fetch(`/static/images/fma/${p.exam}/key.txt`)).text();
+    const txt = await (await fetch(`/static/images/aime/${p.exam}/key.txt`)).text();
     keyMap[`${p.exam}.${p.num}`] = txt.split(/\r?\n/).map(l=>l.trim().toUpperCase());
   }
 
   // Grade each
   const wrappers = document.querySelectorAll('#test-questions .problem-wrapper');
   currentTestProblems.forEach((p, i) => {
-    const ans = document.getElementById(`ans-${i}`).value.toUpperCase().trim();
-    const corr = keyMap[`${p.exam}.${p.num}`][p.num-1].split('').filter(c=>/[A-E]/.test(c));
-    const res = document.createElement('div');
-    res.className = 'result-text';
-    let result;
-    if (corr.includes(ans)) {
-      correct++;
-      res.textContent = '✅';
-      result = 'correct';
-    } else {
-      res.textContent = `❌ (Answer: ${corr.join(',')})`;
-      result = 'incorrect';
-    }
-    wrappers[i].appendChild(res);
-    logHistory({mode:'test',exam:p.exam,num:p.num,result});
-  });
+  const raw = document.getElementById(`ans-${i}`).value.trim();
+  const ansNum = /^\d{1,3}$/.test(raw) ? parseInt(raw,10) : NaN;
+  const keyRaw = keyMap[`${p.exam}.${p.num}`][p.num-1] || '';
+  const keyNum = parseInt(keyRaw, 10);
+
+  const resDiv = document.createElement('div');
+  resDiv.className = 'result-text';
+
+  let result;
+  if (ansNum === keyNum) {
+    correct++;
+    resDiv.textContent = '✅';
+    result = 'correct';
+  } else {
+    resDiv.textContent = `❌ (Ans: ${keyNum})`;
+    result = 'incorrect';
+  }
+
+  wrappers[i].appendChild(resDiv);
+  logHistory({ mode: 'test', exam: p.exam, num: p.num, result });
+});
+
 
   // Show score
   document.getElementById('test-questions')
@@ -562,7 +603,7 @@ async function loadSpeedProblem() {
 
   // Load keyAnswers for this problem
   try {
-    keyAnswers = (await (await fetch(`/static/images/fma/${ex}/key.txt`)).text())
+    keyAnswers = (await (await fetch(`/static/images/aime/${ex}/key.txt`)).text())
       .split(/\r?\n/).map(l=>l.trim().toUpperCase());
   } catch {
     keyAnswers = [];
@@ -603,19 +644,26 @@ async function loadSpeedProblem() {
 }
 
 function handleSpeedSubmission() {
-  const ans = document.getElementById('answer-speed').value.toUpperCase().trim();
-  const corr = keyAnswers[currentNum-1]?.split('').filter(c=>/[A-E]/.test(c)) || [];
-  const fb   = document.getElementById('feedback-speed');
-  const exam = document.getElementById('exam-label-speed').textContent.match(/Exam (\S+) #/)[1];
-  if (corr.includes(ans)) {
+  const fb = document.getElementById('feedback-speed');
+  const raw = document.getElementById('answer-speed').value.trim();
+  if (!/^\d{1,3}$/.test(raw)) {
+    fb.textContent = 'Enter 0–999';
+    return;
+  }
+  const ansNum = parseInt(raw, 10);
+  const keyRaw = keyAnswers[currentNum-1] || '';
+  const keyNum = parseInt(keyRaw, 10);
+
+  if (ansNum === keyNum) {
     fb.textContent = '✅';
-    logHistory({mode:'speed',exam, num: currentNum, result:'correct'});
+    logHistory({ mode:'speed', exam: currentExam, num: currentNum, result:'correct' });
   } else {
-    fb.textContent = `❌ (Answer: ${corr.join('/')})`;
-    logHistory({mode:'speed',exam, num: currentNum, result:'incorrect'});
+    fb.textContent = `❌ (Ans: ${keyNum})`;
+    logHistory({ mode:'speed', exam: currentExam, num: currentNum, result:'incorrect' });
   }
   loadSpeedProblem();
 }
+
 
 function finishSpeed() {
   clearInterval(speedTimerInterval);
@@ -629,6 +677,7 @@ function hideHeaderAndMenu() {
   document.getElementById('stats-container').classList.add('hidden');
   welcomeEl.classList.add('hidden');
 }
+
 
 function hideHeaderAndMenu() {
   document.getElementById('stats-container').classList.add('hidden');
