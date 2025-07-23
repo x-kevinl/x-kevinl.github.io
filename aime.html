@@ -1,163 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>AIME Practice</title>
-  <!-- MathJax configuration: TeX and MathML input, delay typesetting -->
-  <script>
-    window.MathJax = {
-      loader: {load: ['input/tex', 'input/mml', 'output/chtml']},
-      tex: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\\[','\\]']]
-      },
-      options: {
-        skipHtmlTags: ['script','noscript','style','textarea','pre','asy'],
-        enableMenu: false
-      },
-      startup: { typeset: false }
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <!-- Asymptote.js for <asy> diagrams -->
-  <script src="https://cdn.jsdelivr.net/npm/asymptote.js@0.3.0/dist/asy.min.js"></script>
-  <style>
-    body { font-family: sans-serif; max-width: 800px; margin: 2em auto; text-align: center; }
-    .problem-container { border: 2px solid #000; padding: 1em; margin-bottom: 1em; text-align: left; }
-    #loader-container, #answer-box, #feedback { margin: 1em 0; }
-    #custom-loader input { width: 200px; padding: 0.5em; }
-    #custom-loader button, #answer-box button { padding: 0.5em 1em; margin-left: 0.5em; }
-    #answer-box input { width: 60px; padding: 0.5em; text-align: center; }
-  </style>
+  <link rel="stylesheet" href="fma.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <script src="aime.js" defer></script>
 </head>
 <body>
-  <h1>AIME Practice</h1>
-  <div id="custom-loader">
-    <input id="custom-input" placeholder="YYYY.EXAM.DIV.NUM (e.g. 2022.10.A.2)" />
-    <button id="custom-btn">Load Specific</button>
+  <div id="stats-container">
+    <h1 id="greeting">Welcome back!</h1>
+    <p>Correct: <span id="total-correct">0</span></p>
+    <p>Overtime: <span id="total-overtime">0</span></p>
+    <p>Incorrect: <span id="total-incorrect">0</span></p>
+    <button id="download-stats-btn">Download Stats</button>
   </div>
-  <div id="loader-container"></div>
-  <div id="problem-label">Loading…</div>
-  <div id="problem-container" class="problem-container">Loading problem…</div>
-  <div id="answer-box">
-    <input id="answer" placeholder="Answer" />
-    <button id="submit-btn" disabled>Submit</button>
-    <button id="next-btn">Next</button>
+
+  <div id="welcome-page">
+    <p>Choose a mode to start:</p>
+    <div id="practice-toggle-container">
+      <label>
+        <input type="checkbox" id="practice-toggle" />
+        Practice selected problems only
+      </label>
+    </div>
+    <div class="menu-wrapper">
+      <nav class="menu" id="mode-buttons">
+        <a id="zen-btn">Zen - Unlimited Problems</a>
+        <a id="test-btn">Test - Fixed Problems</a>
+        <a id="speed-btn">Speed - Time Attack</a>
+      </nav>
+    </div>
   </div>
-  <div id="feedback"></div>
 
-  <script>
-    const RAW_BASE = 'https://raw.githubusercontent.com/x-kevinl/ui/main/Problems';
-    const config = {
-      exams: Array.from({length:24}, (_,i) => `${2000+i}I`).concat(Array.from({length:25}, (_,i) => `${2000+i}II`)),
-      maxProblems: { I:15, II:15 }
-    };
-    let current;
+  <!-- Zen Mode -->
+  <div id="practice-container" class="hidden">
+    <div id="problem-counter">Problems: 0</div>
+    <div id="accuracy-summary">CORRECT: 0 | OVERTIME: 0 | INCORRECT: 0 | GAVE UP: 0</div>
+    <button id="end-practice-btn">End Practice</button>
+    <div id="timer">04:00</div>
+    <div id="exam-label"></div>
+    <button id="toggle-previous-btn" class="toggle-previous-btn">Show Previous Problems</button>
+    <div id="previous-wrapper" class="problem-wrapper hidden"></div>
+    <div id="latex-wrapper" class="problem-wrapper"></div>
+    <div id="answer-box">
+      <input type="text" id="answer" maxlength="1" placeholder="A–E" />
+      <button id="submit-btn">Submit</button>
+      <button id="skip-btn">Give Up</button>
+    </div>
+    <div id="feedback"></div>
+  </div>
 
-    function parseCustom(str) {
-  const m = str.trim().toUpperCase()
-    .match(/^(\d{4})\.(8|10A|10B|12A|12B|I|II)\.(\d{1,2})$/);
-  if (!m) return null;
-  const [, year, examPart, numStr] = m;
-  const num = parseInt(numStr,10);
-  return { year, examPart, num };
-}
+  <!-- Test Mode -->
+  <div id="test-container" class="hidden">
+    <h2>Test Mode</h2>
+    <div id="test-settings">
+      <input type="number" id="test-time-input" placeholder="Time (min)" min="1" />
+      <input type="number" id="test-count-input" placeholder="Number of problems" min="1" />
+      <button id="begin-test-btn">Begin Test</button>
+    </div>
+    <form id="test-questions-form" class="hidden">
+      <div id="test-timer-display">00:00</div>
+      <div id="test-questions"></div>
+      <button type="button" id="submit-test-btn">Submit Test</button>
+    </form>
+  </div>
 
-async function loadProblem(override) {
-  // if override from custom loader, use it; otherwise pick random AIME
-  if (override) {
-    current = override;
-  } else {
-    const code = config.exams[Math.floor(Math.random()*config.exams.length)];
-    const type = code.endsWith('II') ? 'II' : 'I';
-    current = {
-      year: code.slice(0, -type.length),
-      examPart: type,
-      num: Math.floor(Math.random()*config.maxProblems[type]) + 1
-    };
-  }
+  <!-- Speed Mode -->
+  <div id="speed-container" class="hidden">
+    <h2>Speed Mode</h2>
+    <div id="speed-settings">
+      <input type="number" id="speed-time-input" placeholder="Time (min)" min="1" />
+      <button id="begin-speed-btn">Begin Time Attack</button>
+    </div>
+    <div id="speed-problem-area" class="hidden">
+      <div id="speed-counter">Solved: 0</div>
+      <div id="speed-timer-display">00:00</div>
+      <div id="exam-label-speed"></div>
+      <button id="toggle-previous-speed-btn" class="toggle-previous-btn">Show Previous Problems</button>
+      <div id="previous-wrapper-speed" class="problem-wrapper hidden"></div>
+      <div id="latex-wrapper-speed" class="problem-wrapper"></div>
+      <div id="answer-box-speed">
+        <input type="text" id="answer-speed" maxlength="1" placeholder="A–E" />
+        <button id="submit-speed-btn">Submit</button>
+      </div>
+      <div id="feedback-speed"></div>
+    </div>
+  </div>
 
-  document.getElementById('problem-label').textContent =
-    `AIME ${current.year}${current.examPart} #${current.num}`;
-
-  // build the right URL depending on examPart
-  let url;
-  if (current.examPart === 'I' || current.examPart === 'II' || current.examPart === '8') {
-    // AIME I/II or AMC 8
-    url = `${RAW_BASE}/${current.year}/${current.examPart}/${current.num}/Problem.txt`;
-  } else {
-    // AMC10/12 with A/B
-    const parts = current.examPart.match(/^(10|12)([AB])$/);
-    const exam = parts[1], div = parts[2];
-    url = `${RAW_BASE}/${current.year}/${exam}/${div}/${current.num}/Problem.txt`;
-  }
-
-  // now fetch + render exactly as before
-  const container = document.getElementById('problem-container');
-  try {
-    let raw = await fetch(url).then(r => r.ok ? r.text() : Promise.reject(r.status));
-    raw = raw.replace(/\[\[|\]\]/g, '')
-             .replace(/==[^=]+==/g, '');
-    raw = raw.replace(/<cmath>([\s\S]*?)<\/cmath>/gi, (_m,p1) => `$$${p1}$$`)
-             .replace(/<math>([\s\S]*?)<\/math>/gi, (_m,p1) => `$${p1}$`);
-    // … after your existing raw = raw.replace(...) calls …
-raw = raw
-  .replace(/</g, '\\lt')
-  .replace(/>/g, '\\gt');
-  raw = raw
-  .replace(/__TOC__/g, '');
-
-    container.innerHTML = raw;
-    await renderAsyDiagrams(container);
-    await MathJax.typesetPromise([container]);
-    document.getElementById('submit-btn').disabled = false;
-    document.getElementById('feedback').textContent = '';
-  } catch (err) {
-    console.error('Fetch error', err);
-    container.textContent = 'Failed to load problem.';
-  }
-}
-
-    async function handleSubmit() {
-      const ansStr = document.getElementById('answer').value.trim();
-      const feedbackEl = document.getElementById('feedback');
-      const userNum = parseInt(ansStr,10);
-      if (isNaN(userNum)) {
-        feedbackEl.textContent='Enter a numeric answer'; feedbackEl.style.color='orange';
-        return;
-      }
-      const ansUrl = `${RAW_BASE}/${current.year}/${current.type}/${current.num}/Answer.txt`;
-      try {
-        const rawAns = await fetch(ansUrl).then(r=>r.ok? r.text():Promise.reject(r.status));
-        const correctNum = parseInt(rawAns.trim(),10);
-        if (userNum === correctNum) {
-          feedbackEl.textContent='✅ Correct!'; feedbackEl.style.color='green';
-        } else {
-          feedbackEl.textContent=`❌ Incorrect. Answer: ${correctNum}`;
-          feedbackEl.style.color='red';
-        }
-      } catch(e) {
-        console.error('Answer fetch error', e);
-        feedbackEl.textContent='Could not load answer file.';
-        feedbackEl.style.color='darkred';
-      }
-      document.getElementById('submit-btn').disabled = true;
-    }
-
-    document.getElementById('custom-btn').onclick = () => {
-  const o = parseCustom(document.getElementById('custom-input').value);
-  if (o) loadProblem(o);
-  else alert('Invalid format or unsupported exam code');
-};
-    document.getElementById('submit-btn').onclick = handleSubmit;
-    document.getElementById('next-btn').onclick = ()=>{
-      document.getElementById('answer').value = '';
-      document.getElementById('submit-btn').disabled = true;
-      document.getElementById('feedback').textContent = '';
-      loadProblem();
-    };
-
-    window.addEventListener('DOMContentLoaded', ()=> loadProblem());
-  </script>
+  <!-- Summary -->
+  <div id="summary-container" class="hidden">
+    <h2>Session Summary</h2>
+    <div id="final-summary"></div>
+    <button id="restart-btn">Restart</button>
+  </div>
 </body>
 </html>
