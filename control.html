@@ -1,141 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Minecraft Quick Script Generator</title>
-  <style>
-    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,sans-serif; max-width: 900px; margin: 1rem auto; background: #0f111a; color: #e8ecff; }
-    h1 { margin-bottom: .2rem; }
-    label { display:block; margin-top:1rem; }
-    textarea, input { width:100%; padding:.6rem; border-radius:6px; border:1px solid #444; background:#1f2235; color:#fff; font-family: monospace; }
-    .small { font-size:.8em; color:#aaa; }
-    button { margin-top:1rem; padding:.8rem 1.2rem; border:none; border-radius:6px; background:#6366f1; color:#fff; cursor:pointer; }
-    pre { background:#0e0f1f; padding:1rem; border-radius:6px; overflow:auto; }
-    .group { display:flex; gap:1rem; flex-wrap:wrap; }
-    .box { flex:1 1 300px; }
-  </style>
+<meta charset="utf-8">
+<title>Minecraft Script Generator</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  body { background:#0f1220; color:#e7e9fc; font-family: system-ui,-apple-system,BlinkMacSystemFont,sans-serif; max-width:960px; margin:1rem auto; padding:0 1rem; }
+  h1 { margin-top:0; }
+  .card { background:#1f2345; padding:1rem; border-radius:8px; margin-bottom:1rem; }
+  label { display:block; margin:0.5rem 0 0.2rem; font-weight:600; }
+  input, select, textarea { width:100%; padding:8px; border-radius:6px; border:none; background:#171a33; color:#fff; font-size:1rem; }
+  button { background:#6366f1; border:none; padding:10px 16px; border-radius:6px; color:#fff; cursor:pointer; margin-top:8px; }
+  pre { background:#0d1030; padding:12px; border-radius:6px; overflow:auto; position:relative; }
+  .flex { display:flex; gap:1rem; flex-wrap:wrap; }
+  .small { font-size:0.8em; color:#a0a8e0; }
+</style>
 </head>
 <body>
-  <h1>Minecraft Batch Modifier Script Generator</h1>
-  <p class="small">Fill in sets of players; leave empty fields you don't need. Click Generate Script to get a one-liner to run on your server to apply all changes at once.</p>
+  <h1>Minecraft One-line Script Generator</h1>
+  <p class="small">Fill fields / click buttons then press the corresponding "Generate" to get a single bash line to apply changes. You need <code>jq</code> installed on the server for JSON edits and systemctl available.</p>
 
-  <div class="group">
-    <div class="box">
-      <label>Add these players to whitelist (space-separated):</label>
-      <input id="wl_add" placeholder="e.g., Alice Bob Charlie" />
+  <div class="card">
+    <h2>Whitelist</h2>
+    <div class="flex">
+      <div style="flex:1">
+        <label>Add to whitelist (space-separated usernames):</label>
+        <input id="wl_add" placeholder="Alice Bob Charlie">
+        <button onclick="generateWhitelistAdd()">Generate script: add</button>
+      </div>
+      <div style="flex:1">
+        <label>Remove from whitelist (space-separated usernames):</label>
+        <input id="wl_remove" placeholder="Eve Mallory">
+        <button onclick="generateWhitelistRemove()">Generate script: remove</button>
+      </div>
+      <div style="flex:1">
+        <label>Toggle whitelist:</label>
+        <button onclick="generateWhitelistOn()">Enable whitelist</button>
+        <button onclick="generateWhitelistOff()">Disable whitelist</button>
+      </div>
     </div>
-    <div class="box">
-      <label>Remove these players from whitelist (space-separated):</label>
-      <input id="wl_remove" placeholder="e.g., Eve Mallory" />
-    </div>
+    <pre id="out_whitelist"></pre>
   </div>
 
-  <div class="group">
-    <div class="box">
-      <label>Make these players operators (space-separated):</label>
-      <input id="op_add" placeholder="e.g., Kevin Steve" />
+  <div class="card">
+    <h2>Operators</h2>
+    <div class="flex">
+      <div style="flex:1">
+        <label>Make operators (space-separated):</label>
+        <input id="op_add" placeholder="Kevin Steve">
+        <button onclick="generateOpAdd()">Generate script: op</button>
+      </div>
+      <div style="flex:1">
+        <label>Remove operators (space-separated):</label>
+        <input id="op_remove" placeholder="Dave">
+        <button onclick="generateOpRemove()">Generate script: unop</button>
+      </div>
     </div>
-    <div class="box">
-      <label>Remove operator from these players (space-separated):</label>
-      <input id="op_remove" placeholder="e.g., Dave" />
-    </div>
+    <pre id="out_ops"></pre>
   </div>
 
-  <button id="gen">Generate Script</button>
+  <div class="card">
+    <h2>Bans</h2>
+    <div class="flex">
+      <div style="flex:1">
+        <label>Ban usernames (space-separated):</label>
+        <input id="ban_add" placeholder="Griefer123">
+        <button onclick="generateBan()">Generate script: ban</button>
+      </div>
+      <div style="flex:1">
+        <label>Unban usernames (space-separated):</label>
+        <input id="ban_remove" placeholder="Griefer123">
+        <button onclick="generateUnban()">Generate script: unban</button>
+      </div>
+    </div>
+    <pre id="out_ban"></pre>
+  </div>
 
-  <h2>One-line Bash Script</h2>
-  <pre id="output" aria-label="Generated script"># Generated script will appear here</pre>
+  <div class="card">
+    <h2>Server Settings</h2>
+    <div class="flex">
+      <div style="flex:1">
+        <label>Restart server</label>
+        <button onclick="generateRestart()">Generate script: restart</button>
+      </div>
+      <div style="flex:1">
+        <label>Disable Nether</label>
+        <button onclick="generateDisableNether()">Generate script: disable nether</button>
+      </div>
+      <div style="flex:1">
+        <label>Difficulty</label>
+        <select id="difficulty">
+          <option value="peaceful">peaceful</option>
+          <option value="easy">easy</option>
+          <option value="normal" selected>normal</option>
+          <option value="hard">hard</option>
+        </select>
+        <button onclick="generateDifficulty()">Generate script: difficulty</button>
+      </div>
+    </div>
+
+    <div class="flex" style="margin-top:1rem;">
+      <div style="flex:1">
+        <label>Max players</label>
+        <input id="max_players" type="number" placeholder="10">
+        <button onclick="generateMaxPlayers()">Generate script: max players</button>
+      </div>
+      <div style="flex:1">
+        <label>Server name / MOTD</label>
+        <input id="server_name" placeholder="My Cool Server">
+        <button onclick="generateServerName()">Generate script: server name</button>
+      </div>
+      <div style="flex:1">
+        <label>Simulation distance</label>
+        <input id="sim_distance" type="number" placeholder="10">
+        <button onclick="generateSimDistance()">Generate script: simulation distance</button>
+      </div>
+    </div>
+
+    <div class="flex" style="margin-top:1rem;">
+      <div style="flex:1">
+        <label>Monster spawn</label>
+        <button onclick="generateMonsterOn()">Enable</button>
+        <button onclick="generateMonsterOff()">Disable</button>
+      </div>
+      <div style="flex:1">
+        <label>Spawn protection (blocks)</label>
+        <input id="spawn_prot" type="number" placeholder="16">
+        <button onclick="generateSpawnProtection()">Generate script: spawn protection</button>
+      </div>
+    </div>
+    <pre id="out_server"></pre>
+  </div>
 
   <script>
-    async function fetchUUID(name) {
+    // helper to fetch UUID from Mojang
+    async function getUUID(name) {
       try {
         const r = await fetch(`https://api.mojang.com/users/profiles/minecraft/${encodeURIComponent(name)}`);
         if (!r.ok) return null;
         const d = await r.json();
         return d.id;
-      } catch(e) { return null; }
+      } catch (e) { return null; }
     }
 
-    document.getElementById("gen").addEventListener("click", async () => {
-      const wlAdd = document.getElementById("wl_add").value.trim().split(/\s+/).filter(Boolean);
-      const wlRemove = document.getElementById("wl_remove").value.trim().split(/\s+/).filter(Boolean);
-      const opAdd = document.getElementById("op_add").value.trim().split(/\s+/).filter(Boolean);
-      const opRemove = document.getElementById("op_remove").value.trim().split(/\s+/).filter(Boolean);
+    function baseHeader() {
+      return "# one-liner generated by control.html\ncd ~/minecraft-server\n";
+    }
 
-      // Build arrays of lookups
-      const allNames = [...new Set([...wlAdd, ...wlRemove, ...opAdd, ...opRemove])];
-      const uuidMap = {};
+    function sanitize(str) {
+      return str.replace(/"/g, '\\"');
+    }
 
-      document.getElementById("output").textContent = "# Resolving UUIDs...";
-      for (const name of allNames) {
-        const uuid = await fetchUUID(name);
-        if (uuid) {
-          uuidMap[name] = uuid;
-        } else {
-          uuidMap[name] = null;
-        }
-      }
-
-      // Build bash snippet
-      let script = `#!/bin/bash\nset -e\ncd \"/home/$USER/minecraft-server\"\n`;
-      script += "mkdir -p backups\n";
-      script += "cp -r world backups/world-$(date +%F-%H%M%S)\n"; // backup
-
-      // whitelist enable if adding/removing
-      if (wlAdd.length || wlRemove.length) {
-        script += "echo 'Updating whitelist...'\n";
-        script += "touch whitelist.json\n";
-        script += "jq -n '[]' > /tmp/whitelist.tmp.json || true\n";
-        script += "cat whitelist.json 2>/dev/null || echo '[]' > whitelist.json\n";
-      }
-
-      // process adds
-      for (const name of wlAdd) {
-        if (!uuidMap[name]) {
-          script += `echo 'WARNING: could not resolve UUID for ${name}'\n`;
+    async function generateWhitelistAdd() {
+      const names = document.getElementById("wl_add").value.trim().split(/\s+/).filter(Boolean);
+      let script = baseHeader();
+      script += "mkdir -p backups && cp -r world backups/world-$(date +%F-%H%M%S)\n";
+      script += "touch whitelist.json\n";
+      script += "cat whitelist.json 2>/dev/null || echo '[]' > whitelist.json\n";
+      for (const name of names) {
+        const uuid = await getUUID(name);
+        if (!uuid) {
+          script += `echo "WARNING: could not resolve ${name}"\n`;
           continue;
         }
-        script += `jq --arg uuid "${uuidMap[name]}" --arg name "${name}" '.[ ] | . as $in | (load(\"whitelist.json\") | .) as $wl | if any(.uuid == $uuid; .) then $wl else ($wl + [{uuid:$uuid,name:$name}]) end' whitelist.json > /tmp/whitelist.new.json 2>/dev/null || jq -n '[{uuid:"${uuidMap[name]}",name:"${name}"}]' > /tmp/whitelist.new.json\n`;
-        script += "mv /tmp/whitelist.new.json whitelist.json\n";
+        script += `jq --arg uuid "${uuid}" --arg name "${sanitize(name)}" 'if any(.uuid == $uuid; .) then . else . + [{uuid:$uuid,name:$name}] end' whitelist.json > /tmp/whitelist.tmp && mv /tmp/whitelist.tmp whitelist.json\n`;
       }
-      // process removes
-      for (const name of wlRemove) {
-        if (!uuidMap[name]) continue;
-        script += `jq 'map(select(.uuid != "${uuidMap[name]}"))' whitelist.json > /tmp/whitelist.new.json || true\n`;
-        script += "mv /tmp/whitelist.new.json whitelist.json\n";
-      }
+      script += "echo 'done whitelist add';\n";
+      document.getElementById("out_whitelist").textContent = script.trim().replace(/\n/g," && ");
+    }
 
-      // ops
-      if (opAdd.length || opRemove.length) {
-        script += "echo 'Updating ops...'\n";
-        script += "touch ops.json\n";
-        script += "cat ops.json 2>/dev/null || echo '[]' > ops.json\n";
+    async function generateWhitelistRemove() {
+      const names = document.getElementById("wl_remove").value.trim().split(/\s+/).filter(Boolean);
+      let script = baseHeader();
+      script += "touch whitelist.json\n";
+      for (const name of names) {
+        const uuid = await getUUID(name);
+        if (!uuid) continue;
+        script += `jq 'map(select(.uuid != \"${uuid}\"))' whitelist.json > /tmp/whitelist.tmp && mv /tmp/whitelist.tmp whitelist.json\n`;
       }
-      for (const name of opAdd) {
-        if (!uuidMap[name]) {
-          script += `echo 'WARNING: could not resolve UUID for ${name}'\n`;
+      script += "echo 'done whitelist remove';\n";
+      document.getElementById("out_whitelist").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateWhitelistOn() {
+      let script = baseHeader();
+      script += `sed -i 's/^enable-whitelist=.*/enable-whitelist=true/' server.properties || echo 'enable-whitelist=true' >> server.properties\n`;
+      script += "echo 'whitelist enabled';\n";
+      document.getElementById("out_whitelist").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateWhitelistOff() {
+      let script = baseHeader();
+      script += `sed -i 's/^enable-whitelist=.*/enable-whitelist=false/' server.properties || echo 'enable-whitelist=false' >> server.properties\n`;
+      script += "echo 'whitelist disabled';\n";
+      document.getElementById("out_whitelist").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    async function generateOpAdd() {
+      const names = document.getElementById("op_add").value.trim().split(/\s+/).filter(Boolean);
+      let script = baseHeader();
+      script += "mkdir -p backups && cp -r world backups/world-$(date +%F-%H%M%S)\n";
+      script += "touch ops.json\n";
+      script += "cat ops.json 2>/dev/null || echo '[]' > ops.json\n";
+      for (const name of names) {
+        const uuid = await getUUID(name);
+        if (!uuid) {
+          script += `echo "WARNING: cannot resolve ${name}"\n`;
           continue;
         }
-        script += `jq --arg uuid "${uuidMap[name]}" --arg name "${name}" '.[ ] | . as $in | (load("ops.json") | .) as $ops | if any(.uuid == $uuid; .) then $ops else ($ops + [{uuid:$uuid,name:$name,level:4,bypassesPlayerLimit:false}]) end' ops.json > /tmp/ops.new.json 2>/dev/null || jq -n '[{uuid:"${uuidMap[name]}",name:"${name}",level:4,bypassesPlayerLimit:false}]' > /tmp/ops.new.json\n`;
-        script += "mv /tmp/ops.new.json ops.json\n";
+        script += `jq --arg uuid "${uuid}" --arg name "${sanitize(name)}" 'if any(.uuid == $uuid; .) then . else . + [{uuid:$uuid,name:$name,level:4,bypassesPlayerLimit:false}] end' ops.json > /tmp/ops.tmp && mv /tmp/ops.tmp ops.json\n`;
       }
-      for (const name of opRemove) {
-        if (!uuidMap[name]) continue;
-        script += `jq 'map(select(.uuid != "${uuidMap[name]}"))' ops.json > /tmp/ops.new.json || true\n`;
-        script += "mv /tmp/ops.new.json ops.json\n";
+      script += "echo 'done op add';\n";
+      document.getElementById("out_ops").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    async function generateOpRemove() {
+      const names = document.getElementById("op_remove").value.trim().split(/\s+/).filter(Boolean);
+      let script = baseHeader();
+      for (const name of names) {
+        const uuid = await getUUID(name);
+        if (!uuid) continue;
+        script += `jq 'map(select(.uuid != \"${uuid}\"))' ops.json > /tmp/ops.tmp && mv /tmp/ops.tmp ops.json\n`;
       }
+      script += "echo 'done op remove';\n";
+      document.getElementById("out_ops").textContent = script.trim().replace(/\n/g," && ");
+    }
 
-      script += "echo 'Done. Reload whitelist in-game or restart server to apply.'\n";
+    async function generateBan() {
+      const names = document.getElementById("ban_add").value.trim().split(/\s+/).filter(Boolean);
+      let script = baseHeader();
+      script += "mkdir -p backups && cp -r world backups/world-$(date +%F-%H%M%S)\n";
+      script += "touch banned-players.json\n";
+      script += "cat banned-players.json 2>/dev/null || echo '[]' > banned-players.json\n";
+      for (const name of names) {
+        const uuid = await getUUID(name);
+        if (!uuid) {
+          script += `echo "WARNING: cannot resolve ${name}"\n`;
+          continue;
+        }
+        script += `jq --arg uuid "${uuid}" --arg name "${sanitize(name)}" 'if any(.uuid == $uuid; .) then . else . + [{uuid:$uuid,name:$name,source:"web",reason:"",created:"",expires:"forever",bannedBy:"admin"}] end' banned-players.json > /tmp/banned.tmp && mv /tmp/banned.tmp banned-players.json\n`;
+      }
+      script += "echo 'done ban';\n";
+      document.getElementById("out_ban").textContent = script.trim().replace(/\n/g," && ");
+    }
 
-      // final one-liner version (escaped)
-      const oneliner = script
-        .split("\n")
-        .map(l => l.replace(/'/g, "'\"'\"'"))
-        .filter(l => l.trim() !== "")
-        .join(" && ");
+    async function generateUnban() {
+      const names = document.getElementById("ban_remove").value.trim().split(/\s+/).filter(Boolean);
+      let script = baseHeader();
+      for (const name of names) {
+        const uuid = await getUUID(name);
+        if (!uuid) continue;
+        script += `jq 'map(select(.uuid != \"${uuid}\"))' banned-players.json > /tmp/banned.tmp && mv /tmp/banned.tmp banned-players.json\n`;
+      }
+      script += "echo 'done unban';\n";
+      document.getElementById("out_ban").textContent = script.trim().replace(/\n/g," && ");
+    }
 
-      document.getElementById("output").textContent = oneliner;
-    });
+    function generateRestart() {
+      let script = baseHeader();
+      script += "systemctl restart minecraft\n";
+      script += "echo 'restarted';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateDisableNether() {
+      let script = baseHeader();
+      script += `sed -i 's/^allow-nether=.*/allow-nether=false/' server.properties || echo 'allow-nether=false' >> server.properties\n`;
+      script += "echo 'nether disabled';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateDifficulty() {
+      const val = document.getElementById("difficulty").value;
+      let script = baseHeader();
+      script += `sed -i 's/^difficulty=.*/difficulty=${val}/' server.properties || echo 'difficulty=${val}' >> server.properties\n`;
+      script += "echo 'difficulty set';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateMaxPlayers() {
+      const val = document.getElementById("max_players").value || "10";
+      let script = baseHeader();
+      script += `sed -i 's/^max-players=.*/max-players=${val}/' server.properties || echo 'max-players=${val}' >> server.properties\n`;
+      script += "echo 'max players set';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateServerName() {
+      const val = sanitize(document.getElementById("server_name").value || "My Server");
+      let script = baseHeader();
+      script += `sed -i 's/^motd=.*/motd=${val.replace(/\\/g,"\\\\")}/' server.properties || echo 'motd=${val}' >> server.properties\n`;
+      script += "echo 'motd set';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateSimDistance() {
+      const val = document.getElementById("sim_distance").value || "10";
+      let script = baseHeader();
+      script += `sed -i 's/^simulation-distance=.*/simulation-distance=${val}/' server.properties || echo 'simulation-distance=${val}' >> server.properties\n`;
+      script += "echo 'simulation distance set';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateMonsterOff() {
+      let script = baseHeader();
+      script += `sed -i 's/^spawn-monsters=.*/spawn-monsters=false/' server.properties || echo 'spawn-monsters=false' >> server.properties\n`;
+      script += "echo 'monster spawn disabled';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateMonsterOn() {
+      let script = baseHeader();
+      script += `sed -i 's/^spawn-monsters=.*/spawn-monsters=true/' server.properties || echo 'spawn-monsters=true' >> server.properties\n`;
+      script += "echo 'monster spawn enabled';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
+    function generateSpawnProtection() {
+      const val = document.getElementById("spawn_prot").value || "16";
+      let script = baseHeader();
+      script += `sed -i 's/^spawn-protection=.*/spawn-protection=${val}/' server.properties || echo 'spawn-protection=${val}' >> server.properties\n`;
+      script += "echo 'spawn protection set';\n";
+      document.getElementById("out_server").textContent = script.trim().replace(/\n/g," && ");
+    }
+
   </script>
 </body>
 </html>
