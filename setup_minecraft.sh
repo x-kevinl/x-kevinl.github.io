@@ -1,59 +1,67 @@
 #!/bin/bash
 set -e
 
-# ---- Configuration ----
-USER_HOME=$(eval echo "~$USER")
-SERVER_DIR="$USER_HOME/minecraft-server"
-VERSION="${1:-1.21.8}"
-JAR_NAME="minecraft_server.${VERSION}.jar"
-SERVICE_NAME="minecraft.service"
-JAVA_MIN_VERSION=17
-
-# ---- Helpers ----
+# ---- helpers ----
 echo_header() {
   echo
-  echo "=========================="
+  echo "======================================"
   echo "$1"
-  echo "=========================="
+  echo "======================================"
 }
 
-# 1. Install prerequisites
+# ensure requirements
 echo_header "Installing prerequisites"
 sudo apt update
-sudo apt install -y openjdk-21-jre-headless wget jq
+sudo apt install -y wget jq openjdk-21-jre-headless
 
-# 2. Ensure directory
+if ! command -v java >/dev/null 2>&1; then
+  echo "Java not found after install. Exiting."
+  exit 1
+fi
+
+# ask version
+read -rp "Minecraft Java Edition version to install (e.g. 1.21.8, default 1.21.8): " VERSION
+VERSION=${VERSION:-1.21.8}
+
+USER_HOME=$(eval echo "~$USER")
+SERVER_DIR="$USER_HOME/minecraft-server"
+JAR_NAME="minecraft_server.${VERSION}.jar"
+SERVICE_NAME="minecraft.service"
+
 mkdir -p "$SERVER_DIR"
 cd "$SERVER_DIR"
 
-# 3. Download server jar
-if [ -f "$JAR_NAME" ]; then
-  echo "Server jar $JAR_NAME already exists; skipping download."
-else
-  echo_header "Downloading Minecraft Java Edition server $VERSION"
-  # fetch version manifest to locate correct jar URL
-  MANIFEST=$(curl -s https://launchermeta.mojang.com/mc/game/version_manifest.json)
-  DOWNLOAD_URL=$(echo "$MANIFEST" | jq -r --arg VER "$VERSION" '.versions[] | select(.id == $VER) | .url' )
-  if [ -z "$DOWNLOAD_URL" ] || [ "$DOWNLOAD_URL" == "null" ]; then
-    echo "Version $VERSION not found in manifest."
-    exit 1
-  fi
-  VERSION_JSON=$(curl -s "$DOWNLOAD_URL")
-  SERVER_URL=$(echo "$VERSION_JSON" | jq -r '.downloads.server.url')
-  if [ -z "$SERVER_URL" ] || [ "$SERVER_URL" == "null" ]; then
-    echo "No server.jar URL for version $VERSION"
-    exit 1
-  fi
-  wget -O "$JAR_NAME" "$SERVER_URL"
+# download version manifest and resolve JAR URL
+echo_header "Resolving version $VERSION"
+MANIFEST_JSON=$(curl -fsSL https://launchermeta.mojang.com/mc/game/version_manifest.json)
+VERSION_URL=$(echo "$MANIFEST_JSON" | jq -r --arg V "$VERSION" '.versions[] | select(.id==$V) | .url')
+if [ -z "$VERSION_URL" ] || [ "$VERSION_URL" = "null" ]; then
+  echo "Version '$VERSION' not found in manifest. Exiting."
+  exit 1
 fi
 
-# 4. Accept EULA
-echo_header "Writing eula.txt"
+VERSION_JSON=$(curl -fsSL "$VERSION_URL")
+SERVER_JAR_URL=$(echo "$VERSION_JSON" | jq -r '.downloads.server.url')
+if [ -z "$SERVER_JAR_URL" ] || [ "$SERVER_JAR_URL" = "null" ]; then
+  echo "Server jar URL missing for version $VERSION. Exiting."
+  exit 1
+fi
+
+# download jar if missing
+if [ -f "$JAR_NAME" ]; then
+  echo "$JAR_NAME already exists; skipping download."
+else
+  echo_header "Downloading Minecraft server $VERSION"
+  wget -O "$JAR_NAME" "$SERVER_JAR_URL"
+fi
+
+# eula
+echo_header "Accepting EULA"
 echo "eula=true" > eula.txt
 
-# 5. Create default server.properties if missing
+# default server.properties
 if [ ! -f server.properties ]; then
-  echo_header "Creating default server.properties"
+  echo_header "Writing default server.properties"
   cat <<EOF > server.properties
 enable-command-block=true
 online-mode=true
@@ -61,19 +69,25 @@ enable-whitelist=false
 pvp=true
 motd=Hosted on Raspberry Pi
 server-port=25565
+allow-nether=true
+difficulty=normal
+max-players=10
+simulation-distance=10
+spawn-protection=16
+spawn-monsters=true
 EOF
 fi
 
-# 6. Create start.sh
-echo_header "Creating start script"
+# create start script
+echo_header "Creating start.sh"
 cat <<'EOF' > start.sh
 #!/bin/bash
 cd "$HOME/minecraft-server"
-java -Xmx1536M -Xms1024M -jar "$HOME/minecraft-server/${JAR_NAME}" nogui
+exec /usr/bin/java -Xmx1536M -Xms1024M -jar "$HOME/minecraft-server/${JAR_NAME}" nogui
 EOF
 chmod +x start.sh
 
-# 7. Create systemd service
+# create systemd service
 echo_header "Installing systemd service"
 SERVICE_PATH="/etc/systemd/system/$SERVICE_NAME"
 sudo tee "$SERVICE_PATH" > /dev/null <<EOF
@@ -97,8 +111,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable minecraft
 sudo systemctl start minecraft
 
-# 8. Final status
 echo_header "Done"
 sudo systemctl status minecraft --no-pager
 echo
-echo "Minecraft server $VERSION installed and started. Logs: journalctl -u minecraft -f"
+echo "To view live logs: journalctl -u minecraft -f"
