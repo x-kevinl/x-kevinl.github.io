@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Minecraft Quick Script Generator</title>
+  <style>
+    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,sans-serif; max-width: 900px; margin: 1rem auto; background: #0f111a; color: #e8ecff; }
+    h1 { margin-bottom: .2rem; }
+    label { display:block; margin-top:1rem; }
+    textarea, input { width:100%; padding:.6rem; border-radius:6px; border:1px solid #444; background:#1f2235; color:#fff; font-family: monospace; }
+    .small { font-size:.8em; color:#aaa; }
+    button { margin-top:1rem; padding:.8rem 1.2rem; border:none; border-radius:6px; background:#6366f1; color:#fff; cursor:pointer; }
+    pre { background:#0e0f1f; padding:1rem; border-radius:6px; overflow:auto; }
+    .group { display:flex; gap:1rem; flex-wrap:wrap; }
+    .box { flex:1 1 300px; }
+  </style>
+</head>
+<body>
+  <h1>Minecraft Batch Modifier Script Generator</h1>
+  <p class="small">Fill in sets of players; leave empty fields you don't need. Click Generate Script to get a one-liner to run on your server to apply all changes at once.</p>
+
+  <div class="group">
+    <div class="box">
+      <label>Add these players to whitelist (space-separated):</label>
+      <input id="wl_add" placeholder="e.g., Alice Bob Charlie" />
+    </div>
+    <div class="box">
+      <label>Remove these players from whitelist (space-separated):</label>
+      <input id="wl_remove" placeholder="e.g., Eve Mallory" />
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="box">
+      <label>Make these players operators (space-separated):</label>
+      <input id="op_add" placeholder="e.g., Kevin Steve" />
+    </div>
+    <div class="box">
+      <label>Remove operator from these players (space-separated):</label>
+      <input id="op_remove" placeholder="e.g., Dave" />
+    </div>
+  </div>
+
+  <button id="gen">Generate Script</button>
+
+  <h2>One-line Bash Script</h2>
+  <pre id="output" aria-label="Generated script"># Generated script will appear here</pre>
+
+  <script>
+    async function fetchUUID(name) {
+      try {
+        const r = await fetch(`https://api.mojang.com/users/profiles/minecraft/${encodeURIComponent(name)}`);
+        if (!r.ok) return null;
+        const d = await r.json();
+        return d.id;
+      } catch(e) { return null; }
+    }
+
+    document.getElementById("gen").addEventListener("click", async () => {
+      const wlAdd = document.getElementById("wl_add").value.trim().split(/\s+/).filter(Boolean);
+      const wlRemove = document.getElementById("wl_remove").value.trim().split(/\s+/).filter(Boolean);
+      const opAdd = document.getElementById("op_add").value.trim().split(/\s+/).filter(Boolean);
+      const opRemove = document.getElementById("op_remove").value.trim().split(/\s+/).filter(Boolean);
+
+      // Build arrays of lookups
+      const allNames = [...new Set([...wlAdd, ...wlRemove, ...opAdd, ...opRemove])];
+      const uuidMap = {};
+
+      document.getElementById("output").textContent = "# Resolving UUIDs...";
+      for (const name of allNames) {
+        const uuid = await fetchUUID(name);
+        if (uuid) {
+          uuidMap[name] = uuid;
+        } else {
+          uuidMap[name] = null;
+        }
+      }
+
+      // Build bash snippet
+      let script = `#!/bin/bash\nset -e\ncd \"/home/$USER/minecraft-server\"\n`;
+      script += "mkdir -p backups\n";
+      script += "cp -r world backups/world-$(date +%F-%H%M%S)\n"; // backup
+
+      // whitelist enable if adding/removing
+      if (wlAdd.length || wlRemove.length) {
+        script += "echo 'Updating whitelist...'\n";
+        script += "touch whitelist.json\n";
+        script += "jq -n '[]' > /tmp/whitelist.tmp.json || true\n";
+        script += "cat whitelist.json 2>/dev/null || echo '[]' > whitelist.json\n";
+      }
+
+      // process adds
+      for (const name of wlAdd) {
+        if (!uuidMap[name]) {
+          script += `echo 'WARNING: could not resolve UUID for ${name}'\n`;
+          continue;
+        }
+        script += `jq --arg uuid "${uuidMap[name]}" --arg name "${name}" '.[ ] | . as $in | (load(\"whitelist.json\") | .) as $wl | if any(.uuid == $uuid; .) then $wl else ($wl + [{uuid:$uuid,name:$name}]) end' whitelist.json > /tmp/whitelist.new.json 2>/dev/null || jq -n '[{uuid:"${uuidMap[name]}",name:"${name}"}]' > /tmp/whitelist.new.json\n`;
+        script += "mv /tmp/whitelist.new.json whitelist.json\n";
+      }
+      // process removes
+      for (const name of wlRemove) {
+        if (!uuidMap[name]) continue;
+        script += `jq 'map(select(.uuid != "${uuidMap[name]}"))' whitelist.json > /tmp/whitelist.new.json || true\n`;
+        script += "mv /tmp/whitelist.new.json whitelist.json\n";
+      }
+
+      // ops
+      if (opAdd.length || opRemove.length) {
+        script += "echo 'Updating ops...'\n";
+        script += "touch ops.json\n";
+        script += "cat ops.json 2>/dev/null || echo '[]' > ops.json\n";
+      }
+      for (const name of opAdd) {
+        if (!uuidMap[name]) {
+          script += `echo 'WARNING: could not resolve UUID for ${name}'\n`;
+          continue;
+        }
+        script += `jq --arg uuid "${uuidMap[name]}" --arg name "${name}" '.[ ] | . as $in | (load("ops.json") | .) as $ops | if any(.uuid == $uuid; .) then $ops else ($ops + [{uuid:$uuid,name:$name,level:4,bypassesPlayerLimit:false}]) end' ops.json > /tmp/ops.new.json 2>/dev/null || jq -n '[{uuid:"${uuidMap[name]}",name:"${name}",level:4,bypassesPlayerLimit:false}]' > /tmp/ops.new.json\n`;
+        script += "mv /tmp/ops.new.json ops.json\n";
+      }
+      for (const name of opRemove) {
+        if (!uuidMap[name]) continue;
+        script += `jq 'map(select(.uuid != "${uuidMap[name]}"))' ops.json > /tmp/ops.new.json || true\n`;
+        script += "mv /tmp/ops.new.json ops.json\n";
+      }
+
+      script += "echo 'Done. Reload whitelist in-game or restart server to apply.'\n";
+
+      // final one-liner version (escaped)
+      const oneliner = script
+        .split("\n")
+        .map(l => l.replace(/'/g, "'\"'\"'"))
+        .filter(l => l.trim() !== "")
+        .join(" && ");
+
+      document.getElementById("output").textContent = oneliner;
+    });
+  </script>
+</body>
+</html>
