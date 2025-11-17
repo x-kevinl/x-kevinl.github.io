@@ -11,7 +11,24 @@
   <script src="fma.js" defer></script>
 </head>
 <body>
-<div id="session-log" class="log-box"></div>
+<!-- Session Log Box (left side) -->
+<div id="session-log"
+     style="
+       position: fixed;
+       left: 20px;
+       top: 40px;
+       width: 300px;
+       height: 85vh;
+       overflow-y: auto;
+       border: 2px solid #999;
+       padding: 10px;
+       font-family: monospace;
+       font-size: 14px;
+       background: white;
+       white-space: pre-wrap;
+     ">
+</div>
+
 
 
   <div id="stats-container">
@@ -103,5 +120,6 @@
 </body>
 
 </html>
+
 
 
