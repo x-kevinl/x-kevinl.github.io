@@ -1,3 +1,6 @@
+/* fma.css */
+
+/* Layout and Global Styles */
 body {
   font-family: sans-serif;
   max-width: 800px;
@@ -13,7 +16,17 @@ body {
   display: none;
 }
 
-
+#stats-container,
+#welcome-page,
+#practice-container,
+#test-container,
+#speed-container,
+#summary-container {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
 
 /* Buttons and Inputs */
 button {
@@ -110,6 +123,3 @@ input[type="text"] {
   font-weight: bold;
   margin: 1em 0;
 }
-
-
-
