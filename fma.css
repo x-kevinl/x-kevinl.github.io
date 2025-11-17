@@ -1,22 +1,25 @@
 #session-log {
   position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 260px;              /* default */
-  background: #ffffff;
-  border-right: 2px solid #999;
-  overflow-y: auto;
+  top: 20px;
+  left: 20px;
+  height: 85vh;
+  width: 280px;
+  background: rgba(255,255,255,0.95);
+  border: 2px solid #777;
+  border-radius: 6px;
   padding: 10px;
-  font-family: "Consolas", monospace;
+  overflow-y: auto;
+  resize: horizontal;
+  min-width: 200px;
+  max-width: 600px;
+  font-family: Consolas, monospace;
   font-size: 14px;
-  line-height: 1.4rem;
+  line-height: 1.35rem;
   white-space: pre-wrap;
-  resize: horizontal;        /* ⭐ enables drag resize */
-  min-width: 180px;
-  max-width: 600px;          /* prevents overexpansion */
-  box-sizing: border-box;
+  box-shadow: 0 0 14px rgba(0,0,0,0.25);
+  z-index: 999999;     /* <<< makes it float above everything */
 }
+
 
 #page-wrapper {
   max-width: 800px;
@@ -146,6 +149,7 @@ input[type="text"] {
   font-weight: bold;
   margin: 1em 0;
 }
+
 
 
 
