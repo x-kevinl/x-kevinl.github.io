@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+#page-wrapper {
+  max-width: 800px;
+  margin: 2em auto;
+}
 
 
 /* fma.css */
@@ -142,6 +146,7 @@ input[type="text"] {
   font-weight: bold;
   margin: 1em 0;
 }
+
 
 
 
