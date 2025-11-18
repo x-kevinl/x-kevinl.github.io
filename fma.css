@@ -1,24 +1,34 @@
+/* Session Log Sidebar */
 #session-log {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  height: 85vh;
-  width: 280px;
-  background: rgba(255,255,255,0.95);
-  border: 2px solid #777;
-  border-radius: 6px;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 22vw;                 /* relative width */
+  min-width: 260px;
+  max-width: 400px;
+
+  background: white;
+  border-right: 2px solid black;
+  box-sizing: border-box;
+
   padding: 10px;
-  overflow-y: auto;
-  resize: horizontal;
-  min-width: 200px;
-  max-width: 600px;
-  font-family: Consolas, monospace;
+  margin: 0;
+
+  font-family: "Consolas", "Courier New", monospace;
   font-size: 14px;
   line-height: 1.35rem;
+
+  overflow-y: auto;
+  overflow-x: hidden;
   white-space: pre-wrap;
-  box-shadow: 0 0 14px rgba(0,0,0,0.25);
-  z-index: 999999;     /* <<< makes it float above everything */
+  word-wrap: break-word;
+
+  resize: none;
+  border-radius: 0;
+  text-align: left;            /* << aligns text left */
 }
+
 
 
 #page-wrapper {
@@ -32,10 +42,11 @@
 /* Layout and Global Styles */
 body {
   font-family: sans-serif;
-  margin: 0;
-  padding: 0;
+  margin-left: 22vw;     /* leaves room for sidebar */
+  padding: 2em 1em;
   text-align: center;
 }
+
 
 
 .hidden {
@@ -149,6 +160,7 @@ input[type="text"] {
   font-weight: bold;
   margin: 1em 0;
 }
+
 
 
 
