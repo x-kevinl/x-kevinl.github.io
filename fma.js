@@ -30,6 +30,8 @@ async function ensureExcelJS() {
 let statsCache = null;
 let sessionStarted = false;
 let username = null;
+let logsByDay = {};      // date → array of {time, username, message}
+let daysLoaded = 0;      // number of days shown so far
 
 // ---- Auth & Greeting ----
 auth.onAuthStateChanged(async user => {
@@ -41,51 +43,69 @@ auth.onAuthStateChanged(async user => {
 
     // Live log listener
     // ---- Enhanced live log listener: daily grouping + date headers ----
-let lastRenderedDate = "";
-
+// ---- Live log listener that builds logsByDay ----
 try {
   db.collection("users").doc(user.uid).collection("logs")
     .orderBy("time", "asc")
     .onSnapshot(snap => {
-      const box = document.getElementById("session-log");
-      if (!box) return;
-
-      box.innerHTML = "";        // wipe existing
-      lastRenderedDate = "";
-
+      logsByDay = {}; // reset
       snap.forEach(doc => {
         const d = doc.data();
         const ts = d.time?.toDate() || new Date();
-
-        const dayStr = ts.toLocaleDateString("en-US"); // e.g. 11/18/2025
-        const hh = String(ts.getHours()).padStart(2, "0");
-        const mm = String(ts.getMinutes()).padStart(2, "0");
-        const ss = String(ts.getSeconds()).padStart(2, "0");
-
-        // Insert day header only once per date
-        if (dayStr !== lastRenderedDate) {
-          lastRenderedDate = dayStr;
-
-          const header = document.createElement("div");
-          header.style.textAlign = "center";
-          header.style.fontWeight = "bold";
-          header.style.margin = "10px 0";
-          header.textContent = `[${dayStr}]`;
-          box.appendChild(header);
-        }
-
-        // Render log entry line
-        const line = document.createElement("div");
-        line.innerHTML = `[${hh}:${mm}:${ss}] <strong>${d.username}</strong> ${d.message}`;
-        box.appendChild(line);
+        const key = ts.toISOString().slice(0, 10); // yyyy-mm-dd
+        if (!logsByDay[key]) logsByDay[key] = [];
+        logsByDay[key].push(d);
       });
 
-      box.scrollTop = box.scrollHeight; // auto-scroll
+      // reset visible days to only today
+      daysLoaded = 0;
+      renderLogs();
     });
-
 } catch (e) {
   console.error("Log listener error", e);
 }
+function renderLogs() {
+  const box = document.getElementById("session-log");
+  if (!box) return;
+
+  box.innerHTML = ""; // clear
+
+  // Load More button
+  const btn = document.createElement("button");
+  btn.id = "load-more-btn";
+  btn.textContent = "Load More";
+  btn.onclick = loadMoreDays;
+  box.appendChild(btn);
+
+  const sorted = Object.keys(logsByDay).sort().reverse();
+  const visible = sorted.slice(0, daysLoaded + 1);
+
+  visible.forEach(dateKey => {
+    const header = document.createElement("div");
+    header.className = "log-date-header";
+    header.textContent = `[${dateKey}]`;
+    box.appendChild(header);
+
+    logsByDay[dateKey].forEach(d => {
+      const ts = d.time?.toDate() || new Date();
+      const hh = String(ts.getHours()).padStart(2,'0');
+      const mm = String(ts.getMinutes()).padStart(2,'0');
+      const ss = String(ts.getSeconds()).padStart(2,'0');
+
+      const line = document.createElement("div");
+      line.className = "session-log-line";
+      line.innerHTML = `[${hh}:${mm}:${ss}] <strong>${d.username}</strong> ${d.message}`;
+      box.appendChild(line);
+    });
+  });
+
+  box.scrollTop = box.scrollHeight;
+}
+function loadMoreDays() {
+  daysLoaded++;
+  renderLogs();
+}
+
 
 
     await computeStats(); // preload stats for intelligent selection
@@ -722,4 +742,5 @@ window.addEventListener('beforeunload', () => {
     sessionStarted = false;
   }
 });
+
 
