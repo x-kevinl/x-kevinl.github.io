@@ -40,46 +40,53 @@ auth.onAuthStateChanged(async user => {
     username = user.displayName || user.email.split('@')[0];
 
     // Live log listener
-    try {
-      db.collection('users').doc(user.uid).collection('logs')
-        .orderBy('time', 'asc')
-        .onSnapshot(snap => {
-          const box = document.getElementById('session-log');
-          if (!box) return;
-          box.innerHTML = "";
-          snap.forEach(doc => {
-            const d = doc.data();
-            let ts = d.time;
-            let dateObj;
-            if (ts && typeof ts.toDate === 'function') {
-              dateObj = ts.toDate();
-            } else {
-              // fallback if timestamp missing
-              dateObj = new Date();
-            }
-            const hh = String(dateObj.getHours()).padStart(2, '0');
-            const mm = String(dateObj.getMinutes()).padStart(2, '0');
-            const ss = String(dateObj.getSeconds()).padStart(2, '0');
+    // ---- Enhanced live log listener: daily grouping + date headers ----
+let lastRenderedDate = "";
 
-            const lineDiv = document.createElement('div');
-            const timeSpan = document.createElement('span');
-            timeSpan.textContent = `[${hh}:${mm}:${ss}] `;
-            lineDiv.appendChild(timeSpan);
+try {
+  db.collection("users").doc(user.uid).collection("logs")
+    .orderBy("time", "asc")
+    .onSnapshot(snap => {
+      const box = document.getElementById("session-log");
+      if (!box) return;
 
-            const boldUser = document.createElement('strong');
-            boldUser.textContent = d.username || 'user';
-            lineDiv.appendChild(boldUser);
+      box.innerHTML = "";        // wipe existing
+      lastRenderedDate = "";
 
-            const msgText = document.createTextNode(' ' + (d.message || ''));
-            lineDiv.appendChild(msgText);
+      snap.forEach(doc => {
+        const d = doc.data();
+        const ts = d.time?.toDate() || new Date();
 
-            box.appendChild(lineDiv);
-          });
-          box.scrollTop = box.scrollHeight;
-        });
-    } catch (e) {
-      console.error('Log listener error', e);
-    }
+        const dayStr = ts.toLocaleDateString("en-US"); // e.g. 11/18/2025
+        const hh = String(ts.getHours()).padStart(2, "0");
+        const mm = String(ts.getMinutes()).padStart(2, "0");
+        const ss = String(ts.getSeconds()).padStart(2, "0");
+
+        // Insert day header only once per date
+        if (dayStr !== lastRenderedDate) {
+          lastRenderedDate = dayStr;
+
+          const header = document.createElement("div");
+          header.style.textAlign = "center";
+          header.style.fontWeight = "bold";
+          header.style.margin = "10px 0";
+          header.textContent = `[${dayStr}]`;
+          box.appendChild(header);
+        }
+
+        // Render log entry line
+        const line = document.createElement("div");
+        line.innerHTML = `[${hh}:${mm}:${ss}] <strong>${d.username}</strong> ${d.message}`;
+        box.appendChild(line);
+      });
+
+      box.scrollTop = box.scrollHeight; // auto-scroll
+    });
+
+} catch (e) {
+  console.error("Log listener error", e);
+}
+
 
     await computeStats(); // preload stats for intelligent selection
   }
@@ -715,3 +722,4 @@ window.addEventListener('beforeunload', () => {
     sessionStarted = false;
   }
 });
+
