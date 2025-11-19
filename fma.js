@@ -58,7 +58,7 @@ try {
       });
 
       // reset visible days to only today
-      daysLoaded = 0;
+      daysLoaded = 1;
       renderLogs();
     });
 } catch (e) {
@@ -74,15 +74,24 @@ function renderLogs() {
   const btn = document.createElement("button");
   btn.id = "load-more-btn";
   btn.textContent = "Load More";
+  btn.style.display = "block";
+  btn.style.margin = "0 auto 10px auto";
   btn.onclick = loadMoreDays;
   box.appendChild(btn);
 
-  const sorted = Object.keys(logsByDay).sort().reverse();
-  const visible = sorted.slice(0, daysLoaded + 1);
+  // Sorted dates newest → oldest
+  const sorted = Object.keys(logsByDay).sort((a,b) => new Date(b) - new Date(a));
+
+  // Only show limited amount
+  const visible = sorted.slice(0, daysLoaded);
 
   visible.forEach(dateKey => {
+    // Date header
     const header = document.createElement("div");
     header.className = "log-date-header";
+    header.style.textAlign = "center";
+    header.style.fontWeight = "bold";
+    header.style.margin = "10px 0";
     header.textContent = `[${dateKey}]`;
     box.appendChild(header);
 
@@ -101,10 +110,12 @@ function renderLogs() {
 
   box.scrollTop = box.scrollHeight;
 }
+
 function loadMoreDays() {
   daysLoaded++;
   renderLogs();
 }
+
 
 
 
@@ -742,5 +753,6 @@ window.addEventListener('beforeunload', () => {
     sessionStarted = false;
   }
 });
+
 
 
